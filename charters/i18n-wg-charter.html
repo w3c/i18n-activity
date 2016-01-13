@@ -1,10 +1,8 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
-      "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en-US" lang="en-US">
+<!DOCTYPE html>
+<html lang="en-US">
 <head>
-  <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
-  <title>Internationalization Core Working Group</title>
+  <meta charset="utf-8" />
+  <title>Internationalization WG charter (draft)</title>
   <link rel="stylesheet" href="http://www.w3.org/2005/10/w3cdoc.css"
   type="text/css" media="screen" />
   <link rel="stylesheet" type="text/css"
@@ -19,7 +17,7 @@
 <ul id="navbar" style="font-size: small">
   <li><a href="#scope">Scope</a></li>
   <li><a href="#deliverables">Deliverables</a></li>
-  <li><a href="#coordination">Dependencies</a></li>
+  <li><a href="#coordination">Coordination</a></li>
   <li><a href="#participation">Participation</a></li>
   <li><a href="#communication">Communication</a></li>
   <li><a href="#decisions">Decision Policy</a></li>
@@ -28,11 +26,11 @@
 </ul>
 
 <p><a href="http://www.w3.org/"><img alt="W3C" height="48"
-src="/Icons/w3c_home" width="72" /></a> <a class="domainlogo"
-href="/Architecture/"><img src="/Icons/interaction"
+src="http://www.w3.org/Icons/w3c_home" width="72" /></a> <a class="domainlogo"
+href="/Architecture/"><img src="http://www.w3.org/Icons/interaction"
 alt="Architecture Domain" /></a> </p>
 
-<h1 id="title">Internationalization (I18n)  Working Group Charter</h1>
+<h1 id="title">Internationalization (I18n) Working Group Charter (draft)</h1>
 
 <p class="mission">The <strong>mission</strong> of the <a href="http://www.w3.org/International/core/">Internationalization
  Working Group</a>, part of the <a
@@ -50,7 +48,7 @@ and between the various different languages, scripts, regions, and cultures.</p>
   <tbody>
     <tr id="Duration">
       <th rowspan="1" colspan="1">End date</th>
-      <td rowspan="1" colspan="1">31 December 2015</td>
+      <td rowspan="1" colspan="1">31 March 2018</td>
     </tr>
     <tr>
       <th rowspan="1" colspan="1">Confidentiality</th>
@@ -59,18 +57,18 @@ and between the various different languages, scripts, regions, and cultures.</p>
        >public </a></td>
     </tr>
     <tr>
-      <th rowspan="1" colspan="1">Initial Chairs</th>
+      <th rowspan="1" colspan="1"> Chair</th>
       <td rowspan="1" colspan="1">Addison Phillips</td>
     </tr>
     <tr>
-      <th rowspan="1" colspan="1">Initial Team Contacts<br />
+      <th rowspan="1" colspan="1">Team Contact<br />
         (FTE %: 70)</th>
       <td rowspan="1" colspan="1">Richard Ishida</td>
     </tr>
     <tr>
-      <th rowspan="1" colspan="1">Usual Meeting Schedule</th>
-      <td rowspan="1" colspan="1">Teleconferences: Weekly <br />
-        Face-to-face: Once Annually </td>
+      <th rowspan="1" colspan="1"> Usual Meeting Schedule</th>
+      <td rowspan="1" colspan="1"><strong>Teleconferences</strong>: Weekly. Additional calls may be scheduled for specific tasks.<br />
+        <strong>Face-to-face</strong>: During the W3C's annual Technical Plenary week. Additional face-to-face meetings may be scheduled by consent of the participants. </td>
     </tr>
   </tbody>
 </table>
@@ -86,7 +84,7 @@ and between the various different languages, scripts, regions, and cultures.</p>
     as possible in the development of specifications. The Working Group also
     tracks developments outside the W3C which have a bearing on the
     international Web, such as Unicode, IDN/ICANN issues, language tag and IRI
-    developments at the IETF, JavaScript, etc .</li>
+    developments at the IETF, JavaScript, etc.</li>
   <li>Reviews and discussion of W3C technologies for internationalization issues, as these
     technologies develop. This encompasses a broad array of cultural,
     linguistic, technical and accessibility concerns. Review work may also
@@ -94,12 +92,14 @@ and between the various different languages, scripts, regions, and cultures.</p>
     related to internationalization, if it is thought to be relevant to W3C
     technology. The Working Group maintains liaison relationships with these
     groups to ensure coordinated, consistent development of these
-  standards.</li>
+    standards.</li>
+  <li>Gathering requirements for linguistic support. The Working Group supports groups documenting typographic and other requirements for scripts and languages around the world, with a view to informing specification developers and browser/ebook implementers about what needs to be supported.</li>
   <li>Outreach and inreach, in the forms of notes, articles, tutorials,
     presentations, tests and other resources to help specification writers, web
     masters, content authors, and others involved in developing and
     implementing the Web understand the issues involved and the techniques
     available with regard to supporting international use of Web technology.</li>
+  <li>Implementation support and guidance. The WG produces tests for international features of the Web Platform, and provides advice and support to browser/ebook implementers to assist in the adoption of those features.</li>
 </ul>
 
 <h3>Success Criteria</h3>
@@ -115,38 +115,36 @@ and between the various different languages, scripts, regions, and cultures.</p>
 <h2 id="deliverables">Deliverables</h2>
 
 <h4>Recommendation-track specifications</h4>
-
-<p>Most of the formal documents produced by the Working Group are guidelines, best practices, requirements, and the like. These are best published as Working Group Notes. </p>
 <p>The Working Group will also deliver the following W3C Recommendation:
 <dl>
-<dt>Encoding</dt>
+<dt><strong>Encoding</strong></dt>
 <dd>
-  Implementations have not always implemented encodings for the web platform in the same way, have not always used the same labels, and often differ in dealing with undefined and former proprietary areas of encodings. This specification attempts to fill those gaps so that new implementations do not have to reverse engineer encoding implementations of the market leaders and existing implementations can become more interoperable.
+  <p>Implementations have not always implemented encodings for the web platform in the same way, have not always used the same labels, and often differ in dealing with undefined and former proprietary areas of encodings. This specification attempts to fill those gaps so that new implementations do not have to reverse engineer encoding implementations of the market leaders and existing implementations can become more interoperable.</p>
+<p class="milestone"><b>Expected completion:</b> Q3 2016</p>
 </dd>
 </dl>
 
 <h4>Reviews and advice</h4>
 
+<p>Most of the formal documents produced by the Working Group are guidelines, best practices, requirements, and the like. These are best published as Working Group Notes. </p>
 <p>Review of specifications of other W3C Working Groups for issues related to
 internationalization, global usage, and cultural sensitivity is an essential
 deliverable of the Internationalization  Working Group. This is not a
 time-bound activity and the exact schedule of these reviews depends on the
 progress of other Working Groups and the availability of resources in the
 Internationalization Working Group. There is usually a regular supply of
-review work to be done. In depth reviews are typically done at Last Call,
-however additional early reviews are particularly useful and will be scheduled
-where possible. Review work leads to the raising and tracking of issues related to a technology. Discussions related to these issues are often much more time-consuming than the review itself.</p>
+review work to be done. The WG is doing its best to provide reviews  as early as possible in the specification development process, rather than waiting for Last Call. Review work leads to the raising and tracking of issues related to a technology. Discussions related to these issues are often much more time-consuming than the review itself.</p>
 <p>In addition to discussions arising from reviews, the Working Group is often called upon to support other Working Groups with adhoc advice and discussion.</p>
 
 <h4>Web internationalization resources</h4>
 
 <p>The Working Group is being chartered to operate under the Patent Policy to allow it to take  documents to Recommendation status when the need arises.</p>
 <p>The WG will continue  to publish resources on the
-<a href="/International/">Internationalization Activity</a>
+<a href="https://www.w3.org/International/">Internationalization Activity</a>
 site to assist users of W3C and related Web technologies to internationalize
-their applications, content, and services. These will include <a href="/International/articlelist">articles,
+their applications, content, and services. These will include <a href="https://www.w3.org/International/articlelist">articles,
 notes and reference pages</a> and <a
-href="/International/tutorials/">tutorials</a>. </p>
+href="https://www.w3.org/International/tutorials/">tutorials</a>. </p>
 
 <p>The Working Group will also maintain the Internationalization Activity Web
 presence, and develop and maintain ways for users of its resources to quickly
@@ -158,12 +156,12 @@ and task-based indexing.</p>
   targeted at specific user types and activities, that group together and link to
   all relevant information in summary form, with an organization that aids their
   use.</p>
-<p>In the previous charter period the  WG  supported a Japanese Layout task force in their preparation of the document Requirements for Japanese Text Layout. The WG will look for opportunities to replicate the success of this initiative by assisting other groups of people to generate requirements for local support.</p>
+<p>The WG will work with and publish documents for various groups set up to document layout and related requirements for the Web Platform and Electronic Book technologies. The aim is to produce documents similar to the <a href="https://www.w3.org/TR/jlreq/">Japanese Layout Requirements</a> for a range of scripts and languages, and other sources of information for implementers and content developers. See a list of <a href="https://www.w3.org/International/layout">currently available information</a>.</p>
 <h4>Internationalization tests</h4>
 
 <p>The WG will build on the <a
-href="/International/tests/">existing foundation</a> to create
-additional test pages and  summaries of results for the support of internationalization-related features in major browsers. The tests will be made available through the W3C Test Framework. These tests
+href="https://www.w3.org/International/tests/">existing foundation</a> to create
+additional test pages and  summaries of results for the support of internationalization-related features in major browsers. The tests will be made available to the CSS and Web Platform test suites, where appropriate. These tests
 explore support by user agents for internationalization related features, but
 also serve an educational role. In addition to their support for techniques documents and articles, these tests are being used by content authors. In addition, other
 W3C WGs have incorporated these tests into their own test suites, and user
@@ -182,75 +180,51 @@ technologies by in-country experts.</p>
 
 <h3>Milestones</h3>
 
-<p>Plans for the Encoding specification are as follows:</p>
-
-	    <table class="roadmap" width="80%"><caption>
-		Milestones
-	      </caption><tfoot><tr><td colspan="7" rowspan="1">Note: The group will document significant changes from this initial
-	          schedule on the <a href="http://www.w3.org/International/core/">group home page</a>.</td></tr></tfoot><tbody><tr><th rowspan="1" colspan="1">Specification</th><th rowspan="1" colspan="1"><acronym title="First Working Draft">FPWD</acronym></th><th rowspan="1" colspan="1"><acronym title="Last Call Working Draft">LC</acronym></th><th rowspan="1" colspan="1"><acronym title="Candidate Recommendation">CR</acronym></th><th rowspan="1" colspan="1"><acronym title="Proposed Recommendation">PR</acronym></th><th rowspan="1" colspan="1"><acronym title="Recommendation">Rec</acronym></th></tr><tr>
-	            <th rowspan="1" colspan="1">W3C Recommendation about encoding</th>
-	            <td class="WD1" rowspan="1" colspan="1">September 2012</td>
-	            <td class="LC" rowspan="1" colspan="1">March 2013</td>
-	            <td class="CR" rowspan="1" colspan="1">July 2013</td>
-	            <td class="PR" rowspan="1" colspan="1">November 2013</td>
-	            <td class="REC" rowspan="1" colspan="1">December 2013</td></tr></tbody></table>
-
-
+<p>Plans for the Encoding specification are as follows. The document is currently in CR, and browser developers are working on implementations.</p>
+<table class="roadmap" style="width:30%;">
+      <caption>
+      Milestones
+      </caption>
+      <tfoot>
+        <tr>
+          <td colspan="3" rowspan="1">Note: The group will document significant changes from this initial
+            schedule on the <a href="http://www.w3.org/International/core/">group home page</a>.</td>
+        </tr>
+      </tfoot>
+      <tbody>
+        <tr>
+          <th rowspan="1" colspan="1">Specification</th>
+          <th rowspan="1" colspan="1"><acronym title="Proposed Recommendation">PR</acronym></th>
+          <th rowspan="1" colspan="1"><acronym title="Recommendation">Rec</acronym></th>
+        </tr>
+        <tr>
+          <th rowspan="1" colspan="1">Encoding</th>
+          <td class="PR" rowspan="1" colspan="1">July 2016</td>
+          <td class="REC" rowspan="1" colspan="1">Sept 2013</td>
+        </tr>
+      </tbody>
+    </table>
 <p>Other WG deliverables are produced on an ongoing basis throughout the life of the
-  charter, and the specific topics to be addressed by the working group and
-  schedule information cannot be determined in far in advance, but are driven by
-  the needs of the Web community.</p>
+      charter, and the specific topics to be addressed by the working group and
+      schedule information cannot be determined far in advance, but are driven by
+      the needs of the Web community.</p>
 
 <p>Plans for work on resource development and reviews can be tracked at:</p>
 <ul>
-  <li>the <a href="http://www.w3.org/International/wiki/Review_radar">Review Radar</a></li>
-  <li>the <a href="http://www.w3.org/International/wiki/Review_radar">Resource development
-  pipeline</a></li>
-  <li>the <a href="http://www.w3.org/International/wiki/Review_history">Issue list summary page</a>.</li>
+  <li>the <a href="https://www.w3.org/International/wiki/Review_radar">Review Radar</a></li>
+  <li>the <a href="https://www.w3.org/International/wiki/Project_radar">Project Radar</a></li>
+  <li>the <a href="https://www.w3.org/International/reviews/openissues/">Open issue list</a>.</li>
 </ul>
 </div>
 
 <div class="dependencies">
-<h2 id="coordination">Relationships to External Groups</h2>
+<h2 id="coordination">Coordination</h2>
 
 <h3>Dependencies</h3>
 <dl>
   <dt> W3C Working Groups</dt>
-    <dd>The I18n  WG will work with all W3C Working Groups to ensure that
-      their deliverables support international use. The list includes the WGs
-      in the following Activities, in particular, but is not limited to them: 
-      <ul>
-        <li><a href="https://www.w3.org/MarkUp/Activity">HTML</a>, <a href="https://www.w3.org/2006/rwc/">Rich Web Client</a>: HTML is one of the main formats for
-          storing and delivering information on the Web. The I18N  WG will
-          help the HTML WG keep HTML  language- and culture-neutral,
-          and to make the international components of HTML broadly
-        available. The APIs being developed by the Web Apps WG also touch on international issues.</li>
-        <li><a href="https://www.w3.org/Style/">Style (CSS)</a>: Formatting varies widely in different cultures, and different
-          writing systems need different stylesheet support. The I18N  WG
-          will help these working groups address international formatting needs
-          by providing requirements, proposals, and advice.</li>
-        <li><a href="https://www.w3.org/XML/">XML</a>: XML is the base format for many Web
-          applications. The I18N  WG will help the XML CG and the various
-          XML WGs to create and ensure an appropriate base for the
-          internationalization needs of these applications.</li>
-        <li><a href="https://www.w3.org/Mobile/">Mobile Web Initiative</a>: The I18N  WG will
-          monitor the work of the Mobile Web Initiative, to ensure their
-          specifications and best practices are internationalized, and to
-          integrate their best practices in internationalization
-          deliverables.</li>
-        <li><a href="/Voice/">Voice Browser</a>, and <a
-          href="/2002/mmi/">Multimodal Interaction</a>: Spoken language has
-          different requirements from written forms of a language, raising
-          internationalization issues that have to be carefully considered.
-          Also, new forms of interaction, such as cross-language interaction
-          (e.g. a speaker responding with the French pronunciation of a name to
-          an English prompt), need to be reviewed with respect to
-          internationalization.</li>
-        <li><a href="https://www.w3.org/2001/sw/">Semantic Web</a>: I18N  will collaborate to
-          make sure that Semantic Web technologies are appropriately
-          internationalized, and help with creating guidance for the Multilingual Semantic Web.</li>
-      </ul>
-    </dd>
+    <dd>The I18n  WG will work with any W3C Working Group to ensure that
+      their deliverables support international use.    </dd>
     
     <dt>Other Groups</dt>
     <dd>From time to time, the work of the Internationalization Working Group will be dependent on developments in groups outside the W3C. For example, specifications at the Unicode Consortium, or work on IRIs or language tags at the IETF, etc.</dd> 
@@ -268,43 +242,23 @@ technologies by in-country experts.</p>
     information about the work of this WG, sending out information about the
     progress of this WG at regular intervals, and soliciting feedback in
     general. Members of this WG are expected to also become members of the
-    I18N IG to assure a smooth flow of information.</dd>
-  <dt><a href="http://www.w3.org/International/multilingualweb/lt/">MultilingualWeb-LT Working Group</a></dt>
-  <dd>The I18n  WG will track the work of the MultilingualWeb-LT WG (charter), since it is focused on an important aspect of Web internationalization. The MultilingualWeb-LT WG is also in the Internationalization Activity.</dd>
+    I18N IG to assure a smooth flow of information. The WG will also work closely with the
+    task forces in the purvey of the Interest Group to publish documents about layout and 
+    similar requirements.</dd>
   <dt><a href="http://www.w3.org/International/its/ig/">ITS Interest Group</a></dt>
   <dd>The I18n  WG will maintain close contact with the ITS IG (charter).
     Members of the ITS IG may collaborate with the  WG to publish pages
     on the Web site, and the  WG will provide assistance to the ITS WG
     for the development of techniques documents, eg. editorial guidance,
     templates and the like.</dd>
-  <dt><a href="/WAI/">WAI (Web Accessibility Initiative) </a></dt>
-  <dd>The I18N  WG will coordinate with the relevant WAI groups on the
-    following points:
-    <ul>
-      <li>Procedural coordination: Both the I18N  WG and WAI are
-        reviewing W3C specifications.</li>
-      <li>Technical coordination: There are parallels between the cultural
-        universality at the base of the Internationalization work and the
-        principle of universal access at the base of the WAI work. Common
-        issues resulting from such parallels should be coordinated.</li>
-      <li>Internationalization review of WAI work, and WAI review of work of
-        the I18N  WG: Different countries have different traditions and
-        different needs and rules for making content accessible, and some
-        languages may be harder to deal with than others. For example,
-        Japanese text-to-speech systems may need extra information compared
-        to, say, English ones.</li>
-    </ul>
-  </dd>
-  <dt><a href="http://www.w3.org/MarkUp/HCG/">Hypertext Coordination Group</a></dt>
-  <dd>The Working Group will work with the HCG as the need arises.</dd>
-  <dt><a href="/2001/tag/">TAG</a></dt>
-  <dd>The Technical Architecture Group is responsible for the principles of
-    Web Architecture. The I18N  WG will coordinate architectural issues
-    related to internationalization with the TAG where necessary.</dd>
-</dl>
-<h3>Liaisons</h3>
+  </dl>
+<p>The i18n WG will work with other horizontal review groups for accessibility,  performance, privacy, and security, and with the TAG, both to coordinate procedure and technical work.</p>
+<h3>External groups</h3>
 <dl>
-  <dt>IETF</dt>
+  <dt><a href="https://whatwg.org/">WHATWG</a></dt>
+  <dd>The Encoding specification is  developed at the WHATWG and still being maintained there. The Working Group will work with the WHATWG editors to avoid differences between the WHATWG and i18n WG specifications that would harm interoperability on the Web.
+            </dd>
+   <dt>IETF</dt>
     <dd>IETF working groups and other IETF activities that define technology
       with impact on Web Internationalization, such as the IRI WG and the work related to language tags.</dd>
   <dt>Unicode Technical Committee
@@ -351,17 +305,13 @@ technologies by in-country experts.</p>
 have 5 or more active participants for its duration. Expectations for effective participation in
 Internationalization  Working Group are flexible. On average, participants are expected to consume up to one work day per
 week; one and a half days per week for editors.</p>
-
-<p>Participants are reminded of the <a
-href="/2005/10/Process-20051014/groups.html#good-standing">Good
-Standing requirements</a> of the W3C Process.</p>
 </div>
 
 <div class="communication">
 <h2 id="communication">Communication</h2>
 
 <p>This group primarily conducts its work on the public mailing list <a
-href="http://lists.w3.org/Archives/Public/www-international/">www-international@w3.org</a>. This is the Internationalization Interest Group list, and is writable by list subscribers (the Interest Group). There are a number of additional,  specialized mailing lists under the umbrella of the Interest Group (eg. a bidi list, a CJK list, and an Indic list), which will also be used as appropriate for discussion. These lists are all tracked by the Internationalization tracker.</p>
+href="http://lists.w3.org/Archives/Public/www-international/">www-international@w3.org</a>. This is the Internationalization Interest Group list, and can be both read and written to by list subscribers (the Interest Group). There are a number of additional,  specialized mailing lists under the umbrella of the Interest Group (eg. a bidi list, a CJK list,  an Indic list, etc.), which will also be used as appropriate for discussion. These lists are all tracked by the Internationalization tracker.</p>
 <p>There is another mailing list, <a
 href="http://lists.w3.org/Archives/Public/public-i18n-core/">public-i18n-core@w3.org</a>, which can be used for discussions within the group, where needed. This is a publicly archived list, writeable only by Group members.</p>
 
@@ -413,24 +363,22 @@ shape="rect">section 6.2</a> of the <a href="/Consortium/Process"
 shape="rect">Process Document</a>. In the event of a conflict between this
 document or the provisions of any charter and the W3C Process, the W3C Process
 shall take precedence.</p>
-<p>The charter has been extended from 1 Jan 2014 to 31 Dec 2015.</p>
 <hr />
 <address>
   Charter author: Richard Ishida 
 </address>
 
-<p class="copyright"><a rel="Copyright"
-href="/Consortium/Legal/ipr-notice#Copyright">Copyright</a>© 2012
-<a href="/"><acronym
-title="World Wide Web Consortium">W3C</acronym></a> <sup>®</sup> (<a
-href="http://www.csail.mit.edu/"><acronym
-title="Massachusetts Institute of Technology">MIT</acronym></a> , <a
-href="http://www.ercim.eu/"><acronym
-title="European Research Consortium for Informatics and Mathematics">ERCIM</acronym></a>
-, <a href="http://www.keio.ac.jp/">Keio</a>), All Rights
-Reserved.</p>
+<p class="copyright">
+        <a href="http://www.w3.org/Consortium/Legal/ipr-notice#Copyright">Copyright</a> ©    2016
+        <a href="http://www.w3.org/"><abbr title="World Wide Web Consortium">W3C</abbr></a><sup>®</sup>
+        (
+        <a href="http://www.csail.mit.edu/"><abbr title="Massachusetts Institute of Technology">MIT</abbr></a>,
+        <a href="http://www.ercim.eu/"><abbr title="European Research Consortium for Informatics and Mathematics">ERCIM</abbr></a>, 
+        <a href="http://www.keio.ac.jp/">Keio</a>, 
+        <a href="http://ev.buaa.edu.cn/">Beihang</a>
+        ), All Rights Reserved.
 
-<p>$Date: 2012/10/01 19:16:44 $</p>
-</div>
+        <abbr title="World Wide Web Consortium">W3C</abbr> <a href="http://www.w3.org/Consortium/Legal/ipr-notice#Legal_Disclaimer">liability</a>, <a href="http://www.w3.org/Consortium/Legal/ipr-notice#W3C_Trademarks">trademark</a> and <a href="http://www.w3.org/Consortium/Legal/copyright-documents">document use</a> rules apply.
+</p></div>
 </body>
 </html>
