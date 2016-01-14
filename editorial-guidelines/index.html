@@ -1,0 +1,769 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Github basics for i18n documents</title>
+<link rel="stylesheet" type="text/css" href="article-display-2015.css" />
+<style type="text/css">
+/*
+small p, small address {
+	margin: 0;
+	font-size: 90%;
+	font-family: Segoe, "Segoe UI", "DejaVu Sans", "Trebuchet MS", Verdana, sans-serif;
+}
+pre {
+	font-size: 90%;
+}
+table, th {
+	border: 0;
+}
+td {
+	border: 1px solid #ccc;
+	vertical-align: top;
+	border-collapse: collapse;
+}
+h3 {
+	background: #f6f6bb;
+	font-family: Arial, sans-serif;
+	color: #000066;
+	font-size: 140%;
+	margin-top: 2em;
+	padding-left: 5px;
+	border-radius: 5px;
+}
+h3 a:link, h3 a:active, h3 a:visited {
+	text-decoration: none;
+	color: #404040;
+}
+h3 {
+	font-family: Arial, sans-serif;
+	color: #000066;
+	margin-top: 3em;
+}
+.qterm:before, .qchar:before {
+	content: "'";
+}
+.qterm:after, .qchar:after {
+	content: "'";
+}
+.quote:before {
+	content: '"';
+}
+.quote:after {
+	content: '"';
+}
+code {
+	color: #A52A2A;
+	font-family: Consolas, "Andale Mono", "Lucida Console", "Lucida Sans Typewriter", Monaco, "Courier New", monospace;
+	font-size: 100%;
+}
+samp, kbd {
+	font-family: Consolas, "Andale Mono", "Lucida Console", "Lucida Sans Typewriter", Monaco, "Courier New", monospace;
+	font-size: 100%;
+}
+.uname {
+	text-transform: uppercase;
+	font-size: 85%;
+	letter-spacing: 0.03em;
+}
+*/
+h2 {
+	font-family: Arial, helvetica, sans-serif;
+	font-size: 140%;
+	font-weight: normal;
+	color: white;
+	border: none;
+	margin-top: 3.5em;
+	margin-bottom: 1.5em;
+	padding: 0.1em 0.4em;
+	background-color: #697fb1;
+	border-radius: 10px;
+	}
+h2 a:link, h3 a:active, h3 a:visited {
+	text-decoration: none;
+	color: white;
+	}
+h3 {
+	border-bottom: 1px solid #ccc;
+	}
+.highlight {
+	font-size: 130%;
+	color: #6A6A6A;
+	font-weight: bold;
+	}
+code em {
+	font-style: normal;
+	font-weight: bold;
+	}
+var {
+	font-style: italic;
+	}
+.issue {
+	font-size: 200%;
+	color: red;
+	}
+ol ol { margin-right: 20px; margin-left: 30px;  }
+</style>
+<script type="text/javascript" src="https://www.w3.org/International/javascript/articletoc-html5.js"></script>
+</head>
+
+<body>
+<header> <aside id="mainNavigation">
+	<nav id="site-navigation">
+		<a href="/International/"><img id="picture" alt="World map" title="World map" src="https:/www.w3.org/International/icons/world.gif" width="150" height="61"/></a>  </nav>
+	
+	<nav class="noprint" id="search"><form method="get" action="/International/site-search.php" enctype="application/x-www-form-urlencoded" style="margin: 0;">
+<div id="searchSite"><input name="q" type="text" value="I18n site search: " onfocus="this.value=''" id="searchField" accesskey="E" maxlength="255"/></div>
+</form></nav>
+	<nav id="breadcrumbs"><p><a href='/International/'>Home </a> &gt; <a href='/International/resources'>Resources</a> &gt; <a href='/International/articlelist#characters'>Articles</a></p></nav>
+	<nav class="noprint" id="toc">
+		<h2 id="internal-links" class="notoc"><a href="#internal-links">On this page</a></h2>
+		<div id="toclocation"> </div>
+  </nav>
+	<nav class="noprint" id="relatedlinks">
+		
+  </nav>
+</aside>
+<nav id="boilerplate"><div id="siteicons"><a href="http://www.w3.org/" title="Go to W3C Home Page"><img src="https:/www.w3.org/International/icons/w3c_home.gif" alt="s_gotoW3cHome"/></a><a href="/International/" title="Go to Internationalization Activity Home Page" id="i18n-name">
+	Internationalization</a></div>
+<div id="sitelinks" class="noprint"><a href="/International/" title="Internationalization Activity home page.">Home</a>&#xA0; 
+<a href="/International/resources" title="Information resources on the Internationalization site.">Resources</a>&#xA0;
+<a href="/International/technique-index" title="Task-based index of i18n techniques.">Techniques</a>&#xA0;
+<a href="/International/resource-index" title="Topic index for information on this site.">Topics</a>&#xA0; 
+<a href="/International/log/description" title="Information about news filters and RSS feeds for W3C Internationalization.">News</a>&#xA0;
+<a href="/International/about#scope" title="Groups that make up the Internationalization Activity.">Groups</a>&#xA0; 
+<a href="/International/about" title="About the Internationalization Activity.">About</a>&#xA0; 
+&#xA0; </div><div id="line">&#xA0;</div></nav>
+<h1>Guidelines for working with i18n github documents</h1>
+</header>
+
+<p class="disclaimer">This is just a first strawman and still needs a lot of work. Do not believe anything it says, and don't expect anything sensible from it!</p>
+<section>
+<p>The W3C Internationalization Activity has task forces which use github for document development. This page provides guidelines to help people contribute content if they are unfamiliar with github, and includes pointers to style guides also. Some of this information is a shameless copy of text  from <a href="http://testthewebforward.org/docs/github-101.html">the Test the Web Forward documentation</a>.</p>
+<p>For the examples we will use the github username <span class="highlightedterm">myUserName</span> and we'll use a  repository (repo) name, <span class="highlightedterm">myRepoName</span>. You should substitute your own username wherever you see <span class="qterm">myUserName</span>, and the name of the repo you want to work with for <span class="qterm">myRepoName</span>.</p>
+</section>
+
+
+
+<section id="setup">
+  <h2><a href="#setup">Setting up github</a></h2>
+  <p>If you haven't used Github before, follow the instructions in this section. Otherwise, skip to the next section.</p>
+  <ol>
+    <li>
+      <p>Create a GitHub account if you do not already have one, on <a href="https://github.com/">github.com</a></p>
+    </li>
+    <li>
+      <p>Download and install the latest version of Git: <a href="http://git-scm.com/downloads">http://git-scm.com/downloads</a>. Please refer to the instructions there
+        for different platforms.</p>
+    </li>
+    <li>
+      <p>Configure your settings so your commits are properly labeled:</p>
+      <ol>
+      <li><p>On Mac or Linux or Solaris, open the Terminal.</p>
+      <p>On Windows, open Git Bash (From the Start Menu &gt; Git &gt; Git Bash).</p></li>
+      <li><p>At the prompt, type:</p>
+      
+        <pre>$ git config --global user.name "Your Name"
+</pre>
+      
+      <p>This will be the name that is displayed with your test submissions</p></li>
+      <li><p>Next, type:</p>
+      
+        <pre>$ git config --global user.email "your_email@address.com"
+</pre>
+      
+      <p>This should be the email address you used to create the account in Step 1.</p></li>
+      <li><p>Then type:</p>
+      
+        <pre>$ git config --global push.default upstream
+</pre>
+      
+      <p>This ensures that git push will never unintentionally create or update
+        a remote branch.</p></li>
+        </ol>
+    </li>
+    <li>
+      <p>(Optional) If you don't want to enter your username and password every
+        time you talk to the remote server, you'll need to set up password caching.
+        See <a href="https://help.github.com/articles/caching-your-github-password-in-git">Caching your GitHub password in Git</a>.</p>
+    </li>
+  </ol>
+</section>
+<section id="basics">
+  <h2><a href="#basics">Basic overview of how the process works</a></h2>
+  <p>The  repository that you contribute to will depend on the document that your task force is working on. For example, <a href="https://github.com/w3c/alreq">https://github.com/w3c/alreq</a>. The following diagram illustrates the basics.</p>
+  <p><img src="images/github-entities.png" style="width: 100%;" alt="Diagram showing parts of the github setup."/></p>
+  <p>We'll spend a moment in this section familiarising you with the basic setup. The following sections will indicate the detailed steps you need to take.</p>
+  <p>In a typical scenario, you will be working with an <span class="highlightedterm">upstream</span> repository (repo) that has a URL beginning with <span class="url" translate="no">https:/github.com/<strong>w3c</strong>/</span>. This is the <span class="highlightedterm">W3C repo</span> – it is managed by the people who have editor access for your project, unless you are one of those people you don't have access to this, you can only propose changes to it. You will make a <span class="highlightedterm">fork</span> of that repo on github, which has a URL beginning with <span class="url" translate="no">https://github.com/<strong>myUserName</strong></span>. A fork is basically just a copy of the W3C repository in which you can change things at will. It sits on the github server and from time to time will be referred to in this document as the <span class="highlightedterm">origin</span>.</p>
+  <p>Then you will typically <span class="highlightedterm">clone</span> your fork to a directory on your local computer, to make it easier to edit content with authoring tools and the like, however it is also possible just edit on the github site. </p>
+  <p>If you have cloned your fork to your desktop, you should update it regularly so that it matches the W3C repo. You do this by <span class="highlightedterm">fetching</span> the changes from the W3C repo to your local copy and <span class="highlightedterm">merging</span> them with what's on your hard disk. You'll then need to <span class="highlightedterm">push</span> those changes on to your fork on github, so that that is in synch too.</p>
+  <p>As you edit content files on your computer, you'll need to get them into your fork on github. To do this you need to select the files and <span class="highlightedterm">add</span> them (which basically just identifies them as ready for the next stage). Then you <span class="highlightedterm">commit</span> them, and finally you <span class="highlightedterm">push</span> them (upload them) to your fork.</p>
+  <p>Usually, prior to doing the add, commit, push routine, you would create a <span class="highlightedterm">branch</span>. This is rather like a walled garden within which you'll be making and managing changes. You can have any number of branches.</p>
+  <p>Once you have made changes and you want to send those for incorporation into the W3C repo, and once you have pushed those changes to your fork on the github site, you raise a <span class="highlightedterm">pull request</span> for the branch you were working in. The pull request informs the guardians of the W3C repo that you want to contribute some changes. Those guardians may simply merge your changes into the W3C repo, but typically they will look at your suggestions and allow some time for others to review them. You may need to change some things in the light of feedback before your content is merged with the W3C repo. Sometimes, the editors may take your code and add parts of it or add something along similar lines, rather than just merging the documents.</p>
+</section>
+<section id="forking">
+  <h2><a href="#forking">How to make your fork</a></h2>
+  <p>Once you have Git set up, you will need to fork the test repository. This
+  will enable you to submit your proposed changes using a pull request (more on this below).</p>
+  <ol>
+    <li>
+      <p>In the browser, go the the GitHub page for the W3C repository, ie. <span class="url">https:/github.com/w3c/<em>myRepoName</em>/</span>. </p>
+    </li>
+    <li>
+      <p>Click the <img src="images/forkbtn.png" alt="fork"> button in the upper right.</p>
+    </li>
+    <li>
+      <p>The fork will take several seconds, then you will be redirected to your
+        GitHub page for this forked repository, ie. <span class="url">https://github.com/<em>myUserName</em>/<em>myRepoName</em>/</span>.</p>
+    </li>
+  </ol>
+</section>
+
+
+
+<section id="cloning">
+  <h2><a href="#cloning">Cloning your forked repo to your desktop</a></h2>
+  <p>If your fork was successful, the next step is to clone (download) a copy of your forked repo.</p>
+  <p>At the command prompt, cd into the directory where you want to keep the tests, and type the following:</p>
+  
+  <pre>$ git clone --recursive https://github.com/<var>myUserName</var>/<var>myRepoName</var>.git</pre>
+  
+  <p>where <span class="qterm">myUserName</span> is your github username, and <span class="qterm">myRepoName</span> is the name of the repository.</p>
+  <p>This will download the tests into a directory named after the repo, eg. <span class="url">./myRepoName</span>.</p>
+  <p>You should now have a full copy of the test repository on your local
+    machine. Feel free to browse the directories on your hard drive. You can also
+    browse them on <a href="https://github.com/w3c">github.com</a> and see the full history of contributions
+    there.</p>
+</section>
+
+
+<section id="housekeeping">
+  <h2><a href="#housekeeping">Additional housekeeping</a></h2>
+  <p>You should do a little housekeeping before going further.</p>
+  <ol>
+    <li>
+      <p>On the command line, navigate to the directory where your forked copy of
+        the repository is located.</p>
+      
+        <pre>$ cd &lt;pathname&gt;/<em>myRepoName</em></pre>
+      
+    </li>
+    <li>
+      <p>Make sure that you are on the <span class="highlightedterm">gh-pages branch</span>.  This will  be the case if you
+        just forked, otherwise switch to gh-pages.</p>
+      
+        <pre>$ git checkout gh-pages
+</pre>
+      
+    </li>
+    <li>
+      <p>Next, check that git knows about the upstream repository you forked (ie. the W3C repo).  This assigns the
+        W3C repository to  "upstream":</p>
+      
+        <pre>$ git remote -v
+</pre>
+      
+      <p>It should say </p>
+      <pre>origin      https://github.com/<em>myUserName</em>/<em>myRepoName</em>.git (fetch)
+origin      https://github.com/<em>myUserName</em>/<em>myRepoName</em>.git (push)
+upstream    https://github.com/w3c/<em>myRepoName</em>.git (fetch)
+upstream    https://github.com/w3c/<em>myRepoName</em>.git (push)</pre>
+      <p>If it doesn't, set upstream as follows:</p>
+      
+        <pre>$ git remote add upstream https://github.com/w3c/<em>myRepoName</em>.git
+</pre>
+      
+    </li>
+  </ol>
+</section>
+
+
+<section id="synchronising">
+  <h2><a href="#synchronising">Synchronising your local files and your fork with the W3C repo</a></h2>
+  <p>You should regularly bring your local copy of the files up-to-date with the latest commits in the W3C
+    repository.</p>
+  <ol>
+    <li>
+      <p>On the command line, navigate to the directory where your forked copy of
+        the repository is located.</p>
+      
+        <pre>$ cd &lt;pathname&gt;/<em>myRepoName</em></pre>
+      
+    </li>
+    <li>
+      <p>Make sure that you are on the <span class="highlightedterm">gh-pages branch</span>.  This will  be the case if you
+        just forked, otherwise switch to <code class="kw" translate="no">gh-pages</code>.</p>
+      
+        <pre>$ git checkout gh-pages</pre>
+      
+    </li>
+    <li>
+      <p>To pull in changes in the W3C repository that are not present in your
+        local repository first <span class="highlightedterm">fetch</span> them:</p>
+      
+        <pre>$ git fetch upstream</pre>
+      
+      <p>Then merge them into the directories on your local system:</p>
+      
+        <pre>$ git merge upstream/gh-pages
+</pre>
+      
+    </li>
+    <li>
+      <p>Finally you will want to make sure that these changes get into your forked repo on github too. To do this, push the changes to your fork:</p>
+      
+        <pre>$ git push</pre>
+      
+    </li>
+  </ol>
+  <p>For additional information, please see the <a href="https://help.github.com/articles/fork-a-repo">GitHub docs</a>.</p>
+</section>
+
+
+
+<section id="changing">
+<h2><a href="#changing">Making changes and proposing them</a></h2>
+<p>Now we describe steps to create content and how to request that the changes be merged into the content on the W3C repo.</p>
+<p><span class="highlightedterm">Before you start on these steps</span>, ensure that you have fetched the latest files from the W3C repo by following the steps in the previous section! </p>
+<p><span class="highlightedterm">Also, ensure that</span> you start from the <code class="kw" translate="no">gh-pages</code> branch, otherwise you'll end up with a horrible nested mess and you'll be very embarrassed because someone will have to spend a while digging you out. You have been warned!</p>
+<section id="newbranch">
+  <h3><a href="#newbranch">Create a new branch</a></h3>
+  <p>At the command line, check you are on the <code class="kw" translate="no">gh-pages</code> branch:</p>
+  
+    <pre>$ git checkout gh-pages</pre>
+  
+  <p>Then create a <span class="highlightedterm">new branch</span>:</p>
+  
+    <pre>$ git checkout -b <em>myBranchName</em></pre>
+  
+  <p>This will create a branch named <code class="kw" translate="no">myBranchName</code><code></code> and immediately
+    switch this to be your active working branch.</p>
+  <p>The branch name should describe specifically what you are testing.
+    For example:</p>
+  
+    <pre>$ git checkout -b arabic-joining-forms
+</pre>
+  
+</section>
+
+
+<section id="makeChanges">
+  <h3><a href="#makeChanges">Make the changes to your content</a></h3>
+  <p>Edit the files you want to change or create.</p>
+</section>
+
+
+<section id="prepare">
+<h3><a href="#prepare">Prepare your files for submission</a></h3>
+<p>Before you submit your changes for review and contribution to the W3C
+  repo, you'll need to first commit them locally, where you now have your own
+  personal version control system with git. In fact, as you are making your changes, you may want to save versions of your work as you go before you submit
+  them to be reviewed and merged.</p>
+<ol>
+  <li>
+    <p>When you're ready to save a version of your work, go to the command
+      prompt and cd to the directory where your files are.</p>
+  </li>
+  <li>
+    <p>First, ask git what new or modified files you have:</p>
+    
+      <pre>$ git status</pre>
+    
+    <p>This will show you files that have been added or modified.</p>
+  </li>
+  <li>
+    <p>For all new or modified files, you need to tell git to <span class="highlightedterm">add</span> them to the
+      list of things you'd like to commit:</p>
+    
+      <pre>$ git add [file1] [file2] ... [fileN]</pre>
+    
+    <p>Or:</p>
+    
+      <pre>$ git add [directory_of_files]</pre>
+    
+  </li>
+  <li>
+    <p>Run <code>git status</code> again to see what you have on the 'Changes to be
+      committed' list. These files are now <span class="qterm">staged</span>.</p>
+    <p>(Alternatively, you can run <code>git diff --staged</code>, which will show you the
+      diff of things to be committed.)</p>
+  </li>
+  <li>
+    <p>Once you've added everything, you can <span class="highlightedterm">commit</span> and add a message to this
+      set of changes:</p>
+    
+      <pre>$ git commit -m "New section on Arabic joining forms"</pre>
+    
+    <p>Make the message as short but as informative as possible. Others will need to get a clear idea of what these changes are about by reading this text.</p>
+  </li>
+  <li>
+    <p>Repeat these steps as many times as you'd like before you submit your changes for inclusion in the W3C repo.</p>
+  </li>
+</ol>
+</section>
+
+
+
+<section id="request">
+<h3><a href="#request">Request that your changes be incorporated into the W3C repo</a></h3>
+<ol>
+  <li>
+    <p>The first thing you do before submitting changes to the W3C repo is to push
+      them back up to your fork on the server:</p>
+    
+      <pre>$ git push origin <em>myBranchName</em></pre>
+    
+    <p> Here, <code>origin</code> refers to your fork of the repo on the github server. You just use the word origin, git should know where that is. <code class="kw" translate="no">myBranchName</code> should be the name of your branch that
+      created earlier.</p>
+  </li>
+  <li>
+    <p>Now you can send a message that you have changes or additions you'd like
+      to be reviewed and merged into the W3C repository. You do
+      this by using a pull request. In a browser, open the GitHub page for your
+      forked repository, ie. <span class="url">https://github.com/<em>myUserName</em>/<em>myRepoName</em>/</span>.</p>
+  </li>
+  <li>
+    <p>Now create a <span class="highlightedterm">pull request</span>.  There are several ways to create a PR in the
+      GitHub UI.  Below is one method and others can be found on <a href="https://help.github.com/articles/creating-a-pull-request">GitHub.com</a></p>
+    <p>a. Click on the <img src="images/new-pull-request.png" alt="new pull request"> button.</p>
+    <p>b.  On the left, you should see the base repo is the
+      <code class="kw" translate="no">w3c/myRepoName</code>. On the right, you should see your fork of that
+      repo, <code class="kw" translate="no">myUserName/myRepoName</code>. In the branch menu of your forked repo, switch to <code class="kw" translate="no">myBranchName</code>.  If you see <em>'There isn't anything to compare'</em>, click the <img src="images/editbtn.png" alt="edit"> button and make sure your fork and your <code class="kw" translate="no">myBranchName </code>branch is selected on the right side.</p>
+    <p>c. Select the <img src="images/createprlink.png" alt="create pull request"> link at the top.</p>
+    <p>d. Scroll down and review the diff.</p>
+    <p>e. Scroll back up and in the <code class="kw" translate="no">Title</code> field, enter a brief description for
+      your submission, eg. "New section on Arabic joining forms." Once again, make this as short and informative as possible.</p>
+    <p>f.  If you'd like to add more detailed comments, use the comment field
+      below.</p>
+    <p>g.  Click <img src="images/sendpullrequest.png" alt="the send pull request button"></p>
+  </li>
+  <li>
+    <p>Wait for feedback on your pull request.</p>
+  </li>
+</ol>
+</section>
+
+
+  <section id="modify">
+    <h3><a href="#modify">Modify your submission</a></h3>
+    <p>Once you submit your pull request, a reviewer will check your proposed changes
+      for correctness and style. It is likely that this process will lead to some
+      comments asking for modifications to your code. When you are ready to make the
+      changes, follow these steps:</p>
+    <ol>
+      <li>
+        <p>If you are no longer in the branch you were previously working on (in examples above this was <code>myBranchName</code>), check it out again, eg.</p>
+        
+          <pre>$ git checkout myBranchName</pre>
+        
+      </li>
+      <li>
+        <p>Make the changes needed to address the comments, and commit them just like
+          before.</p>
+      </li>
+      <li>
+        <p>Push the changes to the  branch on your forked repo:</p>
+        
+          <pre>$ git push origin myBranchName</pre>
+        
+      </li>
+      <li>
+        <p>The pull request will automatically be updated with the new commit.</p>
+      </li>
+    </ol>
+    <p>Sometimes it takes multiple iterations through a review before the changes are
+      finally accepted. Don't worry about this, it's totally normal. The goal of 
+      review is to work together to create the best possible content for your task force.</p>
+  </section>
+  
+  
+  
+  <section id="cleanup">
+    <h3><a href="#cleanup">Cleaning up</a></h3>
+    <p>Once your pull request has been accepted, you will be notified in the GitHub
+      UI and you may get an email. At this point, your changes have been merged
+      into the W3C repo. You do not need to take any further action
+      on the files you submittted, but you should delete your branch. This can easily be done in
+      the GitHub UI by navigating to the pull requests and clicking the
+      'Delete Branch' button.</p>
+    <p><img src="images/praccepteddelete.png" alt="pull request accepted delete branch"></p>
+    <p>Alternatively, you can delete the branch on the command line.</p>
+    
+      <pre>$ git push origin --delete <em>myBranchName</em></pre>
+    
+    <p>Then fetch the latest files from the W3C repo and push them to your fork, as described earlier, so that you are up to date with everything.</p>
+  </section>
+</section>
+
+
+
+
+
+<section id="hints">
+<h2><a href="#hints">Github hints &amp; tips</a></h2>
+  
+  <section id="liveview">
+  <h3><a href="#liveview">See an HTML version of a page from a commit diff page</a></h3>
+  <p>You're looking at the diff for a commit (eg. <a href="https://github.com/w3c/alreq/commit/404f75daa4f6bb83750db85eee92b73371759842">this one</a>), and i want to see what the HTML page would look like. How do you do that?</p>
+  <ol>
+      <li>
+        <p>At the diff page, click on the View button</p>
+      </li>
+      <li>
+        <p>Pick up the commit number from the address bar</p>
+        <p class="hint">eg. 8be942ceb6ba109309f8371b7845011ed1ee63c1</p>
+      </li>
+    <li>
+      <p>Open a browser window and go to the following URL, filling in the placeholders as appropriate:</p>
+      <p class="hint">http://htmlpreview.github.io/?https://github.com/<em>w3c</em>/<em>repoName</em>/blob/<em>commitNumber</em>/<em>fileName</em></p></li>
+</ol>
+<p>So <a href="http://htmlpreview.github.io/?https://github.com/w3c/alreq/blob/404f75daa4f6bb83750db85eee92b73371759842/index.html">here's the HTML version</a> of the page with the commit in the example at the start of this section.</p>
+</section>
+</section>
+<section id="localcss">
+  <h2><a href="#localcss">General principles for editing HTML</a></h2>
+  <p>You should always bear in mind the following when creating content that you want to submit in a pull request:</p>
+  <ul>
+    <li>HTML pages much always be valid! Always check that your page is valid before submitting a pull request. Use the <a href="https://validator.w3.org/">W3C validator</a>.</li>
+    <li>Use HTML5 markup.</li>
+    <li>HTML pages must always use the UTF-8 character encoding, and this encoding should be declared at the top of the file.</li>
+    <li>HTML pages must also always declare the language of the document as a whole using a <code class="kw" translate="no">lang</code> attribute in the <code class="kw" translate="no">html</code> tag. A range of text in another language inside the document should be tagged for language too, using the <code class="kw" translate="no">lang</code> attribute.</li>
+    <li>When using bidirectional script content, always wrap opposite-direction phrases in markup using a <code class="kw" translate="no">dir</code> attribute.</li>
+  </ul>
+  <p>Editors should also be aware of the information in the <a href="http://www.w3.org/International/docs/styleguide">style guide</a>.</p>
+</section>
+
+
+
+<section id="inline">
+  <h2><a href="#inline">Marking up inline content</a></h2>
+  <p>The following table suggests conventions for marking up inline 
+    content. The presentation column applies to the
+    English version. Any translated version may change the presentation 
+    (eg. a Japanese version may substitute underlining for bold).</p>
+  <table border="1" width="100%">
+    <tbody>
+      <tr>
+        <th>Type of in-line content</th>
+        <th>Example</th>
+        <th>Markup to use</th>
+      </tr>
+      <tr>
+        <td valign="top">emphasis (general)</td>
+        <td valign="top">In keyboard input it is <em>not</em> always the case that...</td>
+        <td valign="top">em</td>
+      </tr>
+      <tr>
+        <td valign="top">emphasis (stronger)</td>
+        <td valign="top">you must <strong>absolutely not</strong> do that!</td>
+        <td valign="top">strong</td>
+      </tr>
+      <tr>
+        <td valign="top">new term introduction</td>
+        <td valign="top">The set of characters is called a <dfn>repertoire</dfn>.</td>
+        <td valign="top">dfn id="def_&lt;termName&gt;" title="&lt;termName&gt;"</td>
+      </tr>
+      <tr>
+        <td valign="top">reference to a term definition</td>
+        <td valign="top">The <a class="termref" href="#def_repertoire">repertoire</a> of UTF-8 includes all characters you're likely to need.</td>
+        <td valign="top">a class="termref" href="#def_&lt;termName&gt;"</td>
+      </tr>
+      <tr>
+        <td valign="top">document title</td>
+        <td valign="top">see <cite>Requirements for String Identity Matching</cite>.</td>
+        <td valign="top">cite</td>
+      </tr>
+      <tr>
+        <td valign="top">quoted term</td>
+        <td valign="top">The word <span class="qterm">character</span> is used in many contexts.</td>
+        <td valign="top">span class="qterm"</td>
+      </tr>
+      <tr>
+        <td valign="top">quoted term / phrase expressing dubious usage</td>
+        <td valign="top">ie. numeric <span class="quote">positions</span> within a string</td>
+        <td valign="top">span class="quote"</td>
+      </tr>
+      <tr>
+        <td valign="top">quoted text</td>
+        <td valign="top">such as <q>...as it may from time to time be revised or amended.</q></td>
+        <td valign="top">q</td>
+      </tr>
+      <tr>
+        <td valign="top">quoted character (refers to typically one, but occasionally more, specific characters).</td>
+        <td valign="top">The character <span class="qchar">ç</span> is common in French.</td>
+        <td valign="top">span class="qchar"</td>
+      </tr>
+      <tr>
+        <td valign="top">quoted sample output (cf. HTML SAMP)</td>
+        <td valign="top">The string <samp>artículo</samp> is subject to different representations</td>
+        <td valign="top">samp</td>
+      </tr>
+      <tr>
+        <td valign="top">quoted code</td>
+        <td valign="top"><code>suc&amp;#xE7;on</code></td>
+        <td valign="top">code translate="no"</td>
+      </tr>
+      <tr>
+        <td valign="top">quoted keyboard input (cf. HTML KBD)</td>
+        <td valign="top">a user typing <kbd>çé</kbd> on a traditional French-Canadian keyboard</td>
+        <td valign="top">kbd</td>
+      </tr>
+      <tr>
+        <td valign="top">element name</td>
+        <td valign="top">a user agent that looks for <code class="name">artículo</code> elements</td>
+        <td valign="top">span class="el" translate="no"</td>
+      </tr>
+      <tr>
+        <td valign="top">attribute name or value</td>
+        <td valign="top">the <code class="kw" translate="no">section</code> element</td>
+        <td valign="top">code class="kw" translate="no"</td>
+      </tr>
+      <tr>
+        <td valign="top">function name</td>
+        <td valign="top">The <code class="kw" translate="no">doit</code> function returns interesting results.</td>
+        <td valign="top">code class="kw" translate="no"</td>
+      </tr>
+      <tr>
+        <td valign="top">key word in a markup or programming language</td>
+        <td valign="top">the IANA <code class="kw" translate="no">charset</code> value</td>
+        <td valign="top">code class="kw" translate="no"</td>
+      </tr>
+      <tr>
+        <td valign="top">variable name</td>
+        <td valign="top"></td>
+        <td valign="top">var</td>
+      </tr>
+      <tr>
+        <td valign="top">conformance related word based on rfc2119</td>
+        <td valign="top">All references to Unicode <span class="rfc2119">MUST</span> refer to...</td>
+        <td valign="top">span class="rfc2119"</td>
+      </tr>
+      <tr>
+        <td valign="top">acronyms &amp; abbreviations</td>
+        <td valign="top">More and more <abbr title="Application Programming Interface">API</abbr>s are defined,</td>
+        <td valign="top"> abbr title="..."</td>
+      </tr>
+      <tr>
+        <td valign="top">Unicode name</td>
+        <td valign="top">Use <span class="uname">U+0338 COMBINING LONG SOLIDUS OVERLAY</span> for that.</td>
+        <td valign="top">span class="uname"</td>
+      </tr>
+      <tr>
+        <td valign="top">an URL that doesn't have a link on it</td>
+        <td valign="top">https:/github.com/w3c/myRepoName/</td>
+        <td valign="top">&lt;span class=&quot;url&quot;&gt;https:/github.com/w3c/myRepoName/&lt;/span&gt;</td>
+      </tr>
+    </tbody>
+  </table>
+  <p>If you use <code class="kw" translate="no">b</code> or <code class="kw" translate="no">i</code> tags, use a class name with them, so that  semantically different 
+    usages can be styled differently (esp. for documents with 
+    translations!).</p>
+</section>
+<section id="othermarkup">
+  <h2><a href="#othermarkup">Other markup guidelines</a></h2>
+  
+  <section id="figures">
+  <h3><a href="#figures">Figures</a></h3>
+  <p>Put pictures, tables, examples, and the like in <code class="kw" translate="no">figure</code> markup. Use the <code class="kw" translate="no">figcaption</code> element when you want a caption.</p>
+</section>
+<section id="notes">
+  <h3><a href="#notes">Notes</a></h3>
+  <p>To create a block-type note add <code>class="note"</code> to the paragraph if a single para note, or use a <code>div class="note"</code> around the note if it contains multiple paras or blocks.</p>
+  <p>For editor's notes, put <code>class="ednote"</code> on a <code class="kw" translate="no">p</code>, <code class="kw" translate="no">div</code> or <code class="kw" translate="no">span</code> around the text you want to be the editor's note.</p>
+</section>
+<section id="headings">
+  <h3><a href="#headings">Headings</a></h3>
+  <p>Do not supply numbering for section headings. These will be provided automatically by respec.</p>
+  <p>An <code class="kw" translate="no">h1</code>..<code class="kw" translate="no">h6</code> element should be used for headings, and should always be a direct child of  a <code class="kw" translate="no">section</code> element. The <code class="kw" translate="no">section</code> element should have an <code class="kw" translate="no">id</code> to it. </p>
+  <p>Surround the text of the   heading with a link to the <code class="kw" translate="no">id</code> in the <code class="kw" translate="no">section</code> tag, to make it easier to find the id.</p>
+  <pre id="line1">&lt;section id="mylinkid"&gt;
+&lt;h3&gt;&lt;a href="#mylinkid"&gt;My header text&lt;/a&gt;&lt;/h3&gt;
+...
+&lt;/section&gt;</pre>
+  <p>The current&nbsp;styling for TR documents makes it often difficult to quickly find section headings. Use the <a href="#css">styling suggested below</a> in your local.css file in order to open up the space between sections.</p>
+  <p>[Add something about how to refer to sections from the text.] </p>
+</section>
+
+<!--div class="section"> 
+		<h3><a name="graphics" id="graphics">Graphics, tables and figures</a></h3> 
+		<p>The implementation of graphics deviates slightly from XMLSpec standard usage. A <code>figure</code> element has also been provided.</p> 
+		<p>All tables and all non-inline pictures should be enclosed in a <code>figure</code> element <em>after</em> the preceding paragraph. </p> 
+		<p>In the generated XHTML, figures can have a caption. If, and only if, a caption is supplied, it will start with "Figure X: " in the XTHML,
+		  where X is the sequential number of the figure in the document. The text "Figure X: " is generated by the XSLT, and you must not add that to the XML.
+		  The use of captions is encouraged.</p> 
+		<p>You should always provide a value for the id attribute, on the <span class="kw">example</span> element (not the head). (See
+		  <a href="#example-ref">how to refer to figures</a> from the text.)</p> 
+		<p>All graphic images included in the text, whether in a figure or within a paragraph, should be created with an <code>image</code> element.
+		  The <span>graphic</span> element that comes with xmlspec must not be used. The <code>image</code> element has two children, <code>img</code> and
+		  <code>alt</code>. <code>img</code> has attributes <code>width</code> and <code>height</code> and you are encouraged to use them; <code>img</code> has
+		  no <code>alt</code> attribute, since an <code>alt</code> <em>element</em> is provided as a child of <code>image</code>. This approach assists
+		  translators, but also allows the alt text to be marked up (eg. with bidi or language information, or <code>ins</code> or <code>del</code> tags). You
+		  should always provide alt text.</p> 
+		<p>All graphics files should be stored in the <code>images</code> directory (eg. the <code>source</code> attribute would point to
+		  <code>images/graphicName.gif</code>).</p> 
+		<p>Note that alt text should describe the picture so that someone unable to see it can derive the same conclusions as someone who can. This
+		  generally means describing the point being made by the picture rather than the visual elements.</p></div-->
+
+<section id="leadin">
+  <h3><a href="#leadin">Run-in headings</a></h3>
+  <p>Sometimes it's not necessary to create a new section and heading, 
+    but you may want to highlight a word or sentence at the start of a 
+    series of paragraphs. To do this, use the following markup.</p>
+  <pre>&lt;span class="leadin"&gt;highlighted text goes here&lt;/span&gt; Rest of paragraph follows...</pre>
+</section>
+<section id="abbrevs">
+  <h3><a href="#abbrevs">Abbreviations and acronyms</a></h3>
+  <p>Use the <span class="kw"><code class="kw" translate="no">abbr</code></span> element for both of these. Spell out the full form in the <span class="kw"><code class="kw" translate="no">title</code></span> attribute.</p>
+</section>
+<section id="lists">
+  <h3><a href="#lists">Lists</a></h3>
+  <p>A colon should be used for a sentence that leads into the list.</p>
+  <p>If a list is expressed as a single sentence each list item should 
+    begin with a lower case letter and end with a comma or ", and".&nbsp; 
+    The
+    last list item should end with a full stop.</p>
+  <p>Example:</p>
+  <div class="example">
+  <p>Every W3C specification <span class="rfc2119">MUST</span>:</p>
+  <ol>
+    <li>conform to the requirements applicable to specifications, </li>
+    <li>specify that implementations MUST conform to the requirements applicable to software, and </li>
+    <li>specify that content created according to that specification MUST conform to the requirements applicable to content.</li>
+  </ol>
+  </div>
+  <p>Otherwise, each list element should begin with an uppercase letter and end with a full stop.</p>
+  
+  <p>Example</p>
+  <div class="example">
+  <p>Some aspects of Unicode that require additional specification for the Web include:</p>
+  <ul>
+    <li>Choice of encoding forms (UTF-8, UTF-16, UTF-32). </li>
+    <li>Counting characters, measuring string length in the presence of variable-length encodings and combining characters). </li>
+    <li>Duplicate encodings (e.g. precomposed vs decomposed). </li>
+    <li>Use of control codes for various purposes (e.g. bidirectionality control, symmetric swapping, etc.).</li>
+  </ul>
+  </div>
+</section>
+<section id="changes">
+  <h3><a href="#changes">Change markup</a></h3>
+  <p>To show changes to the text use <code class="kw" translate="no">ins</code> and <code class="kw" translate="no">del</code>. </p>
+</section>
+<section id="ednotes">
+  <h3><a href="#ednotes">Editorial notes</a></h3>
+  <p>Use <code>class="issue</code>".</p>
+  </section>
+</section>
+<footer>
+	<address> 
+		<p>By: Richard Ishida, W3C.   </p>
+		</address>
+	
+	<small id='version'>Content first published <time datetime='2015-12-16T07:50Z'>2015-12-16 07:50</time>. Last substantive update <time datetime='2010-09-08T20:47Z'>2010-09-08 20:47 GMT</time>. This version <time datetime='2015-04-16T16:33Z'>2015-04-16 16:33 GMT</time></small>
+	<!--small>For the history of document changes, search for
+<span class="searchkey"><a href="http://www.w3.org/blog/International/tag/qa-what-is-encoding/">qa-what-is-encoding</a></span>
+in the i18n blog.</small-->
+	<small class='copyright' lang='en' xml:lang='en' ><a rel='Copyright' href='/Consortium/Legal/ipr-notice#Copyright' id='copyright'>Copyright</a> © 2008-2015 <a href='/'><abbr title='World Wide Web Consortium'>W3C</abbr></a><sup>®</sup> (<a href='http://www.csail.mit.edu/'><abbr title='Massachusetts Institute of Technology'>MIT</abbr></a>, <a href='http://www.ercim.eu/'><abbr title='European Research Consortium for Informatics and Mathematics'>ERCIM</abbr></a>, <a href='http://www.keio.ac.jp/'>Keio</a>, <a href='http://ev.buaa.edu.cn/'>Beihang</a>), All Rights Reserved. W3C <a href='/Consortium/Legal/ipr-notice#Legal_Disclaimer'>liability</a>, <a href='/Consortium/Legal/ipr-notice#W3C_Trademarks'>trademark</a>, <a rel='Copyright' href='/Consortium/Legal/copyright-documents'>document use</a> and <a rel='Copyright' href='/Consortium/Legal/copyright-software'>software licensing</a> rules apply. Your interactions with this site are in accordance with our <a href='/Consortium/Legal/privacy-statement#Public'>public</a> and <a href='/Consortium/Legal/privacy-statement#Members'>Member</a> privacy statements.</small>
+	</footer>
+<script type="text/javascript">if (document.getElementById('toclocation')) { createtoc(); }</script></body>
+</body>
+</html>
