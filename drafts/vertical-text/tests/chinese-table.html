@@ -1,0 +1,392 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<title>Chinese tables, user tests</title>
+<!--[if lt IE 9]><script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+<style type="text/css">
+@font-face {
+    font-family: 'Noto Sans Mongolian WF';
+    src: 	url('/International/webfonts/notosansmongolian-regular-webfont.woff2') format('woff2'),
+         	url('/International/webfonts/notosansmongolian-regular-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+	}
+@font-face {
+    font-family: 'Scheherazade WF';
+    src: 	url('/International/webfonts/scheherazaderegotwebfont.woff2') format('woff2'),
+         	url('/International/webfonts/scheherazaderegotwebfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+	}
+
+:lang(mn) { font-family: "Mongolian Baiti", "Noto Sans Mongolian", "Noto Sans Mongolian WF", "Mongolian White", sans-serif; background-color: #f2dcdb; background-color :#eee; }
+:lang(en) { font-family: roboto, helvetica, arial, serif; }  span:lang(en) { /*background-color: #fcd4b5; background-color: #ffffef;*/  }
+:lang(ar) { font-family: scheherazade, 'scheherazade WF'; /* background-color: #fde9da; background-color: #ffeade;*/ }
+:lang(zh) {  /* background-color: #fffab0; background-color: #ffffef;  */}
+span { background-color: #ffeade;  }
+span span { background-color: #ffffef;  }
+.test { font-size: 30px; border: 1px solid orange; margin: 10px; width: 98%; padding: 5px; height: 500px; }
+.test p { margin: 5px; }
+.instructions { color: #B0AEAF; font-size: 90%; margin-left: 30px;  }
+.test input { font-size: 30px;  }
+.test textarea {font-size: 30px; } 
+.test select, .test option {font-size: 30px; } 
+#extratest td { height: 100px; }
+#extratest td.vert { writing-mode: vertical-lr; -webkit-writing-mode: vertical-lr; -ms-writing-mode: tb-lr; }
+#extratest td span { writing-mode: vertical-lr; -webkit-writing-mode: vertical-lr; -ms-writing-mode: tb-lr; }
+/* #extratest { font-size: 30px; font-family: "Mongolian Baiti", "Noto Sans Mongolian", "Noto Sans Mongolian WF", "Mongolian White", sans-serif;  } */
+</style>
+<style id="programmableStyle">
+
+</style>
+<script>
+function restyle() {
+	var propset = ''
+	propset += '#testbox {'
+	if (document.getElementById('writingmode').value != 'none') propset += ' writing-mode: '+document.getElementById('writingmode').value+'; '
+	if (document.getElementById('webkitwritingmode').value != 'none') propset += ' -webkit-writing-mode: '+document.getElementById('webkitwritingmode').value+'; '
+	if (document.getElementById('mswritingmode').value != 'none') propset += ' -ms-writing-mode: '+document.getElementById('mswritingmode').value+'; '
+	propset += ' }\n'
+	
+	propset += '#testbox {'
+	if (document.getElementById('textorientation').value != 'none') propset += ' text-orientation: '+document.getElementById('textorientation').value+'; '
+	if (document.getElementById('webkittextorientation').value != 'none') propset += ' -webkit-text-orientation: '+document.getElementById('webkittextorientation').value+'; '
+	propset += ' }\n'
+	
+	propset += 'span:lang(en) {'
+	if (document.getElementById('entextorientation').value != 'none') propset += ' text-orientation: '+document.getElementById('entextorientation').value+'; '
+	if (document.getElementById('enwebkittextorientation').value != 'none') propset += ' -webkit-text-orientation: '+document.getElementById('enwebkittextorientation').value+';'
+	propset += ' } \n'
+	
+	propset += 'span:lang(ar) {'
+	if (document.getElementById('artextorientation').value != 'none') propset += ' text-orientation: '+document.getElementById('artextorientation').value+'; '
+	if (document.getElementById('arwebkittextorientation').value != 'none') propset += ' -webkit-text-orientation: '+document.getElementById('arwebkittextorientation').value+';'
+	propset += ' } \n'
+	
+	propset += 'span:lang(zh) {'
+	if (document.getElementById('zhtextorientation').value != 'none') propset += ' text-orientation: '+document.getElementById('zhtextorientation').value+'; '
+	if (document.getElementById('zhwebkittextorientation').value != 'none') propset += ' -webkit-text-orientation: '+document.getElementById('zhwebkittextorientation').value+';'
+	propset += ' } \n'
+	
+	propset += '.date {'
+	propset += ' text-combine-horizontal: '+document.getElementById('textcombinehorizontal').value+'; '
+	propset += ' -webkit-text-combine-horizontal: '+document.getElementById('webkittextcombinehorizontal').value+'; '
+	propset += ' -ms-text-combine-horizontal: '+document.getElementById('mstextcombinehorizontal').value+'; '
+	propset += ' } \n'
+	
+	propset += '.tcy {'
+	propset += ' text-combine-horizontal: '+document.getElementById('tcytextcombinehorizontal').value+'; '
+	propset += ' -webkit-text-combine-horizontal: '+document.getElementById('webkittcytextcombinehorizontal').value+'; '
+	propset += ' -ms-text-combine-horizontal: '+document.getElementById('mstcytextcombinehorizontal').value+'; '
+	propset += ' } \n'
+	
+	propset += '.date {'
+	propset += ' text-combine-upright: '+document.getElementById('textcombineupright').value+'; '
+	propset += ' -webkit-text-combine-upright: '+document.getElementById('webkittextcombineupright').value+'; '
+	propset += ' -ms-text-combine-upright: '+document.getElementById('mstextcombineupright').value+'; '
+	propset += ' } \n'
+	
+	propset += '.tcy {'
+	propset += ' text-combine-upright: '+document.getElementById('tcytextcombineupright').value+'; '
+	propset += ' -webkit-text-combine-upright: '+document.getElementById('webkittcytextcombineupright').value+'; '
+	propset += ' -ms-text-combine-upright: '+document.getElementById('mstcytextcombineupright').value+'; '
+	propset += ' } \n'
+	
+	propset += 'table {'
+	propset += ' caption-side: '+document.getElementById('captionside').value+'; '
+	propset += ' -webkit-caption-side: '+document.getElementById('webkitcaptionside').value+'; '
+	propset += ' -ms-caption-side: '+document.getElementById('mscaptionside').value+'; '
+	propset += ' } \n'
+	
+	document.getElementById('programmableStyle').innerHTML = propset
+	}
+</script>
+<!--script>
+function shrink() {
+	height = document.getElementById('testbox').style.height
+	height = parseInt(height) - 10
+	height = height.toString()+'px'
+	document.getElementById('testbox').style.height=height
+	}
+function expand() {
+	height = document.getElementById('testbox').style.height
+	height = parseInt(height) + 10
+	height = height.toString()+'px'
+	document.getElementById('testbox').style.height=height
+	}
+</script-->
+</head>
+
+<body>
+<h1>Writing mode user tests: Chinese tables</h1>
+
+<p class="instructions" dir="ltr">#testbox { writing-mode
+  <select id=writingmode onChange="restyle();">
+    <option value=none>none</option>
+    <option value=vertical-lr>vertical-lr</option>
+    <option value=vertical-rl>vertical-rl</option>
+    <option value="horizontal-tb">horizontal-tb</option>
+    <option value=tb-lr>*tb-lr</option>
+    <option value=tb-rl>*tb-rl</option>
+  </select>; 
+  -webkit-writing-mode <select id=webkitwritingmode onChange="restyle();">
+    <option value=none>none</option>
+    <option value=vertical-lr>vertical-lr</option>
+    <option value=vertical-rl>vertical-rl</option>
+    <option value="horizontal-tb">horizontal-tb</option>
+    <option value=tb-lr>*tb-lr</option>
+    <option value=tb-rl>*tb-rl</option>
+  </select>;
+  -ms-writing-mode <select id=mswritingmode onChange="restyle();">
+    <option value=none>none</option>
+    <option value="vertical-lr">vertical-lr</option>
+    <option value="vertical-rl">vertical-rl</option>
+    <option value="horizontal-tb">horizontal-tb</option>
+    <option value="tb-lr">*tb-lr</option>
+    <option value=tb-rl>*tb-rl</option>
+  </select>; }
+</p>
+
+<p class="instructions">#testbox { text-orientation
+  <select id=textorientation onChange="restyle();">
+    <option value=none>none</option>
+    <option value=mixed>mixed</option>
+    <option value=upright>upright</option>
+    <option value="sideways-right">sideways-right</option>
+    <option value="sideways-left">sideways-left</option>
+    <option value="sideways">sideways</option>
+    <option value="use-glyph-orientation">use-glyph-orientation</option>
+  </select>;
+  -webkit-text-orientation <select id=webkittextorientation onChange="restyle();">
+    <option value=none>none</option>
+    <option value=mixed>mixed</option>
+    <option value=upright>upright</option>
+    <option value="sideways-right">sideways-right</option>
+    <option value="sideways-left">sideways-left</option>
+    <option value="sideways">sideways</option>
+    <option value="use-glyph-orientation">use-glyph-orientation</option>
+  </select>; }
+</p>
+
+<p class="instructions">span:lang(en) { text-orientation
+  <select id=entextorientation onChange="restyle();">
+    <option value=none>none</option>
+    <option value=mixed>mixed</option>
+    <option value=upright>upright</option>
+    <option value="sideways-right">sideways-right</option>
+    <option value="sideways-left">sideways-left</option>
+    <option value="sideways">sideways</option>
+    <option value="use-glyph-orientation">use-glyph-orientation</option>
+  </select>;
+  -webkit-text-orientation <select id=enwebkittextorientation onChange="restyle();">
+    <option value=none>none</option>
+    <option value=mixed>mixed</option>
+    <option value=upright>upright</option>
+    <option value="sideways-right">sideways-right</option>
+    <option value="sideways-left">sideways-left</option>
+    <option value="sideways">sideways</option>
+    <option value="use-glyph-orientation">use-glyph-orientation</option>
+  </select>; }
+</p>
+
+<p class="instructions">span:lang(ar) { text-orientation
+  <select id=artextorientation onChange="restyle();">
+    <option value=none>none</option>
+    <option value=mixed>mixed</option>
+    <option value=upright>upright</option>
+    <option value="sideways-right">sideways-right</option>
+    <option value="sideways-left">sideways-left</option>
+    <option value="sideways">sideways</option>
+    <option value="use-glyph-orientation">use-glyph-orientation</option>
+  </select>;
+  -webkit-text-orientation <select id=arwebkittextorientation onChange="restyle();">
+    <option value=none>none</option>
+    <option value=mixed>mixed</option>
+    <option value=upright>upright</option>
+    <option value="sideways-right">sideways-right</option>
+    <option value="sideways-left">sideways-left</option>
+    <option value="sideways">sideways</option>
+    <option value="use-glyph-orientation">use-glyph-orientation</option>
+  </select>; }
+</p>
+
+<p class="instructions">span:lang(zh) { text-orientation
+  <select id=zhtextorientation onChange="restyle();">
+    <option value=none>none</option>
+    <option value=mixed>mixed</option>
+    <option value=upright>upright</option>
+    <option value="sideways-right">sideways-right</option>
+    <option value="sideways-left">sideways-left</option>
+    <option value="sideways">sideways</option>
+    <option value="use-glyph-orientation">use-glyph-orientation</option>
+  </select>;
+  -webkit-text-orientation <select id=zhwebkittextorientation onChange="restyle();">
+    <option value=none>none</option>
+    <option value=mixed>mixed</option>
+    <option value=upright>upright</option>
+    <option value="sideways-right">sideways-right</option>
+    <option value="sideways-left">sideways-left</option>
+    <option value="sideways">sideways</option>
+    <option value="use-glyph-orientation">use-glyph-orientation</option>
+  </select>; }
+</p>
+
+<p class="instructions">.date { 
+text-combine-upright:
+  <select id=textcombineupright onChange="restyle();">
+    <option value=none>none</option>
+    <option value=all>all</option>
+    <option value=digits>digits</option>
+    <option value="digits 2">digits 2</option>
+    <option value="digits 4">digits 4</option>
+  </select>;
+-webkit-text-combine-upright:
+  <select id=webkittextcombineupright onChange="restyle();">
+    <option value=none>none</option>
+    <option value=all>all</option>
+    <option value=digits>digits</option>
+    <option value="digits 2">digits 2</option>
+    <option value="digits 4">digits 4</option>
+  </select>;
+-ms-text-combine-upright:
+  <select id=mstextcombineupright onChange="restyle();">
+    <option value=none>none</option>
+    <option value=all>all</option>
+    <option value=digits>digits</option>
+    <option value="digits 2">digits 2</option>
+    <option value="digits 4">digits 4</option>
+  </select>;
+</p>
+
+<p class="instructions">.tcy { 
+text-combine-upright:
+  <select id=tcytextcombineupright onChange="restyle();">
+    <option value=none>none</option>
+    <option value=all>all</option>
+    <option value=digits>digits</option>
+    <option value="digits 2">digits 2</option>
+    <option value="digits 4">digits 4</option>
+  </select>;
+-webkit-text-combine-upright:
+  <select id=webkittcytextcombineupright onChange="restyle();">
+    <option value=none>none</option>
+    <option value=all>all</option>
+    <option value=digits>digits</option>
+    <option value="digits 2">digits 2</option>
+    <option value="digits 4">digits 4</option>
+  </select>;
+-ms-text-combine-upright:
+  <select id=mstcytextcombineupright onChange="restyle();">
+    <option value=none>none</option>
+    <option value=all>all</option>
+    <option value=digits>digits</option>
+    <option value="digits 2">digits 2</option>
+    <option value="digits 4">digits 4</option>
+  </select>;
+</p>
+
+<p class="instructions">.date { 
+text-combine-horizontal:
+  <select id=textcombinehorizontal onChange="restyle();">
+    <option value=none>none</option>
+    <option value=all>all</option>
+    <option value=digits>digits</option>
+    <option value="digits 2">digits 2</option>
+    <option value="digits 4">digits 4</option>
+  </select>;
+-webkit-text-combine-horizontal:
+  <select id=webkittextcombinehorizontal onChange="restyle();">
+    <option value=none>none</option>
+    <option value=all>all</option>
+    <option value=digits>digits</option>
+    <option value="digits 2">digits 2</option>
+    <option value="digits 4">digits 4</option>
+  </select>;
+-ms-text-combine-horizontal:
+  <select id=mstextcombinehorizontal onChange="restyle();">
+    <option value=none>none</option>
+    <option value=all>all</option>
+    <option value=digits>digits</option>
+    <option value="digits 2">digits 2</option>
+    <option value="digits 4">digits 4</option>
+  </select>;
+</p>
+
+<p class="instructions">.tcy { 
+text-combine-horizontal:
+  <select id=tcytextcombinehorizontal onChange="restyle();">
+    <option value=none>none</option>
+    <option value=all>all</option>
+    <option value=digits>digits</option>
+    <option value="digits 2">digits 2</option>
+    <option value="digits 4">digits 4</option>
+  </select>;
+-webkit-text-combine-horizontal:
+  <select id=webkittcytextcombinehorizontal onChange="restyle();">
+    <option value=none>none</option>
+    <option value=all>all</option>
+    <option value=digits>digits</option>
+    <option value="digits 2">digits 2</option>
+    <option value="digits 4">digits 4</option>
+  </select>;
+-ms-text-combine-horizontal:
+  <select id=mstcytextcombinehorizontal onChange="restyle();">
+    <option value=none>none</option>
+    <option value=all>all</option>
+    <option value=digits>digits</option>
+    <option value="digits 2">digits 2</option>
+    <option value="digits 4">digits 4</option>
+  </select>;
+</p>
+
+<p class="instructions">table { 
+caption-side:
+  <select id=captionside onChange="restyle();">
+    <option value=none>none</option>
+    <option value=block-start>block-start</option>
+    <option value=block-end>block-end</option>
+  </select>;
+-webkit-caption-side:
+  <select id=webkitcaptionside onChange="restyle();">
+    <option value=none>none</option>
+    <option value=block-start>block-start</option>
+    <option value=block-end>block-end</option>
+  </select>;
+-ms-caption-side:
+  <select id=mscaptionside onChange="restyle();">
+    <option value=none>none</option>
+    <option value=block-start>block-start</option>
+    <option value=block-end>block-end</option>
+  </select>;
+</p>
+
+<div class="test" id=testbox>
+
+<table>
+<caption>国际化活动国际化活动万维网联盟</caption>
+<tbody>
+<tr><td lang="mn"><span class="tcy">[1]</span> 国际化活动<span lang="zh">国际化活动</span>万维网联盟。</td>
+	<td lang="mn"><span class="tcy">[2]</span> 国际化活动<span lang="en">W3C <span lang="ar">&#x0646;&#x0634;&#x0627;&#x0637; &#x0627;&#x0644;&#x062A;&#x062F;&#x0648;&#x064A;&#x0644;</span> i18n</span>万维网联盟。</td>
+    </tr>
+<tr><td lang="mn"><span class="tcy">[3]</span> 国际化活动<span lang="ar">&#x0646;&#x0634;&#x0627;&#x0637; <span lang="en">W3C i18n</span> &#x0627;&#x0644;&#x062A;&#x062F;&#x0648;&#x064A;&#x0644;</span>万维网联盟。</td>
+	<td lang="mn"><span class="tcy">[4]</span> 在<span class="date">2011年5月22日</span>，我们发布了蒙古族传统的编辑 - 「蒙古族作家型」的<span class="tcy">iOS</span>，可以在iPad，iPhone，iPod touch上使用。</td>
+    </tr>
+</tbody></table>
+</div>
+<p class="instructions">The following table tests whether writing-mode can be applied directly to a td (middle) or a span inside a td (right). The left cell is a control, and should be horizontal.</p>
+<table id=extratest lang="mn"><tbody>
+<tr><td> 国际化活动万维网联盟。</td><td class="vert"> 国际化活动万维网联盟。</td><td><span>国际化活动万维网联盟。</span></td></tr>
+</tbody></table>
+
+
+<p class="instructions">#testbox { height <input id=boxheight value="500px" onchange="console.log(this.value); document.getElementById('testbox').style.height = this.value;" style="width: 50px;" />; }</p>
+<p class="instructions">:lang(mn) { font-family: <input id=fontfamily value="Mongolian Baiti" 
+onchange="spans=document.querySelectorAll(':lang(mn)'); for (i=0;i<spans.length; i++) { spans[i].style.fontFamily = this.value; }" style="width: 200px;" />; }</p>
+<p class="instructions">:lang(en) { font-family: <input id=fontfamily value="Roboto" 
+onchange="spans=document.querySelectorAll('span:lang(en)'); for (i=0;i<spans.length; i++) { spans[i].style.fontFamily = this.value; }" style="width: 100px;" /></p>
+<p class="instructions">:lang(ar) { font-family: <input id=fontfamily value="Scheherazade" 
+onchange="spans=document.querySelectorAll(':lang(ar)'); for (i=0;i<spans.length; i++) { spans[i].style.fontFamily = this.value; }" style="width:200px;" />; }</p>
+<p class="instructions">:lang(zh) { font-family: <input id=fontfamily value="default" 
+onchange="spans=document.querySelectorAll(':lang(zh)'); for (i=0;i<spans.length; i++) { spans[i].style.fontFamily = this.value; }" style="width: 200px;" />; }</p>
+</body></html>
