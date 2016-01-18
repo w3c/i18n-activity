@@ -1,0 +1,11 @@
+@font-face {
+    font-family: 'Noto Sans Mongolian WF';
+    src: 	url('https://www.w3.org/International/webfonts/notosansmongolian-regular-webfont.woff2') format('woff2'),
+         	url('https://www.w3.org/International/webfonts/notosansmongolian-regular-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+	}
+
+:lang(mn) {
+	font-family: "Noto Sans Mongolian", "Noto Sans Mongolian WF", "Mongolian Baiti", "Mongolian White", sans-serif;
+	}

@@ -1,0 +1,482 @@
+<?php 
+// AUTHORS should fill in these assignments:
+$directory = 'articles/vertical-text/'; // the directory path below /International up to but not including the file name: must end in a slash! 
+$filename = 'Overview'; // the file name WITHOUT extensions
+$authors = 'Richard Ishida, W3C'; // author(s) and affiliations
+$previousauthors = ''; // as above
+$modifiers = ''; // people making substantive changes, and their affiliation
+$searchString = 'article-vertical-text'; // blog search string - usually the filename without extensions
+$firstPubDate = '2015-05-21'; // date of the first publication of the document (after review)
+$lastSubstUpdate = '2015-05-21T05:22';  // date of latest substantive changes to this document
+$pathtophp = '../../php'; // authors should check that the following points to /International/php - must be relative path
+$status = 'draft';  // should be one of draft, review, published, or notreviewed
+
+// AUTHORS AND TRANSLATORS should fill in these assignments:
+$clang = 'en'; // the language extension for articles in this language (use 'en' for English)
+$thisVersion = '2015-05-21T05:22'; // date of latest edits to this document/translation
+$contributors = ''; // people providing useful contributions or feedback during review or at other times
+
+// TRANSLATORS should fill in these assignments:
+$translators = 'xxxNAME, ORG'; // translator(s) and their affiliation - a elements allowed, but use double quotes for attributes
+$translatorContact=""; // please add email. This is not displayed, it allows the translation coordinator to contact you if needed in future.
+
+$breadcrumb = 'markup';
+
+$additionalLinks = <<<eot
+eot;
+
+include($pathtophp.'/structure/html5.php');
+?>
+<!DOCTYPE html>
+<html <?php echo "lang='$clang'";?>>
+<head>
+<meta charset="utf-8" />
+<title>Styling vertical text</title>
+<meta name="description" content="How to set text vertically using CSS for Japanese, Chinese and Mongolian." />
+<link rel="stylesheet" href="https://www.w3.org/International/style/article-display-html5.css" type="text/css" />
+<link rel="stylesheet" href="local.css" type="text/css" />
+<?php echo $headincludes;?>
+<style type="text/css">
+.upright {
+    text-orientation: upright;
+    -webkit-text-orientation: upright;
+    -ms-text-orientation: upright;
+    }
+.sideways-right {    
+	text-orientation: sideways-right;
+    -webkit-text-orientation: sideways-right;
+	}
+date { 
+	text-combine-horizontal: digit 2; 
+	-webkit-text-combine-horizontal: digit 2; 
+	-moz-text-combine-horizontal: digit 2; 
+	-ms-text-combine-horizontal: digit 2; 
+	}
+date.fw { 
+	text-transform: full-width; 
+	}
+date.width4 { 
+	text-combine-horizontal: digit 4; 
+	-webkit-text-combine-horizontal: digit 4; 
+	-moz-text-combine-horizontal: digit 4; 
+	-ms-text-combine-horizontal: digit 4; 
+	}
+.tcyAll { 
+	text-combine-horizontal: all; 
+	-webkit-text-combine-horizontal: all; 
+	-moz-text-combine-horizontal: all; 
+	-ms-text-combine-horizontal: all; 
+	}
+.tcy { 
+	text-combine-horizontal: digit 2; 
+	-webkit-text-combine-horizontal: digit 2; 
+	-moz-text-combine-horizontal: digit 2; 
+	-ms-text-combine-horizontal: digit 2; 
+	}
+.noTcy { 
+	text-combine-horizontal: none; 
+	-webkit-text-combine-horizontal: none; 
+	-moz-text-combine-horizontal: none; 
+	-ms-text-combine-horizontal: none; 
+	}
+.advancedusage { margin-top: 2em; margin-bottom: 2em; font-size: 90%; clear: both; }
+:lang(mn) { font-size: 30px; font-family: 'Mongolian Baiti','Noto Sans Mongolian', 'Noto Sans Mongolian WF'; }
+:lang(ja) { font-size: 20px; }
+:lang(zh-hans) { font-size: 20px; }
+:lang(ko) { font-size: 20px; }
+figure:lang(ja) {
+    writing-mode: vertical-rl;
+    -webkit-writing-mode: vertical-rl;
+    writing-mode: tb-rl;
+    }
+figure:lang(zh-hans) {
+    writing-mode: vertical-rl;
+    -webkit-writing-mode: vertical-rl;
+    -ms-writing-mode: tb-rl;
+    }
+figure:lang(mn) {
+    writing-mode: vertical-lr;
+    -webkit-writing-mode: vertical-lr;
+    -ms-writing-mode: tb-lr;
+    }
+.upright1 {    text-orientation: upright;
+    -webkit-text-orientation: upright;
+    -ms-text-orientation: upright;
+}
+#testlinks td, #testlinks th { text-align: start; border: 0; padding: 0 0 0 30px; }
+.advancedusage1 {margin-top: 2em; margin-bottom: 2em; font-size: 90%; clear: both; }
+.upright2 {    text-orientation: upright;
+    -webkit-text-orientation: upright;
+    -ms-text-orientation: upright;
+}
+</style>
+</head>
+
+<body>
+<header>
+<?php echo $mainNavigation; ?>
+<?php echo $topOfPage; ?>
+
+<h1>Styling vertical Chinese, Japanese, Korean and Mongolian text (draft!)</h1>
+</header>
+
+<section>
+    <div id="audience"> 
+        <p><?php echo $intendedAudience?>  HTML authors (using editors or scripting), script developers (PHP, JSP, etc.),  and anyone who is new to internationalization and needs guidance on how to use &lt;b&gt; and &lt;i&gt; tags in HTML.</p>
+    <?php echo $updated; ?>
+    </div>
+    <p>This article explains how to use CSS to produce vertical text for languages such as Chinese, Japanese, Korean, and Mongolian. The CSS specification contains a lot of implementation-specific information. This article draws out the basic information that content&nbsp;authors need to create the more common features of vertical text. It also compares the theory and practice about what is possible.</p>
+    <p>While reading this article check out the <a href="#udtest">user-controlled test pages</a>, which allow you to test how your browser behaves.</p>
+    <div class="strongnote">
+      <p><b>NOTE!</b>This is a  draft of the article and should not be considered authoritative or anywhere near complete.&nbsp; It will be updated regularly and may be significantly changed.</p>
+    </div>
+    
+  <section>
+    <h3 id="browsers"><a href="#browsers">Browser support</a></h3>
+    <p>Each section explains how you would markup up your content according to the CSS spec (which is usually simple and straightforward), but then looks at what you currently have to do to achieve the same result in browsers that don't implement the standard property and value names. </p>
+    <p>Currently,  Microsoft Edge  and Firefox (v41+) support many features of vertical text per the CSS standard (though with some gaps for form controls in Edge). </p>
+    <p> Internet Explorer, Chrome, Safari, and Opera also support vertical text to some degree. However, for this to work, the CSS code typically uses  prefixed property names as well as the standard property name, and for Internet Explorer you will need to use deprecated values for <code class="kw" translate="no">writing-mode</code>. </p>
+    <div class="advancedusage">
+      <p><strong>implementation notes:</strong> After explaining how to achieve the result you want using CSS, as described in the editor's draft of <a href="http://dev.w3.org/csswg/css-writing-modes-3/">Writing Modes Level 3</a> CSS module, you'll find boxes like this that explain some of the associated caveats and issues, as well as identifying which features that are not supported by one browser or another.</p>
+    </div>
+    <p>The issues described are current as of the date of publication of this article. We will try to update the article as issues are resolved.</p>
+</section>
+
+
+  <section>
+    <h3 id="udtest"><a href="#udtest">User-driven test pages</a></h3>
+    <p>The behaviour of browsers can be explored using the following user-controlled test&nbsp;pages:</p>
+    <table id="testlinks"><tbody>
+   	<tr><th>Chinese</th><th>Mongolian</th></tr>
+    <tr><td><a href="tests/chinese">paragraphs</a><br/><a href="tests/chinese-lists">lists</a><br/><a href="tests/chinese-forms">forms</a><br/><a href="tests/chinese-table">tables</a></td>
+    <td><a href="tests/mongolian">paragraphs</a><br/><a href="tests/mongolian-lists">lists</a><br/><a href="tests/mongolian-forms">forms</a><br/><a href="tests/mongolian-table">tables</a></td></tr>
+    </tbody></table>
+  </section>
+</section>
+        
+        
+        
+<section> 
+<h2 id="writing-mode"><a href="#writing-mode">Basic setup</a></h2>
+<p>Where it is supported, most of what you need should be achievable by applying the <code class="kw" translate="no">writing-mode</code> property to the content that you want to be set vertically.</p>
+<p>In Japanese, Chinese and Korean, lines start at the right side of the figure box and progress to the left.  Latin script text typically runs down the page, with the letters rotated clockwise, while the Han characters remain upright. Any graphic also remains upright.</p>
+<p>To produce the Japanese example below we would use the following CSS on the <code class="kw" translate="no">figure</code> element:</p>
+<blockquote>
+<pre>figure:lang(ja) {
+    writing-mode: vertical-rl;
+    }
+</pre>
+</blockquote>
+<p><img src="images/basic-ja.png" alt="basic vertical japanese" /></p>
+<!--figure lang="ja" class="example" style="width:500px;  height: 260px;">
+  <p>国際化活動 W3C。</p>
+  <p><img src="/International/icons/world.gif" alt="graphic of the world"/></p>
+  <p>ワールド・ワイド・ウェッブを世界中に広げましょう。</p>
+</figure>
+<br style="clear:both;"/-->
+<div class="advancedusage">
+  <p><strong>implementation notes:</strong>  Chrome, Safari and Opera: you currently need to use the proprietary <code class="kw" translate="no">-webkit-writing-mode</code> property.</p>
+  <p>Internet Explorer: requires <code class="kw" translate="no">-ms-writing-mode</code>, but in addition   requires the deprecated value <code class="kw" translate="no">rl-tb</code>. That value can be used with the unprefixed <code class="kw" translate="no">writing-mode</code> property in IE, but <code class="kw" translate="no">-ms-writing-mode</code> was introduced in mid 2014 to improve the behaviour of nested properties in IE. </p>
+  <p>Opera: fails to display inline text running along the line, and all Mongolian text.</p>
+</div>
+<p>In Mongolian the lines start at the left side of the figure box and progress to the right. The Latin script text still runs down the page, with the letters rotated clockwise, and the Mongolian characters display as expected.</p>
+<p> For Mongolian, use:</p>
+<blockquote>
+  <pre>figure {
+    writing-mode: vertical-lr;
+    }</pre>
+</blockquote>
+<p><img src="images/basic-mn.png" alt="basic vertical mongolian" /></p>
+<!--figure class="example" lang="mn" style="height: 260px; width: 500px;">
+  <p>Android OS ᠳᠠᠭᠡᠷ᠎ᠡ ᠬᠢᠳᠠᠳ ᠮᠣᠩᠭᠤᠯ ᠲᠣᠯᠢ ᠭᠠᠷᠭᠠᠵᠠᠢ ᠁</p>
+  <p><img src="/International/icons/world.gif" alt="graphic of the world"/></p>
+  <p>Apple iOS ᠳᠡᠭᠡᠷ᠎ᠡ ᠬᠢᠳᠠᠳ ᠮᠣᠩᠭᠤᠯ ᠲᠣᠯᠢ ᠭᠠᠷᠭᠠᠵᠠᠢ ᠁</p>
+</figure-->
+<div class="advancedusage">
+  <p><strong>implementation notes:</strong><span class="issue">Safari doesn't correctly display the Mongolian text. Glyphs are rotated anti-clockwise away from the correct orientation, and don't join. </span></p>
+  <p><span class="issue">Chrome also fails to join the Mongolian characters when using some fonts, although they are correctly oriented.</span></p>
+</div>
+<p>If you embed a right-to-left script in the text, such as Arabic or Hebrew, it will run from bottom to top along the line, and the top of the letters will be to the right.&nbsp; This is analogous to what happens in horizontal text.</p>
+<p><img src="images/embedded-ar.png" alt="embedded arabic" /></p>
+<!--figure lang="zh-hans" class="example" style="width:500px;  height: 260px;">
+  <p>国际化活动 نشاط التدويل 万维网联盟。</p>
+</figure-->
+<div class="advancedusage">
+  <p><strong>implementation notes:</strong><span class="issue">Although Chrome displays Arabic script text perfectly well in horizontal mode, letters are no longer joined up in vertical mode.</span> Safari does not have this problem. Chrome also fails to combine glyphs in Hindi conjuncts.</p>
+  <p> In Internet Explorer, the addition&nbsp;of the <code class="kw" translate="no">dir</code> attribute in vertical text causes the space where the text should appear to go blank.</p>
+</div>
+
+<section>
+<h3 id="other-orientation"><a href="#other-orientation">Other values of <code class="kw" translate="no">writing-mode</code></a></h3>
+<p>In addition to <code class="kw" translate="no">horizontal-tb</code>, which is the normal setting for horizontal text, there are two additional property values for writing-mode, and these produce vertical text.</p>
+<p>The value <code class="kw" translate="no">sideways-rl</code> makes all characters to which it is applied lie on their right side, including Han characters. The text runs from top to bottom, and lines progress from right to left.</p>
+<p><img src="images/sideways-right-ja.png" alt="sideways right" /></p>
+<!--figure class="example" style="writing-mode: vertical-rl; -webkit-writing-mode: vertical-rl; 	-ms-writing-mode: tb-rl;  text-orientation: sideways-right; font-size: 20px; height: 200px; width: 250px;">
+  <p>国际化活动<span class="sideways-right">W3C</span>万维网联盟</p>
+</figure-->
+<p>The <code class="kw" translate="no">sideways-lr</code> value makes all characters lie on their left side, and the text starts at the bottom of the line and lines progress from left to right.</p>
+<p>These values are particularly useful for rotating text that is normally horizontal, for example alongside an image or in a table header.</p>
+<div class="advancedusage">
+  <p><strong>implementation notes:</strong>Neither of these values is currently supported in browsers.</p>
+</div>
+</section>
+</section>
+        
+        
+        
+<section> 
+<h2 id="upright"><a href="#upright">Changing the glyph orientation</a> for embedded text</h2>
+
+<section>
+<h3 id="upright-latin"><a href="#upright-latin">Keeping embedded Latin text upright</a></h3>
+<p>It is common to show embedded Latin letters standing upright, rather than running down the page, particularly  for initialisms.</p>
+<p>One way to achieve this is to use fullwidth characters, such as Ｗ３Ｃ. These will automatically be displayed upright. Of course, this only works for Latin script text that doesn't include accents.</p>
+<p class="ed">Are fullwidth Latin characters needed for Mongolian? Is it common to have upright characters in Mongolian?</p>
+ <p><img src="images/fullwidth-w3c.png" alt="fullwidth latin" /></p>
+ <p>If you want to restyle existing characters that are not fullwidth so that they stand upright,  use markup such as <code class="kw" translate="no">span</code> or <code class="kw" translate="no">abbrev</code> to identify the relevant text,  and apply a CSS<code class="kw" translate="no"></code> property. In the Chinese example below, we put the Latin text in a <code class="kw" translate="no">span</code> with a class name <code class="kw" translate="no">upright</code>. </p>
+ <p>When it comes to styling the marked up text, one alternative would be to transform the text into fullwidth characters. Fullwidth characters are displayed upright by default.</p>
+  <blockquote>
+  <pre>.upright { 
+    text-transform: full-width; 
+    }</pre>
+  </blockquote>
+  <p><img src="images/upright-en.png" alt="upright latin" /></p>
+  <p>This is appropriate for initialisms, but is not necessarily useful for all types of upright text, and note again that this technique only works for Latin characters, but not those that have accents! </p>
+  <div class="advancedusage">
+    <p><strong>implementation notes:</strong><code translate="no">text-transform: full-width</code> currently only works in Firefox.</p>
+    <p>Text in other scripts will not have full-width equivalents, and so will need to use the next approach.</p>
+  </div>
+  <p>Another alternative is to apply the <code class="kw" translate="no">text-orientation</code> property. This option doesn't convert any characters to fullwidth.</p>
+<blockquote>
+<pre>.upright {
+    text-orientation: upright;
+    }</pre>
+    </blockquote>
+<!--figure lang="ja" class="example" style="height: 200px; width: 250px;">
+  <p>『<span class="upright">i</span>』は、浅䈡の双子の兄であり、共犯者だ。</p>
+</figure-->
+  <p><img src="images/upright-i.png" alt="upright latin" /></p>
+<!--figure lang="zh-hans" class="example" style="height: 200px; width: 250px;">
+  <p>国际化活动ａｉｆＡＩＬ万维网联盟</p>
+</figure>
+<figure lang="zh-hans" class="example" style="height: 200px; width: 250px;">
+  <p>国际化活动Ｗ３Ｃ万维网联盟</p>
+</figure>
+<figure lang="zh-hans" class="example" style="height: 200px; width: 250px;">
+  <p>国际化活动<span style="text-transform: full-width;">aifAIL</span>万维网联盟</p>
+</figure>
+<figure lang="zh-hans" class="example" style="height: 200px; width: 250px;">
+  <p>国际化活动<span style="-webkit-text-orientation: upright; text-orientation: upright;">aifAIL</span>万维网联盟</p>
+</figure-->
+<div class="advancedusage">
+  <p><strong>implementation notes:</strong>Chrome, Safari, and Opera use the proprietary <code class="kw" translate="no">-webkit-text-orientation </code>property.</p>
+  <p>There doesn't seem to be a simple way to achieve this in Internet Explorer.</p>
+</div>
+<p>If the Latin text contains accents or diacritics as separate characters alongside their base character, you should not see the combining characters on separate lines.</p>
+</section>
+
+<section>
+<h3 id="other-upright"><a href="#other-upright">Embedding other scripts upright</a></h3>
+<p>For non-Latin scripts you will need to use the <code class="kw" translate="no">text-orientation</code> property to make the text stand upright. </p>
+<p><img src="images/upright-ar-hi.png" alt="upright arabic and hindi" /></p>
+<!--figure class="example" style="writing-mode: vertical-rl; -webkit-writing-mode: vertical-rl; 	-ms-writing-mode: tb-rl; font-size: 20px; height: 300px; width: 250px;">
+  <p>国际化活动<span class="upright2">نشاط التدويل</span>万维网联盟</p>
+  <p>国际化活动<span class="upright2">अंतर्राष्ट्रीयकरण गतिविधि</span>万维网联盟</p>
+</figure-->
+<p>However, there are some scripts that present additional issues, although it should be said that these non-Latin scripts don't seem to be set upright often. </p>
+<p>Embedded Arabic script text (shown in the two right-most lines above) is usually joined up. It is not possible to join Arabic characters when they are displayed upright, so isolated forms should be used. Furthermore, the order of characters is top to bottom, when written upright, whereas Arabic text that is rotated clockwise is read from bottom to top (because it is right-to-left).</p>
+<div class="advancedusage">
+  <p><strong>implementation notes:</strong>Safari uses joining forms, rather than isolated forms, for upright Arabic script text. It also incorrectly orders the glyphs from bottom to top.</p>
+  <p>Chrome orders Arabic words top-to-bottom, but the letters making up each word&nbsp;are ordered bottom-to-top.</p>
+</div>
+<p>Some complex scripts, such as Devanagari (used for Hindi, and shown in the two left-most lines above) require upright text to be split at syllable boundaries. In some cases these syllables are more complicated that those covered by the Unicode concept of 'grapheme cluster'. Such syllables are currently not handled well by browsers in upright text runs.</p>
+<div class="advancedusage">
+  <p><strong>implementation notes:</strong>None of the browsers that support upright orientation of characters do well with Hindi. Many, if not all, combining characters appear on separate lines. Safari&nbsp;does combine some consonant clusters, but still has problems with spacing combining characters.&nbsp; In Firefox and Chrome&nbsp;the indic script text also has large gaps between characters and runs outside the box it is displayed in.</p>
+</div>
+</section>
+
+<section>
+<h3 id="other-orientation"><a href="#other-orientation">Other values of <code class="kw" translate="no">text-orientation</code></a></h3>
+<p>CSS provides one more value of the <code class="kw" translate="no">text-orientation</code> property.</p>
+<p>When used with <code class="kw" translate="no">writing-mode: vertical-lr/rl</code> the value <code class="kw" translate="no">sideways</code> makes all characters to which it is applied lie on their right side, including Han characters.</p>
+<p><img src="images/sideways-right-ja.png" alt="sideways right" /></p>
+<!--figure class="example" style="writing-mode: vertical-rl; -webkit-writing-mode: vertical-rl; 	-ms-writing-mode: tb-rl;  text-orientation: sideways-right; font-size: 20px; height: 200px; width: 250px;">
+  <p>国际化活动<span class="sideways-right">W3C</span>万维网联盟</p>
+</figure-->
+<p>This value only works with the values of <code class="kw" translate="no">writing-mode</code> that begin with <code class="kw" translate="no">vertical-</code>. </p>
+<p>It is more likely that you will use the <code class="kw" translate="no">sideways-rl</code> and <code class="kw" translate="no">sideways-lr</code> values of <code class="kw" translate="no">writing-mode</code> to achieve this kind of effect (see above), since it is equivalent to a simple rotation of horizontal text.</p>
+<div class="advancedusage">
+  <p><strong>implementation notes:</strong>No browser currently supports the <code class="kw" translate="no">sideways</code> value for <code class="kw" translate="no">text-orientation</code>.</p>
+</div>
+</section>
+
+</section>
+        
+        
+<section> 
+<h2 id="tcy"><a href="#tcy">Horizontal-in-vertical text</a></h2>
+
+<p>It is common for short numbers of 2-3 digits (sometimes 4) and occasionally other runs of text, to run horizontal within the vertical flow. In Japanese&nbsp;this is called <span class="foriegntext" lang="ja" translate="no">tate&nbsp;chū&nbsp;yoko</span>.</p>
+<section>
+  <h3 id="tcy_digits"><a href="#tcy_digits">Making inline digits run horizontally</a></h3>
+  <p>The easiest approach to apply this to numeric digits is to use <code class="kw" translate="no">text-combine-upright</code> with a <code class="kw" translate="no">digits x</code> value.</p>
+  <div class="advancedusage">
+    <p><strong>implementation notes:</strong>In Internet Explorer this property is called <code class="kw" translate="no">-ms-text-combine-horizontal</code>.</p>
+    <p>Firefox, Chrome and Safari do not yet support this property.</p>
+  </div>
+  <p>It only works for digits in the ASCII range, and full-width Unicode codepoints are automatically converted to ASCII codepoints during the process.  It doesn't work for other numbering systems, such as Arabic, Bengali, etc.</p>
+  <p>The  example below uses the following CSS</p>
+  <blockquote>
+  <pre translate="no">time {
+      text-combine-upright: digits 2; 
+      }</pre>
+  </blockquote>
+  <p>This makes any double-digit numbers in the text run horizontally, but doesn't affect anything else. (If you only want 2-digit numbers to run horizontally, you can just use the shortcut value, ie. <code> digits</code> without a following number.)</p>
+<p><img src="images/digit2.png" alt="text-combine-upright: digit 2" /></p>
+  <!--figure class="example" lang="ja" style="height: 215px; width: 250px;">
+    <p>今日は<date>2015年5月22日</date>です。</p>
+  </figure-->
+  <p>To fit longer numbers horizontally, change the number after <code class="kw" translate="no">digits</code>. In the above example the 2013 will not be horizontal. You could make it horizontal using <code>text-combine-upright: digits 4</code>. Then any numeric sequence up to four digits long will be horizontal. Four is the maximum number of digits you can layout horizontally in vertical text using this style.</p>
+<p><img src="images/digit4.png" alt="text-combine-upright: digit 4" /></p>
+  <!--figure class="example" lang="ja" style="height: 200px; width: 250px;">
+    <p>今日は
+      <date class="width4">2015年5月22日</date>
+      です。</p>
+  </figure-->
+  <p>If you'd like the unaffected numbers to be full-width, you can use the following styling. Full-width characters are displayed upright by default.</p>
+  <blockquote>
+  <pre>time { 
+    text-combine-<code>upright</code>: digits 2; 
+    text-transform: full-width; 
+    }</pre>
+  </blockquote>
+<p><img src="images/fullwidth.png" alt="fullwidth upright characters" /></p>
+<p>Use dedicated markup where necessary. For example, for dates and times, you could just apply the style to the <code class="kw" translate="no">time</code> element.</p>
+<p>You can set this style on block elements such as <code class="kw" translate="no">p</code> or <code class="kw" translate="no">section</code> and the style will only be applied to runs of numbers. Be aware, however, that you may need to correct the behavior if you set <code class="kw" translate="no">text-combine-horizontal</code> for a whole paragraph or more if that content contains numbers like 10,000, since the comma interrupts the sequence of digits; the result will be 10 set horizontally, and ,000 set running down the page.  </p>
+<!--figure class="example" lang="ja" style="height: 200px; width: 250px;">
+    <p>今日は<date class="fw">2015年5月22日</date>です。</p>
+  </figure-->
+</section>
+
+<section>
+<h3 id="tcy_other"><a href="#tcy_other">Making non-digit inline text run horizontally</a></h3>
+<p>If you want to apply horizontal layout to non-digit text, you have to use <code>text-combine-upright: all;</code> and surround the text you want to be horizontal with markup.  You can still use the <code class="kw" translate="no">digits</code> value for the numbers, but you'll need to use <code class="kw" translate="no">all</code> for the other stuff.</p>
+<p>Example:</p>
+<blockquote>
+  <pre>.tcy { 
+    text-combine-upright: all; 
+    }
+
+&lt;p&gt;...是有&lt;span class=&quot;tcy&quot;&gt;50&lt;/span&gt;&lt;span class=&quot;tcy&quot;&gt;GI&lt;/span&gt;的話、...&lt;/p&gt;</pre>
+</blockquote>
+<p>Note how we used two spans, in order to clearly indicate the boundaries of the horizontal text.</p>
+<p>The browser will try to squeeze the horizontal text into the width of a single character, so don't be too ambitious about how many characters you do this to. It is likely to be hard to read if you have more than three characters side-by-side.</p>
+<p><img src="images/tcu-all.png" alt="text-combine-upright: all" /></p>
+<!--figure class="example"lang="ja" style="height: 200px; width: 250px;">
+  <p>...是有<span class="tcyAll">50</span><span class="tcyAll">GI</span>的話、...</p>
+</figure-->
+</section>
+
+<section>
+<h3 id="tcy_prevention"><a href="#tcy_prevention">Preventing inline text from running horizontally</a></h3>
+<p>Suppose you applied the <code class="kw" translate="no">digit</code> styling to a whole section, and there's a number 10,000 in that section that you don't want to be affected. Use markup to apply the <code class="kw" translate="no">none</code> value to that bit.</p>
+<p>Example:</p>
+<blockquote>
+  <pre>.no-tcy { 
+    text-combine-upright: none; 
+    }
+
+&lt;p&gt;昨日は&lt;span class=&quot;no-tcy&quot;&gt;10,000&lt;/span&gt;円でした。&lt;/p</pre>
+</blockquote>
+<p><img src="images/tcu-none.png" alt="text-combine-upright: none" /></p>
+<!--figure class="example" lang="ja" style="height: 200px; width: 250px;">
+  <p class="tcy">昨日は<span class="noTcy">10,000</span>円でした。</p>
+</figure-->
+<p>(This example is perhaps a little contrived, since, actually, you would probably want to write that number in ideographic characters.)</p>
+</section>
+
+
+<section>
+<h3 id="tcy_font"><a href="#tcy_font">Choosing a font for horizontal inline text</a></h3>
+<p>The browser will try to use special narrow variants of the horizontal characters if they are included in the font being used (eg. OpenType's <code class="kw" translate="no">hwid</code> and <code class="kw" translate="no">twid</code>).  After trying that, it will compress the glyphs to fit them in the space available. The former approach will produce a much nicer result, especially at larger sizes. Therefore, it's worth using a font that has those extra glyphs (many do).</p>
+</section>
+</section>
+
+
+
+<section>
+  <h2 id="forms_etc"><a href="#forms_etc">Forms, lists and tables</a></h2>
+
+<section>
+<h3 id="forms"><a href="#forms">Forms</a></h3>
+<p>Text entry forms and select menus should flow down the page in vertical text, as illustrated in the following diagram.</p>
+<p><img src="images/vertical-form.png" width="182" height="266" alt=""/></p>
+<div class="advancedusage">
+  <p><strong>implementation notes:</strong>Only Firefox rotates the direction of the form fields for <code class="kw" translate="no">input</code> with type of <code class="kw" translate="no">text</code>, <code class="kw" translate="no">textarea</code>, and <code class="kw" translate="no">select</code>, however, <code class="kw" translate="no">select</code> opens the alternatives horizontally at the bottom of the currently displayed option, and the other form fields can drop out of the bottom of the vertical block that contains them unless you specify the height.</p>
+  <p> Chrome and Safari and Internet Explorer place the form field horizontally and display the contained text horizontally also.</p>
+</div>
+</section>
+
+<section>
+<h3 id="lists"><a href="#lists">Lists</a></h3>
+<p>List content should also flow down the page in vertical text, with the counter at the top of the line, as illustrated in the following diagram.</p>
+<figure>
+<p><img src="images/korean-list.png" alt=""/></p>
+</figure>
+<p class="ed">Should the counters be upright? If so, how to do that?</p>
+<div class="advancedusage">
+  <p><strong>implementation notes:</strong>Firefox, Chrome and Safari and Internet Explorer all behave as expected.</p>
+</div>
+</section>
+
+<section>
+<h3 id="tables"><a href="#tables">Tables</a></h3>
+<p>In vertical content areas, table rows should be ordered in the same direction as lines, ie. down the page, the rows should progress in the same direction as lines follow each other, and the text inside cells should also be vertical by default.</p>
+<figure>
+<p><img src="images/korean-table.png" alt=""/></p>
+</figure>
+<p>The numbering of the illustration above counts cells in a row first, then moves to the next row. As you can see, the columns are now horizontal.</p>
+<div class="advancedusage">
+  <p><strong>implementation notes:</strong>Firefox, Chrome and Safari and Internet Explorer all behave as expected.</p>
+</div>
+<p>The picture above shows a caption after the table. The placement of captions can be set using the <code class="kw" translate="no">caption-side</code> property. CSS3 provides two new values for this property: <code class="kw" translate="no">block-start</code> (which would position the caption vertically to the left above), and <code class="kw" translate="no">block-end</code> (which would position the caption as shown). These logical values allow the position of the caption to change appropriately as the direction of the text changes.</p>
+<div class="advancedusage">
+  <p><strong>implementation notes:</strong>Chrome and Safari and Internet Explorer all display the caption as vertical text on the left by default. Firefox displays the caption horizontally, above the table.</p>
+  <p>None of the browsers above recognize the <code class="kw" translate="no">block-start</code> and <code class="kw" translate="no">block-end</code> values.</p>
+</div>
+<div class="advancedusage">
+  <p><strong>implementation notes:</strong>There are some other issues to consider for table display.</p>
+  <p>If you place the <code class="kw" translate="no">writing-mode</code> property on an individual table cell, you would expect the text in that cell to be displayed vertically. Similarly, if you apply the writing-mode property to a <code class="kw" translate="no">span</code> within a table cell, you would expect the text in that <code class="kw" translate="no">span</code> to be displayed vertically.</p>
+  <p>This works as expected in Internet Explorer and Firefox. Chrome and Safari, on the other hand, rotate the characters to the left when <code class="kw" translate="no">-webkit-writing-direction</code> is set on the <code class="kw" translate="no">td</code> element, but display them horizontally. You also have to set the height of the cell in these browsers for a <code class="kw" translate="no">span</code> to be displayed vertically.</p>
+</div>
+</section>
+
+
+
+</section>
+<section>
+  <h2 id="logical_dimensions"><a href="#logical_dimensions">Using logical dimensions</a></h2>
+  <p class="ed">Describe block-start, block-end, inline-start and inlne-end, and report current support levels.</p>
+</section>
+        
+        
+   	<?php echo $survey;?>
+		<section class="noprint"> 
+
+			<h2 id="endlinks"><a href="#endlinks">Further reading</a></h2>
+			<ul id="full-links">
+			  <li>
+			    <p><cite><a href="https://drafts.csswg.org/css-writing-modes-3/">CSS Writing Modes Level 3</a></cite></p>
+			    
+		      </li>
+			  <li>
+				  <p>Related links, <cite>Authoring HTML &amp; CSS</cite></p>
+                  <ul><li><a href="/International/techniques/authoring-html#markup">Markup &amp; text</a> <span class="uri">http://www.w3.org/International/techniques/authoring-html#markup</span></li></ul>
+                  <ul><li><a href="/International/techniques/authoring-html#bandi">Using b and i tags</a> <span class="uri">http://www.w3.org/International/techniques/authoring-html#bandi</span></li></ul>
+				</li>
+			</ul>
+</section>
+<?php echo $bottomOfPage; ?>
+
+	</body>
+</html>
