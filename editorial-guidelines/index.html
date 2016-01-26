@@ -5,68 +5,6 @@
 <title>Github basics for i18n documents</title>
 <link rel="stylesheet" type="text/css" href="http://www.w3.org/International/style/article-display-2016.css" />
 <style type="text/css">
-/*
-small p, small address {
-	margin: 0;
-	font-size: 90%;
-	font-family: Segoe, "Segoe UI", "DejaVu Sans", "Trebuchet MS", Verdana, sans-serif;
-}
-pre {
-	font-size: 90%;
-}
-table, th {
-	border: 0;
-}
-td {
-	border: 1px solid #ccc;
-	vertical-align: top;
-	border-collapse: collapse;
-}
-h3 {
-	background: #f6f6bb;
-	font-family: Arial, sans-serif;
-	color: #000066;
-	font-size: 140%;
-	margin-top: 2em;
-	padding-left: 5px;
-	border-radius: 5px;
-}
-h3 a:link, h3 a:active, h3 a:visited {
-	text-decoration: none;
-	color: #404040;
-}
-h3 {
-	font-family: Arial, sans-serif;
-	color: #000066;
-	margin-top: 3em;
-}
-.qterm:before, .qchar:before {
-	content: "'";
-}
-.qterm:after, .qchar:after {
-	content: "'";
-}
-.quote:before {
-	content: '"';
-}
-.quote:after {
-	content: '"';
-}
-code {
-	color: #A52A2A;
-	font-family: Consolas, "Andale Mono", "Lucida Console", "Lucida Sans Typewriter", Monaco, "Courier New", monospace;
-	font-size: 100%;
-}
-samp, kbd {
-	font-family: Consolas, "Andale Mono", "Lucida Console", "Lucida Sans Typewriter", Monaco, "Courier New", monospace;
-	font-size: 100%;
-}
-.uname {
-	text-transform: uppercase;
-	font-size: 85%;
-	letter-spacing: 0.03em;
-}
-*/
 h2 {
 	font-family: Arial, helvetica, sans-serif;
 	font-size: 140%;
@@ -79,7 +17,7 @@ h2 {
 	background-color: #697fb1;
 	border-radius: 10px;
 	}
-h2 a:link, h3 a:active, h3 a:visited {
+h2 a:link, h2 a:active, h2 a:visited {
 	text-decoration: none;
 	color: white;
 	}
@@ -136,11 +74,10 @@ ol ol { margin-right: 20px; margin-left: 30px;  }
 &#xA0; </div><div id="line">&#xA0;</div></nav>
 <h1>Guidelines for working with i18n github documents</h1>
 </header>
-
-<p class="disclaimer">This is just a first strawman and still needs a lot of work. Do not believe anything it says, and don't expect anything sensible from it!</p>
 <section>
-<p>The W3C Internationalization Activity has task forces which use github for document development. This page provides guidelines to help people contribute content if they are unfamiliar with github, and includes pointers to style guides also. Some of this information is a shameless copy of text  from <a href="http://testthewebforward.org/docs/github-101.html">the Test the Web Forward documentation</a>.</p>
+  <p>The W3C Internationalization Activity has task forces which use github for document development. This page provides guidelines to help people contribute content if they are unfamiliar with github, and includes pointers to style guides also. Some of this information is a shameless copy of text  from <a href="http://testthewebforward.org/docs/github-101.html">the Test the Web Forward documentation</a>.</p>
 <p>For the examples we will use the github username <span class="highlightedterm">myUserName</span> and we'll use a  repository (repo) name, <span class="highlightedterm">myRepoName</span>. You should substitute your own username wherever you see <span class="qterm">myUserName</span>, and the name of the repo you want to work with for <span class="qterm">myRepoName</span>.</p>
+<p>If you have comments or suggestions about how to improve this page, feel free to <a href="https://github.com/w3c/i18n-activity/issues">raise a Github issue</a>.</p>
 </section>
 
 
@@ -180,7 +117,7 @@ ol ol { margin-right: 20px; margin-left: 30px;  }
       
       <p>This ensures that git push will never unintentionally create or update
         a remote branch.</p></li>
-        </ol>
+      </ol>
     </li>
     <li>
       <p>(Optional) If you don't want to enter your username and password every
@@ -756,14 +693,14 @@ upstream    https://github.com/w3c/<em>myRepoName</em>.git (push)</pre>
 <footer>
 	<address> 
 		<p>By: Richard Ishida, W3C.   </p>
-		</address>
+  </address>
 	
 	<small id='version'>Content first published <time datetime='2015-12-16T07:50Z'>2015-12-16 07:50</time>. Last substantive update <time datetime='2010-09-08T20:47Z'>2010-09-08 20:47 GMT</time>. This version <time datetime='2015-04-16T16:33Z'>2015-04-16 16:33 GMT</time></small>
 	<!--small>For the history of document changes, search for
 <span class="searchkey"><a href="http://www.w3.org/blog/International/tag/qa-what-is-encoding/">qa-what-is-encoding</a></span>
 in the i18n blog.</small-->
 	<small class='copyright' lang='en' xml:lang='en' ><a rel='Copyright' href='/Consortium/Legal/ipr-notice#Copyright' id='copyright'>Copyright</a> © 2008-2015 <a href='/'><abbr title='World Wide Web Consortium'>W3C</abbr></a><sup>®</sup> (<a href='http://www.csail.mit.edu/'><abbr title='Massachusetts Institute of Technology'>MIT</abbr></a>, <a href='http://www.ercim.eu/'><abbr title='European Research Consortium for Informatics and Mathematics'>ERCIM</abbr></a>, <a href='http://www.keio.ac.jp/'>Keio</a>, <a href='http://ev.buaa.edu.cn/'>Beihang</a>), All Rights Reserved. W3C <a href='/Consortium/Legal/ipr-notice#Legal_Disclaimer'>liability</a>, <a href='/Consortium/Legal/ipr-notice#W3C_Trademarks'>trademark</a>, <a rel='Copyright' href='/Consortium/Legal/copyright-documents'>document use</a> and <a rel='Copyright' href='/Consortium/Legal/copyright-software'>software licensing</a> rules apply. Your interactions with this site are in accordance with our <a href='/Consortium/Legal/privacy-statement#Public'>public</a> and <a href='/Consortium/Legal/privacy-statement#Members'>Member</a> privacy statements.</small>
-	</footer>
+</footer>
 <script type="text/javascript">if (document.getElementById('toclocation')) { createtoc(); }</script></body>
 </body>
 </html>
