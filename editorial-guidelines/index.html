@@ -41,6 +41,12 @@ var {
 	color: red;
 	}
 ol ol { margin-right: 20px; margin-left: 30px;  }
+.ghButton {
+	border: 1px solid #aaa;
+	border-radius: 5px;
+	padding: 0 0.4em;
+	white-space: nowrap;
+	}
 </style>
 <script type="text/javascript" src="https://www.w3.org/International/javascript/articletoc-html5.js"></script>
 </head>
@@ -362,16 +368,16 @@ upstream    https://github.com/w3c/<em>myRepoName</em>.git (push)</pre>
   <li>
     <p>Now create a <span class="highlightedterm">pull request</span>.  There are several ways to create a PR in the
       GitHub UI.  Below is one method and others can be found on <a href="https://help.github.com/articles/creating-a-pull-request">GitHub.com</a></p>
-    <p>a. Click on the <img src="images/new-pull-request.png" alt="new pull request"> button.</p>
-    <p>b.  On the left, you should see the base repo is the
-      <code class="kw" translate="no">w3c/myRepoName</code>. On the right, you should see your fork of that
-      repo, <code class="kw" translate="no">myUserName/myRepoName</code>. In the branch menu of your forked repo, switch to <code class="kw" translate="no">myBranchName</code>.  If you see <em>'There isn't anything to compare'</em>, click the <img src="images/editbtn.png" alt="edit"> button and make sure your fork and your <code class="kw" translate="no">myBranchName </code>branch is selected on the right side.</p>
-    <p>c. Select the <img src="images/createprlink.png" alt="create pull request"> link at the top.</p>
-    <p>d. Scroll down and review the diff.</p>
-    <p>e. Scroll back up and in the <code class="kw" translate="no">Title</code> field, enter a brief description for
-      your submission, eg. "New section on Arabic joining forms." Once again, make this as short and informative as possible.</p>
-    <p>f.  If you'd like to add more detailed comments, use the comment field
-      below.</p>
+    <p>a. Click on the <img src="images/new-pull-request.png" alt="new pull request"> button. You should see something like this:</p>
+    <p><img src="images/pr-panel-large.png" style="width: 150%; max-width: 809px;" alt=""/></p>
+    <p>b.  Pay careful attention to the line of buttons at the top of the picture above. Here's an example:</p>
+    <p><img src="images/pr-panel-buttons.png" style="width: 150%; max-width: 809px;" alt=""/></p>
+    <p style="width: 150%; max-width: 809px;">Moving from left to right, the first button should say <span class="ghButton">base fork: w3c/<code class="kw" translate="no">myRepoName</code></span>, the second  <span class="ghButton">base: gh-pages</span>, the third, <span class="ghButton">head fork: <code class="kw" translate="no">myUserName/myRepoName</code></span>, and the one on the right should read <span class="ghButton">compare: <code class="kw" translate="no">myBranchName</code></span>.</p>
+    <div class="insideinfonote">
+    <p class="info">Substitute the appropriate names for <code class="kw" translate="no">myRepoName</code>, <code class="kw" translate="no">myUserName</code> and <code class="kw" translate="no">myBranchName</code>.</p>
+    </div>
+    <p>If you see <em>'There isn't anything to compare'</em>, make sure your fork and your branch are selected on the right side.</p>
+    <p>f.  If you'd like to add more detailed comments or a title other than one that is suggested, edit the fields below the buttons.</p>
     <p>g.  Click <img src="images/sendpullrequest.png" alt="the send pull request button"></p>
   </li>
   <li>
