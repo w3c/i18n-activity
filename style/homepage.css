@@ -108,11 +108,12 @@ h2 {
     border-radius: 10px;
 	}
 h2 a:link, h2 a:visited {
-	color: white;
+	color: inherit;
 	}
 
 .directory h2 {
-    background-color: #EEB058;
+	color: #000;
+    	background-color: #EEB058;
 	}
 
 .panel {
