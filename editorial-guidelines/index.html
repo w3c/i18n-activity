@@ -82,7 +82,7 @@ ol ol { margin-right: 20px; margin-left: 30px;  }
 </header>
 <section>
   <p>The W3C Internationalization Activity has task forces which use github for document development. This page provides guidelines to help people contribute content if they are unfamiliar with github, and includes pointers to style guides also. Some of this information is a shameless copy of text  from <a href="http://testthewebforward.org/docs/github-101.html">the Test the Web Forward documentation</a>.</p>
-<p>For the examples we will use the github username <span class="highlightedterm">myUserName</span> and we'll use a  repository (repo) name, <span class="highlightedterm">myRepoName</span>. You should substitute your own username wherever you see <span class="qterm">myUserName</span>, and the name of the repo you want to work with for <span class="qterm">myRepoName</span>.</p>
+<p>For the examples we will use the github username <span class="highlightedterm">myUserName</span> and we'll use a  repository (repo) name, <span class="highlightedterm">repoName</span>. You should substitute your own username wherever you see <span class="qterm">myUserName</span>, and the name of the repo you want to work with for <span class="qterm">repoName</span>.</p>
 <p>If you have comments or suggestions about how to improve this page, feel free to <a href="https://github.com/w3c/i18n-activity/issues">raise a Github issue</a>.</p>
 </section>
 
@@ -150,14 +150,14 @@ ol ol { margin-right: 20px; margin-left: 30px;  }
   will enable you to submit your proposed changes using a pull request (more on this below).</p>
   <ol>
     <li>
-      <p>In the browser, go the the GitHub page for the W3C repository, ie. <span class="url">https:/github.com/w3c/<em>myRepoName</em>/</span>. </p>
+      <p>In the browser, go the the GitHub page for the W3C repository, ie. <span class="url">https:/github.com/w3c/<em>repoName</em>/</span>. </p>
     </li>
     <li>
       <p>Click the <img src="images/forkbtn.png" alt="fork"> button in the upper right.</p>
     </li>
     <li>
       <p>The fork will take several seconds, then you will be redirected to your
-        GitHub page for this forked repository, ie. <span class="url">https://github.com/<em>myUserName</em>/<em>myRepoName</em>/</span>.</p>
+        GitHub page for this forked repository, ie. <span class="url">https://github.com/<em>myUserName</em>/<em>repoName</em>/</span>.</p>
     </li>
   </ol>
 </section>
@@ -167,13 +167,13 @@ ol ol { margin-right: 20px; margin-left: 30px;  }
 <section id="cloning">
   <h2><a href="#cloning">Cloning your forked repo to your desktop</a></h2>
   <p>If your fork was successful, the next step is to clone (download) a copy of your forked repo.</p>
-  <p>At the command prompt, cd into the directory where you want to keep the tests, and type the following:</p>
+  <p>At the command prompt, use <kbd>cd</kbd> to get to a directory where you want to keep your fork. We're about to create a subdirectory within the directory you just moved to: the subdirectory will be called <samp>repoName</samp>, and will contain all the files for that fork.</p>
+  <p>Type the following:</p>
   
-  <pre>$ git clone --recursive https://github.com/<var>myUserName</var>/<var>myRepoName</var>.git</pre>
+  <pre>$ git clone --recursive https://github.com/<var>myUserName</var>/<var>repoName</var>.git</pre>
   
-  <p>where <span class="qterm">myUserName</span> is your github username, and <span class="qterm">myRepoName</span> is the name of the repository.</p>
-  <p>This will download the tests into a directory named after the repo, eg. <span class="url">./myRepoName</span>.</p>
-  <p>You should now have a full copy of the test repository on your local
+  <p>where <span class="qterm">myUserName</span> is your github username, and <span class="qterm">repoName</span> is the name of the repository. This will download the tests into the subdirectory we just mentioned.</p>
+  <p>You should now have a full copy of the forked repository on your local
     machine. Feel free to browse the directories on your hard drive. You can also
     browse them on <a href="https://github.com/w3c">github.com</a> and see the full history of contributions
     there.</p>
@@ -188,12 +188,16 @@ ol ol { margin-right: 20px; margin-left: 30px;  }
       <p>On the command line, navigate to the directory where your forked copy of
         the repository is located.</p>
       
-        <pre>$ cd &lt;pathname&gt;/<em>myRepoName</em></pre>
+        <pre>$ cd &lt;pathname&gt;/<em>repoName</em>
       
-    </li>
+    </pre></li>
     <li>
       <p>Make sure that you are on the <span class="highlightedterm">gh-pages branch</span>.  This will  be the case if you
-        just forked, otherwise switch to gh-pages.</p>
+        just forked. Type</p>
+      <pre>$ git status</pre>
+      <p>You should see several lines, one of which will say</p>
+      <pre>On branch gh-pages</pre>
+      <p>If you are on another branch, switch to gh-pages by typing</p>
       
         <pre>$ git checkout gh-pages
 </pre>
@@ -207,13 +211,13 @@ ol ol { margin-right: 20px; margin-left: 30px;  }
 </pre>
       
       <p>It should say </p>
-      <pre>origin      https://github.com/<em>myUserName</em>/<em>myRepoName</em>.git (fetch)
-origin      https://github.com/<em>myUserName</em>/<em>myRepoName</em>.git (push)
-upstream    https://github.com/w3c/<em>myRepoName</em>.git (fetch)
-upstream    https://github.com/w3c/<em>myRepoName</em>.git (push)</pre>
+      <pre>origin      https://github.com/<em>myUserName</em>/<em>repoName</em>.git (fetch)
+origin      https://github.com/<em>myUserName</em>/<em>repoName</em>.git (push)
+upstream    https://github.com/w3c/<em>repoName</em>.git (fetch)
+upstream    https://github.com/w3c/<em>repoName</em>.git (push)</pre>
       <p>If it doesn't, set upstream as follows:</p>
       
-        <pre>$ git remote add upstream https://github.com/w3c/<em>myRepoName</em>.git
+        <pre>$ git remote add upstream https://github.com/w3c/<em>repoName</em>.git
 </pre>
       
     </li>
@@ -230,9 +234,9 @@ upstream    https://github.com/w3c/<em>myRepoName</em>.git (push)</pre>
       <p>On the command line, navigate to the directory where your forked copy of
         the repository is located.</p>
       
-        <pre>$ cd &lt;pathname&gt;/<em>myRepoName</em></pre>
+        <pre>$ cd &lt;pathname&gt;/<em>repoName</em>
       
-    </li>
+    </pre></li>
     <li>
       <p>Make sure that you are on the <span class="highlightedterm">gh-pages branch</span>.  This will  be the case if you
         just forked, otherwise switch to <code class="kw" translate="no">gh-pages</code>.</p>
@@ -271,7 +275,10 @@ upstream    https://github.com/w3c/<em>myRepoName</em>.git (push)</pre>
 <p><span class="highlightedterm">Also, ensure that</span> you start from the <code class="kw" translate="no">gh-pages</code> branch, otherwise you'll end up with a horrible nested mess and you'll be very embarrassed because someone will have to spend a while digging you out. You have been warned!</p>
 <section id="newbranch">
   <h3><a href="#newbranch">Create a new branch</a></h3>
-  <p>At the command line, check you are on the <code class="kw" translate="no">gh-pages</code> branch:</p>
+  <p>At the command line, check you are on the <code class="kw" translate="no">gh-pages</code> branch by typing</p>
+  
+    <pre>$ git status</pre>
+  <p>If not, then type</p>
   
     <pre>$ git checkout gh-pages</pre>
   
@@ -281,7 +288,7 @@ upstream    https://github.com/w3c/<em>myRepoName</em>.git (push)</pre>
   
   <p>This will create a branch named <code class="kw" translate="no">myBranchName</code><code></code> and immediately
     switch this to be your active working branch.</p>
-  <p>The branch name should describe specifically what you are testing.
+  <p>The branch name should describe specifically what you are working on.
     For example:</p>
   
     <pre>$ git checkout -b arabic-joining-forms
@@ -363,7 +370,7 @@ upstream    https://github.com/w3c/<em>myRepoName</em>.git (push)</pre>
     <p>Now you can send a message that you have changes or additions you'd like
       to be reviewed and merged into the W3C repository. You do
       this by using a pull request. In a browser, open the GitHub page for your
-      forked repository, ie. <span class="url">https://github.com/<em>myUserName</em>/<em>myRepoName</em>/</span>.</p>
+      forked repository, ie. <span class="url">https://github.com/<em>myUserName</em>/<em>repoName</em>/</span>.</p>
   </li>
   <li>
     <p>Now create a <span class="highlightedterm">pull request</span>.  There are several ways to create a PR in the
@@ -372,9 +379,9 @@ upstream    https://github.com/w3c/<em>myRepoName</em>.git (push)</pre>
     <p><img src="images/pr-panel-large.png" style="width: 150%; max-width: 809px;" alt=""/></p>
     <p>b.  Pay careful attention to the line of buttons at the top of the picture above. Here's an example:</p>
     <p><img src="images/pr-panel-buttons.png" style="width: 150%; max-width: 809px;" alt=""/></p>
-    <p style="width: 150%; max-width: 809px;">Moving from left to right, the first button should say <span class="ghButton">base fork: w3c/<code class="kw" translate="no">myRepoName</code></span>, the second  <span class="ghButton">base: gh-pages</span>, the third, <span class="ghButton">head fork: <code class="kw" translate="no">myUserName/myRepoName</code></span>, and the one on the right should read <span class="ghButton">compare: <code class="kw" translate="no">myBranchName</code></span>.</p>
+    <p style="width: 150%; max-width: 809px;">Moving from left to right, the first button should say <span class="ghButton">base fork: w3c/<code class="kw" translate="no">repoName</code></span>, the second  <span class="ghButton">base: gh-pages</span>, the third, <span class="ghButton">head fork: <code class="kw" translate="no">myUserName/repoName</code></span>, and the one on the right should read <span class="ghButton">compare: <code class="kw" translate="no">myBranchName</code></span>.</p>
     <div class="insideinfonote">
-    <p class="info">Substitute the appropriate names for <code class="kw" translate="no">myRepoName</code>, <code class="kw" translate="no">myUserName</code> and <code class="kw" translate="no">myBranchName</code>.</p>
+    <p class="info">Substitute the appropriate names for <code class="kw" translate="no">repoName</code>, <code class="kw" translate="no">myUserName</code> and <code class="kw" translate="no">myBranchName</code>.</p>
     </div>
     <p>If you see <em>'There isn't anything to compare'</em>, make sure your fork and your branch are selected on the right side.</p>
     <p>f.  If you'd like to add more detailed comments or a title other than one that is suggested, edit the fields below the buttons.</p>
@@ -593,8 +600,8 @@ upstream    https://github.com/w3c/<em>myRepoName</em>.git (push)</pre>
       </tr>
       <tr>
         <td valign="top">an URL that doesn't have a link on it</td>
-        <td valign="top">https:/github.com/w3c/myRepoName/</td>
-        <td valign="top">&lt;span class=&quot;url&quot;&gt;https:/github.com/w3c/myRepoName/&lt;/span&gt;</td>
+        <td valign="top">https:/github.com/w3c/repoName/</td>
+        <td valign="top">&lt;span class=&quot;url&quot;&gt;https:/github.com/w3c/repoName/&lt;/span&gt;</td>
       </tr>
     </tbody>
   </table>
