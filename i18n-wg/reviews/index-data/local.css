@@ -1,0 +1,24 @@
+table {
+	border-collapse: collapse;
+	}
+th {
+	background-color: #eee;
+	border: 1px solid #ccc;
+	}
+.requested {
+	font-weight: bold;
+	}
+.shepherd {
+	font-style: italic;
+	}
+td {
+	font-size: 80%;
+	padding: 0 .3em;
+	border: 1px solid #ccc;
+	}
+.document {
+	font-size: 100%;
+	}
+.priority {
+	background-color: rgba(247,203,156,1.00);
+	}
