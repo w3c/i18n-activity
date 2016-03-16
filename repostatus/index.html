@@ -75,8 +75,8 @@ var reposLength = reposKeys.length
   </ul>
 </section>
 <section>
-  <p>This page lists currently OPEN issues in the i18n Activity's github repositories, grouped by repo, with the most recently active repos nearest the top. Click on the issue name to go to the issue page.</p>
-  <p id="total">There are <span id="count">0</span> issues.</p>
+  <p>This page lists currently OPEN issues in the i18n Activity's github repositories, grouped by repo, with the most recently active repos nearest the top. Click on the issue name to go to the issue page. The colored boxes represent labels.</p>
+  <p id="total">Loading data...</p>
 </section>
 <section id="rawdata">
 </section>
@@ -160,6 +160,7 @@ var reposLength = reposKeys.length
 					for (var j=0;j<issueData.labels.length;j++) {
 						span = document.createElement('span')
 						span.setAttribute('style', 'background-color:#'+issueData.labels[j].color)
+						span.title = issueData.labels[j].name
 						span.className = 'labels'
 						span.textContent = ' '
 						td.appendChild(span)
@@ -185,7 +186,7 @@ var reposLength = reposKeys.length
 				repoSection.appendChild(table)
 				// Add the repo header to the DOM
 				document.getElementById("rawdata").appendChild(repoSection)
-				document.getElementById('count').textContent = totals
+				document.getElementById('total').textContent = "There are "+totals+" issues."
 			}
 
 			// Grab and present the issue list from GitHub
