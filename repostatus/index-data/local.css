@@ -11,12 +11,16 @@ th {
 	width: 8em;
 	}
 td {
-	font-size: 80%;
+	font-size: 90%;
 	padding: 0 .3em;
 	border: 1px solid #ccc;
 	}
 .labels {
 	float: right;
+	height: .6em;
+	width: .6em;
+	border-radius: 2px;
+	margin: 2px;
 	}
 #internal-links {
 	display: none;
