@@ -119,7 +119,7 @@ var reposLength = reposKeys.length
 			// Display repository information
 			function displayRepo(repo) {
 				// Add a container to put the repository info and issues in
-				var table, tr, td, a, updated, toc
+				var table, tr, td, a, updated, toc, span
 				var repoSection = document.createElement('section');
 				
 				// Add a heading
@@ -156,12 +156,20 @@ var reposLength = reposKeys.length
 					tr.appendChild(td)
 					
 					td = document.createElement('td')
+					// find labels
+					for (var j=0;j<issueData.labels.length;j++) {
+						span = document.createElement('span')
+						span.style = 'color:#'+issueData.labels[j].color
+						span.className = 'labels'
+						span.textContent = '◼'
+						td.appendChild(span)
+						}
 					a = document.createElement('a')
 					a.href = issueData['html_url']
 					a.textContent = issueData['title']
 					td.appendChild(a)
 					tr.appendChild(td)
-					
+								
 					td = document.createElement('td')
 					td.className = 'date'
 					td.title = 'Date last updated'
