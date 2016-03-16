@@ -159,7 +159,7 @@ var reposLength = reposKeys.length
 					// find labels
 					for (var j=0;j<issueData.labels.length;j++) {
 						span = document.createElement('span')
-						span.style = 'color:#'+issueData.labels[j].color
+						span.setAttribute('style', 'color:#'+issueData.labels[j].color)
 						span.className = 'labels'
 						span.textContent = '◼'
 						td.appendChild(span)
