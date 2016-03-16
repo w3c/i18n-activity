@@ -1,0 +1,20 @@
+table {
+	border-collapse: collapse;
+	width: 100%;
+	}
+th {
+	background-color: #eee;
+	border: 1px solid #ccc;
+	}
+.date {
+	white-space:nowrap;
+	width: 8em;
+	}
+td {
+	font-size: 80%;
+	padding: 0 .3em;
+	border: 1px solid #ccc;
+	}
+#internal-links {
+	display: none;
+	}
