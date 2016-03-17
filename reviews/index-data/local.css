@@ -17,10 +17,12 @@ td {
 	}
 .labels {
 	float: right;
-	height: .8em;
-	width: .8em;
+	height: 11px;
+	width: 11px;
 	border-radius: 2px;
 	margin: 3px;
+	font-size: .2em;
+	color: rgba(0,0,0,0.00);
 	}
 #internal-links {
 	display: none;
