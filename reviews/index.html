@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<title>i18n reviews, open issues</title>
+<meta name="description" content="Lists open issues in i18n Activity github repositories." />
+<script type="text/javascript">
+var f = { }
+
+// AUTHORS should fill in these assignments:
+f.directory = 'i18n-wg/repostatus/'+'/'; // the path to this file, not including /International or the file name
+f.filename = 'reviews'; // the file name WITHOUT extensions
+f.authors = 'Richard Ishida, W3C'; // author(s) and affiliations
+f.previousauthors = ''; // as above
+f.modifiers = ''; // people making substantive changes, and their affiliation
+f.searchString = 'reviews-openissues'; // blog search string - usually the filename without extensions
+f.firstPubDate = '2106-03-16'; // date of the first publication of the document (after review)
+f.lastSubstUpdate = { date:'2106-03-17', time:'04:18'}  // date and time of latest substantive changes to this document
+f.status = 'notreviewed';  // should be one of draft, review, published, notreviewed or obsolete
+f.path = 'https://w3c.github.io/i18n-drafts/' // what you need to prepend to a URL to get to the /International directory 
+
+// AUTHORS AND TRANSLATORS should fill in these assignments:
+f.thisVersion = { date:'2106-03-16', time:'07:32'} // date and time of latest edits to this document/translation
+f.contributors = ''; // people providing useful contributions or feedback during review or at other times
+// also make sure that the lang attribute on the html tag is correct!
+
+// TRANSLATORS should fill in these assignments:
+f.translators = 'xxxNAME, ORG'; // translator(s) and their affiliation - a elements allowed, but use double quotes for attributes
+
+f.breadcrumb = 'characters';
+
+f.additionalLinks = ''
+</script>
+<script type="text/javascript" src="index-data/translations.js"> </script>
+<script type="text/javascript" src="https://w3c.github.io/i18n-drafts/javascript/doc-structure/article-dt.js"> </script>
+<script type="text/javascript" src="https://w3c.github.io/i18n-drafts/javascript/boilerplate-text/boilerplate-en.js"></script><!--TRANSLATORS must change -en to the subtag for their language!-->
+<script type="text/javascript" src="https://w3c.github.io/i18n-drafts/javascript/doc-structure/sitepage.js"> </script>
+<script type="text/javascript" src="https://w3c.github.io/i18n-drafts/javascript/articletoc-html5.js"></script>
+<link rel="stylesheet" href="https://w3c.github.io/i18n-drafts/style/sitepage-2016.css" type="text/css" />
+<link rel="stylesheet" href="index-data/local.css" type="text/css" />
+<link rel="copyright" href="#copyright"/>
+<!--[if lt IE 9]><script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+<script>
+// Define the repository owner
+var owner = 'w3c';
+
+// Full list of repositories to present.
+var labels = { 
+	'webvtt':{},
+	'activitystreams-core':{},
+	'appmanifest':{},
+	'browser-implementations':{},
+	'css-background':{},
+	'css-counter-styles':{},
+	'css-flexbox':{},
+	'css-inline':{},
+	'css-ruby':{},
+	'css-text-decor':{},
+	'css-text':{},
+	'css-variables':{},
+	'dpub-annotation-uc':{},
+	'dpub-aria':{},
+	'dpub-latinreq':{},
+	'dwbp':{},
+	'find-text':{},
+	'html':{},
+	'linked-data-patch-format':{},
+	'media-capture-and-streams':{},
+	'packaging-on-the-web':{},
+	'presentation-api':{},
+	'service_worker':{},
+	'tracking-compliance':{},
+	'tracking-dnt':{},
+	'url':{},
+	'utr51':{},
+	'vehicle-information-access':{},
+	'web-payments-use-cases':{},
+	'xslt':{}
+	}
+var labelsKeys = Object.keys(labels)
+var labelsLength = labelsKeys.length
+</script>
+</head>
+
+<body>
+<header>
+  <nav id="mainNavigation"></nav>
+  <script>document.getElementById('mainNavigation').innerHTML = mainNavigation</script> 
+</header>
+<div class="content">
+<h1>I18n Reviews, Open issues</h1>
+<section id="sidebarExtras">
+  <h2 class="notoc">Useful links</h2>
+  <ul>
+    <li><a class="print" href="https://github.com/w3c/i18n-activity/issues">Issues list on Github</a></li>
+    <li><a class="print" href="http://w3c.github.io/i18n-activity/i18n-wg/reviews/">Review radar</a></li>
+    <li><a class="print" href="https://www.w3.org/International/reviews/review-instructions">Review guidelines</a></li>
+    <li><a class="print" href="https://www.w3.org/International/reviews/openissues/">Earlier open issues in tracker</a></li>
+  </ul>
+</section>
+<section>
+  <p>This page lists currently OPEN issues in the i18n Activity's github repository that points to comments raised against specs of other groups during review activities, with the most recently active specs nearest the top. Click on the issue name to go to the issue page. The colored boxes represent labels.</p>
+  <p id="total">Loading data...</p>
+</section>
+<section id="rawdata">
+</section>
+
+<script>
+			var totals=0
+			var counter=labelsLength
+			
+			function getAllData () {
+				for (label in labels) fetchIssues(label)
+				var timer = setInterval(function() {
+					if (counter === 0) {
+						clearInterval(timer)
+						console.log('finished')
+						checkDates()
+						}
+					else console.log(counter)
+					}, 50)
+				}
+				
+			
+			function checkDates () {
+				// figure out the most-recent-first order for displaying labels
+				dates = {}
+				for (label in labels) {
+					// find the newest date
+					var newest = labels[label][0]['updated_at']
+					//console.log(label,'first',newest)
+					for (x=0;x<labels[label].length;x++) {
+						if (labels[label][x]['updated_at'] > newest) newest = labels[label][x]['updated_at']
+						}
+					//console.log('last',newest)
+					//dates[labels[label][0]['updated_at']] = label
+					dates[newest] = label
+					//console.log(dates)
+					}
+				var keys = Object.keys(dates)
+				keys.sort().reverse()
+				
+				// display the labels in that order
+				for (var i=0;i<keys.length;i++) {
+					var labelname = dates[keys[i]]
+					displayRepo(labelname)
+					//console.log(dates[keys[i]])
+					}
+				}
+									
+			// Display repository information
+			function displayRepo(label) {
+				// Add a container to put the repository info and issues in
+				var table, tr, td, a, updated, toc, span
+				var labelSection = document.createElement('section');
+				
+				// Add a heading
+				var labelLink = document.createElement('a');
+				labelLink.setAttribute('href', '#'+label);
+				labelLink.innerHTML = label;
+				var labelHeader = document.createElement('h2')
+				labelHeader.id = label
+				labelHeader.appendChild(labelLink);
+				labelSection.appendChild(labelHeader);
+				
+				table = document.createElement('table')
+				
+				// figure out the most-recently-updated order for displaying issues
+				idates = {}
+				for (issue in labels[label]) {
+					idates[labels[label][issue]['updated_at']] = labels[label][issue]
+					}
+				var ikeys = Object.keys(idates)
+				ikeys.sort().reverse()
+				//console.log(idates)
+				
+				//for (issue in labels[label]) {
+				// display issues in order of most recently updated
+				for (var i=0;i<ikeys.length;i++) {
+					issueData = idates[ikeys[i]]
+					//console.log(issueData)
+					//console.log(labels[label][issue]['title'])
+					tr = document.createElement('tr')
+					
+					td = document.createElement('td')
+					td.title = 'Issue number'
+					td.textContent = issueData['number']
+					tr.appendChild(td)
+					
+					td = document.createElement('td')
+					// find labels
+					for (var j=0;j<issueData.labels.length;j++) {
+						if (issueData.labels[j].name == 'pending' || issueData.labels[j].name == 'track' || issueData.labels[j].name == 'close') {
+							span = document.createElement('span')
+							span.setAttribute('style', 'background-color:#'+issueData.labels[j].color)
+							span.title = issueData.labels[j].name
+							span.className = 'labels'
+							span.textContent = ' '
+							td.appendChild(span)
+							}
+						}
+					a = document.createElement('a')
+					a.href = issueData['html_url']
+					a.textContent = issueData['title']
+					td.appendChild(a)
+					tr.appendChild(td)
+								
+					td = document.createElement('td')
+					td.className = 'date'
+					td.title = 'Date last updated'
+					updated = new Date(issueData['updated_at'])
+					//updated = updated.toLocaleFormat('%b %e, %Y');
+					td.textContent = updated.getFullYear()+'-'+updated.getMonth()+'-'+updated.getDate()
+					td.textContent = convertDate(updated)
+					tr.appendChild(td)
+					
+					table.appendChild(tr)
+					}
+				
+				labelSection.appendChild(table)
+				// Add the label header to the DOM
+				document.getElementById("rawdata").appendChild(labelSection)
+				document.getElementById('total').textContent = "There are "+totals+" issues."
+			}
+
+			// Grab and present the issue list from GitHub
+			function fetchIssues(label) {
+				var request = new XMLHttpRequest();
+				request.open('get','https://api.github.com/repos/w3c/i18n-activity/issues?labels='+label);
+				request.onload = function () {
+					labels[label] = JSON.parse(request.responseText)
+					totals += labels[label].length;
+					console.log(labels[label].length,totals,label, counter)
+					counter--
+					}
+				request.send();
+				}
+				
+			function convertDate (date) {
+				// date is a date object
+				out = ''
+				switch (date.getUTCMonth()) {
+					case 0: out += 'Jan'; break
+					case 1: out += 'Feb'; break
+					case 2: out += 'Mar'; break
+					case 3: out += 'Apr'; break
+					case 4: out += 'May'; break
+					case 5: out += 'Jun'; break
+					case 6: out += 'Jul'; break
+					case 7: out += 'Aug'; break
+					case 8: out += 'Sep'; break
+					case 9: out += 'Oct'; break
+					case 10: out += 'Nov'; break
+					case 11: out += 'Dec'; break
+					}
+				out += ' '+date.getDate()+', '+date.getFullYear()
+				return out
+				}
+</script>
+<script>window.onload = getAllData()</script>
+
+<footer id="thefooter"></footer>
+<script type="text/javascript">document.getElementById('thefooter').innerHTML = g.bottomOfPage</script> 
+<script type="text/javascript">completePage()</script>
+
+</div>
+</body>
+</html>
