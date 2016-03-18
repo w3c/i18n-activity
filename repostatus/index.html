@@ -167,6 +167,7 @@ var reposLength = reposKeys.length
 						}
 					a = document.createElement('a')
 					a.href = issueData['html_url']
+					a.target = '_blank'
 					a.textContent = issueData['title']
 					td.appendChild(a)
 					tr.appendChild(td)
