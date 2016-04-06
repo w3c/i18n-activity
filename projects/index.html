@@ -1,0 +1,402 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<title>i18n repos, open issues</title>
+<meta name="description" content="Lists open issues in i18n Activity github repositories." />
+<script type="text/javascript">
+var f = { }
+
+// AUTHORS should fill in these assignments:
+f.directory = 'i18n-wg/repostatus/'+'/'; // the path to this file, not including /International or the file name
+f.filename = 'index'; // the file name WITHOUT extensions
+f.authors = 'Richard Ishida, W3C'; // author(s) and affiliations
+f.previousauthors = ''; // as above
+f.modifiers = ''; // people making substantive changes, and their affiliation
+f.searchString = 'github-openissues'; // blog search string - usually the filename without extensions
+f.firstPubDate = '2106-03-16'; // date of the first publication of the document (after review)
+f.lastSubstUpdate = { date:'2106-03-16', time:'07:32'}  // date and time of latest substantive changes to this document
+f.status = 'notreviewed';  // should be one of draft, review, published, notreviewed or obsolete
+f.path = 'https://w3c.github.io/i18n-drafts/' // what you need to prepend to a URL to get to the /International directory 
+
+// AUTHORS AND TRANSLATORS should fill in these assignments:
+f.thisVersion = { date:'2106-03-16', time:'07:32'} // date and time of latest edits to this document/translation
+f.contributors = ''; // people providing useful contributions or feedback during review or at other times
+// also make sure that the lang attribute on the html tag is correct!
+
+// TRANSLATORS should fill in these assignments:
+f.translators = 'xxxNAME, ORG'; // translator(s) and their affiliation - a elements allowed, but use double quotes for attributes
+
+f.breadcrumb = 'characters';
+
+f.additionalLinks = ''
+</script>
+<script type="text/javascript" src="index-data/translations.js"> </script>
+<script type="text/javascript" src="https://w3c.github.io/i18n-drafts/javascript/doc-structure/article-dt.js"> </script>
+<script type="text/javascript" src="https://w3c.github.io/i18n-drafts/javascript/boilerplate-text/boilerplate-en.js"></script><!--TRANSLATORS must change -en to the subtag for their language!-->
+<script type="text/javascript" src="https://w3c.github.io/i18n-drafts/javascript/doc-structure/sitepage.js"> </script>
+<script type="text/javascript" src="https://w3c.github.io/i18n-drafts/javascript/articletoc-html5.js"></script>
+<link rel="stylesheet" href="https://w3c.github.io/i18n-drafts/style/sitepage-2016.css" type="text/css" />
+<link rel="stylesheet" href="index-data/local.css" type="text/css" />
+<link rel="copyright" href="#copyright"/>
+<!--[if lt IE 9]><script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+
+<style>
+#project_list { clear:both; }
+#project_list .topic {
+	font-size: 24px;
+	margin-left: 0;
+	background-color: rgb(244, 150, 9);
+	color: white;
+	border-radius: 10px;
+	padding: 0 .5em;
+	}
+th { text-align: start;
+	font-size: 24px;
+	font-weight: 300;
+	padding: 8px;
+	vertical-align: top;
+	}
+td {
+	vertical-align: top;
+	}
+#project_list p { margin-left: 1em; }
+#project_list ul, #project_list li { margin-left: .5em; padding-left: .5em; }
+.inprogress {
+	background-color: rgb(255, 248, 168);
+	border-radius: 10px;
+	}
+.priority {
+	}
+</style>
+</head>
+
+<body>
+<header>
+  <nav id="mainNavigation"></nav>
+  <script>document.getElementById('mainNavigation').innerHTML = mainNavigation</script> 
+</header>
+<div class="content">
+<h1>I18n  Working Group Project RADAR</h1>
+<section id="sidebarExtras">
+  <h2 class="notoc">Useful links</h2>
+  <ul>
+    <li><a class="print" href="https://www.w3.org/International/reviews/">Review comment issues</a></li>
+    <li><a href="http://w3c.github.io/i18n-activity/repostatus/">Document issue tracker</a></li>
+  </ul>
+</section>
+<section>
+  <p>Use this page to track  projects that we are actively working on.
+This page is mostly focused on project work, rather than review work, tracking of email lists, and other adhoc discussions and advice, in a wide range of topic areas, that take up much of the working group's time. 
+</p>
+</section>
+</div>
+
+<table id="project_list">
+  <tbody>
+    <tr>
+      <th>Reviews, discussion, advice</th>
+      <th>Developer guidelines</th>
+      <th>Requirements</th>
+      <th>Implementation</th>
+      <th>Education &amp; outreach</th>
+      <th>Track industry</th>
+      </tr>
+    <tr>
+      <td><p class="topic">reviews</p>
+      <p><a href="http://w3c.github.io/i18n-activity/radar/">radar</a>, 
+      <a href="http://w3c.github.io/i18n-activity/reviews/">issue tracker</a></p>
+        <ul>
+          <li>review docs on radar</li>
+          <li>raise comments &amp; discuss with WGs</li>
+          <li>other topics arise from emails or other communications on an adhoc basis. </li>
+          </ul>
+        <p class="topic">doc devt issues</p>
+        <ul>
+          <li><a href="http://w3c.github.io/i18n-activity/repostatus/">issue tracker</a></li>
+        </ul>
+        
+		<p class="topic">mlWeb</p>
+        <ul>
+          <li>tbd</li>
+        </ul>
+        <p>Contact: Felix</p>
+        </td>
+
+      <td><p class="topic priority">charmod</p>
+        <p><a href="http://www.w3.org/TR/charmod-norm/">WD</a>, <a href="http://w3c.github.io/charmod-norm/">ED</a>, <a href="https://github.com/w3c/charmod-norm/">GH</a></p>
+        <ul>
+          <li class="inprogress">update to reflect wider string matching issues</li>
+          <li>remove early normalization as a one-size-fits-all solution</li>
+          </ul>
+        <p>Contact: Addison</p>
+        
+        <p class="topic">best practices for spec authors</p>
+        <p><a href="http://www.w3.org/TR/international-specs/">WD</a>,
+          <a href="http://w3c.github.io/bp-i18n-specdev/">ED</a>, <a href="https://github.com/w3c/bp-i18n-specdev">GH</a></p>
+        <ul>
+          <li class="inprogress">compile extra guidelines from past reviews</li>
+          <li>review &amp; check guidelines</li>
+          <li>promote collaborative use by WGs</li>
+          </ul>
+        <p>Contact: Richard</p>
+        
+        <p class="topic">encoding</p>
+        <p><a href="http://www.org/TR/encoding">CR</a>, <a href="https://encoding.spec.whatwg.org/">ED</a></p>
+        <ul>
+          <li>complete tests</li>
+          <li>track issues and changes<br>
+            </li>
+          <li>develop impln report and work with implementers to reduce non-conformance</li>
+          </ul>
+        <p>Contact: Addison</p>
+        
+        <p class="topic">unicode in xml</p>
+        <p><a href="https://www.w3.org/TR/unicode-xml/">WD</a>, <a href="https://w3c.github.io/unicode-xml/">ED</a>, <a href="https://github.com/w3c/unicode-xml">GH</a></p>
+        <ul>
+          <li>WG: review document for necessary changes and add to issues in github</li>
+          <li class="inprogress">update the document</li>
+          <li>add text disclaimer and update the document status, given Unicode's withdrawal of the document<br>
+            </li>
+          </ul>
+        <p>Contact: Martin</p>
+        
+        <p class="topic">locales and locale-affected formats</p>
+        <p><a href="http://w3c.github.io/ltli/">ED</a>, <a href="https://github.com/w3c/ltli/">GH</a>, <a href="https://www.w3.org/International/wiki/Locale-based_forms">wiki</a></p>
+        <ul>
+          <li><span style="background-color: rgb(255, 255, 255);"> review pros and cons of adapting date, number, etc formats to the language of the content in HTML</span></li>
+          <li>develop a working paper to express our findings (Richard, Addison)</li>
+          <li>find a final solution for the LTLI document</li>
+          </ul>
+        <p>Contact: Addison</p>
+        
+        <p class="topic">I18N metadata in data structures and JSON</p>
+        <p><a href="https://www.w3.org/International/wiki/ContentMetadataJavaScriptDiscussion">wiki</a></p>
+        <ul>
+          <li><span style="background-color: rgb(255, 255, 255);"> develop requirements and best practices</span></li>
+          </ul>
+        <p>Contact: Addison</p>
+        
+        <p class="topic">time zones, etc.</p>
+        <p><a href="https://www.w3.org/International/wiki/HTML5TimeZone">tz wiki</a>, <a href="https://www.w3.org/International/wiki/FloatingTime">ftwiki</a></p>
+        <ul>
+          <li><span style="background-color: rgb(255, 255, 255);"> create an article about timezones</span></li>
+          <li><span style="background-color: rgb(255, 255, 255)">track proposal</span></li>
+          <li>finalise floating times article for WG review</li>
+          <li>distribute ft article for wide review</li>
+          <li>publish</li>
+          </ul>
+        <p>Contact: Addison</p>
+        </td>
+      
+      
+      <td><p class="topic">arabic</p>
+        <p><a href="http://w3c.github.io/alreq/">ED</a>, <a href="https://github.com/w3c/alreq/">GH</a>, <a href="https://lists.w3.org/Archives/Public/public-i18n-arabic/">list</a></p>
+        <ul>
+          <li class="inprogress">add content</li>
+          <li>send for reviews</li>
+          <li>publish FPWD</li>
+        </ul>
+        <p>Contact: Shervin, Behnam, Richard</p>
+        
+        <p class="topic">chinese</p>
+        <p><a href="http://w3c.github.io/clreq/">ED</a>, <a href="https://github.com/w3c/clreq/">GH</a>, <a href="https://lists.w3.org/Archives/Public/public-i18n-cjk/">list</a></p>
+        <ul>
+          <li>complete translation to SC</li>
+          <li>address outstanding issues</li>
+          <li>complete glossary</li>
+          <li>publish new WD</li>
+          <li>spin off Mongolian effort</li>
+          </ul>
+        <p>Contact: Bobby, Ethan, Richard</p>
+        
+        <p class="topic">ethiopic</p>
+        <p><a href="http://w3c.github.io/elreq/">ED</a>, <a href="https://github.com/w3c/elreq/">GH</a>, <a href="https://lists.w3.org/Archives/Public/public-i18n-ethiopic/">list</a></p>
+        <ul>
+          <li class="inprogress">finalise initial version</li>
+          <li>send for review</li>
+          <li>publish FPWD</li>
+          </ul>
+        <p>Contact: Daniel, Richard</p>
+        
+        <p class="topic">indic</p>
+        <p><a href="http://www.w3.org/TR/ilreq/">FPWD</a>, <a href="http://w3c.github.io/ilreq/">ED</a>, <a href="https://github.com/w3c/ilreq/">GH</a>, <a href="https://lists.w3.org/Archives/Public/public-i18n-indic/">list</a></p>
+        <ul>
+          <li>restart the work</li>
+          <li>add additional information</li>
+          <li>expand coverage of languages beyond Hindi</li>
+          <li>send for review</li>
+          <li>publish new WD</li>
+          </ul>
+        <p>Contact: Swaran, Somnath, Richard</p>
+        
+        <p class="topic">tibetan</p>
+        <p><a href="http://w3c.github.io/tlreq/">ED</a>, <a href="https://github.com/w3c/tlreq/">GH</a>, <a href="https://lists.w3.org/Archives/Public/public-i18n-tibetan/">list</a></p>
+        <ul>
+          <li>Chunming to translate en to zh</li>
+          <li>publish FPWD</li>
+          <li>find Tibetan experts</li>
+          <li>refine content</li>
+          <li>send for review</li>
+          <li>publish FPWD</li>
+          </ul>
+        <p>Contact: Chunming, Richard</p>
+        
+        <p class="topic">korean</p>
+        <p><a href="http://w3c.github.io/klreq/">ED</a>, <a href="https://github.com/w3c/klreq/">GH</a>, <a href="https://lists.w3.org/Archives/Public/public-i18n-cjk/">list</a></p>
+        <ul>
+          <li>address outstanding issues</li>
+          <li>publish new WD</li>
+        </ul>
+        <p>Contact:  Richard</p>
+        
+        <p class="topic">counter-styles</p>
+        <p><a href="http://www.w3.org/TR/predefined-counter-styles/">WD</a>, <a href="http://w3c.github.io/predefined-counter-styles/">ED</a>, <a href="https://github.com/w3c/predefined-counter-styles/">GH</a></p>
+        <ul>
+          <li>keep doc in synch with CSS Counter Styles doc</li>
+          <li>publish as Note in synch with CSS doc</li>
+          </ul>
+        <p>Contact:  Richard, Leandro</p>
+        
+        <p class="topic">japanese</p>
+        <p><a href="http://www.w3.org/TR/jlreq/">Note</a></p>
+        <ul>
+          <li>update with errata</li>
+          <li>move to github?</li>
+          <li>publish updated Note</li>
+          </ul>
+        <p>Contact:  Kobayashi-san, Richard</p>
+        
+        <p class="topic">latin</p>
+        <p><a href="https://www.w3.org/TR/dpub-latinreq/">WD</a></p>
+        <ul>
+          <li>monitor and contribute to developments</li>
+        </ul>
+        <p>Contact:  Richard</p>
+        
+        </td>
+      
+      
+      
+      
+      <td><p class="topic">bidi</p>
+        <ul>
+          <li><span style="background-color: rgb(255, 248, 168);">move dir isolation implementation forward</span><br>
+            </li>
+          </ul>
+        <p>Contact: Richard</p>
+        <p class="topic">vertical text</p>
+        <p><a href="https://w3c.github.io/i18n-drafts/articles/vertical-text.en">article</a>, <a href="https://www.w3.org/International/tests/#css3-writing-modes">tests</a></p>
+        <ul>
+          <li class="inprogress">create article summarising how to use</li>
+          <li>create tests</li>
+          <li>work with implementers<br>
+          </li>
+          </ul>
+        <p>Contact: Richard</p>
+        
+        <p class="topic">ruby</p>
+        <p><a href="https://w3c.github.io/i18n-drafts/articles/ruby/markup.en">markup</a>, <a href="https://w3c.github.io/i18n-drafts/articles/ruby/styling.en">styling</a>, <a href="https://www.w3.org/International/tests/#html5-ruby">html tests</a>, <a href="https://www.w3.org/International/tests/#css3-ruby">css tests</a></p>
+        <ul>
+          <li class="inprogress">continue markup and styling articles</li>
+          <li>write ruby css tests, incl zhuyin</li>
+          <li>track implementations</li>
+          <li>support bopomofo implementation<br>
+            </li>
+          </ul>
+        <p>Contact: Richard</p>
+        
+        <p class="topic">mongolian variants</p>
+        <p><a href="http://rishida.io/scripts/mongolian/variants">summary</a>, <a href="https://lists.w3.org/Archives/Public/public-i18n-mongolian/">list</a></p>
+        <ul>
+          <li><span style="background-color: rgb(255, 255, 255);">await outcome of chinese standardisation</span></li>
+          <li><span style="background-color: rgb(255, 255, 255)">integrate chinese changes</span></li>
+          <li><span style="background-color: rgb(255, 255, 255)">negotiate with UTC</span><strike><span style="background-color: rgb(255, 255, 255);"><br>
+          </span></strike></li>
+          </ul>
+        <p>Contact: Richard</p>
+        
+        <p class="topic">tests</p>
+        <p><a href="http://www.w3.org/International/tests">test suite</a></p>
+        <ul>
+          <li>produce tests for i18n features of browsers, especially for upcoming CSS features </li>
+          <li>produce summaries of the results on latest UA versions</li>
+          <li> develop notes on current implementation status<br>
+            </li>
+        </ul>
+        <p>Contact: Richard</p></td>
+      <td><p class="topic">articles</p>
+        <p><a href="https://www.w3.org/International/wiki/Core_Pipeline">parking lot</a>, <a href="https://www.w3.org/International/articlelist">article list</a></p>
+        <ul>
+          <li><span style="background-color: rgb(255, 248, 168);">convert to new non-PHP template</span></li>
+          <li><span style="background-color: rgb(255, 248, 168);">apply maintenance fixes as feedback comes in</span><br>
+          </li>
+          </ul>
+          <p>out for wide review</p>
+          <ul>
+          <li>none</li>
+          </ul>
+          <p>in internal review</p>
+          <ul>
+          <li>none</li>
+          </ul>
+          <p>in devt</p>
+          <ul>
+          <li><a href="https://w3c.github.io/i18n-drafts/articles/vertical-text.en">vertical text</a></li>
+          <li><a href="http://w3c.github.io/i18n-drafts/articles/ruby/markup.en.html">ruby markup</a></li>
+          <li><a href="http://w3c.github.io/i18n-drafts/articles/ruby/styling.en.html">ruby styling</a></li>
+          </ul>
+        <p>Contact: Richard</p>
+        <p class="topic">edx courses</p>
+        <ul>
+          <li class="inprogress">provide support for i18n content and questions<br>
+            </li>
+          </ul>
+        <p>Contact: Richard</p>
+        <p class="topic">conf</p>
+        <ul>
+          <li>Unicode conf, Oct 2016<br>
+            </li>
+          </ul>
+        <p class="topic">i18n checker</p>
+        <p><a href="https://validator.w3.org/i18n-checker/">link</a></p>
+        <ul>
+          <li>add new checks<span style="background-color: rgb(255, 248, 168);"></span></li>
+          <li>localise</li>
+          <li>add language detection component<br>
+          </li>
+        </ul>
+      <p>Contact: Richard</p></td>
+      <td><p class="topic">idn/iri/uri and eai</p>
+        <p><a href="https://www.w3.org/International/wiki/EAI_Address_Issues">wiki</a></p>
+        <ul>
+          <li>track developments in this area</li>
+          <li>revamp the article on IDN &amp; IRI</li>
+          <li>consider ways to contribute to raising awareness</li>
+          <li>review the URL spec</li>
+          </ul>
+        <p>Contact: Dennis</p>
+        <p class="topic">unicode</p>
+        <p><a href="http://www.unicode.org">site</a></p>
+        <ul>
+          <li>track developments</li>
+          </ul>
+        <p class="topic">javascript</p>
+        <p><a href="http://wiki.ecmascript.org/doku.php?id=globalization:specification_drafts">ES-402</a></p>
+        <ul>
+          <li>track the Intl extension</li>
+        </ul>
+          </td>
+    </tr>
+    </tbody>
+</table>
+
+
+<div class="content">
+<footer id="thefooter"></footer>
+<script type="text/javascript">document.getElementById('thefooter').innerHTML = g.bottomOfPage</script> 
+<script type="text/javascript">completePage()</script>
+
+</div>
+</body>
+</html>
