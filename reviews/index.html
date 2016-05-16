@@ -55,6 +55,8 @@ var owner = 'w3c';
 // Full list of repositories to present.
 var labels = { 
 	'activitystreams-core':[],
+	'annotation-model':[],
+	'annotation-vocab':[],
 	'appmanifest':[],
 	'browser-implementations':[],
 	'css-background':[],
@@ -116,7 +118,7 @@ var maxpages = 2
   <ul>
     <li><span style="padding: 0 .5em;background-color:red;"> </span> &nbsp; Pending</li>
     <li><span style="padding: 0 .5em;background-color: #ccc;"> </span> &nbsp; Track</li>
-    <li><span style="padding: 0 .5em;background-color: #009800;"> </span> &nbsp; Close</li>
+    <li><span style="padding: 0 .5em;background-color: #009800;"> </span> &nbsp; Close?</li>
   </ul>
 </section>
 <section>
@@ -233,7 +235,7 @@ var maxpages = 2
 					td = document.createElement('td')
 					// find labels
 					for (var j=0;j<issueData.labels.length;j++) {
-						if (issueData.labels[j].name == 'pending' || issueData.labels[j].name == 'track' || issueData.labels[j].name == 'close') {
+						if (issueData.labels[j].name == 'pending' || issueData.labels[j].name == 'track' || issueData.labels[j].name == 'close?') {
 							span = document.createElement('span')
 							span.setAttribute('style', 'background-color:#'+issueData.labels[j].color)
 							span.title = issueData.labels[j].name
