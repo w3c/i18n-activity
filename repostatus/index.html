@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 <meta charset="utf-8" />
-<title>i18n repos, open issues</title>
+<title>I18n Activity issues</title>
 <meta name="description" content="Lists open issues in i18n Activity github repositories." />
 <script type="text/javascript">
 var f = { }
@@ -47,6 +47,7 @@ var owner = 'w3c';
 // Full list of repositories to present.
 var repos = { 
 	'i18n-drafts':{},
+	'i18n-discuss':{},
 	'charmod-norm':{},
 	'bp-i18n-specdev':{},
 	'predefined-counter-styles':{},
@@ -68,19 +69,38 @@ var reposLength = reposKeys.length
   <script>document.getElementById('mainNavigation').innerHTML = mainNavigation</script> 
 </header>
 <div class="content">
-<h1>I18n Documents, Open issues</h1>
+<h1>I18n Activity issues</h1>
 <section id="sidebarExtras">
-  <h2 class="notoc">Useful links</h2>
+  <h2 class="notoc">On this page</h2>
   <ul>
-    <li><a class="print" href="http://w3c.github.io/i18n-activity/reviews/">Review comment issues</a></li>
+    <li><a href="#alreq">alreq</a></li>
+    <li><a href="#bp-i18n-specdev">bp-i18n-specdev</a></li>
+    <li><a href="#charmod-norm">charmod-norm</a></li>
+    <li><a href="#clreq">clreq</a></li>
+    <li><a href="#i18n-discuss">i18n-discuss</a></li>
+    <li><a href="#i18n-drafts">i18n-drafts</a></li>
+    <li><a href="#ilreq">ilreq</a></li>
+    <li><a href="#klreq">klreq</a></li>
+    <li><a href="#tlreq">tlreq</a></li>
+    <li><a href="#predefined-counter-styles">predefined-counter-styles</a></li>
+    <li><a href="#unicode-xml">unicode-xml</a></li>
+  </ul>
+  <h2 class="notoc">Useful links</h2>
+  <p>These links are for comments raised against <em>specs of other Working Groups</em> during reviews</p>
+  <ul>
+    <li><a class="print" href="https://github.com/w3c/i18n-activity/issues">Review comment tracker on Github</span></a></li>
+    <li><a class="print" href="http://w3c.github.io/i18n-activity/reviews/">List of review comments</a></li>
   </ul>
 </section>
 <section>
-  <p>This page lists currently OPEN issues in the i18n Activity's github repositories, grouped by repo, with the most recently active repos nearest the top. Click on the issue name to go to the issue page. The colored boxes represent labels.</p>
+  <p>This page lists currently OPEN issues in the i18n Activity's github repositories, grouped by repo, with the most recently active repos nearest the top. Dates indicate latest interventions for each issue. Click on the issue name to go to the issue page. The colored boxes represent labels. For a list of comments raised against specs of other Working Groups during reviews, see the links in the side column.)</p>
   <p id="total">Loading data...</p>
 </section>
 <section id="rawdata">
 </section>
+
+<p><button onclick="dumpList();">Make list</button></p>
+<p id="dumparea" style="display:none;"><textarea  style="width: 100%; height: 80px;" id="dumpfield"></textarea></p>
 
 <script>
 			var totals=0
@@ -224,6 +244,29 @@ var reposLength = reposKeys.length
 				out += ' '+date.getDate()+', '+date.getFullYear()
 				return out
 				}
+				
+				function dumpList () {
+					// writes a list of issues to the textarea at the bottom of the page
+					var sections = document.querySelectorAll('section')
+					console.log(sections.length)
+					var out = ''
+					
+					for (s=3;s<sections.length;s++) {
+						if (sections[s].querySelector('h2') === null) continue
+						var h2 = sections[s].querySelector('h2').textContent
+						var issues = sections[s].querySelectorAll('a')
+						
+						out += h2+"\n"
+						for (var i=1;i<issues.length;i++) {
+							out += '• ' + issues[i].textContent+'\n'
+							}
+						out += '\n\n'
+						}
+					
+					document.getElementById('dumparea').style.display = 'block'
+					document.getElementById('dumpfield').value = out
+					document.getElementById('dumpfield').select()
+					}
 </script>
 <script>window.onload = getAllData()</script>
 
