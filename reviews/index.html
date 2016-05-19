@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 <meta charset="utf-8" />
-<title>i18n reviews, open issues</title>
+<title>Review comments</title>
 <meta name="description" content="Lists open issues in i18n Activity github repositories." />
 <script type="text/javascript">
 var f = { }
@@ -104,14 +104,15 @@ var maxpages = 2
   <script>document.getElementById('mainNavigation').innerHTML = mainNavigation</script> 
 </header>
 <div class="content">
-<h1>I18n Reviews, Open issues</h1>
+<h1> Review comments</h1>
 <section id="sidebarExtras">
   <h2 class="notoc">Useful links</h2>
   <ul>
-    <li><a class="print" href="https://github.com/w3c/i18n-activity/issues">Issues list on Github</a></li>
+    <li><a class="print" href="https://github.com/w3c/i18n-activity/issues">Review comment tracker on Github</a></li>
     <li><a class="print" href="http://w3c.github.io/i18n-activity/radar/">Review radar</a></li>
     <li><a class="print" href="https://www.w3.org/International/reviews/review-instructions">Review guidelines</a></li>
-    <li><a class="print" href="https://www.w3.org/International/reviews/openissues/">Earlier open issues in tracker</a></li>
+    <li><a class="print" href="https://www.w3.org/International/reviews/openissues/">Previous tracker</a></li>
+    <li><a class="print" href="https://www.w3.org/International/reviews/openissues/">I18n Activity issues</a></li>
   </ul>
   <h2 class="notoc">Coloured squares</h2>
   <p>The coloured squares represent the following labels:</p>
@@ -122,11 +123,14 @@ var maxpages = 2
   </ul>
 </section>
 <section>
-  <p>This page lists currently OPEN issues in the i18n Activity's github repository that points to comments raised against specs of other groups during review activities, with the most recently active specs nearest the top. Click on the issue name to go to the issue page. The date indicates the last time there was activity for this issue.</p>
+  <p>This page lists currently OPEN issues in the i18n Activity's github repository that points to comments raised against <em>specs of other groups</em> during review activities, with the most recently active specs nearest the top.  Click on the issue name to go to the issue page. The date indicates the last time there was activity for this issue. See also the <a href="https://github.com/w3c/i18n-activity/issues">issues list on Github</a>. (For issues related to Internationalization Activity documents and discussions, see the links in the side column.)</p>
   <p id="total">Loading data...</p>
 </section>
 <section id="rawdata">
 </section>
+
+<p><button onclick="dumpList();">Make list</button></p>
+<p id="dumparea" style="display:none;"><textarea  style="width: 100%; height: 80px;" id="dumpfield"></textarea></p>
 
 <script>
 			var totals=0
@@ -288,6 +292,29 @@ var maxpages = 2
 				out += ' '+date.getDate()+', '+date.getFullYear()
 				return out
 				}
+				
+				function dumpList () {
+					// writes a list of issues to the textarea at the bottom of the page
+					var sections = document.querySelectorAll('section')
+					console.log(sections.length)
+					var out = ''
+					
+					for (s=3;s<sections.length;s++) {
+						if (sections[s].querySelector('h2') === null) continue
+						var h2 = sections[s].querySelector('h2').textContent
+						var issues = sections[s].querySelectorAll('a')
+						
+						out += h2+"\n"
+						for (var i=1;i<issues.length;i++) {
+							out += '• ' + issues[i].textContent+'\n'
+							}
+						out += '\n\n'
+						}
+					
+					document.getElementById('dumparea').style.display = 'block'
+					document.getElementById('dumpfield').value = out
+					document.getElementById('dumpfield').select()
+					}
 </script>
 <script>window.onload = getAllData()</script>
 
