@@ -122,6 +122,7 @@ var maxpages = 2
     <li><span style="padding: 0 .5em;background-color: #ccc;"> </span> &nbsp; Track</li>
     <li><span style="padding: 0 .5em;background-color: #fbca04;"> </span> &nbsp; Waiting</li>
     <li><span style="padding: 0 .5em;background-color: #009800;"> </span> &nbsp; Close?</li>
+    <li><span style="padding: 0 .5em;background-color: #1D76DB;"> </span> &nbsp; Deferred?</li>
   </ul>
 </section>
 <section>
@@ -241,7 +242,7 @@ var maxpages = 2
 					td = document.createElement('td')
 					// find labels
 					for (var j=0;j<issueData.labels.length;j++) {
-						if (issueData.labels[j].name == 'pending' || issueData.labels[j].name == 'track' || issueData.labels[j].name == 'close?' || issueData.labels[j].name == 'waiting') {
+						if (issueData.labels[j].name == 'pending' || issueData.labels[j].name == 'track' || issueData.labels[j].name == 'close?' || issueData.labels[j].name == 'waiting' || issueData.labels[j].name == 'deferred') {
 							span = document.createElement('span')
 							span.setAttribute('style', 'background-color:#'+issueData.labels[j].color)
 							span.title = issueData.labels[j].name
@@ -308,7 +309,7 @@ var maxpages = 2
 						
 						out += h2+"\n"
 						for (var i=1;i<issues.length;i++) {
-							out += '• ' + issues[i].textContent+'\n'
+							out += '• ' + issues[i].textContent+'\n  '+issues[i].href+'\n\n'
 							}
 						out += '\n\n'
 						}
