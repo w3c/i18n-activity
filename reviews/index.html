@@ -184,13 +184,15 @@ var maxpages = 2
 				dates = {}
 				var instance = 0 // this is used to distinguish issues with the same updated_at timestamp
 				for (label in labels) {
-					// find the newest date
-					var newest = labels[label][0]['updated_at']
-					for (x=0;x<labels[label].length;x++) {
-						if (labels[label][x]['updated_at'] > newest) newest = labels[label][x]['updated_at']
+					if (labels[label].length > 0) {
+						// find the newest date
+						var newest = labels[label][0]['updated_at']
+						for (x=0;x<labels[label].length;x++) {
+							if (labels[label][x]['updated_at'] > newest) newest = labels[label][x]['updated_at']
+							}
+						dates[newest+instance] = label
+						instance++
 						}
-					dates[newest+instance] = label
-					instance++
 					}
 				var keys = Object.keys(dates)
 				keys.sort().reverse()
