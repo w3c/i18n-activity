@@ -15,12 +15,12 @@ f.previousauthors = ''; // as above
 f.modifiers = ''; // people making substantive changes, and their affiliation
 f.searchString = 'reviews-openissues'; // blog search string - usually the filename without extensions
 f.firstPubDate = '2106-03-16'; // date of the first publication of the document (after review)
-f.lastSubstUpdate = { date:'2106-03-17', time:'04:18'}  // date and time of latest substantive changes to this document
+f.lastSubstUpdate = { date:'2106-07-15', time:'07:18'}  // date and time of latest substantive changes to this document
 f.status = 'notreviewed';  // should be one of draft, review, published, notreviewed or obsolete
 f.path = 'https://w3c.github.io/i18n-drafts/' // what you need to prepend to a URL to get to the /International directory 
 
 // AUTHORS AND TRANSLATORS should fill in these assignments:
-f.thisVersion = { date:'2106-03-16', time:'07:32'} // date and time of latest edits to this document/translation
+f.thisVersion = { date:'2106-07-15', time:'07:18'} // date and time of latest edits to this document/translation
 f.contributors = ''; // people providing useful contributions or feedback during review or at other times
 // also make sure that the lang attribute on the html tag is correct!
 
@@ -124,7 +124,7 @@ var maxpages = 2
     <li><span style="padding: 0 .5em;background-color: #ccc;"> </span> &nbsp; Track</li>
     <li><span style="padding: 0 .5em;background-color: #fbca04;"> </span> &nbsp; Waiting</li>
     <li><span style="padding: 0 .5em;background-color: #009800;"> </span> &nbsp; Close?</li>
-    <li><span style="padding: 0 .5em;background-color: #1D76DB;"> </span> &nbsp; Deferred?</li>
+    <li><span style="padding: 0 .5em;background-color: #1D76DB;"> </span> &nbsp; Deferred</li>
   </ul>
 </section>
 <section>
@@ -134,7 +134,7 @@ var maxpages = 2
 <section id="rawdata">
 </section>
 
-<p><button onclick="dumpList();">Make list</button></p>
+<p><button onclick="dumpList();">Make list</button> <button onclick="dumpByLabel('pending');">List pending</button> <button onclick="dumpByLabel('close?');">List close</button></p>
 <p id="dumparea" style="display:none;"><textarea  style="width: 100%; height: 80px;" id="dumpfield"></textarea></p>
 
 <script>
@@ -314,6 +314,47 @@ var maxpages = 2
 						out += h2+"\n"
 						for (var i=1;i<issues.length;i++) {
 							out += '• ' + issues[i].textContent+'\n  '+issues[i].href+'\n\n'
+							}
+						out += '\n\n'
+						}
+					
+					document.getElementById('dumparea').style.display = 'block'
+					document.getElementById('dumpfield').value = out
+					document.getElementById('dumpfield').select()
+					}
+				
+				function dumpByLabel (label) {
+					// writes a list of pending issues to the textarea at the bottom of the page
+					// label: either 'pending' or 'closed'
+					var sections = document.querySelectorAll('section')
+					console.log(sections.length)
+					var out = ''
+					
+					for (s=3;s<sections.length;s++) {
+						if (sections[s].querySelector('h2') === null) continue
+						
+						var h2 = sections[s].querySelector('h2').textContent
+						var issues = sections[s].querySelectorAll('td')
+						
+						// if this section doesn't contain pending items move on
+						var labelFound = false
+						var spans = sections[s].querySelectorAll('span')
+						for (k=0;k<spans.length;k++) {
+							if (spans[k].title === label) {
+									labelFound = true
+									}
+							}
+						if (! labelFound) continue
+						
+						out += h2+"\n"
+						for (var i=1;i<issues.length;i++) {
+							var spans = issues[i].querySelectorAll('span')
+							for (j=0;j<spans.length;j++) {
+								if (spans[j].title === label) {
+									var a = issues[i].querySelector('a')
+									out += '• ' + a.textContent+'\n  '+a.href+'\n\n'
+									}
+								}
 							}
 						out += '\n\n'
 						}
