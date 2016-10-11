@@ -1,0 +1,433 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Github basics for i18n documents</title>
+<link rel="stylesheet" type="text/css" href="https://www.w3.org/International/style/article-display-2016.css" />
+<style type="text/css">
+h2 {
+	font-family: Arial, helvetica, sans-serif;
+	font-size: 140%;
+	font-weight: normal;
+	color: white;
+	border: none;
+	margin-top: 3.5em;
+	margin-bottom: 1.5em;
+	padding: 0.1em 0.4em;
+	background-color: #697fb1;
+	border-radius: 10px;
+	}
+h2 a:link, h2 a:active, h2 a:visited {
+	text-decoration: none;
+	color: white;
+	}
+h3 {
+	border-bottom: 1px solid #ccc;
+	}
+.highlight {
+	font-size: 130%;
+	color: #6A6A6A;
+	font-weight: bold;
+	}
+code em {
+	font-style: normal;
+	font-weight: bold;
+	}
+var {
+	font-style: italic;
+	}
+.issue {
+	font-size: 200%;
+	color: red;
+	}
+ol ol { margin-right: 20px; margin-left: 30px;  }
+.ghButton {
+	border: 1px solid #aaa;
+	border-radius: 5px;
+	padding: 0 0.4em;
+	white-space: nowrap;
+	}
+table { 
+	border: 0;
+	width: 90%;
+	}
+table td {
+	text-align: left;
+	padding: 0.5em 1em;
+	}
+</style>
+<script type="text/javascript" src="https://www.w3.org/International/javascript/articletoc-html5.js"></script>
+</head>
+
+<body>
+<header> <aside id="mainNavigation">
+	<nav id="site-navigation">
+		<a href="https://www.w3.org/International/"><img id="picture" alt="World map" title="World map" src="https:/www.w3.org/International/icons/world.gif" width="150" height="61"/></a>  </nav>
+	
+	<nav class="noprint" id="search"><form method="get" action="https://www.w3.org/International/site-search.php" enctype="application/x-www-form-urlencoded" style="margin: 0;">
+<div id="searchSite"><input name="q" type="text" value="I18n site search: " onfocus="this.value=''" id="searchField" accesskey="E" maxlength="255"/></div>
+</form></nav>
+	<nav id="breadcrumbs"><p><a href="https://www.w3.org/International/">Home </a> &gt; <a href="https://www.w3.org/International/resources">Resources</a> &gt; <a href="https://www.w3.org/International/articlelist#characters">Articles</a></p></nav>
+	<nav class="noprint" id="toc">
+		<h2 id="internal-links" class="notoc"><a href="#internal-links">On this page</a></h2>
+		<div id="toclocation"> </div>
+  </nav>
+	<nav class="noprint" id="relatedlinks">
+		
+  </nav>
+</aside>
+<nav id="boilerplate"><div id="siteicons"><a href="https://www.w3.org/" title="Go to W3C Home Page"><img src="https:/www.w3.org/International/icons/w3c_home.gif" alt="s_gotoW3cHome"/></a><a href="https://www.w3.org/International/" title="Go to Internationalization Activity Home Page" id="i18n-name">
+	Internationalization</a></div>
+<div id="sitelinks" class="noprint"><a href="https://www.w3.org/International/" title="Internationalization Activity home page.">Home</a>&#xA0; 
+<a href="https://www.w3.org/International/resources" title="Information resources on the Internationalization site.">Resources</a>&#xA0;
+<a href="https://www.w3.org/International/technique-index" title="Task-based index of i18n techniques.">Techniques</a>&#xA0;
+<a href="https://www.w3.org/International/resource-index" title="Topic index for information on this site.">Topics</a>&#xA0; 
+<a href="https://www.w3.org/International/log/description" title="Information about news filters and RSS feeds for W3C Internationalization.">News</a>&#xA0;
+<a href="https://www.w3.org/International/about#scope" title="Groups that make up the Internationalization Activity.">Groups</a>&#xA0; 
+<a href="https://www.w3.org/International/about" title="About the Internationalization Activity.">About</a>&#xA0; 
+&#xA0; </div><div id="line">&#xA0;</div></nav>
+<h1>Editorial guidelines for working with i18n documents</h1>
+</header>
+<section>
+  <p>The W3C Internationalization Activity uses github for document development. This page provides guidelines to help people contribute content that matches the standard styling and keeps the documents in a state that keeps the publication process straightforward.</p>
+  <p>If you have comments or suggestions about how to improve this page, feel free to <a href="https://github.com/w3c/i18n-activity/issues">raise a Github issue</a>.</p>
+  <p>See also the <a href="github">guidelines for working with github</a>.</p>
+</section>
+<section id="localcss">
+  <h2><a href="#localcss">General principles for editing HTML</a></h2>
+  <p>You should always bear in mind the following when creating content:</p>
+  <ul>
+    <li>HTML pages much always be valid!  Use the <a href="https://validator.w3.org/">W3C validator</a>.</li>
+    <li>Use HTML5 markup.</li>
+    <li>HTML pages must always use the UTF-8 character encoding, and this encoding should be declared at the top of the file.</li>
+    <li>HTML pages must also always declare the language of the document as a whole using a <code class="kw" translate="no">lang</code> attribute in the <code class="kw" translate="no">html</code> tag. A range of text in another language inside the document should be tagged for language too, using the <code class="kw" translate="no">lang</code> attribute.</li>
+    <li>When using bidirectional script content, always wrap all opposite-direction phrases in markup using a <code class="kw" translate="no">dir</code> attribute.</li>
+  </ul>
+  <p>We recommend adding the standard i18n CSS rules in a file called <code class="kw" translate="no">local.css</code>. These rules can be <a href="#localcss">found  below</a>.</p>
+  <p><strong>Important: </strong>Only make minimal changes to the source code. If you commit an update that has lots of formatting changes in the source code, it obscures the actual substantive changes in the github diff. You must use an editor that doesn't automatically re-layout the source text each time you make changes. If you do want to tidy the source text, do so as a separate commit, with no substantive changes applied, and describe the commit so that people are aware that it is just a source tidy.</p>
+  <!--p>Editors should also be aware of the information in the <a href="https://www.w3.org/International/docs/styleguide">style guide</a>.</p-->
+</section>
+
+
+<section id="othermarkup">
+  <h2><a href="#othermarkup">General markup guidelines</a></h2>
+  
+  <section id="figures">
+  <h3><a href="#figures">Figures</a></h3>
+  <p>Put pictures, tables, examples, and the like in <code class="kw" translate="no">figure</code> markup. Use the <code class="kw" translate="no">figcaption</code> element when you want a caption. (Caption use is encouraged.)</p>
+  <p>To refer to a <code class="kw" translate="no">figure</code> from the text, just use an empty <code class="kw" translate="no">a</code> element, with <code class="kw" translate="no">href</code> pointing to the <code class="kw" translate="no">id</code> of the <code class="kw" translate="no">figure</code> element, eg. <code>&lt;a href=&quot;#figure_id&quot;&gt;&lt;/a&gt;</code>. Respec will automatically add the figure number to the link text  when the page is displayed.</p>
+  </section>
+<section id="notes">
+  <h3><a href="#notes">Notes</a></h3>
+  <p>To create a block-type note add <code>class="note"</code> to the paragraph if a single para note, or use a <code>div class="note"</code> around the note if it contains multiple paras or blocks.</p>
+  <p>For editor's notes, put <code>class="issue"</code> on a <code class="kw" translate="no">p</code>, <code class="kw" translate="no">div</code> or <code class="kw" translate="no">span</code> around the text you want to be the editor's note.</p>
+</section>
+<section id="headings">
+  <h3><a href="#headings">Headings</a></h3>
+  <p>Do not supply numbering for section headings. These will be provided automatically by respec.</p>
+  <p>An <code class="kw" translate="no">h1</code>..<code class="kw" translate="no">h6</code> element should be used for headings, and should always be a direct child of  a <code class="kw" translate="no">section</code> element. The <code class="kw" translate="no">section</code> element should have an <code class="kw" translate="no">id</code>. </p>
+  <p>Surround the text of the   heading with a link to the <code class="kw" translate="no">id</code> in the <code class="kw" translate="no">section</code> tag, to make it easier to find the id.</p>
+  <pre id="line1">&lt;section id="mylinkid"&gt;
+&lt;h3&gt;&lt;a href="#mylinkid"&gt;My header text&lt;/a&gt;&lt;/h3&gt;
+...
+&lt;/section&gt;</pre>
+  <p>The current&nbsp;styling for TR documents makes it often difficult to quickly find section headings. Use the <a href="#css">styling suggested below</a> in your local.css file in order to open up the space between sections.</p>
+  <p>To refer to a section from the text, just use an empty <code class="kw" translate="no">a</code> element, with <code class="kw" translate="no">href</code> pointing to the <code class="kw" translate="no">id</code> of the <code class="kw" translate="no">section</code> element, eg. <code>&lt;a href=&quot;#section_id&quot;&gt;&lt;/a&gt;</code>. Respec will automatically  add the section number and heading to the link text  when the page is displayed.</p>
+</section>
+
+<!--div class="section"> 
+		<h3><a name="graphics" id="graphics">Graphics, tables and figures</a></h3> 
+		<p>The implementation of graphics deviates slightly from XMLSpec standard usage. A <code>figure</code> element has also been provided.</p> 
+		<p>All tables and all non-inline pictures should be enclosed in a <code>figure</code> element <em>after</em> the preceding paragraph. </p> 
+		<p>In the generated XHTML, figures can have a caption. If, and only if, a caption is supplied, it will start with "Figure X: " in the XTHML,
+		  where X is the sequential number of the figure in the document. The text "Figure X: " is generated by the XSLT, and you must not add that to the XML.
+		  The use of captions is encouraged.</p> 
+		<p>You should always provide a value for the id attribute, on the <span class="kw">example</span> element (not the head). (See
+		  <a href="#example-ref">how to refer to figures</a> from the text.)</p> 
+		<p>All graphic images included in the text, whether in a figure or within a paragraph, should be created with an <code>image</code> element.
+		  The <span>graphic</span> element that comes with xmlspec must not be used. The <code>image</code> element has two children, <code>img</code> and
+		  <code>alt</code>. <code>img</code> has attributes <code>width</code> and <code>height</code> and you are encouraged to use them; <code>img</code> has
+		  no <code>alt</code> attribute, since an <code>alt</code> <em>element</em> is provided as a child of <code>image</code>. This approach assists
+		  translators, but also allows the alt text to be marked up (eg. with bidi or language information, or <code>ins</code> or <code>del</code> tags). You
+		  should always provide alt text.</p> 
+		<p>All graphics files should be stored in the <code>images</code> directory (eg. the <code>source</code> attribute would point to
+		  <code>images/graphicName.gif</code>).</p> 
+		<p>Note that alt text should describe the picture so that someone unable to see it can derive the same conclusions as someone who can. This
+		  generally means describing the point being made by the picture rather than the visual elements.</p></div-->
+
+<section id="leadin">
+  <h3><a href="#leadin">Run-in headings</a></h3>
+  <p>Sometimes it's not necessary to create a new section and heading, 
+    but you may want to highlight a word or sentence at the start of a 
+    series of paragraphs. To do this, use the following markup.</p>
+  <pre>&lt;span class="leadin"&gt;highlighted text goes here&lt;/span&gt; Rest of paragraph follows...</pre>
+</section>
+<section id="abbrevs">
+  <h3><a href="#abbrevs">Abbreviations and acronyms</a></h3>
+  <p>Use the <span class="kw"><code class="kw" translate="no">abbr</code></span> element for both of these. Spell out the full form in the <span class="kw"><code class="kw" translate="no">title</code></span> attribute.</p>
+</section>
+<section id="lists">
+  <h3><a href="#lists">Lists</a></h3>
+  <p>A colon should be used for a sentence that leads into the list.</p>
+  <p>If a list is expressed as a single sentence each list item should 
+    begin with a lower case letter and end with a comma or ", and".&nbsp; 
+    The
+    last list item should end with a full stop.</p>
+  <p>Example:</p>
+  <div class="example">
+  <p>Every W3C specification <span class="rfc2119">MUST</span>:</p>
+  <ol>
+    <li>conform to the requirements applicable to specifications, </li>
+    <li>specify that implementations MUST conform to the requirements applicable to software, and </li>
+    <li>specify that content created according to that specification MUST conform to the requirements applicable to content.</li>
+  </ol>
+  </div>
+  <p>Otherwise, each list element should begin with an uppercase letter and end with a full stop.</p>
+  
+  <p>Example</p>
+  <div class="example">
+  <p>Some aspects of Unicode that require additional specification for the Web include:</p>
+  <ul>
+    <li>Choice of encoding forms (UTF-8, UTF-16, UTF-32). </li>
+    <li>Counting characters, measuring string length in the presence of variable-length encodings and combining characters). </li>
+    <li>Duplicate encodings (e.g. precomposed vs decomposed). </li>
+    <li>Use of control codes for various purposes (e.g. bidirectionality control, symmetric swapping, etc.).</li>
+  </ul>
+  </div>
+</section>
+<section id="changes">
+  <h3><a href="#changes">Change markup</a></h3>
+  <p>To show changes to the text use <code class="kw" translate="no">ins</code> and <code class="kw" translate="no">del</code>. However, remember that if you do commits carefully, such markup is not needed. People will be able to see the changes by looking at the diff for the commit on the Github site.</p>
+</section>
+</section>
+
+
+
+<section id="inline">
+  <h2><a href="#inline">Marking up inline content</a></h2>
+  <p>The following table suggests conventions for marking up inline 
+    content. The presentation column applies to the
+    English version. Any translated version may change the presentation 
+    (eg. a Japanese version may substitute underlining for bold).</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Type of in-line content</th>
+        <th>Example</th>
+        <th>Markup to use</th>
+      </tr>
+      <tr>
+        <td valign="top">emphasis (general)</td>
+        <td valign="top">In keyboard input it is <em>not</em> always the case that...</td>
+        <td valign="top">em</td>
+      </tr>
+      <tr>
+        <td valign="top">emphasis (stronger)</td>
+        <td valign="top">you must <strong>absolutely not</strong> do that!</td>
+        <td valign="top">strong</td>
+      </tr>
+      <tr>
+        <td valign="top">new term introduction</td>
+        <td valign="top">The set of characters is called a <dfn>repertoire</dfn>.</td>
+        <td valign="top">dfn id="def_&lt;termName&gt;" title="&lt;termName&gt;"</td>
+      </tr>
+      <tr>
+        <td valign="top">reference to a term definition</td>
+        <td valign="top">The <a class="termref" href="#def_repertoire">repertoire</a> of UTF-8 includes all characters you're likely to need.</td>
+        <td valign="top">a class="termref" href="#def_&lt;termName&gt;"</td>
+      </tr>
+      <tr>
+        <td valign="top">document title</td>
+        <td valign="top">see <cite>Requirements for String Identity Matching</cite>.</td>
+        <td valign="top">cite</td>
+      </tr>
+      <tr>
+        <td valign="top">quoted term</td>
+        <td valign="top">The word <span class="qterm">character</span> is used in many contexts.</td>
+        <td valign="top">span class="qterm"</td>
+      </tr>
+      <tr>
+        <td valign="top">quoted term / phrase expressing dubious usage</td>
+        <td valign="top">ie. numeric <span class="quote">positions</span> within a string</td>
+        <td valign="top">span class="quote"</td>
+      </tr>
+      <tr>
+        <td valign="top">quoted text</td>
+        <td valign="top">such as <q>...as it may from time to time be revised or amended.</q></td>
+        <td valign="top">q</td>
+      </tr>
+      <tr>
+        <td valign="top">quoted character (refers to typically one, but occasionally more, specific characters).</td>
+        <td valign="top">The character <span class="qchar">ç</span> is common in French.</td>
+        <td valign="top">span class="qchar"</td>
+      </tr>
+      <tr>
+        <td valign="top">quoted sample output (cf. HTML SAMP)</td>
+        <td valign="top">The string <samp>artículo</samp> is subject to different representations</td>
+        <td valign="top">samp</td>
+      </tr>
+      <tr>
+        <td valign="top">quoted code</td>
+        <td valign="top"><code>suc&amp;#xE7;on</code></td>
+        <td valign="top">code translate="no"</td>
+      </tr>
+      <tr>
+        <td valign="top">quoted keyboard input (cf. HTML KBD)</td>
+        <td valign="top">a user typing <kbd>çé</kbd> on a traditional French-Canadian keyboard</td>
+        <td valign="top">kbd</td>
+      </tr>
+      <tr>
+        <td valign="top">element name</td>
+        <td valign="top">a user agent that looks for <code class="name">artículo</code> elements</td>
+        <td valign="top">span class="el" translate="no"</td>
+      </tr>
+      <tr>
+        <td valign="top">attribute name or value</td>
+        <td valign="top">the <code class="kw" translate="no">section</code> element</td>
+        <td valign="top">code class="kw" translate="no"</td>
+      </tr>
+      <tr>
+        <td valign="top">function name</td>
+        <td valign="top">The <code class="kw" translate="no">doit</code> function returns interesting results.</td>
+        <td valign="top">code class="kw" translate="no"</td>
+      </tr>
+      <tr>
+        <td valign="top">key word in a markup or programming language</td>
+        <td valign="top">the IANA <code class="kw" translate="no">charset</code> value</td>
+        <td valign="top">code class="kw" translate="no"</td>
+      </tr>
+      <tr>
+        <td valign="top">variable name</td>
+        <td valign="top"></td>
+        <td valign="top">var</td>
+      </tr>
+      <tr>
+        <td valign="top">conformance related word based on rfc2119</td>
+        <td valign="top">All references to Unicode <span class="rfc2119">MUST</span> refer to...</td>
+        <td valign="top">span class="rfc2119"</td>
+      </tr>
+      <tr>
+        <td valign="top">acronyms &amp; abbreviations</td>
+        <td valign="top">More and more <abbr title="Application Programming Interface">API</abbr>s are defined,</td>
+        <td valign="top"> abbr title="..."</td>
+      </tr>
+      <tr>
+        <td valign="top">Unicode name</td>
+        <td valign="top">Use <span class="uname">U+0338 COMBINING LONG SOLIDUS OVERLAY</span> for that.</td>
+        <td valign="top">span class="uname"</td>
+      </tr>
+      <tr>
+        <td valign="top">an URL that doesn't have a link on it</td>
+        <td valign="top">https:/github.com/w3c/repoName/</td>
+        <td valign="top">&lt;span class=&quot;url&quot;&gt;https:/github.com/w3c/repoName/&lt;/span&gt;</td>
+      </tr>
+    </tbody>
+  </table>
+  <p>If you use <code class="kw" translate="no">b</code> or <code class="kw" translate="no">i</code> tags, use a class name with them, so that  semantically different 
+    usages can be styled differently (esp. for documents with 
+    translations!).</p>
+</section>
+
+
+<section id="localcss">
+  <h2><a href="#localcss">Suggested styling for local.css</a></h2>
+  <p>The following styles can be used as the base for the <code class="kw" translate="no">local.css</code> file. They contain style rules for the approaches mentioned in this styleguide.</p>
+  <pre>h2 {
+	margin-top: 3em;
+	margin-bottom: 0em;
+	}
+.head h2, #abstract h2, #sotd h2 {
+	margin-top: 0;
+	}
+h3 {
+	margin-top: 3em;
+	}
+h4  { 
+	font-size: 100%; 
+    font-weight: normal; 
+    color: #005a9c; 
+    margin-top: 2em;  
+    }
+.leadin {
+	font-weight: bold;
+	}
+
+ins { 
+	background-color: #99FF99; 
+	text-decoration: none; 
+	}
+del { 
+	display: inline; 
+	color: silver; 
+	}
+
+figure { 
+	margin-bottom: 2em; 
+	text-align: center;
+	}
+figcaption {
+	 text-align: center;
+	margin: 0.5em 2em;
+	font-style: italic;
+	font-size: 90%;
+	}
+.figno:after {
+	content: ':\00A0  ';
+}
+
+a.termref:link {
+	color:#C60;
+	text-decoration:none;
+	border-bottom: 1px dotted #FC0; 
+	}
+a.termref:hover {
+	color:#C60;
+	text-decoration:none;
+	border-bottom: 1px dotted #FC0; 
+	}
+a.termref:visited {
+	color:#C60;
+	text-decoration:none;
+	border-bottom: 1px dotted #FC0; 
+	}
+a.termref:active {
+	color:#C60;
+	text-decoration:none;
+	border-bottom: 1px dotted #FC0; 
+	}
+
+.qterm:before, .qchar:before { content: "'"; }
+.qterm:after, .qchar:after { content: "'"; }
+.quote:before { content: '"'; }
+.quote:after { content: '"'; }
+code { 
+	color: #A52A2A; 
+    font-family: Consolas, "Andale Mono", "Lucida Console", "Lucida Sans Typewriter", Monaco, "Courier New", monospace; 
+    font-size: 100%; 
+    }
+samp, kbd { 
+	font-family: Consolas, "Andale Mono", "Lucida Console", "Lucida Sans Typewriter", Monaco, "Courier New", monospace; 
+    font-size: 100%; 
+    }
+.uname {
+	text-transform: uppercase;
+	font-size: 85%;
+	letter-spacing:0.03em;
+	}
+</pre>
+</section>
+
+<footer>
+	<address> 
+		<p>By: Richard Ishida, W3C.   </p>
+  </address>
+	
+	<small id='version'>Content first published <time datetime='2015-12-16T07:50Z'>2015-12-16 07:50</time>. Last substantive update <time datetime='2010-09-08T20:47Z'>2010-09-08 20:47 GMT</time>. This version <time datetime='2015-04-16T16:33Z'>2015-04-16 16:33 GMT</time></small>
+	<!--small>For the history of document changes, search for
+<span class="searchkey"><a href="https://www.w3.org/blog/International/tag/qa-what-is-encoding/">qa-what-is-encoding</a></span>
+in the i18n blog.</small-->
+	<small class='copyright' lang='en' xml:lang='en' ><a rel='Copyright' href='/Consortium/Legal/ipr-notice#Copyright' id='copyright'>Copyright</a> © 2008-2015 <a href='/'><abbr title='World Wide Web Consortium'>W3C</abbr></a><sup>®</sup> (<a href='http://www.csail.mit.edu/'><abbr title='Massachusetts Institute of Technology'>MIT</abbr></a>, <a href='http://www.ercim.eu/'><abbr title='European Research Consortium for Informatics and Mathematics'>ERCIM</abbr></a>, <a href='http://www.keio.ac.jp/'>Keio</a>, <a href='http://ev.buaa.edu.cn/'>Beihang</a>), All Rights Reserved. W3C <a href='/Consortium/Legal/ipr-notice#Legal_Disclaimer'>liability</a>, <a href='/Consortium/Legal/ipr-notice#W3C_Trademarks'>trademark</a>, <a rel='Copyright' href='/Consortium/Legal/copyright-documents'>document use</a> and <a rel='Copyright' href='/Consortium/Legal/copyright-software'>software licensing</a> rules apply. Your interactions with this site are in accordance with our <a href='/Consortium/Legal/privacy-statement#Public'>public</a> and <a href='/Consortium/Legal/privacy-statement#Members'>Member</a> privacy statements.</small>
+</footer>
+<script type="text/javascript">if (document.getElementById('toclocation')) { createtoc(); }</script></body>
+</body>
+</html>
