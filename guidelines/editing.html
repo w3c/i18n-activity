@@ -97,11 +97,12 @@ table td {
   <h2><a href="#localcss">General principles for editing HTML</a></h2>
   <p>You should always bear in mind the following when creating content:</p>
   <ul>
-    <li>HTML pages much always be valid!  Use the <a href="https://validator.w3.org/">W3C validator</a>.</li>
-    <li>Use HTML5 markup.</li>
-    <li>HTML pages must always use the UTF-8 character encoding, and this encoding should be declared at the top of the file.</li>
-    <li>HTML pages must also always declare the language of the document as a whole using a <code class="kw" translate="no">lang</code> attribute in the <code class="kw" translate="no">html</code> tag. A range of text in another language inside the document should be tagged for language too, using the <code class="kw" translate="no">lang</code> attribute.</li>
-    <li>When using bidirectional script content, always wrap all opposite-direction phrases in markup using a <code class="kw" translate="no">dir</code> attribute.</li>
+    <li>HTML pages much <strong>always be valid</strong>!  Use the <a href="https://validator.w3.org/">W3C validator</a>.</li>
+    <li><strong>Use HTML5</strong> markup.</li>
+    <li>HTML pages must always <strong>use the UTF-8 character encoding</strong>, and this encoding should be declared at the top of the file.</li>
+    <li>HTML pages must also always <strong>declare the language</strong> of the document as a whole using a <code class="kw" translate="no">lang</code> attribute in the <code class="kw" translate="no">html</code> tag. A range of text in another language inside the document should be tagged for language too, using the <code class="kw" translate="no">lang</code> attribute.</li>
+    <li>When using bidirectional script content, always <strong>wrap all opposite-direction phrases</strong> in markup using a <code class="kw" translate="no">dir</code> attribute.</li>
+    <li>When committing changes, <strong>use clear and simple descriptions of changes</strong>. It should be possible to use the commit list as a change log for the document, so think in these terms when wording the initial line of your commit.</li>
   </ul>
   <p>We recommend adding the standard i18n CSS rules in a file called <code class="kw" translate="no">local.css</code>. These rules can be <a href="#localcss">found  below</a>.</p>
   <p><strong>Important: </strong>Only make minimal changes to the source code. If you commit an update that has lots of formatting changes in the source code, it obscures the actual substantive changes in the github diff. You must use an editor that doesn't automatically re-layout the source text each time you make changes. If you do want to tidy the source text, do so as a separate commit, with no substantive changes applied, and describe the commit so that people are aware that it is just a source tidy.</p>
