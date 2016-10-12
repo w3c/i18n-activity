@@ -502,8 +502,9 @@ upstream    https://github.com/w3c/<em>repoName</em>.git (push)</pre>
       <li>Check that all links work using the W3C <a href="https://validator.w3.org/checklink">Link Checker</a>.</li>
       <li> Run a spell checker over the document.      </li>
       <li>Update the config file for the document so that it lists all images and other dependant files.</li>
-      <li>Run the document through the Pubrules checker and fix anything that's needed. Since the pubrules checker doesn't work on raw respec files, you need to run the checker against the following:<br>
+      <li>Run the document through the <a href="https://labs.w3.org/pubrules/">Pubrules checker</a> and fix anything that's needed. Since the pubrules checker doesn't work on raw respec files, you need to run the checker against the following:<br>
       <code>https://labs.w3.org/spec-generator/?type=respec&amp;url=https://w3c.github.io/<span style="color: orange">linkToYourSpec</span>/?specStatus=WD;shortName=<span style="color:orange">theShortName</span></code></li>
+      <li>Edit the Javascript assignments at the top of the file, updating <code class="kw" translate="no">publishDate</code>, <code class="kw" translate="no">previouspublishDate</code> and, if needed, <code class="kw" translate="no">previousMaturity</code>.</li>
       <li>Open a terminal window and run the following Curl statement:<br>
       <code>curl 'https://labs.w3.org/echidna/api/request' --data 'url=<span style="color:orange">echidnaConfigURL</span>&amp;decision=<span style="color:orange">decisionUrlOnMailingList</span>&amp;token=<span style="color:orange">documentToken'</span></code>      </li>
       <li>Go  to the <a href="https://lists.w3.org/Archives/Public/public-tr-notifications/">TR-Notification list</a> to check whether the document was successfully published.</li>
