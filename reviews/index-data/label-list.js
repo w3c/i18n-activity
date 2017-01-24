@@ -36,6 +36,7 @@ var labels = {
 	'payment-request':[],
 	'presentation-api':[],
 	'pubsub':[],
+	'remote-playback':[],
 	'service_worker':[],
 	'svg':[],
 	'tracking-compliance':[],
