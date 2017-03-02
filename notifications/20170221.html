@@ -7,6 +7,7 @@ h4 { margin-bottom:0; margin-top: 2em; font-size: 1.4em; }
 a { color: #e6ad49; text-decoration: none; }
 li { margin-bottom: .2em; }
 textarea { float: right; }
+.new { color: red; }
 </style>
 <script>
 function escapeHTML(text) {
@@ -46,7 +47,10 @@ function process (text) {
 			}
 		else {
 			if (inListItem) out += lines[i]
-			else out += lines[i]+'<br/>'
+			else {
+				if (lines[i].match(/issues created:/)) out += '<span class="new">'+lines[i]+'</span><br/>'
+				else out += lines[i]+'<br/>'
+				}
 			}
 		}
 	document.getElementById('out').innerHTML = out
