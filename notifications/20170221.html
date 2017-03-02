@@ -1,0 +1,241 @@
+<html><head>
+<meta charset="utf-8">
+<title>Untitled Document</title>
+<style>
+body { font-family: Gotham, "Helvetica Neue", Helvetica, Arial, sans-serif; font-size: .75em; }
+h4 { margin-bottom:0; margin-top: 2em; font-size: 1.4em; }
+a { color: #e6ad49; text-decoration: none; }
+li { margin-bottom: .2em; }
+textarea { float: right; }
+</style>
+<script>
+function escapeHTML(text) {
+	var map = {
+		'&': '&amp;',
+		'<': '&lt;',
+		'>': '&gt;',
+		'"': '&quot;',
+		"'": '&#039;'
+		}
+	return text.replace(/[&<>"']/g, function(m) { return map[m]; })
+	}
+
+function process (text) {
+	text = escapeHTML(text)
+	text.replace(/[a-zA-z0-9\?\!] https:\/\/github/, '$1\n    https://github')
+	var lines = text.split('\n')
+	var inList = false
+	var inListItem = false
+	var out = ''
+	for (var i=0;i<lines.length;i++) {
+		if (lines[i].match(/^\* w3c\//)) out += '<h4>'+lines[i].replace(/^\* w3c\//,'')+'</h4>'
+		else if (lines[i].match(/^  - /)) { 
+			if (! inList) out += '<ul>'
+			out += '<li>'+lines[i].replace(/^  - /,'')
+			inListItem = true 
+			inList = true
+			}
+		else if (lines[i].match(/^    http/)) {
+			out += '<br/><a target="_blank" href="'+lines[i].trim()+'">'+lines[i].trim()+'</a></li>'
+			inListItem = false
+			}
+		else if (lines[i].trim() == '') {
+			if (inList) out += '</ul>'
+			inList = false
+			inListItem = false
+			}
+		else {
+			if (inListItem) out += lines[i]
+			else out += lines[i]+'<br/>'
+			}
+		}
+	document.getElementById('out').innerHTML = out
+	}
+
+</script>
+</head>
+
+<body onload="process(document.getElementById('in').textContent)">
+<pre id="in" placeholder="Drop the raw text here." style="display:none;">
+* w3c/html (+0/-0/💬1)
+  1 issues received 1 new comments:
+  - #314 Default styling for q element (1 by chaals)
+    https://github.com/w3c/html/issues/314
+
+* w3c/csswg-drafts (+1/-0/💬13)
+  1 issues created:
+  - [css-ruby-1] The default ruby-position for vertical-lr text may 
+not be over  (by r12a)
+    https://github.com/w3c/csswg-drafts/issues/1042
+
+  3 issues received 13 new comments:
+  - #962 [css-text-decor] A new property for text decorations to skip 
+ink (8 by frivoal, kojiishi)
+    https://github.com/w3c/csswg-drafts/issues/962
+  - #727 [css-text-decor] Add auto value for text-decoration-skip: (4 
+by frivoal, behnam, kojiishi)
+    https://github.com/w3c/csswg-drafts/issues/727
+  - #1042 [css-ruby-1] The default ruby-position for vertical-lr text 
+may not be over  (1 by kojiishi)
+    https://github.com/w3c/csswg-drafts/issues/1042
+
+* w3c/ttml2 (+21/-0/💬2)
+  21 issues created:
+  - No mention of isolation for directional controls (by r12a)
+    https://github.com/w3c/ttml2/issues/265
+  - Link from tts:direction to tts:writing-mode (by r12a)
+    https://github.com/w3c/ttml2/issues/264
+  - It should be easier to specify direction for RTL script users  (by
+ r12a)
+    https://github.com/w3c/ttml2/issues/263
+  - Use a more typical example for tts:direction (by r12a)
+    https://github.com/w3c/ttml2/issues/262
+  - Should we allow more overhang for Chinese? (by r12a)
+    https://github.com/w3c/ttml2/issues/261
+  - Should rubyOverhang:allow overlap ideographs in Japanese? (by 
+r12a)
+    https://github.com/w3c/ttml2/issues/260
+  - Simplify description of shiftRuby (editorial) (by r12a)
+    https://github.com/w3c/ttml2/issues/259
+  -  How to space base characters where shiftRuby kicks in for group 
+ruby? (by r12a)
+    https://github.com/w3c/ttml2/issues/258
+  - Make it clearer that tts:rubyOverflow only applies to text that is
+ at the end of a line (by r12a)
+    https://github.com/w3c/ttml2/issues/257
+  -  Please provide more illustrations and examples for the ruby 
+sections (by r12a)
+    https://github.com/w3c/ttml2/issues/256
+  - How would someone display ruby inline? (by r12a)
+    https://github.com/w3c/ttml2/issues/255
+  - Default ruby position may be on the wrong side for tblr (eg. 
+mongolian) (by r12a)
+    https://github.com/w3c/ttml2/issues/254
+  - Support for bopomofo ruby needed (by r12a)
+    https://github.com/w3c/ttml2/issues/253
+  - rubyOffset and line-spacing (by r12a)
+    https://github.com/w3c/ttml2/issues/252
+  - Handling non-kana text for rubyAlign with spaceAround or 
+spaceBetween (by r12a)
+    https://github.com/w3c/ttml2/issues/251
+  - rubyAlign and wide ruby text  (by r12a)
+    https://github.com/w3c/ttml2/issues/250
+  - NR is less than NB and NB is equal to 1 (by r12a)
+    https://github.com/w3c/ttml2/issues/249
+  - rubyAlign withBase (by r12a)
+    https://github.com/w3c/ttml2/issues/248
+  - How to handle mismatched sequences in complex ruby  (by r12a)
+    https://github.com/w3c/ttml2/issues/247
+  - Complex ruby is usually both mono and group ruby (by r12a)
+    https://github.com/w3c/ttml2/issues/246
+  - Why not use elements for ruby? (by r12a)
+    https://github.com/w3c/ttml2/issues/245
+
+  1 issues received 2 new comments:
+  - #263 It should be easier to specify direction for RTL script users
+  (2 by r12a, nigelmegitt)
+    https://github.com/w3c/ttml2/issues/263
+
+* w3c/typography (+6/-0/💬1)
+  6 issues created:
+  - Can long 'ruby text' overlap non-Hanzi characters in Chinese, and 
+how much?  (by r12a)
+    https://github.com/w3c/typography/issues/31
+  - How does line start/end overflow work for Chinese romanised 
+phonetic annotations?  (by r12a)
+    https://github.com/w3c/typography/issues/30
+  - Which side of the line do Mongolian ruby annotations appear 
+normally? (by r12a)
+    https://github.com/w3c/typography/issues/29
+  - Hebrew, with ascender (by r12a)
+    https://github.com/w3c/typography/issues/28
+  - Base with multiple combining characters above (by r12a)
+    https://github.com/w3c/typography/issues/27
+  - Underline, Urdu (by r12a)
+    https://github.com/w3c/typography/issues/26
+
+  1 issues received 1 new comments:
+  - #28 Hebrew, with ascender (1 by r12a)
+    https://github.com/w3c/typography/issues/28
+
+* w3c/i18n-drafts (+1/-1/💬1)
+  1 issues created:
+  - [articles/language-tags/index] Found tiny typo (by coastal-hiker)
+    https://github.com/w3c/i18n-drafts/issues/79
+
+  1 issues closed:
+  - [articles/language-tags/index] Found tiny typo 
+https://github.com/w3c/i18n-drafts/issues/79
+
+  1 issues received 1 new comments:
+  - #79 [articles/language-tags/index] Found tiny typo (1 by r12a)
+    https://github.com/w3c/i18n-drafts/issues/79
+
+* w3c/i18n-checker (+1/-0/💬1)
+  1 issues created:
+  - Print Friendly (by nitinkaveriappa)
+    https://github.com/w3c/i18n-checker/issues/69
+
+  1 issues received 1 new comments:
+  - #69 Print Friendly (1 by r12a)
+    https://github.com/w3c/i18n-checker/issues/69
+
+* w3c/alreq (+0/-1/💬7)
+  1 issues closed:
+  - Change the title to reflect that this is Arabic script, not Arabic
+ Language https://github.com/w3c/alreq/issues/88
+
+  3 issues received 7 new comments:
+  - #57 Drafting “justification” (3 by r12a, khaledhosny, ntounsi)
+    https://github.com/w3c/alreq/issues/57
+  - #86 How are underlines positioned in Arabic text? (3 by 
+khaledhosny, behnam)
+    https://github.com/w3c/alreq/issues/86
+  - #88 Change the title to reflect that this is Arabic script, not 
+Arabic Language (1 by r12a)
+    https://github.com/w3c/alreq/issues/88
+
+* w3c/clreq (+3/-0/💬2)
+  3 issues created:
+  - 兒化音的注音符號標示方式 (by YuRen-tw)
+    https://github.com/w3c/clreq/issues/130
+  - Can long 'ruby text' overlap non-Hanzi characters, and how much? 
+(by r12a)
+    https://github.com/w3c/clreq/issues/129
+  - How does line start/end overflow work for romanised phonetic 
+annotations? (by r12a)
+    https://github.com/w3c/clreq/issues/128
+
+  2 issues received 2 new comments:
+  - #123 Translation fix needed: Extend over not to (1 by ethantw)
+    https://github.com/w3c/clreq/issues/123
+  - #103 注音符号与汉字的比例 (1 by YuRen-tw)
+    https://github.com/w3c/clreq/issues/103
+
+* w3c/jlreq (+1/-0/💬0)
+  1 issues created:
+  - Links to each requirement (by murata0204)
+    https://github.com/w3c/jlreq/issues/7
+
+* w3c/mlreq (+1/-0/💬2)
+  1 issues created:
+  - Which side of the line do Mongolian ruby annotations appear 
+normally? (by r12a)
+    https://github.com/w3c/mlreq/issues/4
+
+  2 issues received 2 new comments:
+  - #3 Browsers must maintain cursive connections across ruby element 
+boundaries (1 by upsuper)
+    https://github.com/w3c/mlreq/issues/3
+  - #4 Which side of the line do Mongolian ruby annotations appear 
+normally? (1 by r12a)
+    https://github.com/w3c/mlreq/issues/4
+
+</pre>
+
+<h1>21 Feb 2017</h1>
+<div id="out"></div>
+
+
+
+</body></html>

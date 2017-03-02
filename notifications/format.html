@@ -1,0 +1,66 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Untitled Document</title>
+<style>
+body { font-family: Gotham, "Helvetica Neue", Helvetica, Arial, sans-serif; font-size: .75em; }
+h4 { margin-bottom:0; margin-top: 2em; font-size: 1.4em; }
+a { color: #e6ad49; text-decoration: none; }
+li { margin-bottom: .2em; }
+textarea { float: right; }
+</style>
+<script>
+function escapeHTML(text) {
+	var map = {
+		'&': '&amp;',
+		'<': '&lt;',
+		'>': '&gt;',
+		'"': '&quot;',
+		"'": '&#039;'
+		}
+	return text.replace(/[&<>"']/g, function(m) { return map[m]; })
+	}
+
+function process (text) {
+	text = escapeHTML(text)
+	text.replace(/[a-zA-z0-9\?\!] https:\/\/github/, '$1\n    https://github')
+	var lines = text.split('\n')
+	var inList = false
+	var inListItem = false
+	var out = ''
+	for (var i=0;i<lines.length;i++) {
+		if (lines[i].match(/^\* w3c\//)) out += '<h4>'+lines[i].replace(/^\* w3c\//,'')+'</h4>'
+		else if (lines[i].match(/^  - /)) { 
+			if (! inList) out += '<ul>'
+			out += '<li>'+lines[i].replace(/^  - /,'')
+			inListItem = true 
+			inList = true
+			}
+		else if (lines[i].match(/^    http/)) {
+			out += '<br/><a target="_blank" href="'+lines[i].trim()+'">'+lines[i].trim()+'</a></li>'
+			inListItem = false
+			}
+		else if (lines[i].trim() == '') {
+			if (inList) out += '</ul>'
+			inList = false
+			inListItem = false
+			}
+		else {
+			if (inListItem) out += lines[i]
+			else out += lines[i]+'<br/>'
+			}
+		}
+	document.getElementById('out').innerHTML = out
+	}
+
+</script>
+</head>
+
+<body>
+<textarea id="in" onChange="process(this.value)" placeholder="Drop the raw text here."></textarea>
+
+<div id="out"></div>
+
+</body>
+</html>
