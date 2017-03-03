@@ -53,8 +53,49 @@ div.directory {
 	margin-top: 0;
 }
 </style>
+<style>
+#project_list { clear:both; }
+#project_list .topic {
+	font-size: 24px;
+	margin-left: 0;
+	background-color: rgb(244, 150, 9);
+	color: white;
+	border-radius: 10px;
+	padding: 0 .5em;
+	}
+th { text-align: start;
+	font-size: 24px;
+	font-weight: 300;
+	padding: 8px;
+	vertical-align: top;
+	}
+td {
+	vertical-align: top;
+	}
+#project_list p { margin-left: 1em; }
+#project_list ul, #project_list li { margin-left: .5em; padding-left: .5em; }
+.inprogress {
+	background-color: rgb(255, 248, 168);
+	border-radius: 10px;
+	}
+.priority {
+	}
+.subdiv {
+    margin-bottom: 0px;
+    font-weight: bold;
+    font-style: italic;
+    margin-top: 0px;
+	}
+</style>
 <link rel="participants"
   href="http://www.w3.org/2000/09/dbwg/details?group=32113" />
+<style type="text/css">
+.inprogress {	background-color: rgb(255, 248, 168);
+	border-radius: 10px;
+}
+.priority {}
+#project_list {clear:both; }
+</style>
 </head>
 
 <body xml:lang="en" lang="en">
@@ -115,34 +156,30 @@ href="http://www.w3.org/2000/09/dbwg/details?group=32113">Participants</a> - <a 
     internationalization aspects of W3C technology better understood and
     more widely and consistently used by content authors and
     implementers.</p>
-  <p>The Internationalization (I18N)  Working Group is part of the <a href="http://www.w3.org/International/">W3C <span
-        class="activity">Internationalization Activity</span></a>.</p>
-  <p>For more details, see the <a
-        href="https://www.w3.org/2012/07/i18n-charter/charter.html" rel="charter">Working
-    Group Charter</a>.</p>
   <h2><a id="lists" name="lists">Organization</a></h2>
-  <p>The Internationalization Working Group is part of <a href="http://www.w3.org/International/">W3C <span class="activity">Internationalization Activity</span></a> and information it develops can be found by starting from the </p>
-  <p class="highlightlink"><a target="_blank" href="https://www.w3.org/International/">Activity Home Page</a></p>
-  <p>It uses Internationalization Interest Group mailing lists for technical discussions.</p>
+  <p>The main point of entry for information and news related to the work of the Internationalization Working Group is the</p>
+  <p class="highlightlink"><a target="_blank" href="https://www.w3.org/International/">I18n Home Page</a>  </p>
+  <p>The news is sent to various <a href="https://www.w3.org/International/log/description">RSS feeds</a>, and also a Twitter channel, <a href="https://twitter.com/webi18n">@webi18n</a>.</p>
   <p>The chair of the Working Group is Addison Phillips (Amazon).</p>
-  <h2><a id="lists" name="lists">Electronic communication</a></h2>
+  <h2><a id="communication" name="lists">Electronic communication</a></h2>
   <p>Much of the technical discussion  takes place in various github issues lists. If you want to raise an issue with a document, this is the place to raise it. See a <a href="http://www.w3.org/International/docs/openissues/">list of open issues</a>.</p>
-  <p>The working group uses all of <a href="http://www.w3.org/International/about#mail">these mailing lists</a>.</p>
+  <p> Technical topics for which  no GitHub issue list is appropriate can be discussed on the <a href="http://lists.w3.org/Archives/Public/www-international/">www-international</a> mailing list, <strong>however, we recommend that you start technical threads on <a href="https://github.com/w3c/i18n-discuss/">w3c/i18n-discuss</a> rather than here</strong>, to leverage the significant benefits that GitHub issues bring. This is the main list for the Internationalization Interest Group. The list  receives i18n WG minutes, and daily digests of activity on i18n GitHub issues, including review comments sent to other groups. The list is public and anyone can subscribe.</p>
+  <p><a href="http://lists.w3.org/Archives/Public/public-i18n-core/">public-i18n-core</a> is used mostly for  group-restricted discussions, and for notification of proposed review comments. The archive is public. This list also receives weekly digests of activity on i18n GitHub issues.</p>
   <p>There is also a member-only list [<a
         href="http://lists.w3.org/Archives/Member/member-i18n-core/">archive</a>] which is used for group administravia and any member-confidential topics.</p>
+  <p> There is also a related, very low traffic list, <a href="http://lists.w3.org/Archives/Public/public-iri/">public-iri</a>, for   discussions of IRIs and related topics. The list is public and anyone can subscribe.</p>
   <h2><a id="meetings" name="meetings">Meetings</a></h2>
   <h3>Teleconferences</h3>
   <p>The working group holds a weekly Webex teleconference to discuss work
     items for about one hour.</p>
   <p>Day: <strong>Thursday</strong><br />
-    Time: <strong>15.00 UTC/GMT</strong> (<a href="http://www.timeanddate.com/worldclock/fixedtime.html?hour=15&amp;min=00&amp;sec=0&amp;p1=0">Convert to your timezone</a>)</p>
+    Time: <strong>16.00 UTC/GMT</strong> (<a href="http://www.timeanddate.com/worldclock/fixedtime.html?hour=16&amp;min=00&amp;sec=0&amp;p1=0">Convert to your timezone</a>)</p>
   <p>Meeting agenda are published before each teleconference  on the <code class="kw" translate="no"><a href="http://lists.w3.org/Archives/Member/member-i18n-core/">member-i18n-core</a></code> mailing list. They include Webex links and telephone numbers, and also include information about how to connect to IRC, which is used during meetings to record minutes and also to share URIs, examples, and so forth. We also use it outside of meetings for quick contacts.</p>
   <p>To request an agenda item, send an email to the member list with &quot;agenda+&quot; at the start of the subject.</p>
   <p>Minutes and summaries of all teleconferences and face-to-face meetings can be found in the <code class="kw" translate="no"><a href="http://lists.w3.org/Archives/Public/www-international/">www-international</a></code> mail archive.</p>
   <h3>Next face-to-face meeting</h3>
   <ul>
-    <li><strong> Lisbon, Portugal (TPAC),  19-23 September 2016</strong></li>
-  </ul>
+    <li><strong> Burlingame, USA (TPAC),  6-10 November 2017</strong></li></ul>
   <h3>Useful Links</h3>
   <ul>
     <li><a href="http://www.w3.org/2001/12/zakim-irc-bot.html">Zakim
@@ -154,17 +191,24 @@ href="http://www.w3.org/2000/09/dbwg/details?group=32113">Participants</a> - <a 
 </div>
 <div id="work_area" class="directory">
   <h2 style="margin-top: 0" 
-        id="work">Work in Progress</h2>
-  <p>You can find a list of current projects using the</p>
-  <p class="highlightlink"><a target="_blank" href="https://w3c.github.io/i18n-activity/projects">Project
+        id="work">Useful links</h2>
+  <p>You can find a <a href="#currentwork">list of current projects</a> below. The project radar lists current objectives for those work items.</p><p class="highlightlink"><a target="_blank" href="https://w3c.github.io/i18n-activity/projects">Project
     Radar</a></p>
-  <h3 id="reviews">Review and discussion</h3>
-  <p>The group also formally reviews W3C and some other specifications and sends comments. They also work informally with other W3C groups to address internationalization issues.</p>
+  <h3 id="requirements">Requirements</h3>
+  <p>To get information about script requirements and related issues, see the 
+  <p class="highlightlink"><a target="_blank" href="https://github.com/w3c/typography/">Typographic index</a></p>
+  <p>For typographic samples, see the 
+  <p class="highlightlink"><a target="_blank" href="https://github.com/w3c/type-samples/">Type samples repo</a></p>
+  <p>And for a list of task forces and work in related to requirements, see the 
+  page<p class="highlightlink"><a target="_blank" href="https://www.w3.org/International/layout">Layout &amp; typography</a></p>
+  <h3 id="reviews">Review and discussion  </h3>
   <p class="highlightlink"><a target="_blank" href="https://www.w3.org/International/review-request">Request a review</a></p>
   <p>You can see what reviews are coming up, and link to comments from previous reviews using the </p>
   <p class="highlightlink"><a target="_blank" href="https://w3c.github.io/i18n-activity/radar/">Review Radar</a></p>
   <p>You can see a list of currently open comments using the</p>
   <p class="highlightlink"><a target="_blank" href="http://w3c.github.io/i18n-activity/reviews/">Open issue list</a></p>
+  <p>Spec developers will find the following useful for guidance and self-review</p>
+  <p class="highlightlink"><a target="_blank" href="https://www.w3.org/International/techniques/developing-specs?collapse">Developer techniques</a></p>
   <p>See also the section below entitled <a href="#reviewhowto">What does reviewing a spec involve?</a></p>
   <h3 id="documents">Documents we create</h3>
   <p>You can find a list of Rec-track docs, Notes and drafts at</p>
@@ -175,9 +219,7 @@ href="http://www.w3.org/2000/09/dbwg/details?group=32113">Participants</a> - <a 
   <p class="highlightlink"><a target="_blank" href="http://w3c.github.io/i18n-activity/repostatus/">Open repo issues</a></p>
   <p>You can find a  list of articles and other documents that are currently in
     development using the</p>
-  <p class="highlightlink"><a target="_blank" href="https://w3c.github.io/i18n-activity/projects">Project radar (articles)</a></p>
-  <p>There is a list of ideas for future articles in the </p>
-  <p class="highlightlink"><a target="_blank" href="https://www.w3.org/International/wiki/Core_Pipeline">Article parking lot</a></p>
+  <p class="highlightlink"><a target="_blank" href="https://github.com/w3c/i18n-drafts/projects/1">Article pipeline</a></p>
   <p>To access the educational material created by the Working Group, use the </p>
   <p class="highlightlink"><a target="_blank" href="https://www.w3.org/International/technique-index">Techniques index</a></p>
   <p>There is also a list of <a href="https://www.w3.org/International/articlelist">Articles and tutorials </a> which may provide a useful shortcut to the articles and tutorials.</p>
@@ -197,8 +239,6 @@ href="http://www.w3.org/2000/09/dbwg/details?group=32113">Participants</a> - <a 
       development process</a></li>
     <li><a href="http://www.w3.org/International/docs/styleguide">Styleguide for i18n TR documents</a></li>
   </ul>
-  <h2><a id="docs">News updates</a></h2>
-  <p>News updates can be found on the <a href="https://www.w3.org/International/">Internationalization Activity home page</a>. The news is sent to various <a href="https://www.w3.org/International/log/description">RSS feeds</a>, and also a Twitter channel, <a href="https://twitter.com/webi18n">@webi18n</a>.</p>
 </div>
 <div id="participation_area" class="directory">
   <h2 style="margin-top: 0"><a id="benefits">How to participate </a></h2>
@@ -259,6 +299,221 @@ href="http://www.w3.org/2000/09/dbwg/details?group=32113">Participants</a> - <a 
   </ul>
 </div>
 <br style="clear:both;"/>
+
+
+
+<h2 id="currentwork">Current work</h2>
+
+<p>The following table summarises key lines of activity in the Working Group, or other groups with which it liaises.</p>
+<table id="project_list">
+  <tbody>
+    <tr>
+      <th>Requirements development</th>
+      <th>Developer guidelines</th>
+      <th>Reviews, discussion, advice</th>
+      <th>Implement&shy;ation support</th>
+      <th>Education &amp; outreach</th>
+    </tr>
+    <tr>
+      <td><p class="topic">index &amp; repo</p>
+        <p><a target="_blank" href="https://github.com/w3c/typography">index</a>, <a href="https://github.com/w3c/type-samples/">type-samples</a></p>
+        <ul>
+          <li>Maintain a  typography index that points to typographic information relevant to the Open Web Platform for scripts and writing systems around the world.</li>
+          <li>Build the type-samples repository as  a collection of images that illustrate typographic features in scripts from around the world.</li>
+        </ul>
+        <p class="topic">text layout</p>
+        <p>Develop text layout and typographic requirements for languages using the following scripts.</p>
+        <p class="topic">arabic</p>
+        <p><a target="_blank" href="https://github.com/w3c/alreq/">GH</a></p>
+<p class="topic">chinese</p>
+        <p><a target="_blank" href="https://github.com/w3c/clreq/">GH</a></p>
+<p class="topic">ethiopic</p>
+        <p><a target="_blank" href="https://github.com/w3c/elreq/">GH</a></p>
+<p class="topic">indic</p>
+        <p><a target="_blank" href="https://github.com/w3c/ilreq/">GH</a>, <a target="_blank" href="https://lists.w3.org/Archives/Public/public-i18n-indic/">list</a></p>
+<p class="topic">tibetan</p>
+        <p><a target="_blank" href="https://github.com/w3c/tlreq/">GH</a>, <a target="_blank" href="https://lists.w3.org/Archives/Public/public-i18n-tibetan/">list</a></p>
+<p class="topic">korean</p>
+        <p><a target="_blank" href="http://w3c.github.io/klreq/">ED</a>, <a target="_blank" href="https://github.com/w3c/klreq/">GH</a>, <a target="_blank" href="https://lists.w3.org/Archives/Public/public-i18n-cjk/">list</a></p>
+<p class="topic">japanese</p>
+        <p><a target="_blank" href="https://github.com/w3c/jlreq/">GH</a></p>
+<p class="topic">latin</p>
+        <p><a target="_blank" href="https://www.w3.org/TR/dpub-latinreq/">WD</a></p>
+        <ul>
+          <li>Monitor and contribute to developments in the Digipub group's document about text layout requirements for the Latin script.</li>
+        </ul></td>
+      <td>
+         <p class="topic">specdev</p>
+       <p><a target="_blank" href="https://github.com/w3c/bp-i18n-specdev">GH</a></p>
+        <ul>
+          <li>Capture guidelines for spec developers, to help them address internationalization needs.</li>
+          <li>Shape the guidelines so that they can be used for self-review.</li>
+        </ul>
+		<p class="topic priority">charmod</p>
+        <p><a target="_blank" href="https://github.com/w3c/charmod-norm/">GH</a></p>
+        <ul>
+          <li>Create guidelines for spec developers and implementers about string matching in an internationalization-sensitive way</li>
+        </ul>
+        <p class="topic">encoding</p>
+        <p><a target="_blank" href="http://www.org/TR/encoding">CR</a>, <a target="_blank" href="https://encoding.spec.whatwg.org/">ED</a></p>
+        <ul>
+          <li>Advance a snapshot of the Encoding specification by the WhatWG to W3C Recommendation.</li>
+        </ul>
+        <p class="topic">locales and locale-affected formats</p>
+        <p><a target="_blank" href="http://w3c.github.io/ltli/">ED</a>, <a target="_blank" href="https://github.com/w3c/ltli/">GH</a>, <a target="_blank" href="https://www.w3.org/International/wiki/Locale-based_forms">wiki</a></p>
+        <ul>
+          <li><span style="background-color: rgb(255, 255, 255);">Produce guidelines for working with locale-specific features in the Open Web Platform.</span></li>
+        </ul>
+        <p class="topic">I18N for data structures &amp; JSON</p>
+        <p><a target="_blank" href="https://www.w3.org/International/wiki/ContentMetadataJavaScriptDiscussion">wiki</a></p>
+        <ul>
+          <li><span style="background-color: rgb(255, 255, 255);"> Develop requirements and best practices</span> for handling plain text and JSON content with natural language.</li>
+        </ul>
+        <p class="topic">time zones, etc.</p>
+        <p><a target="_blank" href="https://www.w3.org/International/wiki/HTML5TimeZone">tz wiki</a>, <a target="_blank" href="https://www.w3.org/International/wiki/FloatingTime">ftwiki</a></p>
+        <ul>
+          <li><span style="background-color: rgb(255, 255, 255);"> Produce guidelines about handling timezones and time-related features.</span></li>
+        </ul></td>
+      <td><p class="topic">reviews</p>
+        <p><a target="_blank" href="http://w3c.github.io/i18n-activity/radar/">radar</a>, <a target="_blank" href="http://w3c.github.io/i18n-activity/reviews/">issue tracker</a></p>
+        <ul>
+          <li>Review specifications for W3C and other working group for internationalization issues.</li>
+        </ul>
+        <p class="topic">adhoc topics</p>
+        <p><a target="_blank" href="https://github.com/w3c/i18n-activity/labels/track">issue tracker</a></p>
+        <ul>
+          <li>Respond to  topics arising from emails or other communications on an adhoc basis. </li>
+        </ul>
+        <p class="topic">ITS IG</p>
+        <p><a target="_blank" href="https://www.w3.org/International/its/ig/">home</a>, <a target="_blank" href="https://www.w3.org/International/its/wiki/ITS_Implementations">implementations</a></p>
+        <ul>
+          <li>Map ITS to <a target="_blank" href="https://www.w3.org/International/its/wiki/XLIFF_2.0_Mapping">XLIFF 2.0</a></li>
+        </ul></td>
+      <td><p class="topic">bidi</p>
+        <ul>
+          <li>Support implementation of features for bidirectional text.<br>
+          </li>
+        </ul>
+        <p class="topic">vertical text</p>
+        <p><a target="_blank" href="https://w3c.github.io/i18n-drafts/articles/vertical-text.en">article</a>, <a target="_blank" href="https://www.w3.org/International/tests/#css3-writing-modes">tests</a></p>
+        <ul>
+          <li>Support implementation of features for vertical text.</li>
+        </ul>
+        <p class="topic">ruby</p>
+        <p><a target="_blank" href="https://w3c.github.io/i18n-drafts/articles/ruby/markup.en">markup</a>, <a target="_blank" href="https://w3c.github.io/i18n-drafts/articles/ruby/styling.en">styling</a>, <a target="_blank" href="https://www.w3.org/International/tests/#html5-ruby">html tests</a>, <a target="_blank" href="https://www.w3.org/International/tests/#css3-ruby">css tests</a></p>
+        <ul>
+          <li>Support implementation of ruby features.</li>
+          <li>Derive a content model for ruby that can be used by spec developers.</li>
+        </ul>
+        <p class="topic">mongolian variants</p>
+        <p><a target="_blank" href="http://rishida.io/scripts/mongolian/variants">summary</a>, <a target="_blank" href="https://lists.w3.org/Archives/Public/public-i18n-mongolian/">list</a></p>
+        <ul>
+          <li>Support efforts to standardise mongolian variant forms.<strike><span style="background-color: rgb(255, 255, 255);"><br>
+          </span></strike></li>
+        </ul>
+        <p class="topic">tests</p>
+        <p><a target="_blank" href="http://www.w3.org/International/tests">test suite</a></p>
+        <ul>
+          <li>Produce tests for i18n features of browsers, especially for upcoming CSS features.</li>
+          <li>Produce summaries of the results on latest UA versions.</li>
+          <li> Develop notes on current implementation status<br>
+          </li>
+        </ul></td>
+      <td><p class="topic">articles</p>
+        <p><a href="https://github.com/w3c/i18n-drafts/projects/1">article pipeline</a>, <a target="_blank" href="http://w3c.github.io/i18n-activity/repostatus/">issue tracker</a>, <a target="_blank" href="https://www.w3.org/International/articlelist">article list</a></p>
+        <ul>
+          <li>Develop articles and tutorials to assist content authors and others to apply internationalization features in W3C standards.</li>
+        </ul>
+        <p class="topic">counter-styles</p>
+        <p><a target="_blank" href="https://github.com/w3c/predefined-counter-styles/">GH</a></p>
+        <ul>
+          <li>Maintain counter-style templates for content authors, reflecting scripts around the world.</li>
+        </ul>
+        <p class="topic">unicode in xml</p>
+        <p><a target="_blank" href="https://www.w3.org/TR/unicode-xml/">WD</a>, <a target="_blank" href="https://w3c.github.io/unicode-xml/">ED</a>, <a target="_blank" href="https://github.com/w3c/unicode-xml">GH</a></p>
+        <ul>
+          <li>Update advice for content developers about when to use Unicode code points and when to use markup.</li>
+        </ul>
+        <p class="topic">edx courses</p>
+        <ul>
+          <li>Provide support for i18n content and questions.<br>
+          </li>
+        </ul>
+        <p>Contact: Richard</p>
+        <p class="topic">conf</p>
+        <ul>
+          <li>Represent W3C internationalization work at industry events and conferences.<br>
+          </li>
+        </ul>
+        <p class="topic">i18n checker</p>
+        <p><a target="_blank" href="https://validator.w3.org/i18n-checker/">link</a></p>
+        <ul>
+          <li>Maintain the Internationalization Checker as part of the W3C validation suite.<br>
+          </li>
+        </ul></td>
+    </tr>
+    <tr>
+      <th colspan="5">Track industry</th>
+    </tr>
+    <tr>
+      <td><p class="topic">unicode</p>
+        <p><a target="_blank" href="http://www.unicode.org">site</a></p>
+        <ul>
+          <li>track developments</li>
+        </ul></td>
+      <td><p class="topic">idn/iri/uri and eai</p>
+        <p><a target="_blank" href="https://www.w3.org/International/wiki/EAI_Address_Issues">wiki</a></p>
+        <ul>
+          <li>track developments in this area</li>
+          <li>revamp the article on IDN &amp; IRI</li>
+          <li>consider ways to contribute to raising awareness</li>
+          <li>review the URL spec</li>
+        </ul>
+        <p>Contact: Dennis</p></td>
+      <td><p class="topic">unicode</p>
+        <p><a target="_blank" href="http://www.unicode.org">site</a></p>
+        <ul>
+          <li>track developments</li>
+        </ul></td>
+      <td><p class="topic">javascript</p>
+        <p><a target="_blank" href="http://wiki.ecmascript.org/doku.php?id=globalization:specification_drafts">ES-402</a></p>
+        <ul>
+          <li>track the Intl extension</li>
+        </ul></td>
+      <td>&nbsp;
+	</td>
+    </tr>
+    <tr>
+      <th colspan="5">Related community groups</th>
+    </tr>
+    <tr>
+      <td><p class="topic">ontolex cg</p>
+        <p><a target="_blank" href="http://www.w3.org/community/ontolex/">home</a>, <a target="_blank" href="https://www.w3.org/community/ontolex/wiki/Final_Model_Specification">spec</a></p>
+        <ul>
+          <li>Define an ontology lexicon model for the Web</li>
+        </ul></td>
+      <td><p class="topic">sentiment cg</p>
+        <p><a target="_blank" href="https://www.w3.org/community/sentiment/">home</a></p>
+        <ul>
+          <li>Define a representation of sentiment information</li>
+        </ul></td>
+      <td><p class="topic">ld4lt cg</p>
+        <p><a target="_blank" href="https://www.w3.org/community/ld4lt/">home</a>, <a target="_blank" href="https://www.w3.org/community/ld4lt/wiki/Meta-Share_OWL_metamodel">wiki</a></p>
+        <ul>
+          <li>Define metadata for linguistic resources and (future) potential standardization of <a target="_blank" href="http://persistence.uni-leipzig.org/nlp2rdf/ontologies/nif-core/nif-core.html">NIF</a></li>
+        </ul></td>
+      <td>
+                <p class="topic">bpmlod</p>
+    <p><a target="_blank" href="https://www.w3.org/community/bpmlod/">home</a>, <a target="_blank" href="https://www.w3.org/community/bpmlod/#group-reports">reports</a></p>
+    <ul>
+      <li><span style="background-color: rgb(255, 255, 255);"> Create best practices  for working with linguistic linked data</span>.</li>
+    </ul>
+
+      </td>
+      <td>&nbsp;</td>
+    </tr>
+  </tbody>
+</table>
 <h2 id="reviewhowto">What does reviewing a spec involve?</h2>
 <p>Choose specs you have an interest in or that you think may widen your awareness, and don't worry about revisiting recently reviewed specs and raising new issues if you spot any. See the <a href="http://w3c.github.io/i18n-activity/radar/">review radar</a> for suggestions.</p>
 <p>There is  a page <a href="https://www.w3.org/International/reviews/review-instructions">How to review specs and raise issues</a> that describes, step-by-step, how to raise issues as you review a spec.</p>
