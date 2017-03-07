@@ -32,13 +32,13 @@ function process (text) {
 	var out = ''
 	for (var i=0;i<lines.length;i++) {
 		if (lines[i].match(/^\* w3c\//)) out += '<h4>'+lines[i].replace(/^\* w3c\//,'')+'</h4>'
-		else if (lines[i].match(/^  - /)) { 
+		else if (lines[i].match(/^ - /)) { 
 			if (! inList) out += '<ul>'
-			out += '<li>'+lines[i].replace(/^  - /,'')
+			out += '<li>'+lines[i].replace(/^ - /,'')
 			inListItem = true 
 			inList = true
 			}
-		else if (lines[i].match(/^    http/)) {
+		else if (lines[i].match(/^   http/)) {
 			out += '<br/><a target="_blank" href="'+lines[i].trim()+'">'+lines[i].trim()+'</a></li>'
 			inListItem = false
 			}
