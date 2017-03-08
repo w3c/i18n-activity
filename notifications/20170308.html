@@ -1,0 +1,173 @@
+<html><head>
+<meta charset="utf-8">
+<title>Untitled Document</title>
+<style>
+body { font-family: Gotham, "Helvetica Neue", Helvetica, Arial, sans-serif; font-size: .75em; }
+h4 { margin-bottom:0; margin-top: 2em; font-size: 1.4em; }
+a { color: #e6ad49; text-decoration: none; }
+li { margin-bottom: .2em; }
+textarea { float: right; }
+.new { color: red; }
+</style>
+<script>
+function escapeHTML(text) {
+	var map = {
+		'&': '&amp;',
+		'<': '&lt;',
+		'>': '&gt;',
+		'"': '&quot;',
+		"'": '&#039;'
+		}
+	return text.replace(/[&<>"']/g, function(m) { return map[m]; })
+	}
+
+function process (text) {
+	text = escapeHTML(text)
+	text.replace(/[a-zA-z0-9\?\!] https:\/\/github/, '$1\n    https://github')
+	var lines = text.split('\n')
+	var inList = false
+	var inListItem = false
+	var out = ''
+	for (var i=0;i<lines.length;i++) {
+		if (lines[i].match(/^\* w3c\//)) out += '<h4>'+lines[i].replace(/^\* w3c\//,'')+'</h4>'
+		else if (lines[i].match(/^ - /)) { 
+			if (! inList) out += '<ul>'
+			out += '<li>'+lines[i].replace(/^ - /,'')
+			inListItem = true 
+			inList = true
+			}
+		else if (lines[i].match(/^   http/)) {
+			out += '<br/><a target="_blank" href="'+lines[i].trim()+'">'+lines[i].trim()+'</a></li>'
+			inListItem = false
+			}
+		else if (lines[i].trim() == '') {
+			if (inList) out += '</ul>'
+			inList = false
+			inListItem = false
+			}
+		else {
+			if (inListItem) out += lines[i]
+			else {
+				if (lines[i].match(/issues created:/)) out += '<span class="new">'+lines[i]+'</span><br/>'
+				else out += lines[i]+'<br/>'
+				}
+			}
+		}
+	document.getElementById('out').innerHTML = out
+	}
+
+</script>
+</head>
+
+<body onload="process(document.getElementById('in').textContent)">
+<pre id="in" placeholder="Drop the raw text here." style="display:none;">
+
+* w3c/html (+0/-0/💬5)
+ 1 issues received 5 new comments:
+ - #218 add warning/advice about lang attribute use (5 by aphillips, stevefaulkner, chaals)
+   https://github.com/w3c/html/issues/218
+
+* w3c/csswg-drafts (+0/-1/💬2)
+ 1 issues closed:
+ - [css-ruby-1] The default ruby-position for vertical-lr text may not be over  https://github.com/w3c/csswg-drafts/issues/1042
+
+ 2 issues received 2 new comments:
+ - #1042 [css-ruby-1] The default ruby-position for vertical-lr text may not be over  (1 by r12a)
+   https://github.com/w3c/csswg-drafts/issues/1042
+ - #1055 [css-text-decor] Results for text-underline-position: under (1 by khaledhosny)
+   https://github.com/w3c/csswg-drafts/issues/1055
+
+* w3c/ttml2 (+0/-1/💬20)
+ 1 issues closed:
+ -  Please provide more illustrations and examples for the ruby sections https://github.com/w3c/ttml2/issues/256
+
+ 7 issues received 20 new comments:
+ - #240 <emphasis-position> vs CSS text-emphasis-position + Mongolian (5 by r12a, palemieux, kojiishi, skynavga)
+   https://github.com/w3c/ttml2/issues/240
+ - #248 rubyAlign withBase (5 by r12a, dae-kim)
+   https://github.com/w3c/ttml2/issues/248
+ - #256  Please provide more illustrations and examples for the ruby sections (3 by r12a, dae-kim)
+   https://github.com/w3c/ttml2/issues/256
+ - #253 Support for bopomofo ruby needed (3 by r12a, nigelmegitt, dae-kim)
+   https://github.com/w3c/ttml2/issues/253
+ - #254 Default ruby position may be on the wrong side for tblr (eg. mongolian) (2 by r12a, dae-kim)
+   https://github.com/w3c/ttml2/issues/254
+ - #269 tts:writingMode example is not helpful (1 by dae-kim)
+   https://github.com/w3c/ttml2/issues/269
+ - #274 Add an illustration of pinyin for ruby align (1 by skynavga)
+   https://github.com/w3c/ttml2/issues/274
+
+* w3c/typography (+1/-0/💬0)
+ 1 issues created:
+ - An Observation on Punctuation Symmetry (by r12a)
+   https://github.com/w3c/typography/issues/32
+
+* w3c/i18n-drafts (+2/-2/💬1)
+ 2 issues created:
+ - [articles/vertical-text]  Making RTL text top to bottom (by khaledhosny)
+   https://github.com/w3c/i18n-drafts/issues/81
+ - [articles/vertical-text]   (by johnwcowan)
+   https://github.com/w3c/i18n-drafts/issues/80
+
+ 2 issues closed:
+ - [articles/vertical-text]  markup -&gt; mark up https://github.com/w3c/i18n-drafts/issues/80
+ - [articles/vertical-text]  block start/end https://github.com/w3c/i18n-drafts/issues/74
+
+ 1 issues received 1 new comments:
+ - #74 [articles/vertical-text]  block start/end (1 by r12a)
+   https://github.com/w3c/i18n-drafts/issues/74
+
+* w3c/elreq (+1/-0/💬0)
+ 1 issues created:
+ - An Observation on Punctuation Symmetry (by r12a)
+   https://github.com/w3c/elreq/issues/111
+
+* w3c/alreq (+3/-2/💬7)
+ 3 issues created:
+ - Section on Numbers (by behnam)
+   https://github.com/w3c/alreq/issues/101
+ - Layout (flow direction) of math formula (by tomerm)
+   https://github.com/w3c/alreq/issues/100
+ - Section on spacings (by behnam)
+   https://github.com/w3c/alreq/issues/99
+
+ 2 issues closed:
+ - Symbols in the language columns of the character tables are confusing https://github.com/w3c/alreq/issues/52
+ - Change alt texts for control character images in the character tables https://github.com/w3c/alreq/issues/66
+
+ 3 issues received 7 new comments:
+ - #100 Layout (flow direction) of math formula (5 by tomerm, behnam, khaledhosny, r12a, ntounsi)
+   https://github.com/w3c/alreq/issues/100
+ - #99 Section on spacings (1 by behnam)
+   https://github.com/w3c/alreq/issues/99
+ - #85 Bidi Category of numbers are different (1 by ebraminio)
+   https://github.com/w3c/alreq/issues/85
+
+* w3c/clreq (+1/-1/💬2)
+ 1 issues created:
+ - Is bopomofo needed for on-screen captions? (by r12a)
+   https://github.com/w3c/clreq/issues/135
+
+ 1 issues closed:
+ - Translation fix needed: Extend over not to https://github.com/w3c/clreq/issues/123
+
+ 2 issues received 2 new comments:
+ - #123 Translation fix needed: Extend over not to (1 by r12a)
+   https://github.com/w3c/clreq/issues/123
+ - #135 Is bopomofo needed for on-screen captions? (1 by dae-kim)
+   https://github.com/w3c/clreq/issues/135
+
+* w3c/mlreq (+1/-0/💬0)
+ 1 issues created:
+ - Text emphasis examples needed (by r12a)
+   https://github.com/w3c/mlreq/issues/7
+
+
+</pre>
+
+<h1>8 Mar 2017</h1>
+<div id="out"></div>
+
+
+
+</body></html>
