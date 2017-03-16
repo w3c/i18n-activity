@@ -27,6 +27,7 @@ var labels = {
 	'encoding':[],
 	'find-text':[],
 	'html':[],
+	'indexeddb':[],
 	'input-events':[],
 	'linked-data-patch-format':[],
 	'ldn':[],
