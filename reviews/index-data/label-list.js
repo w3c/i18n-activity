@@ -39,6 +39,7 @@ var labels = {
 	'pubsub':[],
 	'remote-playback':[],
 	'service_worker':[],
+	'shacl':[],
 	'svg':[],
 	'tracking-compliance':[],
 	'tracking-dnt':[],
