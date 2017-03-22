@@ -83,7 +83,8 @@ var maxpages = 3
   <p>The coloured squares represent the following labels:</p>
   <ul>
     <li><span style="padding: 0 .5em;background-color:red;"> </span> &nbsp; Pending</li>
-    <li><span style="padding: 0 .5em;background-color: #ccc;"> </span> &nbsp; Track</li>
+    <li><span style="padding: 0 .5em;background-color: #f48041;"> </span> &nbsp; Needs review</li>
+    <li><span style="padding: 0 .5em;background-color: #ccc;"> </span> &nbsp; Tracking</li>
     <li><span style="padding: 0 .5em;background-color: #fbca04;"> </span> &nbsp; Waiting</li>
     <li><span style="padding: 0 .5em;background-color: #009800;"> </span> &nbsp; Close?</li>
     <li><span style="padding: 0 .5em;background-color: #1D76DB;"> </span> &nbsp; Deferred</li>
@@ -208,7 +209,7 @@ var maxpages = 3
 					td = document.createElement('td')
 					// find labels
 					for (var j=0;j<issueData.labels.length;j++) {
-						if (issueData.labels[j].name == 'pending' || issueData.labels[j].name == 'track' || issueData.labels[j].name == 'close?' || issueData.labels[j].name == 'waiting' || issueData.labels[j].name == 'deferred') {
+						if (issueData.labels[j].name == 'pending' || issueData.labels[j].name == 'needs-review' || issueData.labels[j].name == 'track' || issueData.labels[j].name == 'close?' || issueData.labels[j].name == 'waiting' || issueData.labels[j].name == 'deferred') {
 							span = document.createElement('span')
 							span.setAttribute('style', 'background-color:#'+issueData.labels[j].color)
 							span.title = issueData.labels[j].name
