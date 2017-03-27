@@ -1,0 +1,756 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Encoding specification Disposition of Comments for CR</title>
+<style type="text/css">
+p {
+	line-height: 1.4em;
+}
+.av, .rv, .ov, .iv {
+	background: #6F9
+}		/* verified, ie. commenter happy with decision */
+.ro, .oo, .io {
+	background: red
+}		/* objection, ie. commenter not happy with decision */
+.accepted {
+	background: #6FC
+}			/* accepted, awaiting reply */
+.deferred {
+	background: lightblue
+}	/* deferred */
+.rejected {
+	background: #FFCC80;
+}	/* rejected, awaiting reply */
+.substantive {
+	background: #FFCC80;
+}
+.outofscope {
+	background: #ddd
+}	/* out of scope, awaiting reply */
+.invalid {
+	background: #ddd
+}	/* invalid, awaiting reply */
+.re {
+	background: #6F9
+}	/* retracted */
+.open {
+	border: solid red;
+	padding: 0.2em;
+}
+:target {
+	box-shadow: 0.25em 0.25em 0.25em;
+}
+.issue {
+	margin: 1em;
+	border: 1px solid #999;
+	border-radius: 10px;
+	padding: 8px;
+}
+.issue p {
+	margin: 0;
+	font-family: Cambria, "Hoefler Text", "Liberation Serif", Times, "Times New Roman", serif;
+}
+#issues strong {
+	color: #666;
+	color: red;
+	font-weight: bold;
+	background-color: #eee;
+	border-radius: 3px;
+	padding: 3px;
+}
+h2 {
+	margin-top: 3em;
+}
+.v {
+	writing-mode: vertical-rl;
+}
+th {
+	vertical-align: bottom;
+	text-align: start;
+}
+td {
+	vertical-align: top;
+	padding: 5px;
+	border-radius: 7px;
+	border-bottom: 1px solid #ccc;
+}
+body {
+	font-family: 'Helvetica Neue', Roboto, "Calibri", "Segoe UI", sans-serif;
+	font-size: 16px;
+	font-weight: 300;
+	line-height: 1.75;
+	color: #555;
+	margin: 0;
+	padding: 10px;
+	background-color: white;
+}
+.objection {
+	background-color: red;
+	color: white;
+	border-radius: 10px;
+}
+.reopened {
+	background-color: orange;
+	color: white;
+	border-radius: 10px;
+}
+</style>
+</head>
+
+<body>
+<h1>Encoding specification Disposition of Comments for CR period, October 2016</h1>
+<p>CR document: <a href="http://www.w3.org/TR/encoding/">http://www.w3.org/TR/encoding/</a></p>
+<p>Editor's draft: <a href="http://encoding.spec.whatwg.org/">http://encoding.spec.whatwg.org/</a></p>
+<p>Github issue list: <a href="https://github.com/whatwg/encoding/issues/">https://github.com/whatwg/encoding/issues/</a></p>
+<table id="inputTable">
+  <tbody>
+    <tr>
+      <th>Id</th>
+      <th>Summary<br>
+	  <span style="font-size:70%;">[issue title]</span></th>
+      <th>From</th>
+      <th class="v">Status<br>
+      <span style="font-size:70%;">[O/C]<br>
+      open<br>
+      closed </span></th>
+      <th class="v">Decision<br>
+        <span style="font-size:70%;">[A/R/Q]<br>
+         accepted<br>
+         rejected
+        <br>
+question </span></th>
+      <th class="v">Responder<br>
+        <span style="font-size:70%;">[S/U]<br>
+         satisfied
+<br>
+unsatisfied <br>
+      </span></th>
+      <th>Changes<br>
+      <span style="font-size:70%;">[PR title(s) with link]</span></th>
+      <th class="v">Type<br>
+        <span style="font-size:70%;">[E/S/I]<br>
+editorial <br>
+substantive<br>
+indexchange
+<br>
+      </span></th>
+      <th class="v"><p>Tests</p>
+        <p><span style="font-size:70%;">[!/c]<br>
+          change!<br>
+          changed <br>
+      </span></p></th>
+    </tr>
+    <tr class="issue">
+      <td id="issue-5" class="id" title="id">76</td>
+      <td class="summary" title="Summary">Editorial style nits</td>
+      <td class="from" title="From">domenic</td>
+      <td class="status" title="Status">o</td>
+      <td title="Decision">&nbsp;</td>
+      <td class="responder " title="Responder">&nbsp;</td>
+      <td class="specchange" title="Spec changes">&nbsp;</td>
+      <td class="type" title="Type">e</td>
+      <td class="tests" title="Tests">&nbsp;</td>
+    </tr>
+    <tr class="issue">
+      <td id="issue-4" class="id" title="id">75</td>
+      <td class="summary" title="Summary">Confusion between Big5 and Big5-HKSCS encodings</td>
+      <td class="from" title="From">bhaible</td>
+      <td class="status" title="Status">o</td>
+      <td title="Decision">&nbsp;</td>
+      <td class="responder " title="Responder">&nbsp;</td>
+      <td class="specchange" title="Spec changes">&nbsp;</td>
+      <td class="type" title="Type">?</td>
+      <td class="tests" title="Tests">&nbsp;</td>
+    </tr>
+    <tr class="issue">
+      <td id="issue-3" class="id" title="id">74</td>
+      <td class="summary" title="Summary">Confusion between KOI8-U and KOI8-RU encodings</td>
+      <td class="from" title="From">bhaible</td>
+      <td class="status" title="Status">o</td>
+      <td title="Decision">&nbsp;</td>
+      <td class="responder " title="Responder">&nbsp;</td>
+      <td class="specchange" title="Spec changes">&nbsp;</td>
+      <td class="type" title="Type">?</td>
+      <td class="tests" title="Tests">&nbsp;</td>
+    </tr>
+    <tr class="issue">
+      <td id="issue-2" class="id" title="id">73</td>
+      <td class="summary" title="Summary">windows-1255 encoding: add mapping for 0xCA</td>
+      <td class="from" title="From">bhaible</td>
+      <td class="status" title="Status">c</td>
+      <td title="Decision">a</td>
+      <td class="responder " title="Responder">&nbsp;</td>
+      <td class="specchange" title="Spec changes"><a href="https://github.com/whatwg/encoding/commit/fd572969c94e03d3f9da8ed65afecfd4d769a6ef"> windows-1255 map 0xCA to U+05BA </a></td>
+      <td class="type" title="Type">i</td>
+      <td class="tests" title="Tests">!</td>
+    </tr>
+    <tr class="issue">
+      <td id="issue-" class="id" title="id">72</td>
+      <td class="summary" title="Summary">Add Streams support</td>
+      <td class="from" title="From">annevk</td>
+      <td class="status" title="Status">o</td>
+      <td title="Decision">&nbsp;</td>
+      <td class="responder " title="Responder">&nbsp;</td>
+      <td class="specchange" title="Spec changes">&nbsp;</td>
+      <td class="type" title="Type">?</td>
+      <td class="tests" title="Tests">&nbsp;</td>
+    </tr>
+    <tr class="issue">
+      <td id="issue-10" class="id" title="id">10</td>
+      <td class="summary" title="Summary">Clarify scope of document in preface</td>
+      <td class="from" title="From">nigelmegitt</td>
+      <td class="status" title="Status">c</td>
+      <td class="decision accepted" title="Decision">a</td>
+      <td class="responder " title="Responder">s</td>
+      <td class="specchange" title="Spec changes"><a href="https://github.com/whatwg/encoding/commit/adb5f843750bc10d518403c0b49c4920fa5ce0d7">point out utf-8/utf-16be/utf-16le encoder equivalence with the Unicode standard</a></td>
+      <td class="type" title="Type">e</td>
+      <td class="tests" title="Tests">-</td>
+    </tr>
+    <tr class="issue">
+      <td id="issue-11" class="id" title="id">11</td>
+      <td class="summary" title="Summary">The title of the document needs to be more than one (commonly used) word</td>
+      <td class="from" title="From">dswinger</td>
+      <td class="status" title="Status">c</td>
+      <td class="decision rejected" title="Decision">r</td>
+      <td class="responder  objection" title="Responder">u</td>
+      <td class="specchange" title="Spec changes">none</td>
+      <td class="type" title="Type">e</td>
+      <td class="tests" title="Tests">-</td>
+    </tr>
+    <tr class="issue">
+      <td id="issue-12" class="id" title="id"><a href="#issue-12">12</a></td>
+      <td class="summary" title="Summary"><a href="https://github.com/whatwg/encoding/issues/12">Signaling EOF in the streaming case is unspecified (or too unclear)</a></td>
+      <td class="from" title="From">hsivonen</td>
+      <td class="status" title="Status">c</td>
+      <td class="decision accepted" title="Decision">a</td>
+      <td class="responder " title="Responder"></td>
+      <td class="specchange" title="Spec changes"><a href="https://github.com/whatwg/encoding/commit/45431e6ce485ad50bc489b6e4cf46903398aff2a">clarify how decode() handles end-of-stream</a></td>
+      <td class="type" title="Type">?</td>
+      <td class="tests" title="Tests">-</td>
+    </tr>
+    <tr class="issue">
+      <td id="issue-13" class="id" title="id"><a href="#issue-13">13</a></td>
+      <td class="summary" title="Summary"><a href="https://github.com/whatwg/encoding/issues/13">Streaming should be a flag on the decoder instead of being a flag on the decode() call</a></td>
+      <td class="from" title="From">hsivonen</td>
+      <td class="status" title="Status">c</td>
+      <td class="decision accepted" title="Decision">a</td>
+      <td class="responder " title="Responder"></td>
+      <td class="specchange" title="Spec changes"><a href="https://github.com/whatwg/encoding/commit/45431e6ce485ad50bc489b6e4cf46903398aff2a">clarify how decode() handles end-of-stream</a></td>
+      <td class="type" title="Type">?</td>
+      <td class="tests" title="Tests">-</td>
+    </tr>
+    <tr class="issue">
+      <td id="issue-14" class="id" title="id"><a href="#issue-14">14</a></td>
+      <td class="summary" title="Summary"><a href="https://github.com/whatwg/encoding/issues/14">Add do not flush flag to encode API, accept DOMString</a></td>
+      <td class="from" title="From">inexorabletash</td>
+      <td class="status" title="Status">c</td>
+      <td class="decision rejected" title="Decision">r</td>
+      <td class="responder " title="Responder"></td>
+      <td class="specchange" title="Spec changes">none</td>
+      <td class="type" title="Type">-</td>
+      <td class="tests" title="Tests">-</td>
+    </tr>
+    <tr class="issue">
+      <td id="issue-15" class="id" title="id"><a href="#issue-15">15</a></td>
+      <td class="summary" title="Summary"><a href="https://github.com/whatwg/encoding/issues/15">iso-2022-jp encoder XSS risks</a></td>
+      <td class="from" title="From">t-tera</td>
+      <td class="status" title="Status">c</td>
+      <td class="decision accepted" title="Decision">a</td>
+      <td class="responder " title="Responder">s</td>
+      <td class="specchange" title="Spec changes"><a href="https://github.com/whatwg/encoding/pull/34">Fix #15: prevent ISO-2022-JP encoder attack #34</a></td>
+      <td class="type substantive" title="Type">s</td>
+      <td class="tests" title="Tests">c</td>
+    </tr>
+    <tr class="issue">
+      <td id="issue-16" class="id" title="id"><a href="#issue-16">16</a></td>
+      <td class="summary" title="Summary"><a href="https://github.com/whatwg/encoding/issues/16">UTf7 supports</a></td>
+      <td class="from" title="From">lygstate</td>
+      <td class="status" title="Status">c</td>
+      <td class="decision rejected" title="Decision">r</td>
+      <td class="responder " title="Responder"></td>
+      <td class="specchange" title="Spec changes">none</td>
+      <td class="type" title="Type">-</td>
+      <td class="tests" title="Tests">-</td>
+    </tr>
+    <tr class="issue">
+      <td id="issue-17" class="id" title="id"><a href="#issue-17">17</a></td>
+      <td class="summary" title="Summary"><a href="https://github.com/whatwg/encoding/issues/17">"gb18030 ranges" have problematic definitions</a></td>
+      <td class="from" title="From">peteroupc</td>
+      <td class="status" title="Status">c</td>
+      <td class="decision accepted" title="Decision">a</td>
+      <td class="responder " title="Responder"></td>
+      <td class="specchange" title="Spec changes"><a href="https://github.com/whatwg/encoding/commit/c798941098f98fe202755300e7af03e142f26fea">Fix #17: gb18030 cannot encode U+E5E5</a></td>
+      <td class="type substantive" title="Type">s</td>
+      <td class="tests" title="Tests">c</td>
+    </tr>
+    <tr class="issue">
+      <td id="issue-18" class="id" title="id"><a href="#issue-18">18</a></td>
+      <td class="summary" title="Summary"><a href="https://github.com/whatwg/encoding/issues/18">Consider removing TextEncoder support for UTF-16</a></td>
+      <td class="from" title="From">hsivonen</td>
+      <td class="status" title="Status">c</td>
+      <td class="decision accepted" title="Decision">a</td>
+      <td class="responder " title="Responder"></td>
+      <td class="specchange" title="Spec changes"><a href="https://github.com/whatwg/encoding/commit/8360f775c8df145f649047c7d59c5ff733ade112">Fix #18: remove UTF-16 support from TextEncoder</a></td>
+      <td class="type substantive" title="Type">s</td>
+      <td class="tests" title="Tests">api</td>
+    </tr>
+    <tr class="issue">
+      <td id="issue-19" class="id" title="id"><a href="#issue-19">19</a></td>
+      <td class="summary" title="Summary"><a href="https://github.com/whatwg/encoding/issues/19">Unclear text in utf-8 decoder</a></td>
+      <td class="from" title="From">r12a</td>
+      <td class="status" title="Status">c</td>
+      <td class="decision accepted" title="Decision">a</td>
+      <td class="responder " title="Responder">s</td>
+      <td class="specchange" title="Spec changes"><a href="https://github.com/whatwg/encoding/commit/05d96490cba5e800e40b76bfd4acc7e7ff2981ae">reword utf-8 decoder step to avoid extra parenthesis</a></td>
+      <td class="type" title="Type">e</td>
+      <td class="tests" title="Tests">-</td>
+    </tr>
+    <tr class="issue">
+      <td id="issue-20" class="id" title="id"><a href="#issue-20">20</a></td>
+      <td class="summary" title="Summary"><a href="https://github.com/whatwg/encoding/issues/20">Clarify result of division in algorithms</a></td>
+      <td class="from" title="From">r12a</td>
+      <td class="status" title="Status">c</td>
+      <td class="decision accepted" title="Decision">a</td>
+      <td class="responder " title="Responder">s</td>
+      <td class="specchange" title="Spec changes"><a href="https://github.com/whatwg/encoding/commit/929a3ffec7695b38c1b5529411de52eca6935d61">rather than relying on integer division, use floor() </a></td>
+      <td class="type" title="Type">e</td>
+      <td class="tests" title="Tests">-</td>
+    </tr>
+    <tr class="issue">
+      <td id="issue-21" class="id" title="id"><a href="#issue-21">21</a></td>
+      <td class="summary" title="Summary"><a href="https://github.com/whatwg/encoding/issues/21">Treatment of U+2022 is incorrect in Shift_JIS, EUC-JP and ISO-2022-JP</a></td>
+      <td class="from" title="From">jungshik</td>
+      <td class="status" title="Status">c</td>
+      <td class="decision accepted" title="Decision">a</td>
+      <td class="responder " title="Responder"></td>
+      <td class="specchange" title="Spec changes"><a href="https://github.com/whatwg/encoding/commit/95f85a63ad4d6b6331f21ff60f9244b3bcbe6d84">Japanese encoders have special treatment for U+2212, not U+2022</a></td>
+      <td class="type substantive" title="Type">s</td>
+      <td class="tests" title="Tests">c</td>
+    </tr>
+    <tr class="issue">
+      <td id="issue-22" class="id" title="id"><a href="#issue-22">22</a></td>
+      <td class="summary" title="Summary"><a href="https://github.com/whatwg/encoding/issues/22">GB 18030 2000 vs 2005</a></td>
+      <td class="from" title="From">jungshik</td>
+      <td class="status" title="Status">c</td>
+      <td class="decision accepted" title="Decision">a</td>
+      <td class="responder " title="Responder"></td>
+      <td class="specchange" title="Spec changes"><a href="https://github.com/whatwg/encoding/commit/e7b9ce0ed75da6bbc87aa952194025a03df97ce6">align with GB18030-2005</a></td>
+      <td class="type substantive" title="Type">s</td>
+      <td class="tests" title="Tests">c</td>
+    </tr>
+    <tr class="issue">
+      <td id="issue-24" class="id" title="id"><a href="#issue-24">24</a></td>
+      <td class="summary" title="Summary"><a href="https://github.com/whatwg/encoding/issues/24">BufferSource is not specified</a></td>
+      <td class="from" title="From">phistuck</td>
+      <td class="status" title="Status">c</td>
+      <td class="decision rejected" title="Decision">r</td>
+      <td class="responder " title="Responder">s</td>
+      <td class="specchange" title="Spec changes">none</td>
+      <td class="type" title="Type">-</td>
+      <td class="tests" title="Tests">-</td>
+    </tr>
+    <tr class="issue">
+      <td id="issue-27" class="id" title="id"><a href="#issue-27">27</a></td>
+      <td class="summary" title="Summary"><a href="https://github.com/whatwg/encoding/issues/27">Remove the last 14 characters PUA of GB18030-2005</a></td>
+      <td class="from" title="From">lygstate</td>
+      <td class="status" title="Status">o</td>
+      <td class="decision rejected" title="Decision">r</td>
+      <td class="responder  reopened" title="Responder">Reopened</td>
+      <td class="specchange" title="Spec changes">none</td>
+      <td class="type substantive" title="Type">?</td>
+      <td class="tests" title="Tests">-</td>
+    </tr>
+    <tr class="issue">
+      <td id="issue-28" class="id" title="id"><a href="#issue-28">28</a></td>
+      <td class="summary" title="Summary"><a href="https://github.com/whatwg/encoding/issues/28">What's the correct choice for BIG5 F9FE?</a></td>
+      <td class="from" title="From">lygstate</td>
+      <td class="status" title="Status">c</td>
+      <td class="decision?" title="Decision">q</td>
+      <td class="responder " title="Responder"></td>
+      <td class="specchange" title="Spec changes">none</td>
+      <td class="type" title="Type">-</td>
+      <td class="tests" title="Tests">-</td>
+    </tr>
+    <tr class="issue">
+      <td id="issue-29" class="id" title="id"><a href="#issue-29">29</a></td>
+      <td class="summary" title="Summary"><a href="https://github.com/whatwg/encoding/issues/29">Introduce "output encoding"</a></td>
+      <td class="from" title="From">annevk</td>
+      <td class="status" title="Status">c</td>
+      <td class="decision accepted" title="Decision">a</td>
+      <td class="responder " title="Responder">s</td>
+      <td class="specchange" title="Spec changes"><a href="https://github.com/whatwg/encoding/commit/02c55f23fc1968f68472d3e82e5da29c4fe0ec65">introduce output encoding for URL and HTML forms</a></td>
+      <td class="type substantive" title="Type">s</td>
+      <td class="tests objection" title="Tests">!</td>
+    </tr>
+    <tr class="issue">
+      <td id="issue-31" class="id" title="id"><a href="#issue-31">31</a></td>
+      <td class="summary" title="Summary"><a href="https://github.com/whatwg/encoding/issues/31">SHIFT_JISX0213 are not supported</a></td>
+      <td class="from" title="From">lygstate</td>
+      <td class="status" title="Status">c</td>
+      <td class="decision rejected" title="Decision">r</td>
+      <td class="responder " title="Responder"></td>
+      <td class="specchange" title="Spec changes">none</td>
+      <td class="type" title="Type">-</td>
+      <td class="tests" title="Tests">-</td>
+    </tr>
+    <tr class="issue">
+      <td id="issue-32" class="id" title="id"><a href="#issue-32">32</a></td>
+      <td class="summary" title="Summary"><a href="https://github.com/whatwg/encoding/issues/32">Consider making the DOM name the canonical name</a></td>
+      <td class="from" title="From">hsivonen</td>
+      <td class="status" title="Status">c</td>
+      <td class="decision accepted" title="Decision">a</td>
+      <td class="responder " title="Responder"></td>
+      <td class="specchange" title="Spec changes"><a href="https://github.com/whatwg/encoding/commit/18bf4fa6f005a899696800a8f6b0d20f3a4c1c0e">use the encoding name exposed by DOM and HTML &lt;form&gt;</a></td>
+      <td class="type" title="Type">Editorial</td>
+      <td class="tests" title="Tests">no change</td>
+    </tr>
+    <tr class="issue">
+      <td id="issue-33" class="id" title="id"><a href="#issue-33">33</a></td>
+      <td class="summary" title="Summary"><a href="https://github.com/whatwg/encoding/issues/33">Replacement encoding should handle empty input better</a></td>
+      <td class="from" title="From">annevk</td>
+      <td class="status" title="Status">c</td>
+      <td class="decision accepted" title="Decision">a</td>
+      <td class="responder " title="Responder">s</td>
+      <td class="specchange" title="Spec changes"><a href="https://github.com/whatwg/encoding/commit/4e8e2111c45e02934b36bbce51157d3dbb322242">handle empty input better for the replacement decoder</a></td>
+      <td class="type substantive" title="Type">e</td>
+      <td class="tests objection" title="Tests">!</td>
+    </tr>
+    <tr class="issue">
+      <td id="issue-40" class="id" title="id"><a href="#issue-40">40</a></td>
+      <td class="summary" title="Summary"><a href="https://github.com/whatwg/encoding/issues/40">Adding BRF as "legacy" single-byte encoding for braille</a></td>
+      <td class="from" title="From">sthibaul</td>
+      <td class="status" title="Status">c</td>
+      <td class="decision rejected" title="Decision">r</td>
+      <td class="responder " title="Responder"></td>
+      <td class="specchange" title="Spec changes">none</td>
+      <td class="type" title="Type">-</td>
+      <td class="tests" title="Tests">-</td>
+    </tr>
+    <tr class="issue">
+      <td id="issue-42" class="id" title="id"><a href="#issue-42">42</a></td>
+      <td class="summary" title="Summary"><a href="https://github.com/whatwg/encoding/issues/42">utf-8 decoder lead byte switch branches 0xE0 to 0xEF, 0xF0 to 0xF4 need 'return continue'</a></td>
+      <td class="from" title="From">inexorabletash</td>
+      <td class="status" title="Status">c</td>
+      <td class="decision accepted" title="Decision">a</td>
+      <td class="responder " title="Responder">s</td>
+      <td class="specchange" title="Spec changes"><a href="https://github.com/whatwg/encoding/pull/45/commits/4d8c93c82ad11fc5f9b8cf7cd20c7e6dbe749d1b">Fix regression in utf-8 decoder #45</a></td>
+      <td class="type" title="Type">e</td>
+      <td class="tests" title="Tests">-</td>
+    </tr>
+    <tr class="issue">
+      <td id="issue-47" class="id" title="id"><a href="#issue-47">47</a></td>
+      <td class="summary" title="Summary"><a href="https://github.com/whatwg/encoding/issues/47">index-jis0208.txt should be JIS X 0208 and add another index file</a></td>
+      <td class="from" title="From">takahashim</td>
+      <td class="status" title="Status">o</td>
+      <td class="decision?" title="Decision">&nbsp;</td>
+      <td class="responder " title="Responder"></td>
+      <td class="specchange" title="Spec changes"></td>
+      <td class="type" title="Type">e</td>
+      <td class="tests" title="Tests"></td>
+    </tr>
+    <tr class="issue">
+      <td id="issue-49" class="id" title="id"><a href="#issue-49">49</a></td>
+      <td class="summary" title="Summary"><a href="https://github.com/whatwg/encoding/issues/49">Group constants together in half-width math</a></td>
+      <td class="from" title="From">hsivonen</td>
+      <td class="status" title="Status">c</td>
+      <td class="decision accepted" title="Decision">a</td>
+      <td class="responder " title="Responder">s</td>
+      <td class="specchange" title="Spec changes"><a href="https://github.com/whatwg/encoding/commit/0ed5a4c2fa079f31616dd94c971d994897659414">Editorial: avoid upsetting lazy compilers</a></td>
+      <td class="type" title="Type">e</td>
+      <td class="tests" title="Tests">unchanged</td>
+    </tr>
+    <tr class="issue">
+      <td id="issue-50" class="id" title="id"><a href="#issue-50">50</a></td>
+      <td class="summary" title="Summary"><a href="https://github.com/whatwg/encoding/issues/50">Editorial: Add a note about duplicates to "index Shift_JIS pointer" #50</a></td>
+      <td class="from" title="From">hsivonen</td>
+      <td class="status" title="Status">c</td>
+      <td class="decision accepted" title="Decision">a</td>
+      <td class="responder " title="Responder"></td>
+      <td class="specchange" title="Spec changes"><a href="https://github.com/whatwg/encoding/commit/aa93c486881a81147947b886b8b449462ea6fdf5">Editorial: point out that Shift_JIS contains duplicate code points</a></td>
+      <td class="type" title="Type">e</td>
+      <td class="tests" title="Tests">-</td>
+    </tr>
+    <tr class="issue">
+      <td id="issue-51" class="id" title="id"><a href="#issue-51">51</a></td>
+      <td class="summary" title="Summary"><a href="https://github.com/whatwg/encoding/issues/51">Editorial: Exclude index entries instead of just pointers #51</a></td>
+      <td class="from" title="From">hsivonen</td>
+      <td class="status" title="Status">c</td>
+      <td class="decision accepted" title="Decision">a</td>
+      <td class="responder " title="Responder"></td>
+      <td class="specchange" title="Spec changes"><a href="https://github.com/whatwg/encoding/commit/2297f2bfef3e696304310d269097c354eb930b76">Editorial: make it clearer what index pointer exclusion means</a></td>
+      <td class="type" title="Type">e</td>
+      <td class="tests" title="Tests">-</td>
+    </tr>
+    <tr class="issue">
+      <td id="issue-52" class="id" title="id"><a href="#issue-52">52</a></td>
+      <td class="summary" title="Summary"><a href="https://github.com/whatwg/encoding/issues/52">Editorial optimization: Move EUDC before index lookup #52</a></td>
+      <td class="from" title="From">hsivonen</td>
+      <td class="status" title="Status">c</td>
+      <td class="decision accepted" title="Decision">a</td>
+      <td class="responder " title="Responder"></td>
+      <td class="specchange" title="Spec changes"><a href="https://github.com/whatwg/encoding/commit/cee4a87a2d5aa7c745f6af76212872f79cf0d249">Handle EUDC before the index in Shift_JIS</a></td>
+      <td class="type" title="Type">e</td>
+      <td class="tests" title="Tests">c</td>
+    </tr>
+    <tr class="issue">
+      <td id="issue-53" class="id" title="id"><a href="#issue-53">53</a></td>
+      <td class="summary" title="Summary"><a href="https://github.com/whatwg/encoding/issues/53"> Please double-check the end of the EUDC range #53 </a></td>
+      <td class="from" title="From">hsivonen</td>
+      <td class="status" title="Status">c</td>
+      <td class="decision accepted" title="Decision">a</td>
+      <td class="responder " title="Responder"></td>
+      <td class="specchange" title="Spec changes"><a href="https://github.com/whatwg/encoding/commit/f0cfd4f241d8442083aff0dc5cdde6b0512ecd8a">Correct Shift_JIS EUDC range</a></td>
+      <td class="type substantive" title="Type">s</td>
+      <td class="tests" title="Tests">c</td>
+    </tr>
+    <tr class="issue">
+      <td id="issue-63" class="id" title="id"><a href="#issue-63">63</a></td>
+      <td class="summary" title="Summary"><a href="https://github.com/whatwg/encoding/issues/63"> Editorial: Clean up gb18030 math </a></td>
+      <td class="from" title="From">hsivonen</td>
+      <td class="status" title="Status">c</td>
+      <td class="decision accepted" title="Decision">a</td>
+      <td class="responder " title="Responder"></td>
+      <td class="specchange" title="Spec changes"><a href="https://github.com/whatwg/encoding/commit/b7ed173d0d65a8836a32cc27fb0184b17f2034ef">Editorial: make gb18030 math more clear</a></td>
+      <td class="type" title="Type">e</td>
+      <td class="tests" title="Tests"></td>
+    </tr>
+    <tr class="issue">
+      <td id="issue-64" class="id" title="id"><a href="#issue-64">64</a></td>
+      <td class="summary" title="Summary"><a href="https://github.com/whatwg/encoding/issues/64"> Correct [Exposed] syntax </a></td>
+      <td class="from" title="From">ms2ger</td>
+      <td class="status" title="Status">c</td>
+      <td class="decision accepted" title="Decision">a</td>
+      <td class="responder " title="Responder"></td>
+      <td class="specchange" title="Spec changes"><a href="https://github.com/whatwg/encoding/commit/41ac88bd17b4844e9894e9452acbe478f25aa075">Correct IDL Exposed syntax</a></td>
+      <td class="type" title="Type">e</td>
+      <td class="tests" title="Tests"></td>
+    </tr>
+    <tr class="issue">
+      <td id="issue-66" class="id" title="id"><a href="#issue-66">66</a></td>
+      <td class="summary" title="Summary"><a href="https://github.com/whatwg/encoding/issues/66"> In equations, all numbers are integers, additio... </a></td>
+      <td class="from" title="From">ricea</td>
+      <td class="status" title="Status">o</td>
+      <td class="decision accepted" title="Decision">a</td>
+      <td class="responder " title="Responder"></td>
+      <td class="specchange" title="Spec changes"></td>
+      <td class="type" title="Type">e</td>
+      <td class="tests" title="Tests"></td>
+    </tr>
+    <tr class="issue">
+      <td id="issue-67" class="id" title="id"><a href="#issue-67">67</a></td>
+      <td class="summary" title="Summary"><a href="https://github.com/whatwg/encoding/issues/67"> URL parsing HTML form submission </a></td>
+      <td class="from" title="From">ricea</td>
+      <td class="status" title="Status">c</td>
+      <td class="decision accepted" title="Decision">a</td>
+      <td class="responder " title="Responder"></td>
+      <td class="specchange" title="Spec changes"><a href="https://github.com/whatwg/encoding/commit/4bf904adec53ceae8b11ffe8c33a98fbde8a67f7">Editorial: add "and" to note </a></td>
+      <td class="type" title="Type">e</td>
+      <td class="tests" title="Tests"></td>
+    </tr>
+    <tr class="issue">
+      <td id="issue-68" class="id" title="id"><a href="#issue-68">68</a></td>
+      <td class="summary" title="Summary"><a href="https://github.com/whatwg/encoding/issues/68"> Add UTF-7 to replacement encoding list? </a></td>
+      <td class="from" title="From">jungshik</td>
+      <td class="status" title="Status">o</td>
+      <td class="decision?" title="Decision">&nbsp;</td>
+      <td class="responder " title="Responder"></td>
+      <td class="specchange" title="Spec changes"></td>
+      <td class="type substantive" title="Type">?</td>
+      <td class="tests" title="Tests"></td>
+    </tr>
+    <tr class="issue">
+      <td id="issue-69" class="id" title="id"><a href="#issue-69">69</a></td>
+      <td class="summary" title="Summary"><a href="https://github.com/whatwg/encoding/issues/69"> TextEncoder#encode - write to existing Uint8Array </a></td>
+      <td class="from" title="From">maciejhirsz</td>
+      <td class="status" title="Status">o</td>
+      <td class="decision?" title="Decision">&nbsp;</td>
+      <td class="responder " title="Responder"></td>
+      <td class="specchange" title="Spec changes"></td>
+      <td class="type" title="Type">?</td>
+      <td class="tests" title="Tests"></td>
+    </tr>
+    <tr class="issue">
+      <td id="issue-70" class="id" title="id"><a href="#issue-70">70</a></td>
+      <td class="summary" title="Summary"><a href="https://github.com/whatwg/encoding/issues/70"> Consider adding "replacement" as a label for the replacement encoding </a></td>
+      <td class="from" title="From">hsivonen</td>
+      <td class="status" title="Status">o</td>
+      <td class="decision?" title="Decision">&nbsp;</td>
+      <td class="responder " title="Responder"></td>
+      <td class="specchange" title="Spec changes"></td>
+      <td class="type substantive" title="Type">?</td>
+      <td class="tests" title="Tests"></td>
+    </tr>
+  </tbody>
+</table>
+
+
+<script>
+var issueList = new Array
+
+var issues = document.querySelectorAll('tr')
+for (var i=1;i<issues.length;i++) {
+	var cells = issues[i].querySelectorAll('td')
+	//console.log(cells[0].textContent)
+	issueList[i-1] = [
+		cells[0].textContent,
+		cells[1].textContent,
+		cells[2].textContent,
+		cells[3].textContent,
+		cells[4].textContent,
+		cells[5].textContent,
+		cells[6].innerHTML,
+		cells[7].textContent,
+		cells[8].textContent
+		]
+	}
+	console.log('issueList',issueList)
+
+for (i=0;i<issueList.length;i++) {
+	
+	}
+
+
+function resort (column) { 
+
+	table = '<table id="reviewtable"><thead><tr>';
+	
+	tablecolumns = [
+		"Id",
+		"Summary",
+		"From", 
+		"Status", 
+		"Decision", 
+		"Responder", 
+		"Changes",
+		"Type", 
+		"Tests"
+		];
+		
+	for (var i=0;i<tablecolumns.length;i++) {
+		table += '<th class="top"><a href="#theTable" onclick="resort(col='+i+');">'+tablecolumns[i]+'</a></th>'+"\n";
+		}
+	
+	table += '</tr></thead><tbody>';
+	
+	id = 0;
+	summary = 1;
+	from = 2;
+	status = 3;
+	decision = 4;
+	responder = 5;
+	changes = 6;
+	type = 7;
+	tests = 8;
+	
+	for (i=0;i<issueList.length;i++) {
+		temp = issueList[i][column];
+		issueList[i][column] = issueList[i][0];
+		issueList[i][0] = temp;
+		}
+	
+	//if (column == id || column == status || column == decision || column == responder || column == type || column == tests) issueList.reverse()
+	if (column == id || column == status || column == decision || column == responder || column == type) issueList.sort(function(a, b) {
+			  var nameA = a[0].toUpperCase()
+			  var nameB = b[0].toUpperCase()
+			  if (nameA < nameB) return 1
+			  if (nameA > nameB) return -1			
+			  return 0;
+			  })
+	//else if (column == numchars || column == combining || column == fcount ) issueList.sort(function(a,b){var x=a[0];var y=b[0];return x-y})
+	else issueList.sort()
+		
+	for (i=0;i<issueList.length;i++) {
+		temp = issueList[i][column];
+		issueList[i][column] = issueList[i][0];
+		issueList[i][0] = temp;
+		}
+
+	for (r=0;r<issueList.length;r++) {
+		table += '<tr class="issue">';
+		table += '<td class="id" id="issue-'+issueList[r][id]+'" title="'+issueList[r][id]+'"><a href="#issue-'+issueList[r][id]+'">'+issueList[r][id]+'</a></td>';
+		table += '<td class="summary" title="Summary"><a target="_blank" href="https://github.com/whatwg/encoding/issues/'+issueList[r][id]+'">'+issueList[r][summary]+'</a></td>';
+		table += '<td class="from" title="From">'+issueList[r][from]+'</td>';
+		
+		table += '<td class="status'
+		if (issueList[r][status].toLowerCase() == 'open' || issueList[r][status].toLowerCase() == 'o') table += ' accepted'
+		table += '" title="Status">'
+		if (issueList[r][status].toLowerCase() == 'open' || issueList[r][status].toLowerCase() == 'o') table += 'Open'
+		else if (issueList[r][status].toLowerCase() == 'closed' || issueList[r][status].toLowerCase() == 'c') table += 'Closed'
+		else  table += issueList[r][status]
+		table += '</td>'
+
+		table += '<td class="decision'
+		if (issueList[r][decision].toLowerCase() == 'accepted' || issueList[r][decision].toLowerCase() == 'a') table += ' accepted'
+		if (issueList[r][decision].toLowerCase() == 'rejected' || issueList[r][decision].toLowerCase() == 'r') table += ' rejected'
+		table += '" title="Decision">'
+		if (issueList[r][decision].toLowerCase() == 'accepted' || issueList[r][decision].toLowerCase() == 'a') table += 'Accepted'
+		else if (issueList[r][decision].toLowerCase() == 'rejected' || issueList[r][decision].toLowerCase() == 'r') table += 'Rejected'
+		else if (issueList[r][decision].toLowerCase() == 'question' || issueList[r][decision].toLowerCase() == 'q') table += 'Question'
+		else  table += issueList[r][decision]
+		table += '</td>'
+
+		table += '<td class="responder'
+		if (issueList[r][responder].toLowerCase() == 'unsatisfied' || issueList[r][responder].toLowerCase() == 'u') table += ' objection'
+		table += '" title="Responder">'
+		if (issueList[r][responder].toLowerCase() == 'unsatisfied' || issueList[r][responder].toLowerCase() == 'u') table += 'Not satisfied'
+		else if (issueList[r][responder].toLowerCase() == 'satisfied' || issueList[r][responder].toLowerCase() == 's') table += 'Satisfied'
+		else  table += issueList[r][responder]
+		table += '</td>'
+
+		table += '<td class="specchange" title="Spec changes">'+issueList[r][changes]+'</td>'
+
+		table += '<td class="type'
+		if (issueList[r][type].toLowerCase() == 'substantive' || issueList[r][type].toLowerCase() == 's') table += ' substantive'
+		table += '" title="Type">'
+		if (issueList[r][type].toLowerCase() == 'substantive' || issueList[r][type].toLowerCase() == 's') table += 'Substantive'
+		else if (issueList[r][type].toLowerCase() == 'editorial' || issueList[r][type].toLowerCase() == 'e') table += 'Editorial'
+		else if (issueList[r][type].toLowerCase() == 'indexchange' || issueList[r][type].toLowerCase() == 'i') table += 'Index changed'
+		else  table += issueList[r][type]
+		table += '</td>'
+
+		table += '<td class="tests'
+		if (issueList[r][tests].toLowerCase() == 'change!' || issueList[r][tests].toLowerCase() == '!') table += ' objection'
+		table += '" title="Tests">'
+		if (issueList[r][tests].toLowerCase() == 'change!' || issueList[r][tests].toLowerCase() == '!') table += 'Change!'
+		else if (issueList[r][tests].toLowerCase() == 'changed' || issueList[r][tests].toLowerCase() == 'c') table += 'Done'
+		else  table += issueList[r][tests]
+		table += '</td>'
+
+		table += '</tr>'+"\n";
+		}
+	document.getElementById('theTable').innerHTML = table;
+	}
+
+</script>
+
+
+
+<div id="theTable"></div>
+<script type="text/javascript">
+document.getElementById('inputTable').style.display = 'none';
+resort(0);
+</script>
+
+
+<script>
+// check for parameters and take appropriate action
+parameters = location.search.split('&');
+parameters[0] = parameters[0].substring(1);
+for (var p=0;p<parameters.length;p++) {  
+	pairs = parameters[p].split('=');
+	if (pairs[0] == 'sort') { 
+		switch (pairs[1]) {
+			case 'from': resort(col=2); break
+			case 'status': resort(col=3); break
+			case 'decision': resort(col=4); break
+			case 'responder': resort(col=5); break
+			case 'type': resort(col=7); break
+			case 'tests': resort(col=8); break
+			}
+		}
+	}
+</script>
+
+</body>
+</html>
