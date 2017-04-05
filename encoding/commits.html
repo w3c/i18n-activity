@@ -1,0 +1,240 @@
+<html lang="en"><head>
+<meta charset="utf-8">
+<title>Encoding specification Disposition of Comments for CR</title>
+<style type="text/css">
+p {
+	line-height: 1.4em;
+}
+.av, .rv, .ov, .iv {
+	background: #6F9
+}		/* verified, ie. commenter happy with decision */
+.ro, .oo, .io {
+	background: red
+}		/* objection, ie. commenter not happy with decision */
+.accepted {
+	background: #6FC
+}			/* accepted, awaiting reply */
+.deferred {
+	background: lightblue
+}	/* deferred */
+.rejected {
+	background: #FFCC80;
+}	/* rejected, awaiting reply */
+.substantive {
+	background: #FFCC80;
+}
+.outofscope {
+	background: #ddd
+}	/* out of scope, awaiting reply */
+.invalid {
+	background: #ddd
+}	/* invalid, awaiting reply */
+.re {
+	background: #6F9
+}	/* retracted */
+.open {
+	border: solid red;
+	padding: 0.2em;
+}
+:target {
+	box-shadow: 0.25em 0.25em 0.25em;
+}
+.issue {
+	margin: 1em;
+	border: 1px solid #999;
+	border-radius: 10px;
+	padding: 8px;
+}
+.issue p {
+	margin: 0;
+	font-family: Cambria, "Hoefler Text", "Liberation Serif", Times, "Times New Roman", serif;
+}
+#issues strong {
+	color: #666;
+	color: red;
+	font-weight: bold;
+	background-color: #eee;
+	border-radius: 3px;
+	padding: 3px;
+}
+h2 {
+	margin-top: 3em;
+}
+.v {
+	writing-mode: vertical-rl;
+}
+th {
+	vertical-align: bottom;
+	text-align: start;
+}
+td {
+	vertical-align: top;
+	padding: 5px;
+	border-radius: 7px;
+	border-bottom: 1px solid #ccc;
+}
+body {
+	font-family: 'Helvetica Neue', Roboto, "Calibri", "Segoe UI", sans-serif;
+	font-size: 16px;
+	font-weight: 300;
+	line-height: 1.75;
+	color: #555;
+	margin: 0;
+	padding: 10px;
+	background-color: white;
+}
+.objection {
+	background-color: red;
+	color: white;
+	border-radius: 10px;
+}
+.reopened {
+	background-color: orange;
+	color: white;
+	border-radius: 10px;
+}
+aside { float:right; font-size:90%; line-height: 1.2; margin:0; text-align: end; }
+aside p { line-height: 1.2; }
+</style>
+</head>
+
+<body>
+<aside>
+<p><a href="http://www.w3.org/TR/encoding/">CR document</a></p>
+<p><a href="http://encoding.spec.whatwg.org/">Editor's draft</a></p>
+<p><a href="https://github.com/whatwg/encoding/issues/">Github issue list</a></p>
+</aside>
+<h1>Encoding specification <br>
+Commit History, Apr 2017</h1>
+
+<script>
+
+function colour (column) { 
+	var labels = document.querySelectorAll('.type')
+	for (var i=0;i<labels.length;i++) {
+		if (labels[i].textContent.match(/editorial/i)) labels[i].parentNode.style.backgroundColor = '#C2F5BD'
+		else if (labels[i].textContent.match(/-/i)) labels[i].parentNode.style.backgroundColor = '#eee'
+		else if (labels[i].textContent.match(/substantive/i)) labels[i].parentNode.style.backgroundColor = '#F8BF6D'
+		else if (labels[i].textContent.match(/typo/i)) labels[i].parentNode.style.backgroundColor = '#eee'
+		else labels[i].parentNode.style.backgroundColor = '#F4BBBC'
+		}
+
+	}
+
+</script>
+
+
+
+<div><table id="reviewtable"><thead><tr>
+<th class="top">Date</th>
+<th class="top">Summary</th>
+<th class="top">From</th>
+<th class="top">Closes</th>
+<th class="top">Type</th>
+<th class="top">Tests</th>
+</tr></thead><tbody>
+  <tr class="issue">
+    <td class="id" id="issue-36" title="76">20 Mar 2017</td>
+    <td class="summary" title="Summary"><a href="https://github.com/whatwg/encoding/commit/eb1195b84c662e45274e148fbc5ed7ba308920d6"> Editorial: enable indexes and fix a couple minor nits </a></td>
+    <td class="from" title="From">anne</td>
+    <td class="specchange" title="Spec changes">-</td>
+    <td class="type" title="Type">editorial</td>
+    <td class="tests" title="Tests">-</td>
+  </tr>
+  <tr class="issue">
+    <td class="id" id="issue-35" title="76">20 Mar 2017</td>
+    <td class="summary" title="Summary"><p><a href="https://github.com/whatwg/encoding/commit/9323530fae940d95b2c0b9f00a6a654bd2097aff">Document minimal implementation requirements </a></p>
+      <p>This makes it clearer that alternative implementation strategies are possible.</p></td>
+    <td class="from" title="From">anne</td>
+    <td class="specchange" title="Spec changes"><a href="https://github.com/whatwg/encoding/issues/44">#44</a></td>
+    <td class="type" title="Type">?</td>
+    <td class="tests" title="Tests">-</td>
+  </tr>
+  <tr class="issue">
+    <td class="id" id="issue-34" title="76">20 Mar 2017</td>
+    <td class="summary" title="Summary"><a href="https://github.com/whatwg/encoding/commit/eb8130688bcaafb75cefa519faa19141de30407e">Editorial: remove floor() operation in favor of integer division </a></td>
+    <td class="from" title="From">anne</td>
+    <td class="specchange" title="Spec changes"><a href="https://github.com/whatwg/encoding/issues/66">#66</a></td>
+    <td class="type" title="Type">editorial</td>
+    <td class="tests" title="Tests">-</td>
+  </tr>
+  <tr class="issue">
+    <td class="id" id="issue-30" title="76">20 Mar 2017</td>
+    <td class="summary" title="Summary"><a href="https://github.com/whatwg/encoding/commit/2e054a6074c396a5a6ecdf0d5d8b90173571c254"> Encourage implementations to avoid copying in TextDecoder </a></td>
+    <td class="from" title="From">anne</td>
+    <td class="specchange" title="Spec changes"><a href="https://github.com/whatwg/encoding/issues/92">#92</a></td>
+    <td class="type" title="Type">?</td>
+    <td class="tests" title="Tests">-</td>
+  </tr>
+  <tr class="issue">
+    <td class="id" id="issue-26" title="76">19 Mar 2017</td>
+    <td class="summary" title="Summary"><a href="https://github.com/whatwg/encoding/commit/ee2bd345bc6f51fe9cca2cb5d99280eeb02b455f"> Editorial: added two rowspan=2 to the 8859-9-i table row </a></td>
+    <td class="from" title="From">addison</td>
+    <td class="specchange" title="Spec changes"><a href="https://github.com/whatwg/encoding/issues/95">#95</a></td>
+    <td class="type" title="Type">editorial</td>
+    <td class="tests" title="Tests">-</td>
+  </tr>
+  <tr class="issue">
+    <td class="id" id="issue-25" title="76">22 Feb 2017</td>
+    <td class="summary" title="Summary"><a href="https://github.com/whatwg/encoding/commit/f2c66828cebdf1fd79b1735e76ee984b796ba8b5">Meta: fix typo in test URL made in previous commit</a></td>
+    <td class="from" title="From">anne</td>
+    <td class="specchange" title="Spec changes">-</td>
+    <td class="type" title="Type">typo</td>
+    <td class="tests" title="Tests">-</td>
+  </tr>
+  <tr class="issue">
+    <td class="id" id="issue-9" title="76">22 Feb 2017</td>
+    <td class="summary" title="Summary"><a href="https://github.com/whatwg/encoding/commit/24eb4377bd6d448e71d0f666b550fe9984bc9d05"> Meta: enable PR preview, add editor config, and link web-platform-tests </a></td>
+    <td class="from" title="From">anne</td>
+    <td class="specchange" title="Spec changes">-</td>
+    <td class="type" title="Type">editorial</td>
+    <td class="tests" title="Tests">-</td>
+  </tr>
+  <tr class="issue">
+    <td class="id" id="issue-23" title="76">7 Feb 2017</td>
+    <td class="summary" title="Summary"><a href="https://github.com/whatwg/encoding/commit/a46a0c41dc471747c9bc931dfa16934c04153f98">Editorial: fix formatting of code and add new to a constructor </a></td>
+    <td class="from" title="From">anne</td>
+    <td class="specchange" title="Spec changes"><a href="https://github.com/whatwg/encoding/issues/90">#90</a></td>
+    <td class="type" title="Type">editorial</td>
+    <td class="tests" title="Tests">-</td>
+  </tr>
+  <tr class="issue">
+    <td class="id" id="issue-8" title="76">20 Jan 2017</td>
+    <td class="summary" title="Summary"><p><a href="https://github.com/whatwg/encoding/commit/7696b7abf42ac13ccb59f183ee4e9e836ade13c2">Add visualizations for the indexes </a></p></td>
+    <td class="from" title="From">anne</td>
+    <td class="specchange" title="Spec changes"><a href="https://github.com/whatwg/encoding/issues/78">#78</a></td>
+    <td class="type" title="Type">editorial</td>
+    <td class="tests" title="Tests">-</td>
+  </tr>
+  <tr class="issue">
+    <td class="id" id="issue-6" title="76">12 Jan 2017</td>
+    <td class="summary" title="Summary"><a href="https://github.com/whatwg/encoding/commit/8131b9eb7580e8f27736d7999e96821ca447eca1">Meta: enable HTML checker </a></td>
+    <td class="from" title="From">anne</td>
+    <td class="specchange" title="Spec changes">-</td>
+    <td class="type" title="Type">-</td>
+    <td class="tests" title="Tests">-</td>
+  </tr>
+  <tr class="issue">
+    <td class="id" id="issue-76" title="76"> 10 Jan 2017</td><td class="summary" title="Summary"><a target="_blank" href="https://github.com/whatwg/encoding/issues/76"> Editorial: mark certain references non-normative</a><br>
+  Also remove the DOM reference as it’s not actually needed for anything.</td>
+  <td class="from" title="From">anne</td>
+  <td class="specchange" title="Spec changes"><a href="https://github.com/whatwg/encoding/issues/86"> #86</a></td>
+  <td class="type" title="Type">editorial</td>
+  <td class="tests" title="Tests">-</td></tr>
+  <tr class="issue">
+    <td colspan="2" class="id" id="issue-7" title="76">Update published 15 Dec 2016</td>
+    <td class="from" title="From">&nbsp;</td>
+    <td class="specchange" title="Spec changes">&nbsp;</td>
+    <td class="type" title="Type">&nbsp;</td>
+    <td class="tests" title="Tests">&nbsp;</td>
+  </tr>
+  </tbody>
+</table></div>
+
+
+
+
+<script>
+colour()
+</script>
+</body></html>
