@@ -1,4 +1,4 @@
-**This is a tracker issue.  Contribute to the discussion at the following link:**
+**This is a tracker issue.  Contribute to the actual discussion at the following link:**
 
 link
 
