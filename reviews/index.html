@@ -69,15 +69,15 @@ var maxpages = 3
   <script>document.getElementById('mainNavigation').innerHTML = mainNavigation</script> 
 </header>
 <div class="content">
-<h1> Review comments</h1>
+<h1> Review comment tracker</h1>
 <section id="sidebarExtras">
   <h2 class="notoc">Useful links</h2>
   <ul>
-    <li><a class="print" href="https://github.com/w3c/i18n-activity/issues">Review comment tracker on Github</a></li>
-    <li><a class="print" href="http://w3c.github.io/i18n-activity/radar/">Review radar</a></li>
+    <li><a class="print" href="https://github.com/w3c/i18n-activity/issues">Tracker issues on Github</a></li>
+    <li><a class="print" href="https://github.com/w3c/i18n-activity/projects/1">Review radar</a></li>
     <li><a class="print" href="https://www.w3.org/International/reviews/review-instructions">Review guidelines</a></li>
     <li><a class="print" href="https://www.w3.org/International/reviews/openissues/">Previous tracker</a></li>
-    <li><a class="print" href="https://www.w3.org/International/reviews/openissues/">I18n Activity issues</a></li>
+    <li><a class="print" href="http://w3c.github.io/i18n-activity/repostatus/">I18n document issues</a></li>
   </ul>
   <h2 class="notoc">Coloured squares</h2>
   <p>The coloured squares represent the following labels:</p>
@@ -91,7 +91,8 @@ var maxpages = 3
   </ul>
 </section>
 <section>
-  <p>This page lists currently OPEN issues in the i18n Activity's github repository that points to comments raised against <em>specs of other groups</em> during review activities, with the most recently active specs nearest the top.  Click on the issue name to go to the issue page. The date indicates the last time there was activity for this issue. See also the <a href="https://github.com/w3c/i18n-activity/issues">issues list on Github</a>. (For issues related to Internationalization Activity documents and discussions, see the links in the side column.)</p>
+  <p>This page tracks comments made by the i18n WG on the specs of other WGs. It only shows tracker issues the i18n WG has not closed. (Issues may remain open in the i18n tracker even if closed by the other WG in their repo.)</p>
+  <p>The mostly recently changed issues appear at the top of each section, and sections are ordered according to where the most recent changes occurred. The date indicates the last time there was a change to the <em>tracker</em> issue (not the issue in the other WG's repo). Each item links to a tracking <a href="https://github.com/w3c/i18n-activity/issues">issue in the i18n-activity github repo</a>. Click on the link in <em>that</em> issue to follow the actual discussion. </p>
   <p id="total">Loading data...</p>
 </section>
 <section id="rawdata">
