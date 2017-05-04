@@ -1,5 +1,5 @@
 # i18n-activity
-Home pages, charters, style-guides, and similar documents related to the W3C Internationalization Activity.
+Home pages, charters, style-guides, and similar documents related to the [W3C Internationalization Activity](https://www.w3.org/International/).
 
 Please DO NOT RAISE ISSUES in this repository other than for the tracking of WG review comments.  If you really need to make a comment on one of the few documents in this repo, please send email to r12a@w3.org.  
 
