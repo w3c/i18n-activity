@@ -33,6 +33,7 @@ var labels = {
 	'ldn':[],
 	'media-capture-and-streams':[],
 	'micropub':[],
+	'owl-time':[],
 	'packaging-on-the-web':[],
 	'payment-request':[],
 	'presentation-api':[],
@@ -52,7 +53,9 @@ var labels = {
 	'webauthn':[],
 	'webdriver':[],
 	'webmention':[],
+	'webrtc':[],
 	'web-share':[],
+	'websub':[],
 	'webvtt':[],
 	'xslt':[]
 	}
