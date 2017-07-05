@@ -90,6 +90,9 @@ td {
     border-radius: .25em;
 }
 
+.objectives1 {    background-color: #eee;
+    border-radius: .25em;
+}
 </style>
 <script>
 // routines to achieve correct ordering of items per column, based on order of lists below
@@ -182,7 +185,7 @@ For each work item, the page describes objectives and next steps (the numbered l
       <th style="font-size:110%;">Lreq development</th>
       <th style="font-size:110%;">Indexing, gap analysis, etc</th>
       <th style="font-size:110%;">Reviews, discussion, advice</th>
-      <th style="font-size:110%;">Documenting guidelines</th>
+      <th style="font-size:110%;">Projects</th>
     </tr>
     <tr>
       <td id="req"><div class="item" id="arabic">
@@ -389,54 +392,17 @@ For each work item, the page describes objectives and next steps (the numbered l
           <li class="inprogress">respond to  requests for help. </li>
         </ol>
         </div>
-      <div class="item" id="strings">
-        <p class="topic">lang/bidi for strings</p>
-        <p><a target="_blank" href="https://www.w3.org/International/wiki/ContentMetadataJavaScriptDiscussion">wiki</a></p>
-        <ul class="objectives">
-          <li> Develop requirements and best practices for handling plain text and JSON content with natural language.</li>
+      <div class="item" id="specdev">
+        <p class="topic">specdev</p>
+        <p><a target="_blank" href="https://github.com/w3c/bp-i18n-specdev">GH</a></p>
+        <ul class="objectives1">
+          <li>Capture guidelines for spec developers, to help them address internationalization needs.</li>
+          <li>Shape the guidelines so that they can be used for self-review.</li>
         </ul>
         <ol class="todo">
-          <li><span> develop requirements and best practices</span></li>
-        </ol>
-        <p>Contact: Addison</p>
-      </div>
-      <div class="item" id="ruby_cm">
-        <p class="topic">ruby content model</p>
-        <p><a target="_blank" href="https://w3c.github.io/i18n-drafts/articles/ruby/markup.en">markup</a> &bull; <a target="_blank" href="https://w3c.github.io/i18n-drafts/articles/ruby/styling.en">styling</a> &bull; <a target="_blank" href="https://www.w3.org/International/tests/#html5-ruby">html tests</a> &bull; <a target="_blank" href="https://www.w3.org/International/tests/#css3-ruby">css tests</a></p>
-        <ul class="objectives">
-          <li>Develop a content model for ruby to replace Ruby Annotation, and underpin TTML, WebVTT and other formats wanting to add ruby support.</li>
-        </ul>
-        <ol class="todo">
-          <li class="inprogress">Produce an initial draft.</li>
-          <li>Internal review</li>
-          <li>Wide review</li>
-          <li>Publish Note</li>
-        </ol>
-        <p>Contact: Richard</p>
-      </div>
-      <div class="item" id="ruby_impl">
-        <p class="topic">ruby implementation</p>
-        <p><a target="_blank" href="https://w3c.github.io/i18n-drafts/articles/ruby/markup.en">markup</a> &bull; <a target="_blank" href="https://w3c.github.io/i18n-drafts/articles/ruby/styling.en">styling</a> &bull; <a target="_blank" href="https://www.w3.org/International/tests/#html5-ruby">html tests</a> &bull; <a target="_blank" href="https://www.w3.org/International/tests/#css3-ruby">css tests</a></p>
-        <ul class="objectives">
-          <li>Assess and track implementations of ruby markup &amp; styling, and offer advice to implementers.</li>
-        </ul>
-        <ol class="todo">
-          <li class="inprogress">continue  styling article</li>
-          <li>write ruby css tests, incl zhuyin</li>
-          <li>track implementations</li>
-          <li>support bopomofo implementation<br>
-          </li>
-        </ol>
-        <p>Contact: Richard</p>
-      </div>
-      <div class="item" id="bidi_impl">
-        <p class="topic">bidi implementation</p>
-        <ul class="objectives">
-          <li>Assess and track implementations of bidi markup &amp; styling, and offer advice to implementers.</li>
-        </ul>
-        <ol class="todo">
-          <li>help move dir isolation implementation forward<br>
-          </li>
+          <li class="inprogress">review &amp; check guidelines</li>
+          <li>promote collaborative use by WGs</li>
+          <li class="inprogress">develop a higher level set of questions to point groups to the right parts of specdev</li>
         </ol>
         <p>Contact: Richard</p>
       </div>
@@ -453,6 +419,22 @@ For each work item, the page describes objectives and next steps (the numbered l
           <li>develop more articles like vertical text &amp; ruby.</li>
         </ol>
         <p>Contact: Richard</p>
+</div>
+      <div class="item" id="ruby_impl">
+        <p class="topic"> implementer support</p>
+        <p><a target="_blank" href="http://www.w3.org/International/tests">test suite</a> • <a href="http://w3c.github.io/i18n-activity/reviews/#browser-implementations">bug tracker</a></p>
+        <ul class="objectives1">
+          <li>Assess and track implementations of i18n features, and offer advice to implementers.</li>
+        </ul>
+        <ol class="todo">
+          <li>write ruby css tests, incl zhuyin</li>
+          <li>support bopomofo ruby implementation<br>
+          </li>
+          <li>help move dir isolation implementation forward</li>
+          <li>encourage encoding spec completeness<br>
+          </li>
+        </ol>
+        <p>Contact: Richard</p>
       </div>
       <div class="item" id="its">
         <p class="topic">ITS IG</p>
@@ -461,22 +443,8 @@ For each work item, the page describes objectives and next steps (the numbered l
           <li>map ITS to <a target="_blank" href="https://www.w3.org/International/its/wiki/XLIFF_2.0_Mapping">XLIFF 2.0</a></li>
         </ol>
         <p>Contact: Felix</p>
-      </div></td>
-      <td><div class="item" id="specdev">
-        <p class="topic">specdev</p>
-        <p><a target="_blank" href="https://github.com/w3c/bp-i18n-specdev">GH</a></p>
-        <ul class="objectives">
-          <li>Capture guidelines for spec developers, to help them address internationalization needs.</li>
-          <li>Shape the guidelines so that they can be used for self-review.</li>
-        </ul>
-        <ol class="todo">
-          <li class="inprogress">review &amp; check guidelines</li>
-          <li>promote collaborative use by WGs</li>
-          <li class="inprogress">develop a higher level set of questions to point groups to the right parts of specdev</li>
-        </ol>
-        <p>Contact: Richard</p>
-      </div>
-        <div class="item" id="charmod">
+    </div></td>
+      <td><div class="item" id="charmod">
           <p class="topic priority">charmod</p>
           <p><a target="_blank" href="https://github.com/w3c/charmod-norm/">GH</a></p>
           <ul class="objectives">
@@ -503,6 +471,34 @@ For each work item, the page describes objectives and next steps (the numbered l
             <li class="inprogress">decide when to publish Rec</li>
           </ol>
           <p>Contact: Addison</p>
+        </div>
+        <div class="item" id="strings">
+          <p class="topic"> string metadata</p>
+          <p><a target="_blank" href="http://w3c.github.io/i18n-discuss/notes/i18n-action-612.html">issue doc</a> • <a href="https://github.com/w3ctag/design-reviews/issues/178">tag discn</a> • <a href="https://aphillips.github.io/bidi-lang-req/">note</a></p>
+          <ul class="objectives1">
+            <li> Develop requirements and best practices for handling language and direction with strings in plain text and JSON, data formats, etc.</li>
+          </ul>
+          <ol class="todo">
+            <li><span> develop requirements and best practices</span></li>
+            <li class="inprogress">discuss with stakeholders</li>
+            <li>create a document with findings</li>
+            <li>merge findings into specdev</li>
+          </ol>
+          <p>Contact: Addison</p>
+        </div>
+        <div class="item" id="ruby_cm">
+          <p class="topic">ruby content model</p>
+          <p><a target="_blank" href="https://w3c.github.io/i18n-discuss/notes/ruby-content-model">draft notes</a></p>
+          <ul class="objectives1">
+            <li>Develop a content model for ruby to replace Ruby Annotation, and underpin TTML, WebVTT and other formats wanting to add ruby support.</li>
+          </ul>
+          <ol class="todo">
+            <li class="inprogress">Produce an initial draft.</li>
+            <li>Internal review</li>
+            <li>Wide review</li>
+            <li>Publish Note</li>
+          </ol>
+          <p>Contact: Richard</p>
         </div>
         <div class="item" id="timezones">
           <p class="topic">time zones, etc.</p>
