@@ -7,3 +7,7 @@ If you want to comment on a document that the WG produces, please use the issues
 
 If you want to contribute to discussions pointed to by the issues in this repo, do so on the github issue, bugzilla page, or email list pointed to by the issue.
 
+## Links
+- [WG home page](http://w3c.github.io/i18n-activity/i18n-wg/)
+- [Action tracker](http://www.w3.org/International/track/actions/open)
+- [Practical tips for task forces](https://w3c.github.io/i18n-activity/guidelines/process.html)
