@@ -58,7 +58,7 @@ var labelsLength = labelsKeys.length
 var debug = false
 
 var issues = []
-var maxpages = 3
+var maxpages = 5
 
 </script>
 </head>
@@ -79,15 +79,16 @@ var maxpages = 3
     <li><a class="print" href="https://www.w3.org/International/reviews/openissues/">Previous tracker</a></li>
     <li><a class="print" href="http://w3c.github.io/i18n-activity/repostatus/">I18n document issues</a></li>
   </ul>
-  <h2 class="notoc">Coloured squares</h2>
-  <p>The coloured squares represent the following labels:</p>
+  <h2 class="notoc">Filter results</h2>
+  <p>Click to show items with that label only:</p>
   <ul>
-    <li><span style="padding: 0 .5em;background-color:red;"> </span> &nbsp; Pending</li>
-    <li><span style="padding: 0 .5em;background-color: #f48041;"> </span> &nbsp; Needs review</li>
-    <li><span style="padding: 0 .5em;background-color: #ccc;"> </span> &nbsp; Tracking</li>
-    <li><span style="padding: 0 .5em;background-color: #fbca04;"> </span> &nbsp; Waiting</li>
-    <li><span style="padding: 0 .5em;background-color: #009800;"> </span> &nbsp; Close?</li>
-    <li><span style="padding: 0 .5em;background-color: #1D76DB;"> </span> &nbsp; Deferred</li>
+    <li><span style="padding: 0 .5em;background-color:red;"> </span> &nbsp; <a href="#" onclick="filterByLabel('pending')">Pending</a></li>
+    <li><span style="padding: 0 .5em;background-color: #f48041;"> </span> &nbsp; <a href="#" onclick="filterByLabel('needs-review')">Needs review</a></li>
+    <li><span style="padding: 0 .5em;background-color: #ccc;"> </span> &nbsp; <a href="#" onclick="filterByLabel('track')">Tracking</a></li>
+    <li><span style="padding: 0 .5em;background-color: #fbca04;"> </span> &nbsp; <a href="#" onclick="filterByLabel('waiting')">Waiting</a></li>
+    <li><span style="padding: 0 .5em;background-color: #009800;"> </span> &nbsp; <a href="#" onclick="filterByLabel('close?')">Close?</a></li>
+    <li><span style="padding: 0 .5em;background-color: #1D76DB;"> </span> &nbsp; <a href="#" onclick="filterByLabel('deferred')">Deferred</a></li>
+    <li><span style="padding: 0 .5em;background-color: white; border: 1px solid #ccc;"> </span> &nbsp; <a href="#" onclick="filterByLabel('clear')">Clear filter</a></li>
   </ul>
 </section>
 <section>
@@ -240,7 +241,10 @@ var maxpages = 3
 				labelSection.appendChild(table)
 				// Add the label header to the DOM
 				document.getElementById("rawdata").appendChild(labelSection)
-				document.getElementById('total').textContent = "There are "+issues.length+" issues."
+				
+				// tally the issues on the page
+				trs = document.querySelectorAll('tr')
+				document.getElementById('total').textContent = "There are "+trs.length+" issues."
 			}
 
 			function convertDate (date) {
@@ -326,6 +330,52 @@ var maxpages = 3
 					document.getElementById('dumparea').style.display = 'block'
 					document.getElementById('dumpfield').value = out
 					document.getElementById('dumpfield').select()
+					}
+
+
+				
+				
+				function filterByLabel (label) {
+					// filters page contents to show only those items with label specified
+					// label: either 'type-info-request' or 'spec-type-issue' or 'browser-type-bug'
+					var sections = document.querySelectorAll('section')
+					console.log(sections.length)
+					
+					// clear all previous filters
+					var trs = document.querySelectorAll('tr')
+					for (let i=0;i<trs.length;i++) trs[i].classList.remove('hidden')
+					for (let s=0;s<sections.length;s++) sections[s].classList.remove('hidden')
+					if (label === 'clear') {
+						var trsTotal = document.querySelectorAll('tr')
+						document.getElementById('total').textContent = "There are "+trsTotal.length+" issues."
+						return						
+						}
+					
+					for (s=3;s<sections.length;s++) {
+						var secLabelFound = false
+						if (sections[s].querySelector('h2') === null) continue
+												
+						var issues = sections[s].querySelectorAll('tr')
+						
+						for (let r=0;r<issues.length;r++) {
+							var labelFound = false
+							var spans = issues[r].querySelectorAll('span')
+							for (let s=0;s<spans.length;s++) {
+								if (spans[s].title === label) {
+									labelFound = true
+									secLabelFound = true
+									}
+								}
+							if (! labelFound) issues[r].classList.add('hidden')
+							}
+						if (! secLabelFound) sections[s].classList.add('hidden')
+						}
+						
+					// tally the issues on the page
+					trsTotal = document.querySelectorAll('tr')
+					trs = document.querySelectorAll('tr.hidden')
+					var filteredIssues = trsTotal.length - trs.length
+					document.getElementById('total').textContent = "There are "+filteredIssues+" issues."
 					}
 </script>
 <script>window.onload = getAllData()</script>
