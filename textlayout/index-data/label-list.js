@@ -6,7 +6,7 @@ var labels = {
 	'bidi-text':[],
 	'boundaries':[],
 	'transforms':[],
-	'cursive-text':[],
+	'cursive':[],
 	'emphasis':[],
 	'fonts':[],
 	'glyphs-diacritics':[],
