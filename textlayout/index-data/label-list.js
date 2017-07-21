@@ -3,9 +3,9 @@
 
 var labels = { 
 	'baselines':[],
-	'bidi-controls':[],
+	'bidi-text':[],
 	'boundaries':[],
-	'character-transforms':[],
+	'transforms':[],
 	'cursive-text':[],
 	'emphasis':[],
 	'fonts':[],
