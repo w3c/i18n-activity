@@ -78,12 +78,21 @@ var maxpages = 5
     <li><a class="print" href="https://w3c.github.io/i18n-activity/reviews/">Review tracker</a></li>
   </ul>
   <h2 class="notoc">Filter results</h2>
-  <p>Click to show items with that label only:</p>
+  <p>Click to show only items of this type:</p>
   <ul>
     <li><span style="padding: 0 .5em;background-color:#D93F0B;"> </span> &nbsp; <a href="#" onclick="filterByLabel('type-info-request')">Info request</a></li>
     <li><span style="padding: 0 .5em;background-color: #006b65;"> </span> &nbsp; <a href="#" onclick="filterByLabel('spec-type-issue')">Spec issue</a></li>
     <li><span style="padding: 0 .5em;background-color: #0052CC;"> </span> &nbsp; <a href="#" onclick="filterByLabel('browser-type-bug')">Browser bug</a></li>
-    <li><span style="padding: 0 .5em;background-color: white; border: 1px solid #ccc;"> </span> &nbsp; <a href="#" onclick="filterByLabel('clear')">Clear filter</a></li>
+    <li><span style="padding: 0 .5em;background-color: white; border: 1px solid #ccc;"> </span> &nbsp; <a href="#" onclick="clearFilters()">Clear filters</a></li>
+  </ul>
+  <p>Click to show only items of this script:</p>
+  <ul id="scriptFilters">
+  <script>
+  var scriptsOut = ''
+  for (let item of scriptLabels) scriptsOut += '<li><span style="padding: 0 .5em;background-color:#f9d0c4;"> </span> &nbsp; <a href="#" onclick="filterByLabel(\''+item+'\')">'+item+'</a></li>'
+  document.getElementById('scriptFilters').innerHTML = scriptsOut
+  </script>
+    <li><span style="padding: 0 .5em;background-color: white; border: 1px solid #ccc;"> </span> &nbsp; <a href="#" onclick="clearFilters()">Clear filters</a></li>
   </ul>
 </section>
 <section>
@@ -205,11 +214,34 @@ var maxpages = 5
 					tr.appendChild(td)
 					
 					td = document.createElement('td')
-					// find labels
+					// find type labels
 					for (var j=0;j<issueData.labels.length;j++) {
-						if (issueData.labels[j].name == 'type-info-request' || issueData.labels[j].name == 'spec-type-issue' || issueData.labels[j].name == 'track' || issueData.labels[j].name == 'close?' || issueData.labels[j].name == 'browser-type-bug') {
+						if (issueData.labels[j].name == 'type-info-request' || issueData.labels[j].name == 'spec-type-issue' || issueData.labels[j].name == 'browser-type-bug') {
 							span = document.createElement('span')
 							span.setAttribute('style', 'background-color:#'+issueData.labels[j].color)
+							span.title = issueData.labels[j].name
+							span.className = 'labels'
+							span.textContent = issueData.labels[j].name+' '
+							td.appendChild(span)
+							}
+						}
+					// find script labels
+					for (var j=0;j<issueData.labels.length;j++) {
+						if (scriptLabels.has(issueData.labels[j].name)) {
+						//if (issueData.labels[j].name == 'arabic' || issueData.labels[j].name == 'japanese' || issueData.labels[j].name == 'han' || issueData.labels[j].name == 'hangul' || issueData.labels[j].name == 'thai') {
+							span = document.createElement('span')
+							span.setAttribute('style', 'background-color:#'+issueData.labels[j].color)
+							span.title = issueData.labels[j].name
+							span.className = 'labels'
+							span.textContent = issueData.labels[j].name+' '
+							td.appendChild(span)
+							}
+						}
+					// find close labels
+					for (var j=0;j<issueData.labels.length;j++) {
+						if (issueData.labels[j].name == 'close?') {
+							span = document.createElement('span')
+							span.setAttribute('style', 'background-color:#91fc76')
 							span.title = issueData.labels[j].name
 							span.className = 'labels'
 							span.textContent = issueData.labels[j].name+' '
@@ -336,14 +368,14 @@ var maxpages = 5
 					console.log(sections.length)
 					
 					// clear all previous filters
-					var trs = document.querySelectorAll('tr')
-					for (let i=0;i<trs.length;i++) trs[i].classList.remove('hidden')
-					for (let s=0;s<sections.length;s++) sections[s].classList.remove('hidden')
-					if (label === 'clear') {
-						var trsTotal = document.querySelectorAll('tr')
-						document.getElementById('total').textContent = "There are "+trsTotal.length+" issues."
-						return						
-						}
+					//var trs = document.querySelectorAll('tr')
+					//for (let i=0;i<trs.length;i++) trs[i].classList.remove('hidden')
+					//for (let s=0;s<sections.length;s++) sections[s].classList.remove('hidden')
+					//if (label === 'clear') {
+					//	var trsTotal = document.querySelectorAll('tr')
+					//	document.getElementById('total').textContent = "There are "+trsTotal.length+" issues."
+					//	return						
+					//	}
 					
 					for (let s=3;s<sections.length;s++) {
 						var secLabelFound = false
@@ -371,6 +403,16 @@ var maxpages = 5
 					var filteredIssues = trsTotal.length - trs.length
 					document.getElementById('total').textContent = "There are "+filteredIssues+" issues."
 					}
+
+				function clearFilters () {
+					var sections = document.querySelectorAll('section')
+					var trs = document.querySelectorAll('tr')
+					for (let i=0;i<trs.length;i++) trs[i].classList.remove('hidden')
+					for (let s=0;s<sections.length;s++) sections[s].classList.remove('hidden')
+					var trsTotal = document.querySelectorAll('tr')
+					document.getElementById('total').textContent = "There are "+trsTotal.length+" issues."
+					}
+
 </script>
 <script>window.onload = getAllData()</script>
 

@@ -26,3 +26,7 @@ var labels = {
 	'text-decoration':[],
 	'vertical-text':[],
 	}
+
+
+
+var scriptLabels= new Set(['arabic', 'devanagari','ethiopic', 'han', 'hangul', 'hebrew', 'japanese', 'latin', 'mongolian', 'thai','tibetan'])
