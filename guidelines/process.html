@@ -132,18 +132,18 @@ trackbot   Date: 18 July 2017</pre>
   <p>You may want to 
     <mark>set up a list of agenda items</mark>
     . Do this in IRC using this pattern:</p>
-  <pre>me    agenda+ Action item review 
-me    agenda+ Issue review
-me    agenda+ Do this
-me    agenda+ Do that 
+  <pre>mynick:    agenda+ Action item review 
+mynick:    agenda+ Issue review
+mynick:    agenda+ Do this
+mynick:    agenda+ Do that 
 ...</pre>
   <p>
     <mark>If you have regrets</mark>
 from some participants, indicate that for the minutes by typing:</p>
-  <pre>me    regrets+ personsname anotherperson etc
+  <pre>mynick:    regrets+ personsname anotherperson etc
 </pre>
   <p>You'll need to set up someone as a scribe (to take the minutes). To do so, type:</p>
-  <pre>me    scribenick: persons_irc_nickname</pre>
+  <pre>mynick:    scribenick: persons_irc_nickname</pre>
   <p>Depending on how your telecon is set up, you may need to 
     <mark>claim the host role</mark>
     to start the meeting. To do this.....</p>
@@ -151,7 +151,7 @@ from some participants, indicate that for the minutes by typing:</p>
   <p>
     You should <mark>sign in when you join the call</mark>
  by typing into IRC:</p>
-  <pre>me    present+ myname 
+  <pre>mynick:    present+ myname 
 </pre>
   <p>This records you as present in the minutes, and the zakim bot keeps track of participants this way.</p>
   
@@ -165,25 +165,25 @@ from some participants, indicate that for the minutes by typing:</p>
     To 
     <mark> start a new topic</mark>
 type:</p>
-  <pre> me    Topic: title_of_the_topic_here</pre>
+  <pre> mynick:    Topic: title_of_the_topic_here</pre>
   <p>Alternatively, if you have set up an agenda on IRC, you can type:</p>
-  <pre>me     zakim, take up agendum X</pre>
+  <pre>mynick:     zakim, take up agendum X</pre>
   <p>where X is the number of the agenda item. You don't need to progress through the agenda sequentially. Setting the topic will automatically create a linked heading in the minutes.</p>
   <p>
     To 
     <mark> check what's on the agenda</mark>
     , type</p>
-  <pre>me    agenda?</pre>
+  <pre>mynick:    agenda?</pre>
   <p>To 
     <mark>give someone an action</mark>
     , type</p>
-  <pre>me    Action: Person's_nickname to do something
+  <pre>mynick:    Action: Person's_nickname to do something
 </pre>
   <p>Note that the person's name needs to be the one the bot recognises, and that the word 'to' is important for the action to be recognised by the bot.</p>
   <p>To 
     <mark>close an action</mark>
     , such as action number 10, simply type</p>
-  <pre>me    close action-10
+  <pre>mynick:    close action-10
 </pre>
   <p>Depending on how your telecon is set up, you may need to 
     <mark>claim the host role</mark>
@@ -191,7 +191,7 @@ type:</p>
   <p>Anyone can 
     <mark>correct the minutes in IRC</mark>
 using the substitution command. For example, the following will change the record in the minutes.</p>
-  <pre>me    s/@@ said he would do it/David said he would NOT do it/
+  <pre>mynick:    s/@@ said he would do it/David said he would NOT do it/
 </pre>
   </section>
   
@@ -202,14 +202,14 @@ using the substitution command. For example, the following will change the recor
   <p>You need to 
     <mark>tell the bot who the scribe is</mark>
     . Do this by typing in IRC:</p>
-  <pre>me    scribenick: person's_nickname</pre>
+  <pre>mynick:    scribenick: person's_nickname</pre>
   <p>Doing this will produce much tidier and more readable minutes.</p>
   <p>To
     <mark>scribe what someone is saying</mark>
     , type the name/nick of that person followed by a colon, then add what they say. You can continue the same person's comments by starting a new line with ... (three dots). The bot will then stitch the lines together when it produces the minutes. So, for example:</p>
-  <pre> me    r12a: this is me scribing what someone is saying
- me    ... and now i'm adding something else they are saying
- me    ... and yet more!</pre>
+  <pre> mynick:    r12a: this is me scribing what someone is saying
+ mynick:    ... and now i'm adding something else they are saying
+ mynick:    ... and yet more!</pre>
   <p>There not much more to it than that. But don't forget to save the minutes before the end of the call and before dismissing rrsagent!</p>
   
   </section>
@@ -221,19 +221,19 @@ using the substitution command. For example, the following will change the recor
   <p>You need to 
     <mark>ensure that the rrsagent bot is on the IRC channel</mark>
     before starting to record minutes. If you start the meeting using trackbot, it will usually start up rrsagent automatically. Otherwise, do this in IRC:</p>
-  <pre>me    /invite #channel_name rrsagent</pre>
+  <pre>mynick:    /invite #channel_name rrsagent</pre>
   <p>If you don't have rrsagent running, producing minutes will be a major hassle.</p>
   <p>To 
     <mark>tell rrsagent to draft the minutes</mark>
     , type the following:</p>
-  <pre> me    rrsagent, draft minutes
+  <pre> mynick:    rrsagent, draft minutes
 </pre>
   <p>The bot will reply to you with a URL where the minutes are being stored. (It may take a moment for the page to refresh.)</p>
   <p>You should ALWAYS ask rrsagent to draft the minutes at the end of the telecon, but you can also do so at any time during the call.</p>
   <p>You may need to 
     <mark>set the access rights for the minutes</mark>
     . You can do this in IRC using:</p>
-  <pre> me    rrsagent, make log public
+  <pre> mynick:    rrsagent, make log public
 </pre>
   <p>Once the meeting is finished, the chair or scribe should check that the minutes look ok. If you want to change anything in the minutes page, use the substitution command mentioned above (ie. s/xxx/yyy/). You'll need to do this before dismissing rrsagent!</p>
   <p>Finally, 
