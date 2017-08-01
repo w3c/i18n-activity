@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Github guidelines for i18n docs</title>
+<link rel="stylesheet" type="text/css" href="../../International/style/article-display-2016.css" />
+<style type="text/css">
+h2 {
+	font-family: Arial, helvetica, sans-serif;
+	font-size: 140%;
+	font-weight: normal;
+	color: white;
+	border: none;
+	margin-top: 3.5em;
+	margin-bottom: 1.5em;
+	padding: 0.1em 0.4em;
+	background-color: #697fb1;
+	border-radius: 10px;
+	}
+h2 a:link, h2 a:active, h2 a:visited {
+	text-decoration: none;
+	color: white;
+	}
+h3 {
+	border-bottom: 1px solid #ccc;
+	}
+.highlight {
+	font-size: 130%;
+	color: #6A6A6A;
+	font-weight: bold;
+	}
+code em {
+	font-style: normal;
+	font-weight: bold;
+	}
+var {
+	font-style: italic;
+	}
+.issue {
+	font-size: 200%;
+	color: red;
+	}
+ol ol { margin-right: 20px; margin-left: 30px;  }
+.ghButton {
+	border: 1px solid #aaa;
+	border-radius: 5px;
+	padding: 0 0.4em;
+	white-space: nowrap;
+	}
+mark {
+	color: white;
+	background-color: orange;
+	}
+</style>
+<script type="text/javascript" src="../../International/javascript/toc_2016.js"></script>
+</head>
+
+<body>
+<header> <aside id="mainNavigation">
+	<nav id="site-navigation">
+		<a href="https://www.w3.org/International/"><img id="picture" alt="World map" title="World map" src="../../International/icons/world.gif" width="150" height="61"/></a>  </nav>
+	
+	<nav class="noprint" id="search"><form method="get" action="https://www.w3.org/International/site-search.php" enctype="application/x-www-form-urlencoded" style="margin: 0;">
+<div id="searchSite"><input name="q" type="text" value="I18n site search: " onfocus="this.value=''" id="searchField" accesskey="E" maxlength="255"/></div>
+</form></nav>
+	<nav id="breadcrumbs"><p><a href="https://www.w3.org/International/">Home </a> &gt; <a href="https://www.w3.org/International/resources">Resources</a> &gt; <a href="https://www.w3.org/International/articlelist#characters">Articles</a></p></nav>
+	<nav class="noprint" id="toc">
+		<h2 id="internal-links" class="notoc"><a href="#internal-links">On this page</a></h2>
+		<div id="toclocation"> </div>
+  </nav>
+	<nav class="noprint" id="relatedlinks">
+		<h2 id="related-links" class="notoc"><a href="#related-links">Related links</a></h2>
+		<p><a href="https://www.w3.org/2002/03/RRSAgent">The RRSAgent IRC Bot</a></p>
+        <p><a href="https://www.w3.org/2005/06/tracker/">Tracker documentation</a></p>
+  </nav>
+</aside>
+<nav id="boilerplate"><div id="siteicons"><a href="https://www.w3.org/" title="Go to W3C Home Page"><img src="../../International/icons/w3c_home.gif" alt="s_gotoW3cHome"/></a><a href="https://www.w3.org/International/" title="Go to Internationalization Activity Home Page" id="i18n-name">
+	Internationalization</a></div>
+<div id="sitelinks" class="noprint"><a href="https://www.w3.org/International/" title="Internationalization Activity home page.">Home</a>&#xA0; 
+<a href="https://www.w3.org/International/resources" title="Information resources on the Internationalization site.">Resources</a>&#xA0;
+<a href="https://www.w3.org/International/technique-index" title="Task-based index of i18n techniques.">Techniques</a>&#xA0;
+<a href="https://www.w3.org/International/resource-index" title="Topic index for information on this site.">Topics</a>&#xA0; 
+<a href="https://www.w3.org/International/log/description" title="Information about news filters and RSS feeds for W3C Internationalization.">News</a>&#xA0;
+<a href="https://www.w3.org/International/about#scope" title="Groups that make up the Internationalization Activity.">Groups</a>&#xA0; 
+<a href="https://www.w3.org/International/about" title="About the Internationalization Activity.">About</a>&#xA0; 
+&#xA0; </div><div id="line">&#xA0;</div></nav>
+<h1>Practical tips for task forces</h1>
+</header>
+<section>
+  <p>I thought it would be useful to gather together the bare minimum of useful things to help participants use W3C meetings, IRC, etc.</p>
+  <p>Remember that you should be able to find links to most of the information you need from your GitHub repo home page, eg. https://github.com/w3c/alreq/. That includes links to how to use GitHub for collaboration on document delivereables, a style guide for people editing the documents, and a link to the group home page, which includes information about teleconference times, etc.  See also the 'Related Links' to the right for more detailed information.</p>
+  <p>If you have comments or suggestions about how to improve this page, feel free to <a href="https://github.com/w3c/i18n-activity/issues">raise a Github issue</a>.</p>
+<p>See also the <a href="editing">editorial guidelines</a>.</p>
+</section>
+
+
+
+<section id="setup">
+  <h2><a href="#setup">Starting and running a telecon</a></h2>
+  <p>You should already be set up with the things you need to make this work. If you're stuck with something ask your staff contact for help. Follow the steps below.</p>
+  
+  
+  
+  <section id="prepping_telecons">
+  <h3><a href="#prepping_telecons">Preparing for a telecon</a></h3>
+  <p><strong>For: the meeting chair</strong></p>
+  <p>Depending on how your teleconference is set up, participants may need a 
+    <mark>password and a host key</mark>
+    . These are set up by the staff contact and communicated to the chair. They should be sent on to participants in email or private IRC channels directly. They should not be sent via any publicly visible list, since otherwise you will find unknown people camping on your call. </p>
+  <p>(To get rid of unknown participants, you'll need to go to Reclaim Host Role, and enter the host key. You'll then be able to remove the individual by right-clicking on their name.)</p>
+  <p>You should 
+    <mark>send out an agenda</mark>
+on the <code>public-xlreq-admin</code> mailing list (change x as appropriate) far enough in advance for people to do prep work. We find it effective to also call for agenda items from the participants at the same time.</p>
+  </section>
+  
+  
+  
+  <section id="starting_telecons">
+  <h3><a href="#starting_telecons">Starting a telecon</a></h3>
+  <p><strong>For: the meeting chair</strong>  </p>
+  <p>To 
+    <mark>get a meeting started</mark>
+on IRC the chair should go to IRC and type:</p>
+  <pre> me   trackbot, start meeting</pre>
+  <p>You should see something like the following:</p>
+  <pre>trackbot is preparing a teleconference. 
+trackbot   RRSAgent, make logs public 
+RRSAgent   I have made the request, trackbot 
+trackbot   Zakim, this will be 
+trackbot   Meeting: Hebrew Layout Task Force Teleconference 
+trackbot   Date: 18 July 2017</pre>
+  <p>You may want to 
+    <mark>set up a list of agenda items</mark>
+    . Do this in IRC using this pattern:</p>
+  <pre>mynick:    agenda+ Action item review 
+mynick:    agenda+ Issue review
+mynick:    agenda+ Do this
+mynick:    agenda+ Do that 
+...</pre>
+  <p>
+    <mark>If you have regrets</mark>
+from some participants, indicate that for the minutes by typing:</p>
+  <pre>mynick:    regrets+ personsname anotherperson etc
+</pre>
+  <p>You'll need to set up someone as a scribe (to take the minutes). To do so, type:</p>
+  <pre>mynick:    scribenick: persons_irc_nickname</pre>
+  <p>Depending on how your telecon is set up, you may need to 
+    <mark>claim the host role</mark>
+    to start the meeting. To do this.....</p>
+  <p><strong>For: the participants</strong></p>
+  <p>
+    You should <mark>sign in when you join the call</mark>
+ by typing into IRC:</p>
+  <pre>mynick:    present+ myname 
+</pre>
+  <p>This records you as present in the minutes, and the zakim bot keeps track of participants this way.</p>
+  
+  </section>
+  
+  
+  
+  <section id="during_telecons">
+  <h3><a href="#during_telecons">During a telecon</a>  </h3>
+  <p>
+    To 
+    <mark> start a new topic</mark>
+type:</p>
+  <pre> mynick:    Topic: title_of_the_topic_here</pre>
+  <p>Alternatively, if you have set up an agenda on IRC, you can type:</p>
+  <pre>mynick:     zakim, take up agendum X</pre>
+  <p>where X is the number of the agenda item. You don't need to progress through the agenda sequentially. Setting the topic will automatically create a linked heading in the minutes.</p>
+  <p>
+    To 
+    <mark> check what's on the agenda</mark>
+    , type</p>
+  <pre>mynick:    agenda?</pre>
+  <p>To 
+    <mark>give someone an action</mark>
+    , type</p>
+  <pre>mynick:    Action: Person's_nickname to do something
+</pre>
+  <p>Note that the person's name needs to be the one the bot recognises, and that the word 'to' is important for the action to be recognised by the bot.</p>
+  <p>To 
+    <mark>close an action</mark>
+    , such as action number 10, simply type</p>
+  <pre>mynick:    close action-10
+</pre>
+  <p>Depending on how your telecon is set up, you may need to 
+    <mark>claim the host role</mark>
+    to start the meeting. To do this.....</p>
+  <p>Anyone can 
+    <mark>correct the minutes in IRC</mark>
+using the substitution command. For example, the following will change the record in the minutes.</p>
+  <pre>mynick:    s/@@ said he would do it/David said he would NOT do it/
+</pre>
+  </section>
+  
+  
+  
+  <section id="scribing">
+  <h3><a href="#scribing">Scribing</a>  </h3>
+  <p>You need to 
+    <mark>tell the bot who the scribe is</mark>
+    . Do this by typing in IRC:</p>
+  <pre>mynick:    scribenick: person's_nickname</pre>
+  <p>Doing this will produce much tidier and more readable minutes.</p>
+  <p>To
+    <mark>scribe what someone is saying</mark>
+    , type the name/nick of that person followed by a colon, then add what they say. You can continue the same person's comments by starting a new line with ... (three dots). The bot will then stitch the lines together when it produces the minutes. So, for example:</p>
+  <pre> mynick:    r12a: this is me scribing what someone is saying
+ mynick:    ... and now i'm adding something else they are saying
+ mynick:    ... and yet more!</pre>
+  <p>There not much more to it than that. But don't forget to save the minutes before the end of the call and before dismissing rrsagent!</p>
+  
+  </section>
+  
+  
+  
+  <section id="minutes">
+  <h3><a href="#minutes">Creating minutes</a>  </h3>
+  <p>You need to 
+    <mark>ensure that the rrsagent bot is on the IRC channel</mark>
+    before starting to record minutes. If you start the meeting using trackbot, it will usually start up rrsagent automatically. Otherwise, do this in IRC:</p>
+  <pre>mynick:    /invite #channel_name rrsagent</pre>
+  <p>If you don't have rrsagent running, producing minutes will be a major hassle.</p>
+  <p>To 
+    <mark>tell rrsagent to draft the minutes</mark>
+    , type the following:</p>
+  <pre> mynick:    rrsagent, draft minutes
+</pre>
+  <p>The bot will reply to you with a URL where the minutes are being stored. (It may take a moment for the page to refresh.)</p>
+  <p>You should ALWAYS ask rrsagent to draft the minutes at the end of the telecon, but you can also do so at any time during the call.</p>
+  <p>You may need to 
+    <mark>set the access rights for the minutes</mark>
+    . You can do this in IRC using:</p>
+  <pre> mynick:    rrsagent, make log public
+</pre>
+  <p>Once the meeting is finished, the chair or scribe should check that the minutes look ok. If you want to change anything in the minutes page, use the substitution command mentioned above (ie. s/xxx/yyy/). You'll need to do this before dismissing rrsagent!</p>
+  <p>Finally, 
+    <mark>send the minutes out to the group's mailing list</mark>
+    . You should send the minutes to the mailing list your group uses for public discussion, ie. public-i18n-xxxx.</p>
+  <p>Set the subject of the email to something like </p>
+  <pre> [minutes] Hebrew layout telecon 2017-07-19
+</pre>
+  <p>Add a link to the minutes at the top of the email body, and it's usually recommended to add a text version of the minutes after that. To get the text version, </p>
+  <ol>
+    <li>look at the minutes using a web page</li>
+  <li>at the end of the URL in the address bar, add <code>,text</code> and hit return/go.</li>
+  <li>cut out from the plain text page you see the useful information and paste it into the email.</li>
+  </ol>
+  
+  </section>
+</section>
+
+
+
+
+<section id="action_items">
+  <h2><a href="#action_items">Managing actions</a></h2>
+  <p>We discussed how to raise actions and close them in meetings in the previous section.</p>
+  <p>Other groups have concluded that it works much better to use a separate W3C tracker instance for action items, rather than using github issues.</p>
+  <p>You should have a tracker instance set up for you. You should be able to find open actions for review at a URL like this (substitute something appropriate for <samp>hebrew-layout</samp>).</p>
+  <p><a href="https://www.w3.org/International/groups/hebrew-layout/track/actions/open">https://www.w3.org/International/groups/hebrew-layout/track/actions/open</a></p>
+  <p>You can edit actions using that interface, if you need to.</p>
+  <p>We usually close actions during teleconference calls, during an action item review topic.</p>
+  <p>(The W3C tracker is also able to track issue, but we strongly recommend that you use github issues instead. The latter is much superior.)</p>
+</section>
+
+
+
+
+<section id="issues">
+  <h2><a href="#issues">Managing issues</a></h2>
+  <p>Use your GitHub repo to manage issues. Try to avoid email-based discussions.</p>
+  <p>Keep each issue focused on a specific topic. If the discussion begins to diverge, create a new issue and point people to it. Also ensure that the title for an issue is short but informative.</p>
+  <p>You will receive notifications on a daily basis when there are changes to the issues in your repo. These will be sent to your public-i18n-xxxx mailing list. You can also subscribe the group to weekly digests (ask your staff contact). These can be timed to reach your mailing list a day or so prior to your teleconference, if you wish.</p>
+  <p>If you want to track issues more closely, you can watch the GitHub repo (click on the Watch button at the top of the repo page), or subscribe to a particular issue. In this case, you'll receive personal notifications as soon as there are changes in the repo.</p>
+</section>
+
+
+
+
+<section id="pipeline">
+  <h2><a href="#pipeline">Using a github project pipeline</a></h2>
+  <p>In your github repo you can set up a project to track progress on work items.</p>
+  <p>This is very useful for doing a status review during or outside of meetings. During a review in a telecon, it's particularly useful because you can drag and drop items from one column to the next in real time. This avoids having to update the chart offline, and gives everyone on the call instant feedback.</p>
+  <p>You can see an <a href="https://github.com/w3c/alreq/projects/1">example of how this might work</a> at the alreq repo.</p>
+  <p>The alreq folks have columns for </p>
+  <ol>
+  <li>ideas + discussions</li>
+  <li>ready to pick up (ie. waiting for someone to start work on an item)</li>
+  <li>drafting (ie. someone is working on the text - note that all items in this column need to have someone assigned to them, since that is the definition of drafting)</li>
+  <li>review + edit</li>
+  <li>done</li>
+  </ol>
+  <p>The idea is to move items from the left to the right.</p>
+  <p>&nbsp;</p>
+</section>
+
+
+
+<section id="recruiting">
+  <h2><a href="#recruiting">Recruiting someone to the task force</a></h2>
+  <p>Your staff contact will take care of this. Send them the contact information for the person who wants to join the group, and any information you have about that person's needs and motivations.</p>
+</section>
+
+
+
+<footer>
+	<address> 
+		<p>By: Richard Ishida, W3C.</p>
+  </address>
+	
+	<small id="version">Content first published <time datetime="2015-12-16T07:50Z">2015-12-16 07:50</time>. Last substantive update <time datetime="2016-10-11T14:02Z">2016-10-11 14:02 GMT</time>. This version <time datetime="2016-10-11T14:02Z">2016-10-11 14:02 GMT</time>
+  </small>
+	<small>For the history of document changes, see the
+<span class="searchkey"><a href="https://github.com/w3c/i18n-activity/commits/gh-pages/guidelines/github.html">github commit log</a></span>.</small>
+	<small class="copyright" lang="en"><a rel="Copyright" href="/Consortium/Legal/ipr-notice#Copyright" id="copyright">Copyright</a> © 2017 <a href="/"><abbr title="World Wide Web Consortium">W3C</abbr></a><sup>®</sup> (<a href="http://www.csail.mit.edu/"><abbr title="Massachusetts Institute of Technology">MIT</abbr></a>, <a href="http://www.ercim.eu/"><abbr title="European Research Consortium for Informatics and Mathematics">ERCIM</abbr></a>, <a href="http://www.keio.ac.jp/">Keio</a>, <a href="http://ev.buaa.edu.cn/">Beihang</a>), All Rights Reserved. W3C <a href="/Consortium/Legal/ipr-notice#Legal_Disclaimer">liability</a>, <a href="/Consortium/Legal/ipr-notice#W3C_Trademarks">trademark</a>, <a rel="Copyright" href="/Consortium/Legal/copyright-documents">document use</a> and <a rel="Copyright" href="/Consortium/Legal/copyright-software">software licensing</a> rules apply. Your interactions with this site are in accordance with our <a href="/Consortium/Legal/privacy-statement#Public">public</a> and <a href="/Consortium/Legal/privacy-statement#Members">Member</a> privacy statements.</small>
+</footer>
+<script type="text/javascript">if (document.getElementById('toclocation')) { createtoc(); }</script>
+</body>
+</html>
