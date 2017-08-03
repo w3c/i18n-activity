@@ -97,7 +97,7 @@ ol ol { margin-right: 20px; margin-left: 30px;  }
       <p>Create a GitHub account if you do not already have one, on <a href="https://github.com/">github.com</a></p>
     </li>
     <li>
-      <p>Download and install the latest version of Git: <a href="http://git-scm.com/downloads">http://git-scm.com/downloads</a>. Please refer to the instructions there
+      <p>Download and install the latest version of Git: <a href="https://git-scm.com/downloads">https://git-scm.com/downloads</a>. Please refer to the instructions there
         for different platforms.</p>
     </li>
     <li>
@@ -138,7 +138,7 @@ ol ol { margin-right: 20px; margin-left: 30px;  }
   <p>The  repository that you contribute to will depend on the document that your task force is working on. For example, <a href="https://github.com/w3c/alreq">https://github.com/w3c/alreq</a>. The following diagram illustrates the basics.</p>
   <p><img src="images/github-entities.png" style="width: 100%;" alt="Diagram showing parts of the github setup."/></p>
   <p>We'll spend a moment in this section familiarising you with the basic setup. The following sections will indicate the detailed steps you need to take.</p>
-  <p>In a typical scenario, you will be working with an <span class="highlightedterm">upstream</span> repository (repo) that has a URL beginning with <span class="url" translate="no">https:/github.com/<strong>w3c</strong>/</span>. This is the <span class="highlightedterm">W3C repo</span> – it is managed by the people who have editor access for your project, unless you are one of those people you don't have access to this, you can only propose changes to it. You will make a <span class="highlightedterm">fork</span> of that repo on github, which has a URL beginning with <span class="url" translate="no">https://github.com/<strong>myUserName</strong></span>. A fork is basically just a copy of the W3C repository in which you can change things at will. It sits on the github server and from time to time will be referred to in this document as the <span class="highlightedterm">origin</span>.</p>
+  <p>In a typical scenario, you will be working with an <span class="highlightedterm">upstream</span> repository (repo) that has a URL beginning with <span class="url" translate="no">https://github.com/<strong>w3c</strong>/</span>. This is the <span class="highlightedterm">W3C repo</span> – it is managed by the people who have editor access for your project, unless you are one of those people you don't have access to this, you can only propose changes to it. You will make a <span class="highlightedterm">fork</span> of that repo on github, which has a URL beginning with <span class="url" translate="no">https://github.com/<strong>myUserName</strong></span>. A fork is basically just a copy of the W3C repository in which you can change things at will. It sits on the github server and from time to time will be referred to in this document as the <span class="highlightedterm">origin</span>.</p>
   <p>Then you will typically <span class="highlightedterm">clone</span> your fork to a directory on your local computer, to make it easier to edit content with authoring tools and the like, however it is also possible just edit on the github site. </p>
   <p>If you have cloned your fork to your desktop, you should update it regularly so that it matches the W3C repo. You do this by <span class="highlightedterm">fetching</span> the changes from the W3C repo to your local copy and <span class="highlightedterm">merging</span> them with what's on your hard disk. You'll then need to <span class="highlightedterm">push</span> those changes on to your fork on github, so that that is in synch too.</p>
   <p>As you edit content files on your computer, you'll need to get them into your fork on github. To do this you need to select the files and <span class="highlightedterm">add</span> them (which basically just identifies them as ready for the next stage). Then you <span class="highlightedterm">commit</span> them, and finally you <span class="highlightedterm">push</span> them (upload them) to your fork.</p>
@@ -151,7 +151,7 @@ ol ol { margin-right: 20px; margin-left: 30px;  }
   will enable you to submit your proposed changes using a pull request (more on this below).</p>
   <ol>
     <li>
-      <p>In the browser, go the the GitHub page for the W3C repository, ie. <span class="url">https:/github.com/w3c/<em>repoName</em>/</span>. </p>
+      <p>In the browser, go the the GitHub page for the W3C repository, ie. <span class="url">https://github.com/w3c/<em>repoName</em>/</span>. </p>
     </li>
     <li>
       <p>Click the <img src="images/forkbtn.png" alt="fork"> button in the upper right.</p>
@@ -171,9 +171,9 @@ ol ol { margin-right: 20px; margin-left: 30px;  }
   <p>At the command prompt, use <kbd>cd</kbd> to get to a directory where you want to keep your fork. We're about to create a subdirectory within the directory you just moved to: the subdirectory will be called <samp>repoName</samp>, and will contain all the files for that fork.</p>
   <p>Type the following:</p>
   
-  <pre>$ git clone --recursive https://github.com/<var>myUserName</var>/<var>repoName</var>.git</pre>
+  <pre>$ git clone https://github.com/<var>myUserName</var>/<var>repoName</var>.git</pre>
   
-  <p>where <span class="qterm">myUserName</span> is your github username, and <span class="qterm">repoName</span> is the name of the repository. This will download the tests into the subdirectory we just mentioned.</p>
+  <p>where <span class="qterm">myUserName</span> is your github username, and <span class="qterm">repoName</span> is the name of the repository. This will download the forked repository into the subdirectory we just mentioned.</p>
   <p>You should now have a full copy of the forked repository on your local
     machine. Feel free to browse the directories on your hard drive. You can also
     browse them on <a href="https://github.com/w3c">github.com</a> and see the full history of contributions
@@ -466,9 +466,9 @@ upstream    https://github.com/w3c/<em>repoName</em>.git (push)</pre>
       </li>
     <li>
       <p>Open a browser window and go to the following URL, filling in the placeholders as appropriate:</p>
-      <p class="hint">http://htmlpreview.github.io/?https://github.com/<em>w3c</em>/<em>repoName</em>/blob/<em>commitNumber</em>/<em>fileName</em></p></li>
+      <p class="hint">https://htmlpreview.github.io/?https://github.com/<em>w3c</em>/<em>repoName</em>/blob/<em>commitNumber</em>/<em>fileName</em></p></li>
 </ol>
-<p>So <a href="http://htmlpreview.github.io/?https://github.com/w3c/alreq/blob/404f75daa4f6bb83750db85eee92b73371759842/index.html">here's the HTML version</a> of the page with the commit in the example at the start of this section.</p>
+<p>So <a href="https://htmlpreview.github.io/?https://github.com/w3c/alreq/blob/404f75daa4f6bb83750db85eee92b73371759842/index.html">here's the HTML version</a> of the page with the commit in the example at the start of this section.</p>
 </section>
 </section>
 
