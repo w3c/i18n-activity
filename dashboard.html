@@ -4,6 +4,10 @@
 <meta charset="utf-8">
 <title>Dashboard</title>
 <style>
+body {
+	font-size: 16px;
+	font-family: Gotham, "Helvetica Neue", Helvetica, Arial, sans-serif;
+	}
 iframe { 
 	border: 1px solid #ccc;
 	width: 49%;
@@ -22,11 +26,18 @@ onClick="iframes=document.querySelectorAll('iframe');
 
 <iframe id="radar" src="http://w3c.github.io/i18n-activity/projects/"></iframe>
 
-<iframe src="http://w3c.github.io/i18n-activity/reviews/"></iframe>
+<div style="float:right; width:9%; text-align:right;">
+<p><a href="https://github.com/w3c/i18n-drafts/projects/1" target="_blank">radar</a></p>
+<p><a href="https://github.com/w3c/i18n-activity/projects/1" target="_blank">pipeline</a></p>
+</div>
 
-<iframe src="http://w3c.github.io/i18n-activity/repostatus/"></iframe>
+<iframe id="wgs" src="https://w3c.github.io/spec-dashboard/report.html"></iframe>
 
-<iframe src="http://w3c.github.io/i18n-activity/textlayout/"></iframe>
+<iframe id="reviews" src="http://w3c.github.io/i18n-activity/reviews/"></iframe>
+
+<iframe id="docstatus" src="http://w3c.github.io/i18n-activity/repostatus/"></iframe>
+
+<iframe id="layout" src="http://w3c.github.io/i18n-activity/textlayout/"></iframe>
 
 <!--iframe src="https://github.com/w3c/i18n-drafts/projects/1"></iframe>
 
@@ -36,8 +47,21 @@ onClick="iframes=document.querySelectorAll('iframe');
 </body>
 <script>
 var iframes = document.querySelectorAll('iframe')
-var iframeHeight = window.innerHeight/3
-for (let i=0;i<iframes.length;i++) iframes[i].style.height = iframeHeight+'px'
+document.getElementById('radar').style.width = '49%'
+document.getElementById('radar').style.height = window.innerHeight/3+'px'
+
+document.getElementById('wgs').style.width = '40%'
+document.getElementById('wgs').style.height = window.innerHeight/3+'px'
+
+document.getElementById('reviews').style.width = '32%'
+document.getElementById('reviews').style.height = window.innerHeight/3*2+'px'
+
+document.getElementById('docstatus').style.width = '32%'
+document.getElementById('docstatus').style.height = window.innerHeight/3*2+'px'
+
+document.getElementById('layout').style.width = '32%'
+document.getElementById('layout').style.height = window.innerHeight/3*2+'px'
+
 
 function iframeRef( frameRef ) {
     return frameRef.contentWindow
