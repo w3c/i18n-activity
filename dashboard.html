@@ -1,0 +1,45 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Dashboard</title>
+<style>
+iframe { 
+	border: 1px solid #ccc;
+	width: 49%;
+	height: 30%;
+	}
+</style>
+</head>
+
+<body>
+<button style="float:right" onClick="var iframe = iframeRef(document.getElementById('radar'));console.log(iframe.querySelector('body'))">Go</button>
+
+<iframe id="radar" src="http://w3c.github.io/i18n-activity/projects/"></iframe>
+
+<iframe src="http://w3c.github.io/i18n-activity/reviews/"></iframe>
+
+<iframe src="http://w3c.github.io/i18n-activity/repostatus/"></iframe>
+
+<iframe src="http://w3c.github.io/i18n-activity/textlayout/"></iframe>
+
+<iframe src="https://github.com/w3c/i18n-drafts/projects/1"></iframe>
+
+<iframe src="https://github.com/w3c/i18n-activity/projects/1"></iframe>
+
+
+</body>
+<script>
+var iframes = document.querySelectorAll('iframe')
+var iframeHeight = window.innerHeight/3
+for (let i=0;i<iframes.length;i++) iframes[i].style.height = iframeHeight+'px'
+
+function iframeRef( frameRef ) {
+    return frameRef.contentWindow
+        ? frameRef.contentWindow.document
+        : frameRef.contentDocument
+	}
+
+
+</script>
+</html>
