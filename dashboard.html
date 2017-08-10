@@ -13,7 +13,7 @@ iframe {
 </head>
 
 <body>
-<button style="float:right" onClick="var iframe = iframeRef(document.getElementById('radar'));iframe.querySelector('body').style.fontSize='12px'">Go</button>
+<button style="float:right; width: 1.5%;" onClick="iframes=document.querySelectorAll('iframe'); for (i=0;i<iframes.length;i++) iframe = iframeRef(iframes[i]);iframe.querySelector('body').style.fontSize='12px'">↓</button>
 
 <iframe id="radar" src="http://w3c.github.io/i18n-activity/projects/"></iframe>
 
