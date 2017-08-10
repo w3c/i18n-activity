@@ -20,8 +20,8 @@ iframe {
 <button style="float:right; width: 1.5%;" 
 onClick="iframes=document.querySelectorAll('iframe'); 
 	for (i=0;i<iframes.length;i++)  { 
-    	iframe = iframeRef(iframes[i]);
-        iframe.querySelector('body').style.fontSize='12px'; 
+    		iframe = iframeRef(iframes[i]);
+        	if (iframes[i].className != 'external') {iframe.querySelector('body').style.fontSize='12px'; }
         }">↓</button>
 
 <iframe id="radar" src="http://w3c.github.io/i18n-activity/projects/"></iframe>
@@ -31,7 +31,7 @@ onClick="iframes=document.querySelectorAll('iframe');
 <p><a href="https://github.com/w3c/i18n-activity/projects/1" target="_blank">pipeline</a></p>
 </div>
 
-<iframe id="wgs" src="https://w3c.github.io/spec-dashboard/report.html"></iframe>
+<iframe id="wgs" class="external" src="https://w3c.github.io/spec-dashboard/report.html"></iframe>
 
 <iframe id="reviews" src="http://w3c.github.io/i18n-activity/reviews/"></iframe>
 
