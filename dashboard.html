@@ -17,7 +17,11 @@ iframe {
 </head>
 
 <body>
-<button style="float:right; width: 1.5%;" 
+
+<iframe id="radar" src="http://w3c.github.io/i18n-activity/projects/"></iframe>
+
+<div style="float:right; width:5%; text-align:right;">
+<button style="float:right; width: 1.5%; margin: 2em 1em;" 
 onClick="iframes=document.querySelectorAll('iframe');
 	for (i=0;i<iframes.length;i++) console.log(iframes[i].id);
 	for (i=0;i<iframes.length;i++)  { 
@@ -28,11 +32,8 @@ onClick="iframes=document.querySelectorAll('iframe');
                 }
         }">↓</button>
 
-<iframe id="radar" src="http://w3c.github.io/i18n-activity/projects/"></iframe>
-
-<div style="float:right; width:9%; text-align:right;">
-<p><a href="https://github.com/w3c/i18n-drafts/projects/1" target="_blank">radar</a></p>
-<p><a href="https://github.com/w3c/i18n-activity/projects/1" target="_blank">pipeline</a></p>
+<p style="margin:2em 1em;"><a href="https://github.com/w3c/i18n-drafts/projects/1" target="_blank">Review radar</a></p>
+<p style="margin:2em 1em;"><a href="https://github.com/w3c/i18n-activity/projects/1" target="_blank">Article Pipeline</a></p>
 </div>
 
 <iframe id="wgs" class="external" src="https://w3c.github.io/spec-dashboard/report.html"></iframe>
