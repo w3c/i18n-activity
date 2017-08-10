@@ -21,9 +21,11 @@ iframe {
 onClick="iframes=document.querySelectorAll('iframe');
 	for (i=0;i<iframes.length;i++) console.log(iframes[i].id);
 	for (i=0;i<iframes.length;i++)  { 
-            console.log(iframes[i].className);
-    		iframe = iframeRef(iframes[i]);
-        	if (iframes[i].id !== 'wgs') { iframe.querySelector('body').style.fontSize='12px'; }
+            console.log(iframes[i].id);
+    		if (iframes[i].id !== 'wgs') {
+            	iframe = iframeRef(iframes[i]);
+        		iframe.querySelector('body').style.fontSize='12px'; 
+                }
         }">↓</button>
 
 <iframe id="radar" src="http://w3c.github.io/i18n-activity/projects/"></iframe>
