@@ -30,6 +30,7 @@ var labels = {
 	'html':[],
 	'indexeddb':[],
 	'input-events':[],
+	'intersection-observer':[],
 	'linked-data-patch-format':[],
 	'ldn':[],
 	'media-capture-and-streams':[],
