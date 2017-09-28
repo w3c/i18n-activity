@@ -54,6 +54,7 @@ var labels = {
 	'uievents':[],
 	'url':[],
 	'utr51':[],
+	'utr53':[],
 	'vehicle-information-access':[],
 	'wcag':[],
 	'web-payments-use-cases':[],
