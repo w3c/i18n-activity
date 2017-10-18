@@ -33,6 +33,7 @@ var labels = {
 	'intersection-observer':[],
 	'linked-data-patch-format':[],
 	'ldn':[],
+	'low-vision-needs':[],
 	'media-capture-and-streams':[],
 	'microdata':[],
 	'micropub':[],
