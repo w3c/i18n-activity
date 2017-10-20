@@ -17,3 +17,4 @@ If you want to contribute to discussions pointed to by the issues in this repo, 
 - [WG home page](http://w3c.github.io/i18n-activity/i18n-wg/)
 - [Action tracker](http://www.w3.org/International/track/actions/open)
 - [Practical tips for task forces](https://w3c.github.io/i18n-activity/guidelines/process.html)
+- [Repos tracked by the i18n WG](https://github.com/w3c/i18n-activity/blob/gh-pages/tracking.md)
