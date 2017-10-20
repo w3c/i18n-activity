@@ -1,8 +1,10 @@
-This file contains a list of GitHub repos currently being tracked by the i18n WG. All these repos should have the labels `i18n-comment` and `i18n-tracking`. When an issue with one of those labels is created, closed or a comment added, the i18n WG and IG will be notified in a daily and weekly digest. 
+# Repos tracked by the i18n WG #
 
-If your repo is in the list, you can bring issues to the attention of the i18n WG by adding an `i18n-tracking` label to it.
+This file contains a list of GitHub repos for which the i18n WG is currently tracking issues. All these repos should have the labels `i18n-comment` and `i18n-tracking`. When an issue with one of those labels is created, closed, or a comment added, the i18n WG and IG are notified in daily and weekly digests. 
 
-If your repo is not in the list, contact r12a@w3.org if you want your repo to be tracked.
+If your repo is in the list, you can bring a new issue to the attention of the i18n WG by adding an `i18n-tracking` label to it.
+
+If your repo is not in the list and you want your repo to be tracked, contact r12a@w3.org.
 
 ```
 w3c/activitypub 
