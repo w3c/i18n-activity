@@ -1,9 +1,57 @@
 <!DOCTYPE html>
 <html lang="en">
-<head profile="http://www.w3.org/2002/12/wg">
+<head>
 <meta charset="utf-8" />
 <title>Internationalization Working Group home page</title>
 <link type="text/css" rel="stylesheet" href="https://w3c.github.io/i18n-activity/style/homepage.css">
+
+
+<script type="text/javascript">
+var f = { }
+
+// AUTHORS should fill in these assignments:
+f.directory = 'i18n-activity/i18n-wg/'+'/';
+f.filename = 'index'; 
+f.authors = 'Richard Ishida, W3C';
+f.previousauthors = ''; 
+f.modifiers = ''; 
+f.searchString = 'i18n-wg-homepage';
+f.firstPubDate = '2166-03-16'; 
+f.lastSubstUpdate = { date:'2018-01-25', time:'07:18'} 
+f.status = 'notreviewed'; 
+f.path = 'https://w3c.github.io/i18n-drafts/'
+
+// AUTHORS AND TRANSLATORS should fill in these assignments:
+f.thisVersion = { date:'2018-01-25', time:'07:18'} 
+f.contributors = ''; 
+
+// TRANSLATORS should fill in these assignments:
+f.translators = 'xxxNAME, ORG';
+
+f.breadcrumb = '';
+f.toc = 'no'
+
+f.additionalLinks = ''
+</script>
+<script type="text/javascript" src="index-data/translations.js"> </script>
+<script type="text/javascript" src="https://w3c.github.io/i18n-drafts/javascript/doc-structure/article-dt.js"> </script>
+<script type="text/javascript" src="https://w3c.github.io/i18n-drafts/javascript/boilerplate-text/boilerplate-en.js"></script>
+<script type="text/javascript" src="https://w3c.github.io/i18n-drafts/javascript/doc-structure/sitepage.js"> </script>
+<script type="text/javascript" src="https://w3c.github.io/i18n-drafts/javascript/articletoc-html5.js"></script>
+<link rel="stylesheet" href="https://w3c.github.io/i18n-drafts/style/sitepage-2016.css" type="text/css" />
+<link rel="stylesheet" href="index-data/local.css" type="text/css" />
+<link rel="copyright" href="#copyright"/>
+<!--[if lt IE 9]><script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+
+<style>
+div.content { width: 100%; display: flex; flex-flow: row; flex-wrap: wrap; float: none; padding: 0; }
+.panel {flex: 1; }
+.topRight { width: inherit; }
+</style>
+
+
+
+
 <style type="text/css">
 table#layout-body {
 	width: 100%;
@@ -101,47 +149,16 @@ td {
 </style>
 </head>
 
-<body xml:lang="en" lang="en">
-<div id="search">
-  <div>
-    <form method="get" action="https://www.w3.org/International/site-search.php"
-enctype="application/x-www-form-urlencoded">
-      <div id="searchSite" class="topRight"> Internationalization site search:<br />
-        <input name="q" size="15" id="searchField" accesskey="E" maxlength="255"
-  type="text" />
-      </div>
-    </form>
-  </div>
-  <div> <a href="http://www.w3.org/International/log/description"><span
-class="topRight">RSS Feeds</span><img src="https://w3c.github.io/i18n-activity/images/rss.gif"
-alt="RSS feed" height="16" width="16" /> </a> </div>
-</div>
-<!-- Top left icons -->
+<body lang="en">
+<header>
+  <nav id="mainNavigation"></nav>
+  <script>document.getElementById('mainNavigation').innerHTML = mainNavigation</script> 
 
-<div id="topLeft"> <a href="http://www.w3.org/"><img src="http://www.w3.org/Icons/w3c_home"
-alt="W3C" border="0" height="48" width="72" /></a> <a
-href="http://www.w3.org/Architecture/"></a> &#xA0; <a href="http://www.w3.org/International/"
-title="Go to the Internationalization home page."><img
-src="https://w3c.github.io/i18n-activity/images/sitetitle.gif"
-alt="W3C Internationalization (I18N) Activity: Making the World Wide Web truly world wide!"
-/></a></div>
-<!-- Top left links -->
-
-<div id="sitelinks"> <a href="http://www.w3.org/International/"
-title="Internationalization Activity home page.">Home</a>  <a
-href="http://www.w3.org/International/about"
-title="About the Internationalization Activity.">About</a>  <a
-href="http://www.w3.org/International/about#scope"
-title="Groups that make up the Internationalization Activity.">Groups</a>  <a href="http://www.w3.org/International/resource-index"
-title="Topic index for information on this site">Topics</a>  <a
-href="http://www.w3.org/International/technique-index"
-title="Task-based index of i18n techniques">Techniques</a>  <a
-href="http://www.w3.org/International/resources"
-title="Information resources on the Internationalization site.">Resources</a>  <a href="https://www.w3.org/International/log/description"
-title="Information about news filters and RSS feeds for W3C Internationalization.">News</a> 
-    </div>
-<h1 style="margin-top: 1em;">Internationalization  Working Group<br />
+<h1>Internationalization  Working Group<br />
   Home Page</h1>
+</header>
+
+
 <p><span class="intnavbar"><strong>Key  information:</strong> <a
 href="#about">Mission</a> - <a href="https://www.w3.org/International">News</a> - <a
 href="#work">Work in progress</a> - <a href="https://www.w3.org/standards/techs/i18n#drafts">Publications</a> - <a
@@ -149,7 +166,11 @@ href="https://www.w3.org/International/resources">Other resources</a> - <a
 href="https://www.w3.org/2012/07/i18n-charter/charter.html" rel="charter">Charter</a> - <a
 href="#meetings">Meetings</a> - <a href="#lists">Archives</a> - <a
 href="http://www.w3.org/2000/09/dbwg/details?group=32113">Participants</a> - <a href="#benefits">How to join</a> - <a href="#join">Patent policy</a></span></p>
-<div class="column" id="admin_area">
+
+
+<div class="content">
+
+<section class="panel">
   <h2 style="margin-top: 0" id="about">Mission</h2>
   <p> Provide internationalization advice to
     other groups developing Web standards, and review their
@@ -192,11 +213,10 @@ href="http://www.w3.org/2000/09/dbwg/details?group=32113">Participants</a> - <a 
             href="http://www.timeanddate.com/worldclock/meeting.html">World
       Clock Meeting Planner</a></li>
   </ul>
-</div>
+</section>
 
 
-
-<div id="participation_area" class="directory">
+<section class="panel directory">
   <h2 style="margin-top: 0"><a id="benefits">How to participate </a></h2>
   <p>The Working Group (WG) is always looking for additional
     participants, to work on a very varied range of topics and interests.
@@ -228,12 +248,11 @@ href="http://www.w3.org/2000/09/dbwg/details?group=32113">Participants</a> - <a 
   <p><a
         href="http://www.w3.org/2000/09/dbwg/details?group=32113">Current
     WG participants</a></p>
-</div>
+</section>
 
 
 
-
-<div id="work_area" class="directory">
+<section class="panel directory">
   <h2 style="margin-top: 0" 
         id="work">Useful links</h2>
   <p>We use Github to develop our technical reports. You can find links to the github repositories in the <a href="https://www.w3.org/International/wiki/Project_radar">project radar</a>.</p>
@@ -271,8 +290,9 @@ href="http://www.w3.org/2000/09/dbwg/details?group=32113">Participants</a> - <a 
 <p>Choose specs you have an interest in or that you think may widen your awareness, and don't worry about revisiting recently reviewed specs and raising new issues if you spot any. See the <a href="http://w3c.github.io/i18n-activity/radar/">review radar</a> for suggestions.</p>
 <p>There is  a page <a href="https://www.w3.org/International/reviews/review-instructions">How to review specs and raise issues</a> that describes, step-by-step, how to raise issues as you review a spec.</p>
 <p> We are currently developing <a href="https://www.w3.org/International/techniques/developing-specs-dynamic">a checklist to help you</a> with suggestions of things to look for. It's by no means exhaustive, and it's still in development, so don't expect it to be perfect. However, as you drill down in that page you reach a list of &quot;Recommendations&quot; which will give you ideas. If there is a 'more' link at the end of the recommendation, click on it to better understand the topic. </p>
-</div>
+</section>
 
+</div>
 
 
 <br style="clear:both;"/>
