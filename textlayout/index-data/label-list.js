@@ -29,4 +29,4 @@ var labels = {
 
 
 
-var scriptLabels= new Set(['arabic', 'devanagari','ethiopic', 'han', 'hangul', 'hebrew', 'japanese', 'latin', 'mongolian', 'tamil', 'thai','tibetan'])
+var scriptLabels= new Set(['arabic', 'devanagari','ethiopic', 'han', 'hangul', 'hebrew', 'japanese', 'latin', 'mongolian', 'seasia', 'tamil', 'thai','tibetan'])
