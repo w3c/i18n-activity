@@ -96,6 +96,9 @@ td {
 div.directory {
     position: absolute;
     }
+.todo {
+    display: none;
+    }
 </style>
 <script>
 // routines to achieve correct ordering of items per column, based on order of lists below
@@ -138,9 +141,9 @@ function orderCol (col) {
 </section>
 <section>
   <p>Use this page to track  projects that we are actively working on.
-For each work item, the page describes objectives and next steps (the numbered lists) as well as useful links and contact names.
-    <span class="inprogress">Yellow backgrounds</span> indicate priority work in progress.</p>
-  <p>
+For each work item, the page describes objectives <!--and next steps (the numbered lists)--> as well as useful links and contact names.
+    <!--span class="inprogress">Yellow backgrounds</span> indicate priority work in progress.--></p>
+  <!--p>
   <button onClick="
     objs=document.querySelectorAll('.objectives');
     for(i=0;i<objs.length;i++){
@@ -173,7 +176,7 @@ For each work item, the page describes objectives and next steps (the numbered l
         objs[i].style.display='block';
         }
     ">Show both</button>
-    </p>
+    </p-->
 </section>
 </div>
 
@@ -191,113 +194,100 @@ For each work item, the page describes objectives and next steps (the numbered l
       <th style="font-size:110%;">Projects</th>
     </tr>
     <tr>
-      <td id="req"><div class="item" id="arabic">
-        <p class="topic">arabic</p>
-        <p><a target="_blank" href="https://github.com/w3c/alreq/">GH</a></p>
-        <ul class="objectives">
-          <li>Develop text layout and typographic requirements for languages using the Arabic script.</li>
+      <td id="req">
+              <ul class="objectives">
+          <li>Bring together experts, analyse gaps, and document requirements for support of text layout and local conventions. </li>
+<li>For languages using the scripts listed below, identify and work to eliminate barriers for  use  on the Web and in eBooks.</li>
         </ul>
-        <ol class="todo">
-          <li class="inprogress">add content</li>
+
+      
+      <div class="item" id="arabic">
+      <p class="topic">arabic</p>
+        <p><a target="_blank" href="https://github.com/w3c/alreq/">GH repo</a> • <a target="_blank" href="http://w3c.github.io/i18n-activity/textlayout/?filter=arabic">issue summary</a></p>
+<ol class="todo">
+<li class="inprogress">add content</li>
           <li>send for reviews</li>
           <li>publish FPWD</li>
         </ol>
-        <p>Contact: Shervin, Behnam, Richard</p>
-      </div>
-        <div class="item" id="japanese">
-          <p class="topic">japanese</p>
-          <p><a target="_blank" href="https://github.com/w3c/jlreq/">GH</a></p>
-          <ul class="objectives">
-            <li>Develop text layout and typographic requirements for languages using the Japanese scripts.</li>
-          </ul>
-          <ol class="todo">
-            <li class="inprogress">update with errata</li>
+</div>
+<div class="item" id="chinese">
+<p class="topic">chinese</p>
+<p><a target="_blank" href="https://github.com/w3c/clreq/">GH repo</a> &bull; <a target="_blank" href="http://w3c.github.io/i18n-activity/textlayout/?filter=han">issue summary</a></p>
+<ol class="todo">
+<li class="inprogress">complete translation to SC</li>
+<li>address outstanding issues</li>
+<li>complete glossary</li>
+</ol>
+</div>
+<div class="item" id="ethiopic">
+<p class="topic">ethiopic</p>
+<p><a target="_blank" href="https://github.com/w3c/elreq/">GH repo</a> &bull; <a target="_blank" href="http://w3c.github.io/i18n-activity/textlayout/?filter=ethiopic">issue summary</a></p>
+<ol class="todo">
+<li class="inprogress">get review of FPWD</li>
+<li>add further content</li>
+</ol>
+</div>
+        <div class="item" id="hebrew">
+<p class="topic">hebrew</p>
+<p><a target="_blank" href="https://github.com/w3c/hlreq/">GH repo</a> &bull; <a target="_blank" href="http://w3c.github.io/i18n-activity/textlayout/?filter=hebrew">issue summary</a></p>
+<ol class="todo">
+<li class="inprogress">set up group</li>
+<li>send for reviews</li>
+<li>publish FPWD</li>
+</ol>
+</div>
+<div class="item" id="indic">
+<p class="topic">indic (s asian)</p>
+<p><a target="_blank" href="https://github.com/w3c/ilreq/">GH repo</a> &bull; <a target="_blank" href="http://w3c.github.io/i18n-activity/textlayout/?filter=indic">issue summary</a></p>
+<ol class="todo">
+<li class="inprogress">revitalise the work</li>
+<li class="inprogress">expand coverage of languages beyond Hindi</li>
+<li>add further content</li>
+</ol>
+</div>
+<div class="item" id="japanese">
+<p class="topic">japanese</p>
+          <p><a target="_blank" href="https://github.com/w3c/jlreq/">GH repo</a> &bull; <a target="_blank" href="http://w3c.github.io/i18n-activity/textlayout/?filter=japanese">issue summary</a></p>
+<ol class="todo">
+<li class="inprogress">update with errata</li>
             <li>publish updated Note</li>
           </ol>
-          <p>Contact:  Kobayashi-san, Richard</p>
-        </div>
-        <div class="item" id="hebrew">  
-          <p class="topic">hebrew</p>
-        <p><a target="_blank" href="https://github.com/w3c/hlreq/">GH</a> &bull; <a target="_blank" href="https://lists.w3.org/Archives/Public/public-i18n-hebrew/">list</a></p>
-        <ul class="objectives">
-          <li>Develop text layout and typographic requirements for languages using the Hebrew script.</li>
-        </ul>
-        <ol class="todo">
-          <li class="inprogress">set up group</li>
-          <li>send for reviews</li>
-          <li>publish FPWD</li>
-        </ol>
-        <p>Contact: Lina, Richard</p>
-  </div>
-      <div class="item" id="chinese">
-        <p class="topic">chinese</p>
-        <p><a target="_blank" href="https://github.com/w3c/clreq/">GH</a> &bull; <a target="_blank" href="https://lists.w3.org/Archives/Public/public-i18n-cjk/">list</a></p>
-        <ul class="objectives">
-          <li>Develop text layout and typographic requirements for languages using the Simplified and Traditional Chinese scripts.</li>
-        </ul>
-        <ol class="todo">
-          <li class="inprogress">complete translation to SC</li>
-          <li>address outstanding issues</li>
-          <li>complete glossary</li>
-        </ol>
-        <p>Contact: Bobby, Ethan, Richard</p>
-      </div>
-        
-        
-       <div class="item" id="ethiopic">
-       <p class="topic">ethiopic</p>
-        <p><a target="_blank" href="https://github.com/w3c/elreq/">GH</a> &bull; <a target="_blank" href="https://lists.w3.org/Archives/Public/public-i18n-ethiopic/">list</a></p>
-        <ul class="objectives">
-          <li>Develop text layout and typographic requirements for languages using the Ehtiopic script.</li>
-        </ul>
-        <ol class="todo">
-          <li class="inprogress">get review of FPWD</li>
-          <li>add further content</li>
-        </ol>
-        <p>Contact: Daniel, Richard</p>
-        </div>
-        
-        
-        <div class="item" id="indic">
-        <p class="topic">indic</p>
-        <p><a target="_blank" href="https://github.com/w3c/ilreq/">GH</a> &bull; <a target="_blank" href="https://lists.w3.org/Archives/Public/public-i18n-indic/">list</a></p>
-        <ul class="objectives">
-          <li>Develop text layout and typographic requirements for languages using the major scripts of India.</li>
-        </ul>
-        <ol class="todo">
-          <li class="inprogress">revitalise the work</li>
-          <li class="inprogress">expand coverage of languages beyond Hindi</li>
-          <li>add further content</li>
-        </ol>
-        <p>Contact: Swaran, Somnath, Richard</p>
-        </div>
+</div>
+<div class="item" id="korean">
+<p class="topic">korean</p>
+<p><a target="_blank" href="https://github.com/w3c/klreq/">GH repo</a> &bull; <a target="_blank" href="http://w3c.github.io/i18n-activity/textlayout/?filter=hangul">issue summary</a></p>
+<ol class="todo">
+<li>address outstanding issues</li>
+<li>publish new WD</li>
+</ol>
+</div>
+<div class="item" id="mongolian">
+<p class="topic">mongolian</p>
+<p><a target="_blank" href="https://github.com/w3c/mlreq/">GH repo</a> &bull; <a target="_blank" href="http://w3c.github.io/i18n-activity/textlayout/?filter=mongolian">issue summary</a></p>
+<ol class="todo">
+<li>support discussions on mongolian variants</li>
+<li>ask experts about requirements when needed and capture them</li>
+</ol>
+</div>
+<div class="item" id="mongolian2">
+<p class="topic">se asian</p>
+<p><a target="_blank" href="https://github.com/w3c/sealreq/">GH repo</a> &bull; <a target="_blank" href="http://w3c.github.io/i18n-activity/textlayout/?filter=seasia">issue summary</a></p>
+<ol class="todo">
+<li>support discussions on mongolian variants</li>
+<li>ask experts about requirements when needed and capture them</li>
+</ol>
+</div>
         <div class="item" id="tibetan">
-          <p class="topic">tibetan</p>
-          <p><a target="_blank" href="https://github.com/w3c/tlreq/">GH</a> &bull; <a target="_blank" href="https://lists.w3.org/Archives/Public/public-i18n-tibetan/">list</a></p>
-          <ul class="objectives">
-            <li>Develop text layout and typographic requirements for languages using the Tibetan script.</li>
-          </ul>
-          <ol class="todo">
-            <li class="inprogress">Chunming to translate en to zh</li>
+        <p class="topic">tibetan</p>
+<p><a target="_blank" href="https://github.com/w3c/tlreq/">GH repo</a> &bull; <a target="_blank" href="http://w3c.github.io/i18n-activity/textlayout/?filter=tibetan">issue summary</a></p>
+<ol class="todo">
+<li class="inprogress">Chunming to translate en to zh</li>
             <li class="inprogress">do initial review</li>
             <li class="inprogress">publish FPWD</li>
             <li>find Tibetan experts</li>
             <li>add content</li>
           </ol>
-          <p>Contact: Chunming, Richard</p>
-        </div>
-        <div class="item" id="korean">
-          <p class="topic">korean</p>
-          <p><a target="_blank" href="http://w3c.github.io/klreq/">ED</a> &bull; <a target="_blank" href="https://github.com/w3c/klreq/">GH</a> &bull; <a target="_blank" href="https://lists.w3.org/Archives/Public/public-i18n-cjk/">list</a></p>
-          <ul class="objectives">
-            <li>Develop text layout and typographic requirements for languages using the Korean script.</li>
-          </ul>
-          <ol class="todo">
-            <li>address outstanding issues</li>
-            <li>publish new WD</li>
-          </ol>
-          <p>Contact:  Richard</p>
-      </div></td>
+</div></td>
       <td>
         
         
@@ -316,34 +306,17 @@ For each work item, the page describes objectives and next steps (the numbered l
             <li class="inprogress">maintain pointers to info about  reqs of non-latin scripts/languages</li>
             <li class="inprogress">add to type-samples repo</li>
           </ol>
-          <p>Contact:  Richard</p>
-        </div>
-        <div class="item" id="mongolian">
-          <p class="topic">mongolian</p>
-        <p><a target="_blank" href="https://r12a.github.io/mongolian-variants/">summary</a> &bull; <a target="_blank" href="https://lists.w3.org/Archives/Public/public-i18n-mongolian/">list</a></p>
-        <ul class="objectives">
-          <li>Develop text layout and typographic requirements for languages using the Mongolian script.</li>
-        </ul>
-        <ol class="todo">
-          <li>support discussions on mongolian variants</li>
-          <li>ask experts about requirements when needed and capture them</li>
-        </ol>
-        <p>Contact: Richard</p>
-      </div>
-        
-
-
-        <div class="item" id="counter_styles">
-        <p class="topic">counter-styles</p>
-        <p><a target="_blank" href="https://github.com/w3c/predefined-counter-styles/">GH</a></p>
+</div>
+<div class="item" id="counter_styles">
+<p class="topic">counter-styles</p>
+        <p><a target="_blank" href="https://github.com/w3c/predefined-counter-styles/">GH repo</a></p>
         <ul class="objectives">
           <li>Maintain a document that provides content authors with ready made templates for international counter styles.</li>
         </ul>
         <ol class="todo">
           <li>add new styling information as needed</li>
         </ol>
-        <p>Contact:  Richard</p>
-        </div>
+</div>
         
         
         
@@ -356,8 +329,7 @@ For each work item, the page describes objectives and next steps (the numbered l
         <ol class="todo">
           <li>monitor and contribute to developments</li>
         </ol>
-        <p>Contact:  Richard</p>
-        </div>
+</div>
         
         
         
@@ -397,7 +369,7 @@ For each work item, the page describes objectives and next steps (the numbered l
         </div>
       <div class="item" id="specdev">
         <p class="topic">specdev</p>
-        <p><a target="_blank" href="https://github.com/w3c/bp-i18n-specdev">GH</a></p>
+        <p><a target="_blank" href="https://github.com/w3c/bp-i18n-specdev">GH repo</a></p>
         <ul class="objectives1">
           <li>Capture guidelines for spec developers, to help them address internationalization needs.</li>
           <li>Shape the guidelines so that they can be used for self-review.</li>
@@ -407,8 +379,7 @@ For each work item, the page describes objectives and next steps (the numbered l
           <li>promote collaborative use by WGs</li>
           <li class="inprogress">develop a higher level set of questions to point groups to the right parts of specdev</li>
         </ol>
-        <p>Contact: Richard</p>
-      </div>
+</div>
       <div class="item" id="tests">
         <p class="topic">tests</p>
         <p><a target="_blank" href="http://www.w3.org/International/tests">test suite</a></p>
@@ -421,7 +392,6 @@ For each work item, the page describes objectives and next steps (the numbered l
           <li>update results as browser support changes.</li>
           <li>develop more articles like vertical text &amp; ruby.</li>
         </ol>
-        <p>Contact: Richard</p>
 </div>
       <div class="item" id="ruby_impl">
         <p class="topic"> implementer support</p>
@@ -437,16 +407,17 @@ For each work item, the page describes objectives and next steps (the numbered l
           <li>encourage encoding spec completeness<br>
           </li>
         </ol>
-        <p>Contact: Richard</p>
-      </div>
+</div>
       <div class="item" id="its">
         <p class="topic">ITS IG</p>
         <p><a target="_blank" href="https://www.w3.org/International/its/ig/">home</a> &bull; <a target="_blank" href="https://www.w3.org/International/its/wiki/ITS_Implementations">implementations</a></p>
+<ul class="objectives1">
+<li>A community of users of the Internationalization Tag Set (ITS) to promote its adoption within and outside of W3C, and gather information for its further development.</li>
+</ul>
         <ol class="todo">
-          <li>map ITS to <a target="_blank" href="https://www.w3.org/International/its/wiki/XLIFF_2.0_Mapping">XLIFF 2.0</a></li>
+        <li>map ITS to <a target="_blank" href="https://www.w3.org/International/its/wiki/XLIFF_2.0_Mapping">XLIFF 2.0</a></li>
         </ol>
-        <p>Contact: Felix</p>
-    </div></td>
+</div></td>
       <td><div class="item" id="charmod">
           <p class="topic priority">charmod</p>
           <p><a target="_blank" href="https://github.com/w3c/charmod-norm/">GH</a></p>
@@ -458,8 +429,7 @@ For each work item, the page describes objectives and next steps (the numbered l
             <li>send for wide review</li>
             <li>publish as WG Note</li>
           </ol>
-          <p>Contact: Addison</p>
-        </div>
+</div>
         <div class="item" id="encoding">
           <p class="topic">encoding</p>
           <p><a target="_blank" href="http://www.org/TR/encoding">CR</a> &bull; <a target="_blank" href="https://encoding.spec.whatwg.org/">ED</a></p>
@@ -473,8 +443,7 @@ For each work item, the page describes objectives and next steps (the numbered l
             <li>support migration of tests to wpt repo</li>
             <li class="inprogress">decide when to publish Rec</li>
           </ol>
-          <p>Contact: Addison</p>
-        </div>
+</div>
         <div class="item" id="strings">
           <p class="topic"> string metadata</p>
           <p><a target="_blank" href="http://w3c.github.io/i18n-discuss/notes/i18n-action-612.html">issue doc</a> • <a href="https://github.com/w3ctag/design-reviews/issues/178">tag discn</a> • <a href="https://aphillips.github.io/bidi-lang-req/">note</a></p>
@@ -487,8 +456,7 @@ For each work item, the page describes objectives and next steps (the numbered l
             <li>create a document with findings</li>
             <li>merge findings into specdev</li>
           </ol>
-          <p>Contact: Addison</p>
-        </div>
+</div>
         <div class="item" id="ruby_cm">
           <p class="topic">ruby content model</p>
           <p><a target="_blank" href="https://w3c.github.io/i18n-discuss/notes/ruby-content-model">draft notes</a></p>
@@ -501,8 +469,7 @@ For each work item, the page describes objectives and next steps (the numbered l
             <li>Wide review</li>
             <li>Publish Note</li>
           </ol>
-          <p>Contact: Richard</p>
-        </div>
+</div>
         <div class="item" id="timezones">
           <p class="topic">time zones, etc.</p>
           <p><a target="_blank" href="https://www.w3.org/International/wiki/HTML5TimeZone">tz wiki</a> &bull; <a target="_blank" href="https://www.w3.org/International/wiki/FloatingTime">ftwiki</a></p>
@@ -513,8 +480,7 @@ For each work item, the page describes objectives and next steps (the numbered l
             <li class="inprogress">distribute ft article for wide review</li>
             <li>publish</li>
           </ol>
-          <p>Contact: Addison</p>
-        </div>
+</div>
         <div class="item" id="locales">
           <p class="topic">locales and locale-affected formats</p>
           <p><a target="_blank" href="http://w3c.github.io/ltli/">ED</a> &bull; <a target="_blank" href="https://github.com/w3c/ltli/">GH</a> &bull; <a target="_blank" href="https://www.w3.org/International/wiki/Locale-based_forms">wiki</a></p>
@@ -526,8 +492,7 @@ For each work item, the page describes objectives and next steps (the numbered l
             <li>develop a working paper to express our findings (Richard, Addison)</li>
             <li>find a final solution for the LTLI document</li>
           </ol>
-          <p>Contact: Addison</p>
-      </div></td>
+</div></td>
       <td>
       
       
@@ -540,14 +505,14 @@ For each work item, the page describes objectives and next steps (the numbered l
         <a target="_blank" href="https://www.w3.org/International/articlelist">article list</a></p>
         <ul class="objectives">
           <li> Develop articles and tutorials to assist content authors and others to apply internationalization features in W3C standards.</li>
+<li>See also the work on test development, which includes presenting results for various internationalization features.</li>
         </ul>
         <ol class="todo">
-          <li>create new articles as needed</li>
+        <li>create new articles as needed</li>
           <li>apply maintenance fixes as feedback comes in<br>
           </li>
         </ol>
-        <p>Contact: Richard</p>
-        </div>
+</div>
         
         
         
@@ -563,8 +528,7 @@ For each work item, the page describes objectives and next steps (the numbered l
           <li>help answer  questions<br>
           </li>
         </ol>
-        <p>Contact: Richard</p>
-        </div>
+</div>
 
 
 
@@ -581,8 +545,7 @@ For each work item, the page describes objectives and next steps (the numbered l
           <li>add language detection component<br>
           </li>
         </ol>
-      <p>Contact: Richard</p>
-      </div>
+</div>
       
       
       
@@ -601,16 +564,6 @@ For each work item, the page describes objectives and next steps (the numbered l
         
         
         
-        <p class="topic">unicode in xml</p>
-        <p><a target="_blank" href="https://www.w3.org/TR/unicode-xml/">WD</a> &bull; <a target="_blank" href="https://w3c.github.io/unicode-xml/">ED</a> &bull; <a target="_blank" href="https://github.com/w3c/unicode-xml">GH</a></p>
-        <ul class="objectives">
-          <li> Update advice for content developers about when to use Unicode code points and when to use markup.</li>
-        </ul>
-        <ol class="todo">
-          <li class="inprogress">make the document</li>
-        obsolete
-        </ol>
-        <p>Contact: Martin</p>
  
  </td>
     </tr>
