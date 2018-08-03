@@ -131,7 +131,7 @@
     
     
 <section id="encoding" class="tbd">
-    <h3>Encoding considerations</h3>
+    <h3>Characters &amp; encoding</h3>
     <p class="status_prompt">Are there any character repertoire issues preventing use of this script on the Web? Do variation selectors need attention?</p>
 
     <p></p>
@@ -409,7 +409,7 @@
 
 <section id="morepage" class="tbd">
     <h3>Other page layout &amp; pagination features</h3>
-    <p class="status_prompt">Some cultures define page areas and page progression direction very differently from those in the West (eg. kihon hanmen in Japanese). Is this an issue for you? Are widows and orphans relevant? In what order do pages progress, RTL or LTR? <a href="https://w3c.github.io/typography/index#more_page_layout_and_pagination">See available information</a> or <a href="https://github.com/w3c/i18n-activity/issues?utf8=%E2%9C%93&amp;q=is%3Aissue%20is%3Aopen%20label%3Apagination%20label%3Atype-info-request">check for currently needed data</a>.</p>
+    <p class="status_prompt">Some cultures define text areas and page progression direction very differently from those in the West (eg. kihon hanmen in Japanese). Is this an issue for you? Are widows and orphans relevant? If pages progress RTL, are there issues for support with paged media? What about things such as cross-references, bookmarks, columns, printer marks,  tables of contents and indexes? <a href="https://w3c.github.io/typography/index#more_page_layout_and_pagination">See available information</a> or <a href="https://github.com/w3c/i18n-activity/issues?utf8=%E2%9C%93&amp;q=is%3Aissue%20is%3Aopen%20label%3Apagination%20label%3Atype-info-request">check for currently needed data</a>.</p>
 
 
     <p></p>
@@ -488,10 +488,10 @@ for (let i=0;i<respecConfig.langs.length;i++) {
     out += '},\n'
 
     out = out.replace(/tbd/g,'')
+    out = out.replace(/broken/g,'0')
     out = out.replace(/ok/g,'3')
     out = out.replace(/advanced/g,'2')
     out = out.replace(/basic/g,'1')
-    out = out.replace(/broken/g,'0')
     out = out.replace(/"na/g,'"-')
     }
 document.getElementById('summaryPlaceholder').textContent = out
