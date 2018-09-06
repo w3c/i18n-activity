@@ -208,7 +208,17 @@ var maxpages = 5
 				// display issues in order of most recently updated
 				for (var i=0;i<ikeys.length;i++) {
 					var issueData = idates[ikeys[i]]
-					tr = document.createElement('tr')
+                    
+                    // get the url of the actual issue, if there is a § marker
+                    var urlpointer = issueData.body.match(/§ [^\r]+/)
+                    if (urlpointer) {
+                        urlpointer = urlpointer[0].replace(/§ /,'').trim()
+                        temp = urlpointer.split(' ')
+                        urlpointer = temp[0]
+                        }
+                    else urlpointer = issueData['html_url']
+
+                    tr = document.createElement('tr')
 					
 					td = document.createElement('td')
 					td.title = 'Issue number'
@@ -251,7 +261,8 @@ var maxpages = 5
 							}
 						}
 					a = document.createElement('a')
-					a.href = issueData['html_url']
+					//a.href = issueData['html_url']
+					a.href = urlpointer
 					a.target = '_blank'
 					a.textContent = issueData['title']
 					td.appendChild(a)
