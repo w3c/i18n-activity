@@ -29,4 +29,19 @@ var labels = {
 
 
 
-var scriptLabels= new Set(['arabic', 'devanagari','ethiopic', 'han', 'hangul', 'hebrew', 'japanese', 'latin', 'mongolian', 'seasia', 'tamil', 'thai','tibetan'])
+var scriptLabels= new Set(['alreq', 'clreq', 'elreq', 'hlreq', 'ilreq', 'jlreq', 'klreq', 'llreq', 'mlreq', 'sealreq', 'tlreq'])
+
+
+var labelName = {
+	'alreq': 'Arabic/Persian',
+	'clreq': 'Chinese',
+	'elreq': 'Ethiopic',
+	'hlreq': 'Hebrew',
+	'ilreq': 'Indic',
+	'jlreq': 'Japanese',
+	'klreq': 'Korean',
+	'llreq': 'Latin',
+	'mlreq': 'Mongolian',
+	'sealreq': 'Southeast Asia',
+	'tlreq': 'Tibetan',
+	}

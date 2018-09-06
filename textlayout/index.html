@@ -78,18 +78,18 @@ var maxpages = 5
     <li><a class="print" href="https://w3c.github.io/i18n-activity/reviews/">Review tracker</a></li>
   </ul>
   <h2 class="notoc">Filter results</h2>
-  <p>Click to show only items of this type:</p>
+  <p>Click to filter items by type:</p>
   <ul>
     <li><span style="padding: 0 .5em;background-color:#D93F0B;"> </span> &nbsp; <a href="#" onclick="filterByLabel('type-info-request')">type-info-request</a></li>
     <li><span style="padding: 0 .5em;background-color: #006b65;"> </span> &nbsp; <a href="#" onclick="filterByLabel('spec-type-issue')">spec-type-issue</a></li>
     <li><span style="padding: 0 .5em;background-color: #0052CC;"> </span> &nbsp; <a href="#" onclick="filterByLabel('browser-type-bug')">browser-type-bug</a></li>
     <li><span style="padding: 0 .5em;background-color: white; border: 1px solid #ccc;"> </span> &nbsp; <a href="#" onclick="clearFilters()">Clear filters</a></li>
   </ul>
-  <p>Click to show only items of this script:</p>
+  <p>Click to filter items by layout group:</p>
   <ul id="scriptFilters">
   <script>
   var scriptsOut = ''
-  for (let item of scriptLabels) scriptsOut += '<li><span style="padding: 0 .5em;background-color:#f9d0c4;"> </span> &nbsp; <a href="#" onclick="filterByLabel(\''+item+'\')">'+item+'</a></li>'
+  for (let item of scriptLabels) scriptsOut += '<li><span style="padding: 0 .5em;background-color:#f9d0c4;"> </span> &nbsp; <a href="#" onclick="filterByLabel(\''+item+'\')">'+labelName[item]+'</a></li>'
   document.getElementById('scriptFilters').innerHTML = scriptsOut
   </script>
     <li><span style="padding: 0 .5em;background-color: white; border: 1px solid #ccc;"> </span> &nbsp; <a href="#" onclick="clearFilters()">Clear filters</a></li>
