@@ -99,7 +99,11 @@ var maxpages = 5
 <section id="rawdata">
 </section>
 
-<p><button onclick="dumpList();">Make list</button> <button onclick="dumpByLabel('pending');">List pending</button> <button onclick="dumpByLabel('close?');">List close</button></p>
+<p><button onclick="dumpList();">Make list</button> 
+<button onclick="dumpByLabel('pending');">List pending</button> 
+<button onclick="dumpByLabel('close?');">List close</button>
+<button onclick="dumpByLabel('needs-review');">List needs-review</button>
+</p>
 <p id="dumparea" style="display:none;"><textarea  style="width: 100%; height: 80px;" id="dumpfield"></textarea></p>
 
 <script>
