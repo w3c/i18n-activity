@@ -9,6 +9,9 @@ th {
 .date {
 	white-space:nowrap;
 	width: 8em;
+    font-size: 80%;
+    text-align: end;
+    vertical-align: top;
 	}
 td {
 	font-size: 90%;
@@ -30,3 +33,11 @@ td {
 .hidden {
 	display: none;
 	}
+.trackerId {
+    text-align: start;
+    vertical-align: top;
+    font-size: 80%;
+    }
+#filterList span {
+    border-radius: 3px;
+    }

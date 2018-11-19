@@ -81,10 +81,11 @@ var maxpages = 5
   </ul>
   <h2 class="notoc">Filter results</h2>
   <p>Click to show items with that label only:</p>
-  <ul>
+  <ul id="filterList">
     <li><span style="padding: 0 .5em;background-color:red;"> </span> &nbsp; <a href="#" onclick="filterByLabel('pending')">Pending</a></li>
     <li><span style="padding: 0 .5em;background-color: #f48041;"> </span> &nbsp; <a href="#" onclick="filterByLabel('needs-review')">Needs review</a></li>
-    <li><span style="padding: 0 .5em;background-color: #ccc;"> </span> &nbsp; <a href="#" onclick="filterByLabel('track')">Tracking</a></li>
+    <li><span style="padding: 0 .5em;background-color: #f9c9ff;"> </span> &nbsp; <a href="#" onclick="filterByLabel('comment')">i18n-comment</a></li>
+    <li><span style="padding: 0 .5em;background-color: #eee; border: 1px solid #ddd;"> </span> &nbsp; <a href="#" onclick="filterByLabel('track')">i18n-tracking</a></li>
     <li><span style="padding: 0 .5em;background-color: #fbca04;"> </span> &nbsp; <a href="#" onclick="filterByLabel('waiting')">Waiting</a></li>
     <li><span style="padding: 0 .5em;background-color: #009800;"> </span> &nbsp; <a href="#" onclick="filterByLabel('close?')">Close?</a></li>
     <li><span style="padding: 0 .5em;background-color: #1D76DB;"> </span> &nbsp; <a href="#" onclick="filterByLabel('deferred')">Deferred</a></li>
@@ -93,7 +94,7 @@ var maxpages = 5
 </section>
 <section>
   <p>This page tracks comments made by the i18n WG on the specs of other WGs. It only shows tracker issues the i18n WG has not closed. (Issues may remain open in the i18n tracker even if closed by the other WG in their repo.)</p>
-  <p>The mostly recently changed issues appear at the top of each section, and sections are ordered according to where the most recent changes occurred. The date indicates the last time there was a change to the <em>tracker</em> issue (not the issue in the other WG's repo). Each item links to a tracking <a href="https://github.com/w3c/i18n-activity/issues">issue in the i18n-activity github repo</a>. Click on the link in <em>that</em> issue to follow the actual discussion. </p>
+  <p>The sections and items within those sections are ordered by the last modified date of the items in the <em>tracker</em> repository (not the discussions). The mostly recently changed items appear highest. The link on the left of each line links directly to the issue where the discussion is taking place. The date indicates when the <em>tracker</em> item was modified, and the right-hand column links to the issue used to track the discussion in <a href="https://github.com/w3c/i18n-activity/issues">the i18n-activity github repo</a>.</p>
   <p id="total">Loading data...</p>
 </section>
 <section id="rawdata">
@@ -220,14 +221,9 @@ var maxpages = 5
 					tr = document.createElement('tr')
 					
 					td = document.createElement('td')
-					td.title = 'Issue number'
-					td.textContent = issueData['number']
-					tr.appendChild(td)
-					
-					td = document.createElement('td')
 					// find labels
 					for (var j=0;j<issueData.labels.length;j++) {
-						if (issueData.labels[j].name == 'pending' || issueData.labels[j].name == 'needs-review' || issueData.labels[j].name == 'track' || issueData.labels[j].name == 'close?' || issueData.labels[j].name == 'waiting' || issueData.labels[j].name == 'deferred') {
+						if (issueData.labels[j].name == 'pending' || issueData.labels[j].name == 'needs-review' || issueData.labels[j].name == 'comment' || issueData.labels[j].name == 'track' || issueData.labels[j].name == 'close?' || issueData.labels[j].name == 'waiting' || issueData.labels[j].name == 'deferred') {
 							span = document.createElement('span')
 							span.setAttribute('style', 'background-color:#'+issueData.labels[j].color)
 							span.title = issueData.labels[j].name
@@ -252,6 +248,17 @@ var maxpages = 5
 					td.textContent = convertDate(updated)
 					tr.appendChild(td)
 					
+					td = document.createElement('td')
+					td.title = 'Issue number in the tracker repo'
+                    td.className = 'trackerId'
+					a = document.createElement('a')
+					a.href = 'https://github.com/w3c/i18n-activity/issues/'+issueData['number']
+					a.target = '_blank'
+					a.textContent = issueData['number']
+					td.appendChild(a)
+					//td.textContent = issueData['number']
+					tr.appendChild(td)
+	
 					table.appendChild(tr)
 					}
 				
