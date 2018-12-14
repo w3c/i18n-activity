@@ -41,3 +41,6 @@ td {
 #filterList span {
     border-radius: 3px;
     }
+tr:hover {
+    background-color: antiquewhite;
+}
