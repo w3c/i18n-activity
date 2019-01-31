@@ -227,8 +227,8 @@
     <p></p>
     </section>
 <section id="emphasis" class="tbd">
-    <h3>Emphasis &amp; other text markers</h3>
-    <p class="status_prompt">This is about other ways of marking text (see also specific sections dedicated to quotations and inline notes/annotations). Is it possible to express emphasis or highlight content as expected? Bold, italic and under-/over-lines are not always appropriate, and some scripts have their own unique ways of doing things, that are not in the Western tradition at all. Text delimiters mark certain items or sections off from the main text, such as book names in Chinese, quotations, head markers in Tibetan, etc, and often involve the use of punctuation. Is there any behaviour that isn't well supported, such as overlines for numeric digits in Syriac?    Are there issues about the positioning or use of underlines? Some aspects related to the drawing of lines alongside or through text involve local typographic considerations. Do underlines need to be broken in special ways for this script? Do you need support for additional line shapes or widths? Does the distance or position of the lines relative to the text need to vary in ways that are not achievable? Are lines correctly drawn relative to vertical text?  <a href="https://w3c.github.io/typography/index#emphasis">See available information</a> or <a href="https://github.com/w3c/i18n-activity/issues?utf8=%E2%9C%93&amp;q=is%3Aissue%20is%3Aopen%20label%3Aemphasis%20label%3Atype-info-request">check for currently needed data</a>.</p>
+    <h3>Text decoration</h3>
+    <p class="status_prompt">This is about  ways of marking text (see also specific sections dedicated to quotations and inline notes/annotations). Is it possible to express emphasis or highlight content as expected? Bold, italic and under-/over-lines are not always appropriate, and some scripts have their own unique ways of doing things, that are not in the Western tradition at all. Text delimiters mark certain items or sections off from the main text, such as book names in Chinese, quotations, head markers in Tibetan, etc, and often involve the use of punctuation. Is there any behaviour that isn't well supported, such as overlines for numeric digits in Syriac?    Are there issues about the positioning or use of underlines? Some aspects related to the drawing of lines alongside or through text involve local typographic considerations. Do underlines need to be broken in special ways for this script? Do you need support for additional line shapes or widths? Does the distance or position of the lines relative to the text need to vary in ways that are not achievable? Are lines correctly drawn relative to vertical text?  <a href="https://w3c.github.io/typography/index#text_decoration">See available information</a> or <a href="https://github.com/w3c/i18n-activity/issues?utf8=%E2%9C%93&amp;q=is%3Aissue%20is%3Aopen%20label%3Atext-decoration%20label%3Atype-info-request">check for currently needed data</a>.</p>
 
 
     <p></p>
@@ -246,7 +246,7 @@
 
 
 
-<section id="ruby" class="tbd">
+<section id="inlinenotes" class="tbd">
     <h3>Inline notes &amp; annotations</h3>
     <p class="status_prompt">The ruby spec currently specifies an initial subset of requirements for fine-tuning the typography of phonetic and semantic annotations of East Asian text, including furigana, pinyin and zhuyin fuhao systems.  Is is adequate for what it sets out to do?  What other controls will be needed in the future? What about other types of inline annotation, such as warichu? (For referent-type notes such as footnotes, see below.) <a href="https://w3c.github.io/typography/index#ruby_annotation">See available information</a> or <a href="https://github.com/w3c/i18n-activity/issues?utf8=%E2%9C%93&amp;q=is%3Aissue%20is%3Aopen%20label%3Aruby%20label%3Atype-info-request">check for currently needed data</a>.</p>
 
@@ -345,16 +345,6 @@
 
 
 
-<section id="interaction" class="tbd">
-    <h3>Forms &amp; user interaction</h3>
-    <p class="status_prompt">Are vertical form controls well supported? In right-to-left scripts, is it possible to set the base direction for a form field? Is the scroll bar on the correct side? etc. <a href="https://w3c.github.io/typography/index#page_numbering_running_headers">See available information</a> or <a href="https://github.com/w3c/i18n-activity/issues?utf8=%E2%9C%93&amp;q=is%3Aissue%20is%3Aopen%20label%3Apage-numbering%20label%3Atype-info-request">check for currently needed data</a>.</p>
-
-
-    <p></p>
-</section>
-
-
-
 <section id="baselines" class="tbd">
     <h3>Baselines &amp; inline alignment</h3>
     <p class="status_prompt">Does the browser support  requirements for baseline alignment between mixed scripts and in general? <a href="https://w3c.github.io/typography/index#baselines_inline_alignment">See available information</a> or <a href="https://github.com/w3c/i18n-activity/issues?utf8=%E2%9C%93&amp;q=is%3Aissue%20is%3Aopen%20label%3Abaselines%20label%3Atype-info-request">check for currently needed data</a>.</p>
@@ -411,6 +401,16 @@
 
     <p></p>
     </section>
+
+
+
+<section id="interaction" class="tbd">
+    <h3>Forms &amp; user interaction</h3>
+    <p class="status_prompt">Are vertical form controls well supported? In right-to-left scripts, is it possible to set the base direction for a form field? Is the scroll bar on the correct side? etc. <a href="https://w3c.github.io/typography/index#page_numbering_running_headers">See available information</a> or <a href="https://github.com/w3c/i18n-activity/issues?utf8=%E2%9C%93&amp;q=is%3Aissue%20is%3Aopen%20label%3Apage-numbering%20label%3Atype-info-request">check for currently needed data</a>.</p>
+
+
+    <p></p>
+</section>
 
 
 
@@ -475,9 +475,9 @@ for (let i=0;i<respecConfig.langs.length;i++) {
     out += ', cursive:"'+document.getElementById('cursive').className+'"'
     out += ', transforms:"'+document.getElementById('transforms').className+'"'
     out += ', boundaries:"'+document.getElementById('boundaries').className+'"'
-    out += ', emphasis:"'+document.getElementById('emphasis').className+'"'
+    out += ', textdecoration:"'+document.getElementById('textdecor').className+'"'
     out += ', quotations:"'+document.getElementById('quotations').className+'"'
-    out += ', ruby:"'+document.getElementById('ruby').className+'"'
+    out += ', inlinenotes:"'+document.getElementById('inlinenotes').className+'"'
     out += ', digits:"'+document.getElementById('numbers').className+'"'
     out += ', otherinline:"'+document.getElementById('otherinline').className+'"'
 
