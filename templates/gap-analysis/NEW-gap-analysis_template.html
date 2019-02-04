@@ -180,7 +180,7 @@
 
 <section id="fontstyle" class="tbd">
     <h3>Font  styles, weight, etc</h3>
-    <p id="fontstylePrompt" class="status_prompt"> Do italic fonts lean in the right direction? Is synthesised italicisation problematic? Are there other problems relating to bolding or italicisation - perhaps relating to generalised assumptions of applicability? <a href="https://w3c.github.io/typography/index#font-style">See available information</a> or <a href="https://github.com/w3c/i18n-activity/issues?utf8=%E2%9C%93&amp;q=is%3Aissue%20is%3Aopen%20label%3Afont-style%20label%3Atype-info-request">check for currently needed data</a>.</p>
+    <p id="fontstylePrompt" class="status_prompt"> This covers ways of modifying the glyphs, such as for italicisation, bolding, oblique, etc. Do italic fonts lean in the right direction? Is synthesised italicisation problematic? Are there other problems relating to bolding or italicisation - perhaps relating to generalised assumptions of applicability? <a href="https://w3c.github.io/typography/index#font-style">See available information</a> or <a href="https://github.com/w3c/i18n-activity/issues?utf8=%E2%9C%93&amp;q=is%3Aissue%20is%3Aopen%20label%3Afont-style%20label%3Atype-info-request">check for currently needed data</a>.</p>
 
 
     <p></p>
@@ -226,7 +226,10 @@
 
     <p></p>
     </section>
-<section id="emphasis" class="tbd">
+    
+    
+    
+<section id="textdecor" class="tbd">
     <h3>Text decoration</h3>
     <p class="status_prompt">This is about  ways of marking text (see also specific sections dedicated to quotations and inline notes/annotations). Is it possible to express emphasis or highlight content as expected? Bold, italic and under-/over-lines are not always appropriate, and some scripts have their own unique ways of doing things, that are not in the Western tradition at all. Text delimiters mark certain items or sections off from the main text, such as book names in Chinese, quotations, head markers in Tibetan, etc, and often involve the use of punctuation. Is there any behaviour that isn't well supported, such as overlines for numeric digits in Syriac?    Are there issues about the positioning or use of underlines? Some aspects related to the drawing of lines alongside or through text involve local typographic considerations. Do underlines need to be broken in special ways for this script? Do you need support for additional line shapes or widths? Does the distance or position of the lines relative to the text need to vary in ways that are not achievable? Are lines correctly drawn relative to vertical text?  <a href="https://w3c.github.io/typography/index#text_decoration">See available information</a> or <a href="https://github.com/w3c/i18n-activity/issues?utf8=%E2%9C%93&amp;q=is%3Aissue%20is%3Aopen%20label%3Atext-decoration%20label%3Atype-info-request">check for currently needed data</a>.</p>
 
@@ -306,7 +309,7 @@
 
 
 <section id="justification" class="tbd">
-    <h3>Text alignment, spacing &amp; justification</h3>
+    <h3>Text alignment &amp; justification</h3>
     <p class="status_prompt"> When text in a paragraph needs to have flush lines down both sides, does it follow the rules for your script? Does the script need assistance to conform to a grid pattern? Does your script allow punctuation to hang outside the text box at the start or end of a line? Where adjustments are need to make a line flush, how is that done? Do you shrink/stretch space between words and/or letters? Are word baselines stretched, as in Arabic? What about paragraph indents, or the need for logical alignment keywords, such as start/end, rather than left/right? <a href="https://w3c.github.io/typography/index#justification">See available information</a> or <a href="https://github.com/w3c/i18n-activity/issues?utf8=%E2%9C%93&amp;q=is%3Aissue%20is%3Aopen%20label%3Ajustification%20label%3Atype-info-request">check for currently needed data</a>.</p>
 
 
@@ -374,7 +377,7 @@
 <section id="h_pages">
 <h2>Page &amp; book layout</h2>
 
-<section id="bidilayout" class="tbd">
+<section id="pagelayout" class="tbd">
     <h3>General page layout &amp; progression</h3>
     <p class="status_prompt">How are the main text area and ancilliary areas positioned and defined? Are there any special requirements here, such as dimensions in characters for the Japanese kihon hanmen? The book cover for scripts that are read right-to-left scripts is on the right of the spine, rather than the left. Is that provided for? When content can flow vertically and to the left or right, how do you specify the location of objects, text, etc. relative to the flow? For example, keywords 'left' and 'right' are likely to need to be reversed for pages written in English and page written in Arabic. Do tables and grid layouts work as expected? How do columns work in vertical text? Can you mix block of vertical and horizontal text correctly? Does text scroll in the expected direction? <a href="https://w3c.github.io/typography/index#direction_agnostic">See available information</a> or <a href="https://github.com/w3c/i18n-activity/issues?utf8=%E2%9C%93&amp;q=is%3Aissue%20is%3Aopen%20label%3Abidi%20label%3Atype-info-request">check for currently needed data</a>.</p>
 
@@ -475,7 +478,7 @@ for (let i=0;i<respecConfig.langs.length;i++) {
     out += ', cursive:"'+document.getElementById('cursive').className+'"'
     out += ', transforms:"'+document.getElementById('transforms').className+'"'
     out += ', boundaries:"'+document.getElementById('boundaries').className+'"'
-    out += ', textdecoration:"'+document.getElementById('textdecor').className+'"'
+    out += ', textdecor:"'+document.getElementById('textdecor').className+'"'
     out += ', quotations:"'+document.getElementById('quotations').className+'"'
     out += ', inlinenotes:"'+document.getElementById('inlinenotes').className+'"'
     out += ', digits:"'+document.getElementById('numbers').className+'"'
@@ -490,9 +493,10 @@ for (let i=0;i<respecConfig.langs.length;i++) {
     out += ', baselines:"'+document.getElementById('baselines').className+'"'
     out += ', otherpara:"'+document.getElementById('otherpara').className+'"'
 
-    out += ', bidilayout:"'+document.getElementById('bidilayout').className+'"'
+    out += ', pagelayout:"'+document.getElementById('pagelayout').className+'"'
     out += ', notes:"'+document.getElementById('notes').className+'"'
     out += ', pagehead:"'+document.getElementById('pageheaders').className+'"'
+    out += ', interaction:"'+document.getElementById('interaction').className+'"'
     out += ', otherpage:"'+document.getElementById('morepage').className+'"'
     out += '},\n'
 
