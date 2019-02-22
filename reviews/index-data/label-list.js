@@ -59,6 +59,7 @@ var labels = {
 	'utr51':[],
 	'utr53':[],
 	'vehicle-information-access':[],
+	'verifiable-claims':[],
 	'wcag':[],
 	'web-payments-use-cases':[],
 	'webauthn':[],
