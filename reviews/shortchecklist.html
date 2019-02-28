@@ -41,26 +41,9 @@ f.additionalLinks = ''
 <link rel="stylesheet" href="index-data/local.css" type="text/css" />
 <link rel="copyright" href="#copyright"/>
 <!--[if lt IE 9]><script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
-<script>
-// Note that the code is designed to pull a maximum of 200 issues - for more, change maxpages
-// It will only display issues with labels that correspond to those defined in the labels variable
-// this means that if a new label is added, this code needs to be changed
-// we could probably fix this by ignoring pending, close and track labels and constituting the list of labels as needed
-// but we'd have to be careful to ignore other labels that are added other than spec labels
- 
-
-
-// Define the repository owner
-var owner = 'w3c';
-
-var labelsKeys = Object.keys(labels)
-var labelsLength = labelsKeys.length
-var debug = false
-
-var issues = []
-var maxpages = 5
-
-</script>
+<style>
+#checklist td { vertical-align: top; padding: .25em; font-family: Helvetica, Roboto, Calibri, "Segoe UI", sans-serif; }
+</style>
 </head>
 
 <body>
@@ -69,7 +52,7 @@ var maxpages = 5
   <script>document.getElementById('mainNavigation').innerHTML = mainNavigation</script> 
 </header>
 <div class="content">
-<h1> Spec review checklist</h1>
+<h1> Short i18n review checklist</h1>
 <section id="sidebarExtras">
   <h2 class="notoc">Useful links</h2>
   <ul>
@@ -80,74 +63,75 @@ var maxpages = 5
 </section>
 <section>
   <p>This page points developers of specifications to various aspects of their spec that may need internationalization review. It can also be used by spec reviewers, to get an idea of what to look for in a spec.</p>
+<p>The text of this page is still being perfected. Please raise any suggestions using <a href="https://github.com/w3c/i18n-activity/issues/">GitHub issues</a>.</p>
 </section>
 <section id="rawdata">
 </section>
 
 
-<table>
+<table id="checklist">
 <tbody>
 <tr>
-<th>If  the spec...</th>
+<th>If  the spec or its implementation...</th>
 <th>... then:</th>
-<th>links to detailed checklist</th></tr>
+<th>links to detailed checklists</th></tr>
 <tr>
-<td>... contains any natural language text that will be read by a human (this  includes error messages or other UI text, JSON strings, etc, etc),</td>
+<td>... contains <strong>any natural language</strong> text that will be read by a human (this  includes error messages or other UI text, JSON strings, etc, etc),</td>
 <td>... ensure that there’s metadata about and support for basic  things such as language and text direction</td>
 <td><p><a href="https://www.w3.org/International/techniques/developing-specs.en?open=resource#resource">Language</a></p>
 <p><a href="https://www.w3.org/International/techniques/developing-specs.en?open=text_direction#text_direction">Direction</a></p></td></tr>
 <tr>
-<td><p>... allows content authors to produce human readable text, either in its own right, or in association with graphics.</p></td>
+<td>... allows content authors to produce <strong>typographically appealing  text</strong>, either in its own right, or in association with graphics.</td>
 <td>... take into account the different typographic  styles used around the world (for things such as line-breaking, text  justification, emphasis or other text decorations, text selection and  units, etc.)</td>
 <td><p><a href="https://www.w3.org/International/techniques/developing-specs.en?open=typography#typography">Typographic support</a></p></td>
 </tr>
 <tr>
-<td>... allows the user to point into text, creates text fragments,  concatenates text, allows the user to select or step through text (using  a cursor or other methods), etc.</td>
+<td>... allows the user to <strong>point into text</strong>, creates text <strong>fragments</strong>,  <strong>concatenates</strong> text, allows the user to <strong>select or step through</strong> text (using  a cursor or other methods), etc.</td>
 <td>... make allowances for the  ways different scripts handle units of text</td>
-<td>&nbsp;</td>
+<td><a href="/International/techniques/developing-specs.en?open=characters&open=char_indexing#char_indexing">Indexing strings</a></td>
 </tr>
 <tr>
-<td>... sorts text</td>
+<td>... <strong>sorts text</strong></td>
 <td>... ensure that it does so in locally relevant  ways</td>
-<td>&nbsp;</td>
+<td><a href="/International/techniques/developing-specs.en?open=characters&open=char_sort#char_sort">Specifying sort &amp; search</a></td>
 </tr>
 <tr>
-<td>... captures user input</td>
+<td>... <strong>captures user input</strong></td>
 <td>... ensure that it also captures  metadata about language and text direction, and that it accommodates  locale-specific input methods</td>
 <td>&nbsp;</td>
 </tr>
 <tr>
-<td>... deals with time in any way that will be read by humans and/or crosses  time zone boundaries</td>
-<td>... ensure that it will represent time as expected in locales around the world.</td>
-<td>&nbsp;</td>
+<td>... <strong>deals with time</strong> in any way that will be read by humans and/or crosses  time zone boundaries</td>
+<td>... ensure that it will represent time as expected in locales around the world, and manage the relationship between local and global/absolute time.</td>
+<td><a href="/International/techniques/developing-specs.en?open=locale&open=loc_time#loc_time">Working with time</a></td>
 </tr>
 <tr>
-<td>... allows any character encoding other than UTF-8</td>
+<td>... allows any <strong>character encoding</strong> other than UTF-8</td>
 <td>... make sure you have a  convincing argument as to why, and then ensure that the character  encoding model is correct</td>
 <td><p><a href="https://www.w3.org/International/techniques/developing-specs.en?open=characters#characters">Characters</a></p></td>
 </tr>
 <tr>
-<td>... allows searching or matching of text, including syntax and  identifiers</td>
+<td>... allows <strong>searching or matching</strong> of text, including syntax and  identifiers</td>
 <td>... understand the implications of  normalisation, case folding, etc</td>
-<td>&nbsp;</td>
+<td><a href="/International/techniques/developing-specs.en?open=characters&open=char_case#char_case">Handling case folding</a></td>
 </tr>
 <tr>
-<td>... defines markup</td>
+<td>... <strong>defines markup</strong></td>
 <td>... ensure support for  internationalisation features and avoid putting human-readable text in  attribute values or plain-text elements</td>
 <td><p><a href="https://www.w3.org/International/techniques/developing-specs.en?open=markup#markup">Markup</a></p></td>
 </tr>
 <tr>
-<td>... deals with names, addresses, time &amp; date formats, etc</td>
+<td>... deals with <strong>names, addresses, time &amp; date formats</strong>, etc</td>
 <td>... ensure that the model is flexible enough to cope with wide variations  in format, levels of data, etc</td>
 <td><p><a href="https://www.w3.org/International/techniques/developing-specs.en?open=locale#locale">Local dates, times and formats</a></p></td>
 </tr>
 <tr>
-<td>... is likely to need localisation</td>
+<td>... describes a format or data that is likely to <strong>need localisation</strong></td>
 <td>... ensure that there’s  an approach in place which allows effective storage and labelling of, and access to localised  alternatives for strings, text, images, etc</td>
 <td>&nbsp;</td>
 </tr>
 <tr>
-<td>... makes any reference to or relies on any cultural norms</td>
+<td>... makes any reference to or relies on any <strong>cultural norms</strong></td>
 <td>... ensure that it can be adapted to suit different cultural norms around  the world (ranging from depictions of people or gestures, to  expectations about gender roles, to approaches to work and life, etc).</td>
 <td>&nbsp;</td>
 </tr>
@@ -160,5 +144,6 @@ var maxpages = 5
 <script type="text/javascript">completePage()</script>
 
 </div>
+s
 </body>
 </html>
