@@ -17,6 +17,7 @@ var labels = {
 	'css-inline':[],
 	'css-ruby':[],
 	'css-text-decor':[],
+	'css-scroll-snap':[],
 	'css-text':[],
 	'css-writing-modes':[],
 	'css-variables':[],
