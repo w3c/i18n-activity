@@ -27,6 +27,7 @@ var labels = {
 	'dpub-aria':[],
 	'dpub-css-priorities':[],
 	'dpub-latinreq':[],
+	'dpub-pwp-ucr':[],
 	'dwbp':[],
 	'encoding':[],
 	'find-text':[],
