@@ -71,5 +71,6 @@ var labels = {
 	'web-share':[],
 	'websub':[],
 	'webvtt':[],
+	'wot':[],
 	'xslt':[]
 	}
