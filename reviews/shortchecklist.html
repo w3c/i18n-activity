@@ -60,6 +60,60 @@ f.additionalLinks = ''
     <li><a class="print" href="https://www.w3.org/International/review-request">Request an i18n review</a></li>
     <li><a class="print" href="https://github.com/w3c/i18n-activity/projects/1">Review radar</a></li>
   </ul>
+  <p>If you would like to create a report against this list in a GitHub repository (<a href="https://github.com/w3c/wot-thing-description/issues/582">like this</a>), copy the text in this box to the comment field of your issue, and then annotate it.</p>
+  <textarea id="copy" style="width:100%;height:10em;">
+Short i18n review checklist is [here](http://w3c.github.io/i18n-activity/reviews/shortchecklist)
+
+1. [ ] _If the spec (or its implementation) contains any natural language text that will be read by a human (this includes error messages or other UI text, JSON strings, etc, etc),_
+
+    Comments go here.
+    
+2. [ ] _If the spec (or its implementation) allows content authors to produce typographically appealing text, either in its own right, or in association with graphics._
+
+    Comments go here.
+
+3. [ ] _If the spec (or its implementation) allows the user to point into text, creates text fragments, concatenates text, allows the user to select or step through text (using a cursor or other methods), etc._
+
+    Comments go here.
+
+4. [ ] _If the spec (or its implementation) allows searching or matching of text, including syntax and identifiers_
+
+    Comments go here.
+
+5. [ ] _If the spec (or its implementation) sorts text_
+
+    Comments go here.
+
+6. [ ] _If the spec (or its implementation) captures user input_
+
+    Comments go here.
+
+7. [ ] _If the spec (or its implementation) deals with time in any way that will be read by humans and/or crosses time zone boundaries_
+
+    Comments go here.
+
+8. [ ] _If the spec (or its implementation) allows any character encoding other than UTF-8._
+
+    Comments go here.
+
+9. [ ] _If the spec (or its implementation) defines markup._
+
+    Comments go here.
+
+10. [ ] _If the spec (or its implementation) deals with names, addresses, time & date formats, etc_
+
+    Comments go here.
+
+11. [ ] _If the spec (or its implementation) describes a format or data that is likely to need localization._
+
+    Comments go here.
+
+12. [ ] _If the spec (or its implementation) makes any reference to or relies on any cultural norms_
+
+    Comments go here.
+
+</textarea>
+<p><button onClick="document.getElementById('copy').select();">Select all</button></p>
 </section>
 <section>
   <p>This page points developers of specifications to various aspects of their spec that may need internationalization review. It can also be used by spec reviewers, to get an idea of what to look for in a spec.</p>
