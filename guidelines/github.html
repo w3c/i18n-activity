@@ -505,7 +505,7 @@ upstream    https://github.com/w3c/<em>repoName</em>.git (push)</pre>
       <li> Run a spell checker over the document.      </li>
       <li>Update the config file for the document so that it lists all images and other dependant files. The config file will be at the top level of the GitHub repo, and usually has the name of the document, without an extension.</li>
       <li>Go to the <a href="https://labs.w3.org/pubrules/">Pubrules checker</a> and run it against the following URL: <br>
-      <code>https://labs.w3.org/spec-generator/?type=respec&amp;url=https://w3c.github.io/<span style="color: orange">linkToYourSpec</span>/?specStatus=WD;shortName=<span style="color:orange">theShortName</span></code><br>
+      <code>https://labs.w3.org/spec-generator/?type=respec&amp;url=https://w3c.github.io/<span style="color: orange">linkToYourSpec</span>/?specStatus=WD&amp;shortName=<span style="color:orange">theShortName</span></code><br>
 Fix anything that's needed, and rerun the checker until it's ok. You will probably find that the checker complains about not being able to find a dependent file (usually the .css file). That's because the URL above creates a WD version of your main file in a new location for testing, and doesn't copy over the dependent files. You can ignore those messages, but you should double-check that the config file lists all dependent files.</li>
       <!--li>Edit the Javascript assignments at the top of the file, updating <code class="kw" translate="no">publishDate</code>, <code class="kw" translate="no">previouspublishDate</code> and, if needed, <code class="kw" translate="no">previousMaturity</code>.</li-->
       <li>Open a terminal window and run the following Curl statement:<br>
