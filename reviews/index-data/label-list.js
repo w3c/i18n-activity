@@ -48,6 +48,7 @@ var labels = {
 	'presentation-api':[],
 	'pubsub':[],
 	'push-api':[],
+	'rdf-dir-literal':[],
 	'remote-playback':[],
 	'service_worker':[],
 	'shacl':[],
