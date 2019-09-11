@@ -35,6 +35,7 @@ var labels = {
 	'indexeddb':[],
 	'input-events':[],
 	'intersection-observer':[],
+	'json-ld':[],
 	'linked-data-patch-format':[],
 	'ldn':[],
 	'low-vision-needs':[],
