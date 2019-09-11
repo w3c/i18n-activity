@@ -73,5 +73,6 @@ var labels = {
 	'websub':[],
 	'webvtt':[],
 	'wot':[],
+	'wpub':[],
 	'xslt':[]
 	}
