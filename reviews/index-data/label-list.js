@@ -47,6 +47,8 @@ var labels = {
 	'payment-request':[],
 	'poe':[],
 	'presentation-api':[],
+	'pronunciation-gap-analysis':[],
+	'pronunciation-use-cases':[],
 	'pubsub':[],
 	'push-api':[],
 	'rdf-dir-literal':[],
