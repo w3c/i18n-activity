@@ -14,6 +14,7 @@ var labels = {
 	'css-counter-styles':[],
 	'css-flexbox':[],
 	'css-fonts':[],
+	'css-grid':[],
 	'css-inline':[],
 	'css-ruby':[],
 	'css-text-decor':[],
