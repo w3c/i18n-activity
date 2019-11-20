@@ -84,9 +84,9 @@ var maxpages = 5
   <ul id="filterList">
     <li><a href="#" onclick="filterByLabel('pending')"><span style="padding: 0 .5em;background-color:red;"> </span> &nbsp; Pending</a></li>
     <li><a href="#" onclick="filterByLabel('advice-requested')"><span style="padding: 0 .5em;background-color:#f48041;"> </span> &nbsp; Advice requested</a></li>
-    <li><a href="#" onclick="filterByLabel('needs-review')"><span style="padding: 0 .5em;background-color: #f48041;"> </span> &nbsp; Needs review</a></li>
-    <li><a href="#" onclick="filterByLabel('comment')"><span style="padding: 0 .5em;background-color: #f9c9ff;"> </span> &nbsp; i18n-comment</a></li>
-    <li><a href="#" onclick="filterByLabel('track')"><span style="padding: 0 .5em;background-color: #eee; border: 1px solid #ddd;"> </span> &nbsp; i18n-tracking</a></li>
+    <li><a href="#" onclick="filterByLabel('eeds-review')"><span style="padding: 0 .5em;background-color: #f48041;"> </span> &nbsp; Needs review</a></li>
+    <li><a href="#" onclick="filterByLabel('needs-resolution')"><span style="padding: 0 .5em;background-color: #f9c9ff;"> </span> &nbsp; Needs resolution</a></li>
+    <li><a href="#" onclick="filterByLabel('tracker')"><span style="padding: 0 .5em;background-color: #eee; border: 1px solid #ddd;"> </span> &nbsp; Tracker</a></li>
     <li><a href="#" onclick="filterByLabel('waiting')"><span style="padding: 0 .5em;background-color: #fbca04;"> </span> &nbsp; Waiting</a></li>
     <li><a href="#" onclick="filterByLabel('close?')"><span style="padding: 0 .5em;background-color: #9df9d4;"> </span> &nbsp; Close?</a></li>
     <li><a href="#" onclick="filterByLabel('deferred')"><span style="padding: 0 .5em;background-color: #1D76DB;"> </span> &nbsp; Deferred</a></li>
@@ -225,7 +225,7 @@ var maxpages = 5
 					td = document.createElement('td')
 					// find labels
 					for (var j=0;j<issueData.labels.length;j++) {
-						if (issueData.labels[j].name == 'pending' || issueData.labels[j].name == 'advice-requested' || issueData.labels[j].name == 'needs-review' || issueData.labels[j].name == 'comment' || issueData.labels[j].name == 'track' || issueData.labels[j].name == 'close?' || issueData.labels[j].name == 'waiting' || issueData.labels[j].name == 'deferred') {
+						if (issueData.labels[j].name == 'pending' || issueData.labels[j].name == 'advice-requested' || issueData.labels[j].name == 'needs-review' || issueData.labels[j].name == 'needs-resolution' || issueData.labels[j].name == 'tracker' || issueData.labels[j].name == 'close?' || issueData.labels[j].name == 'waiting' || issueData.labels[j].name == 'deferred') {
 							span = document.createElement('span')
 							span.setAttribute('style', 'background-color:#'+issueData.labels[j].color)
 							span.title = issueData.labels[j].name
