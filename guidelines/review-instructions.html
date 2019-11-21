@@ -77,7 +77,7 @@ ol ol { margin-right: 20px; margin-left: 30px;  }
 </header>
 <section>
 <p>The i18n WG uses GitHub issues to track review comments raised against the specs of other WGs. This page outlines how to raise issues against a spec, and create other issues in the i18n-activity repository to track those issues. It is verbose to help beginners. Practised hands can just follow the highlighted text for reminders.</p>
-<p>The i18n WG also tracks discussions of interest, or discussions brought to their attention by other WGs. This tracking is enabled by applying the <span class="highlight1"><span style="background-color: #C742FA; padding:2px 4px; border-radius:5px; color:white;font-style:normal;font-weight: normal;">i18n-tracking</span></span> label to an issue in the other WG repo, and creating a tracker issue in the i18n-activity repo. Instructions for handling that are found on another page, under the heading <a href="https://www.w3.org/International/wiki/Review_procedures">Keeping tracker issues up to date</a>.</p>
+<p>The i18n WG also tracks discussions of interest, or discussions brought to their attention by other WGs. This tracking is enabled by applying the <span class="highlight1"><span style="background-color: #f9c9ff; padding:2px 4px; border-radius:5px; color:black;font-style:normal;font-weight: bold; white-space: nowrap;">i18n-tracker</span></span> label to an issue in the other WG repo, and creating a tracker issue in the i18n-activity repo. Instructions for handling that are found on another page, under the heading <a href="https://www.w3.org/International/wiki/Review_procedures">Keeping tracker issues up to date</a>.</p>
 </section>
 
 
@@ -87,7 +87,7 @@ ol ol { margin-right: 20px; margin-left: 30px;  }
   <p>When reviewing a specification for issues related to internationalization, you can use the <a href="https://w3c.github.io/i18n-drafts/techniques/shortchecklist.html">Short review checklist</a> to get ideas of what to look for.</p>
 <p>If you find something that seems to be a problem, follow the steps below. Follow the links for detailed instructions.</p>
 <ol class="main-instructions">
-<li>Is there a label at <a href="https://github.com/w3c/i18n-activity/labels">https://github.com/w3c/i18n-activity/labels</a> for the document in question?<br />
+<li>Is there a label beginning with <span style="font-weight:bold">s:</span> at <a href="https://github.com/w3c/i18n-activity/labels">https://github.com/w3c/i18n-activity/labels</a> for the document in question?<br />
 If yes, go to step 2.<br />
 Otherwise, ask i18n staff to <a href="#creating-product"> create a label</a>, then go to step 2.</li>
 <li><a href="#writeup-issue">Create a new issue</a>.</li>
@@ -95,7 +95,7 @@ Otherwise, ask i18n staff to <a href="#creating-product"> create a label</a>, th
 </li>
 <li>Once the i18n WG has reviewed the comments, <a href="#notify">notify the relevant Working Group</a>.</li>
 <li>Monitor and contribute to the discussion thread for the issue(s) raised.</li>
-<li>When the issue has been addressed, add the <span translate="no" style="background-color:#009800; color: white;border-radius:5px;padding: 2px;">close?</span> label to the issue and get agreement from the i18n WG to close it.</li>
+<li>When the issue has been addressed, add the <span translate="no" style="background-color:#09f9d4; color: black;border-radius:5px;padding: 2px; font-weight: bold;">close?</span> label to the issue and get agreement from the i18n WG to close it.</li>
 </ol>
 </section>
 
@@ -106,10 +106,10 @@ Otherwise, ask i18n staff to <a href="#creating-product"> create a label</a>, th
 <h2><a href="creating-product">Create a label</a></h2>
 <ol>
 <li>
-<p>Labels should be the exact short-name for the document.</p>
+<p>Labels should start with &quot;<span style="font-weight: bold">s:</span>&quot;, followed by the exact short-name for the document.</p>
 </li>
 <li>
-<p>Do not include version numbers. For example, use css-text rather than css-text-3 or css3-text. This is because if we use the same label for css3 and css4 and so on, we can spot synergies.</p></li></ol>
+<p>Do not include version numbers. For example, use css-text rather than css-text-3 or css3-text. This is because if we use the same label for css3 and css4 and so on, we can spot synergies more easily.</p></li></ol>
 </section>
 
 
@@ -125,7 +125,7 @@ Otherwise, ask i18n staff to <a href="#creating-product"> create a label</a>, th
 <li>
 <p>Write a short, succinct <span class="highlight1">title</span>.</p>
 </li>
-<li><span class="highlight1">Add  labels.</span> There should be one label to identify the spec, eg. <span style="background-color:#bfdadc; padding:2px; border-radius:5px; color:black;font-style:normal;font-weight: normal;">annotation-model</span>, or <span style="background-color:#bfdadc; padding:2px; border-radius:5px; color:black;font-style:normal;font-weight: normal;">css-variables</span>, etc. Also <span class="highlight1">add the <span style="background-color:#E11D21; padding:2px; border-radius:5px; color:white;font-style:normal;font-weight: normal;">pending</span> label</span>, to signify that this issue needs to be reviewed by the WG.</li>
+<li><span class="highlight1">Add  labels.</span> There should be one label (beginning with <span style="font-weight:bold">s:</span>) to identify the spec, eg. <span style="background-color:#6bc5c6; padding:2px; border-radius:5px; color:black;font-style:normal;font-weight: bold; white-space: nowrap;">s:annotation-model</span>, or <span style="background-color:#6bc5c6; padding:2px; border-radius:5px; color:black;font-style:normal;font-weight: bold; white-space: nowrap;">s:css-variables</span>, etc. Also <span class="highlight1">add the <span style="background-color:#E11D21; padding:2px; border-radius:5px; color:white;font-style:normal;font-weight: normal;">pending</span> label</span>, to signify that this issue needs to be reviewed by the WG.</li>
 <li>
 <p><span class="highlight1">Describe the issue</span> as indicated in the issue template. </p>
 <p>Always start the description with information about the <span class="highlight1">location of the  text</span> your comment refers to.&nbsp; Do this by listing the  section number and name, followed by a <span class="highlight1">URI</span>.&nbsp; For example:</p>
@@ -165,13 +165,14 @@ We feel that you should use xml:lang for this. </p>
 </li>
   <li>
 <p> <span class="highlight1">Add labels to the new WG issue</span>, or ask one of the i18n staff to add them. <span class="highlight1"></span></p>
-<ol><li>Always add an <span style="background-color: #C742FA; padding:2px 4px; border-radius:5px; color:white;font-style:normal;font-weight: normal;">i18n-comment</span> label.</li>
-<li>If you think any of the participants in layout requirements task force groups would be interested in following the discussion, add the appropriate <span style="background-color: #C742FA; padding:2px 4px; border-radius:5px; color:white;font-style:normal;font-weight: normal;">i18n-*lreq</span>  label(s).</li>
+<ol>
+<li>Always add an <span style="background-color: #f9c9ff; padding:2px 4px; border-radius:5px; color:black;font-style:normal;font-weight: bold; white-space: nowrap;">i18n-needs-resolution</span> label.</li>
+<li>If you think any of the participants in layout requirements task force groups would be interested in following the discussion, add the appropriate <span style="background-color: #d4c5f9; padding:2px 4px; border-radius:5px; color:black;font-style:normal;font-weight: bold; white-space: nowrap;">i18n-*lreq</span>  label(s).</li>
 </ol>
 </li>
 <li>
-<p> <span class="highlight1">Add the equivalent labels to the tracker issue</span>, ie. a<span class="highlight1"></span> <span class="highlight1"><span style="background-color: #C742FA; padding:2px 4px; border-radius:5px; color:white;font-style:normal;font-weight: normal;">comment</span></span> label, and any appropriate <span class="highlight1"><span style="background-color: #C742FA; padding:2px 4px; border-radius:5px; color:white;font-style:normal;font-weight: normal;">*lreq</span></span> label(s). (These are the same labels as used for the WG issue, just without the i18n- prefix.)</p>
-<p>If you added an *lreq label, add the label <span style="background-color: #006b75; padding:2px 4px; border-radius:5px; color:white;font-style:normal;font-weight: normal;">spec-type-issue</span> and a label to indicate the relevant typographic feature(s), eg. <span style="background-color: #fef2c0; padding:2px 4px; border-radius:5px; color:black;font-style:normal;font-weight: normal;">line_breaking</span>. </p>
+<p> <span class="highlight1">Add the equivalent labels to the tracker issue</span>, ie. a<span class="highlight1"></span> <span class="highlight1"><span style="background-color: #f9c9ff; padding:2px 4px; border-radius:5px; color:black;font-style:normal;font-weight: bold; white-space: nowrap;">needs-resolution</span></span> label, and any appropriate <span class="highlight1"><span style="background-color: #d4c5f9; padding:2px 4px; border-radius:5px; color:black;font-style:normal;font-weight: bold;">*lreq</span></span> label(s). (These are the same labels as used for the WG issue, just without the i18n- prefix.)</p>
+<p>If you added an *lreq label, add the label <span style="background-color: #006b75; padding:2px 4px; border-radius:5px; color:white;font-style:normal;font-weight: normal; white-space: nowrap;">spec-type-issue</span> and a label to indicate the relevant typographic feature(s), eg. <span style="background-color: #fef2c0; padding:2px 4px; border-radius:5px; color:black;font-style:normal;font-weight: normal; white-space: nowrap;">line_breaking</span>. </p>
 </li>
   <li>
     <p><span class="highlight1">Copy over</span> the information in the tracker issue description to the WG issue description, incorporating any changes that arise out of discussions with the i18n WG.</p>
@@ -184,7 +185,7 @@ We feel that you should use xml:lang for this. </p>
 <p><strong>Remove</strong> <span class="highlight1">the <span style="background-color:#E11D21; padding:2px; border-radius:5px; color:white;font-style:normal;font-weight: normal;">pending</span> label</span> from the  tracker issue.</p>
 </li>
 </ol>
-<p>Going forward, as long as you are subscribed to the www-international@w3.org mailing list, you will receive a (single) daily digest containing links to all issues  that have changed over the past 24 hours. You should track the progress of any issues you raised.</p>
+<p>Going forward, as long as you are subscribed to the www-international@w3.org mailing list, you will receive a daily digest containing links to all issues  that have changed over the past 24 hours. You should track the progress of any issues you raised.</p>
 </section>
 <footer>
 	<address> 
