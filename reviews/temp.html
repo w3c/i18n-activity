@@ -1,0 +1,426 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<title>Review comments</title>
+<meta name="description" content="Lists open issues in i18n Activity github repositories." />
+<script type="text/javascript">
+var f = { }
+
+// AUTHORS should fill in these assignments:
+f.directory = 'i18n-wg/repostatus/'+'/'; // the path to this file, not including /International or the file name
+f.filename = 'reviews'; // the file name WITHOUT extensions
+f.authors = 'Richard Ishida, W3C'; // author(s) and affiliations
+f.previousauthors = ''; // as above
+f.modifiers = ''; // people making substantive changes, and their affiliation
+f.searchString = 'reviews-openissues'; // blog search string - usually the filename without extensions
+f.firstPubDate = '2106-03-16'; // date of the first publication of the document (after review)
+f.lastSubstUpdate = { date:'2106-07-15', time:'07:18'}  // date and time of latest substantive changes to this document
+f.status = 'notreviewed';  // should be one of draft, review, published, notreviewed or obsolete
+f.path = 'https://w3c.github.io/i18n-drafts/' // what you need to prepend to a URL to get to the /International directory 
+
+// AUTHORS AND TRANSLATORS should fill in these assignments:
+f.thisVersion = { date:'2106-07-15', time:'07:18'} // date and time of latest edits to this document/translation
+f.contributors = ''; // people providing useful contributions or feedback during review or at other times
+// also make sure that the lang attribute on the html tag is correct!
+
+// TRANSLATORS should fill in these assignments:
+f.translators = 'xxxNAME, ORG'; // translator(s) and their affiliation - a elements allowed, but use double quotes for attributes
+
+f.breadcrumb = 'characters';
+
+f.additionalLinks = ''
+</script>
+<script type="text/javascript" src="index-data/translations.js"> </script>
+<script type="text/javascript" src="https://w3c.github.io/i18n-drafts/javascript/doc-structure/article-dt.js"> </script>
+<script type="text/javascript" src="https://w3c.github.io/i18n-drafts/javascript/boilerplate-text/boilerplate-en.js"></script><!--TRANSLATORS must change -en to the subtag for their language!-->
+<script type="text/javascript" src="https://w3c.github.io/i18n-drafts/javascript/doc-structure/sitepage.js"> </script>
+<script type="text/javascript" src="https://w3c.github.io/i18n-drafts/javascript/articletoc-html5.js"></script>
+<script type="text/javascript" src="index-data/label-list.js"></script>
+<link rel="stylesheet" href="https://w3c.github.io/i18n-drafts/style/sitepage-2016.css" type="text/css" />
+<link rel="stylesheet" href="index-data/local.css" type="text/css" />
+<link rel="copyright" href="#copyright"/>
+<!--[if lt IE 9]><script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+<script>
+// Note that the code is designed to pull a maximum of 200 issues - for more, change maxpages
+// It will only display issues with labels that correspond to those defined in the labels variable
+// this means that if a new label is added, this code needs to be changed
+// we could probably fix this by ignoring pending, close and track labels and constituting the list of labels as needed
+// but we'd have to be careful to ignore other labels that are added other than spec labels
+ 
+
+
+// Define the repository owner
+var owner = 'w3c';
+
+var sections = {}
+//var labelsKeys = Object.keys(labels)
+//var labelsLength = labelsKeys.length
+var debug = false
+
+var issues = []
+var maxpages = 5
+
+</script>
+</head>
+
+<body>
+<header>
+  <nav id="mainNavigation"></nav>
+  <script>document.getElementById('mainNavigation').innerHTML = mainNavigation</script> 
+</header>
+<div class="content">
+<h1> Review comment tracker</h1>
+<section id="sidebarExtras">
+  <h2 class="notoc">Useful links</h2>
+  <ul>
+    <li><a class="print" href="https://github.com/w3c/i18n-activity/issues">Tracker issues on Github</a></li>
+    <li><a class="print" href="https://github.com/w3c/i18n-activity/projects/1">Review radar</a></li>
+    <li><a class="print" href="https://www.w3.org/International/reviews/review-instructions">Review guidelines</a></li>
+    <li><a class="print" href="https://www.w3.org/International/reviews/openissues/">Previous tracker</a></li>
+    <li><a class="print" href="http://w3c.github.io/i18n-activity/repostatus/">I18n document issues</a></li>
+  </ul>
+  <h2 class="notoc">Filter results</h2>
+  <p>Click to show items with that label only:</p>
+  <ul id="filterList">
+    <li><a href="#" onclick="filterByLabel('pending')"><span style="padding: 0 .5em;background-color:red;"> </span> &nbsp; Pending</a></li>
+    <li><a href="#" onclick="filterByLabel('advice-requested')"><span style="padding: 0 .5em;background-color:#f48041;"> </span> &nbsp; Advice requested</a></li>
+    <li><a href="#" onclick="filterByLabel('eeds-review')"><span style="padding: 0 .5em;background-color: #f48041;"> </span> &nbsp; Needs review</a></li>
+    <li><a href="#" onclick="filterByLabel('needs-resolution')"><span style="padding: 0 .5em;background-color: #f9c9ff;"> </span> &nbsp; Needs resolution</a></li>
+    <li><a href="#" onclick="filterByLabel('tracker')"><span style="padding: 0 .5em;background-color: #eee; border: 1px solid #ddd;"> </span> &nbsp; Tracker</a></li>
+    <li><a href="#" onclick="filterByLabel('waiting')"><span style="padding: 0 .5em;background-color: #fbca04;"> </span> &nbsp; Waiting</a></li>
+    <li><a href="#" onclick="filterByLabel('close?')"><span style="padding: 0 .5em;background-color: #9df9d4;"> </span> &nbsp; Close?</a></li>
+    <li><a href="#" onclick="filterByLabel('deferred')"><span style="padding: 0 .5em;background-color: #1D76DB;"> </span> &nbsp; Deferred</a></li>
+    <li><a href="#" onclick="filterByLabel('clear')"><span style="padding: 0 .5em;background-color: white; border: 1px solid #ccc;"> </span> &nbsp; Clear filter</a></li>
+  </ul>
+</section>
+<section>
+  <p>This page tracks comments made by the i18n WG on the specs of other WGs. It only shows tracker issues the i18n WG has not closed. (Issues may remain open in the i18n tracker even if closed by the other WG in their repo.)</p>
+  <p>The sections and items within those sections are ordered by the last modified date of the items in the <em>tracker</em> repository (not the discussions). The mostly recently changed items appear highest. The link on the left of each line links directly to the issue where the discussion is taking place. The date indicates when the <em>tracker</em> item was modified, and the right-hand column links to the issue used to track the discussion in <a href="https://github.com/w3c/i18n-activity/issues">the i18n-activity github repo</a>.</p>
+  <p id="total">Loading data...</p>
+</section>
+<section id="rawdata">
+</section>
+
+<p><button onclick="dumpList();">Make list</button> 
+<button onclick="dumpByLabel('pending');">List pending</button> 
+<button onclick="dumpByLabel('advice-requested');">List advice-requested</button> 
+<button onclick="dumpByLabel('close?');">List close</button>
+<button onclick="dumpByLabel('needs-review');">List needs-review</button>
+</p>
+<p id="dumparea" style="display:none;"><textarea  style="width: 100%; height: 80px;" id="dumpfield"></textarea></p>
+
+<script>
+			var totals=0
+			var counter=maxpages
+			
+			function getAllData () {
+				for (var p=1;p<maxpages+1;p++) fetchIssues(p)
+				var timer = setInterval(function() {
+					if (counter === 0) {
+						clearInterval(timer)
+						if (debug) console.log('finished','Issue length:',issues.length, sections)
+						
+						// group issues by label, adding to the labels array
+						for (var i=0; i<issues.length; i++) {  // for each issue grabbed from GH
+							sLabelFound = ''
+							if (issues[i].labels) {            // if that issue has some labels
+								for (var l=0;l<issues[i].labels.length;l++) { // for each label in that issue
+									if (issues[i].labels[l].name.startsWith('s:')) {
+										sLabelFound = issues[i].labels[l].name.replace(/^s:/,'')
+										if (sections[sLabelFound]) sections[sLabelFound].push(issues[i])
+										else {
+											sections[sLabelFound] = []
+											sections[sLabelFound].push(issues[i])
+											}
+								if (debug) console.log(sLabelFound)
+								}
+									//if (labels[issues[i].labels[l].name]) labels[issues[i].labels[l].name].push(issues[i])
+									}
+								}
+							}
+						
+						checkDates()
+						}
+					else if (debug) console.log('Counter',counter)
+					}, 50)
+				}
+
+	
+			// Grab all the open issues on GitHub and add them to the issues array
+			function fetchIssues(page) {
+				var request = new XMLHttpRequest();
+				request.open('get','https://api.github.com/repos/w3c/i18n-activity/issues?per_page=100&page='+page)
+				request.onload = function () {
+						var temp = JSON.parse(request.responseText)
+						for (var i=0;i<temp.length;i++) {
+							issues.push(temp[i])
+							}
+					totals += issues.length;
+					if (debug) console.log('Issue length:',issues.length,'Totals',totals,'Page:',page,'Counter:', counter)
+					counter--
+					}
+				request.send();
+				}
+				
+			
+			function checkDates () {
+				// figure out the most-recent-first order for displaying labels
+				dates = {}
+				var instance = 0 // this is used to distinguish issues with the same created_at timestamp
+				for (label in sections) {
+					if (sections[label].length > 0) {
+						// find the newest date
+						var newest = sections[label][0]['created_at']
+						for (x=0;x<sections[label].length;x++) {
+							if (sections[label][x]['created_at'] > newest) newest = sections[label][x]['created_at']
+							}
+						dates[newest+instance] = label
+						instance++
+						}
+					}
+				var keys = Object.keys(dates)
+				keys.sort().reverse()
+				
+				// display the labels in that order
+				for (var i=0;i<keys.length;i++) {
+					var labelname = dates[keys[i]]
+					displayRepo(labelname)
+					}
+				}
+									
+			// Display repository information
+			function displayRepo(label) {
+				// Add a container to put the repository info and issues in
+				var table, tr, td, a, updated, toc, span
+				var labelSection = document.createElement('section');
+				
+				// Add a heading
+				var labelLink = document.createElement('a');
+				labelLink.setAttribute('href', '#'+label);
+				labelLink.innerHTML = label;
+				var labelHeader = document.createElement('h2')
+				labelHeader.id = label
+				labelHeader.appendChild(labelLink);
+				labelSection.appendChild(labelHeader);
+				
+				table = document.createElement('table')
+				
+				// figure out the most-recently-updated order for displaying issues
+				var idates = {}
+				var instance = 0 // this is used to distinguish issues with the same created_at timestamp
+				for (issue in sections[label]) {
+					idates[sections[label][issue]['created_at']+instance] = sections[label][issue]
+					instance++
+					}
+				var ikeys = Object.keys(idates)
+				ikeys.sort().reverse()
+				
+				// display issues in order of most recently updated
+				for (var i=0;i<ikeys.length;i++) {
+					var issueData = idates[ikeys[i]]
+                    
+                    // get the url of the actual issue, if there is a § marker
+                    var urlpointer = issueData.body.match(/§ [^\r]+/)
+                    if (urlpointer) {
+                        urlpointer = urlpointer[0].replace(/§ /,'').trim()
+                        temp = urlpointer.split(' ')
+                        urlpointer = temp[0]
+                        }
+                    else urlpointer = issueData['html_url']
+                    
+                    //if (i===0) console.log(issueData.body.match(/\n§ [^\\]+\r/)[0].trim())
+                    //if (i===0) console.log(issueData)
+					tr = document.createElement('tr')
+					
+					td = document.createElement('td')
+					// find labels
+					for (var j=0;j<issueData.labels.length;j++) {
+						if (issueData.labels[j].name == 'pending' || issueData.labels[j].name == 'advice-requested' || issueData.labels[j].name == 'needs-review' || issueData.labels[j].name == 'needs-resolution' || issueData.labels[j].name == 'tracker' || issueData.labels[j].name == 'close?' || issueData.labels[j].name == 'waiting' || issueData.labels[j].name == 'deferred') {
+							span = document.createElement('span')
+							span.setAttribute('style', 'background-color:#'+issueData.labels[j].color)
+							span.title = issueData.labels[j].name
+							span.className = 'labels'
+							span.textContent = issueData.labels[j].name+' '
+							td.appendChild(span)
+							}
+						}
+					a = document.createElement('a')
+					//a.href = issueData['html_url']
+					a.href = urlpointer
+					a.target = '_blank'
+					a.textContent = issueData['title']
+					td.appendChild(a)
+					tr.appendChild(td)
+								
+					td = document.createElement('td')
+					td.className = 'date'
+					td.title = 'Date last updated'
+					updated = new Date(issueData['created_at'])
+					td.textContent = updated.getFullYear()+'-'+updated.getMonth()+'-'+updated.getDate()
+					td.textContent = convertDate(updated)
+					tr.appendChild(td)
+					
+					td = document.createElement('td')
+					td.title = 'Issue number in the tracker repo'
+                    td.className = 'trackerId'
+					a = document.createElement('a')
+					a.href = 'https://github.com/w3c/i18n-activity/issues/'+issueData['number']
+					a.target = '_blank'
+					a.textContent = issueData['number']
+					td.appendChild(a)
+					//td.textContent = issueData['number']
+					tr.appendChild(td)
+	
+					table.appendChild(tr)
+					}
+				
+				labelSection.appendChild(table)
+				// Add the label header to the DOM
+				document.getElementById("rawdata").appendChild(labelSection)
+				
+				// tally the issues on the page
+				trs = document.querySelectorAll('tr')
+				document.getElementById('total').textContent = "There are "+trs.length+" issues."
+			}
+
+			function convertDate (date) {
+				// date is a date object
+				out = ''
+				switch (date.getUTCMonth()) {
+					case 0: out += 'Jan'; break
+					case 1: out += 'Feb'; break
+					case 2: out += 'Mar'; break
+					case 3: out += 'Apr'; break
+					case 4: out += 'May'; break
+					case 5: out += 'Jun'; break
+					case 6: out += 'Jul'; break
+					case 7: out += 'Aug'; break
+					case 8: out += 'Sep'; break
+					case 9: out += 'Oct'; break
+					case 10: out += 'Nov'; break
+					case 11: out += 'Dec'; break
+					}
+				out += ' '+date.getDate()+', '+date.getFullYear()
+				return out
+				}
+				
+				function dumpList () {
+					// writes a list of issues to the textarea at the bottom of the page
+					var sections = document.querySelectorAll('section')
+					console.log(sections.length)
+					var out = ''
+					
+					for (s=3;s<sections.length;s++) {
+						if (sections[s].querySelector('h2') === null) continue
+						var h2 = sections[s].querySelector('h2').textContent
+						var issues = sections[s].querySelectorAll('a')
+						
+						out += h2+"\n"
+						for (var i=1;i<issues.length;i++) {
+							out += '• ' + issues[i].textContent+'\n  '+issues[i].href+'\n\n'
+							}
+						out += '\n\n'
+						}
+					
+					document.getElementById('dumparea').style.display = 'block'
+					document.getElementById('dumpfield').value = out
+					document.getElementById('dumpfield').select()
+					}
+				
+				function dumpByLabel (label) {
+					// writes a list of pending issues to the textarea at the bottom of the page
+					// label: either 'pending' or 'closed'
+					var sections = document.querySelectorAll('section')
+					console.log(sections.length)
+					var out = ''
+					
+					for (s=3;s<sections.length;s++) {
+						if (sections[s].querySelector('h2') === null) continue
+						
+						var h2 = sections[s].querySelector('h2').textContent
+						var issues = sections[s].querySelectorAll('td')
+						
+						// if this section doesn't contain pending items move on
+						var labelFound = false
+						var spans = sections[s].querySelectorAll('span')
+						for (k=0;k<spans.length;k++) {
+							if (spans[k].title === label) {
+									labelFound = true
+									}
+							}
+						if (! labelFound) continue
+						
+						out += h2+"\n"
+						for (var i=1;i<issues.length;i++) {
+							var spans = issues[i].querySelectorAll('span')
+							for (j=0;j<spans.length;j++) {
+								if (spans[j].title === label) {
+									var a = issues[i].querySelector('a')
+									out += '• ' + a.textContent+'\n  '+a.href+'\n\n'
+									}
+								}
+							}
+						out += '\n\n'
+						}
+					
+					document.getElementById('dumparea').style.display = 'block'
+					document.getElementById('dumpfield').value = out
+					document.getElementById('dumpfield').select()
+					}
+
+
+				
+				
+				function filterByLabel (label) {
+					// filters page contents to show only those items with label specified
+					// label: either 'type-info-request' or 'spec-type-issue' or 'browser-type-bug'
+					var sections = document.querySelectorAll('section')
+					console.log(sections.length)
+					
+					// clear all previous filters
+					var trs = document.querySelectorAll('tr')
+					for (let i=0;i<trs.length;i++) trs[i].classList.remove('hidden')
+					for (let s=0;s<sections.length;s++) sections[s].classList.remove('hidden')
+					if (label === 'clear') {
+						var trsTotal = document.querySelectorAll('tr')
+						document.getElementById('total').textContent = "There are "+trsTotal.length+" issues."
+						return						
+						}
+					
+					for (s=3;s<sections.length;s++) {
+						var secLabelFound = false
+						if (sections[s].querySelector('h2') === null) continue
+												
+						var issues = sections[s].querySelectorAll('tr')
+						
+						for (let r=0;r<issues.length;r++) {
+							var labelFound = false
+							var spans = issues[r].querySelectorAll('span')
+							for (let s=0;s<spans.length;s++) {
+								if (spans[s].title === label) {
+									labelFound = true
+									secLabelFound = true
+									}
+								}
+							if (! labelFound) issues[r].classList.add('hidden')
+							}
+						if (! secLabelFound) sections[s].classList.add('hidden')
+						}
+						
+					// tally the issues on the page
+					trsTotal = document.querySelectorAll('tr')
+					trs = document.querySelectorAll('tr.hidden')
+					var filteredIssues = trsTotal.length - trs.length
+					document.getElementById('total').textContent = "There are "+filteredIssues+" issues."
+					}
+</script>
+<script>window.onload = getAllData()</script>
+
+<footer id="thefooter"></footer>
+<script type="text/javascript">document.getElementById('thefooter').innerHTML = g.bottomOfPage</script> 
+<script type="text/javascript">completePage()</script>
+
+</div>
+</body>
+</html>
