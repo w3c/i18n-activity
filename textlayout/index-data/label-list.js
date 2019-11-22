@@ -51,3 +51,38 @@ var labelName = {
 	'sealreq': 'sealreq (Southeast Asia)',
 	'tlreq': 'tlreq (Tibetan)',
 	}
+
+
+var sectionNames = { 
+	'baselines':'Baselines & inline alignment',
+	'bidi-text':'Bidirectional text direction',
+	'boundaries':'Text segmentation & selection',
+	'transforms':'Transforming characters',
+	'cursive':'Cursive text',
+	'emphasis':'Emphasis (change me)',
+	'encoding':'Character encodings',
+	'fonts':'Fonts',
+	'font-style':'Font styles, weight, etc.',
+	'footnotes-etc':'Notes, footnotes, etc',
+	'glyphs':'Glyph shaping & positioning',
+	'grids-tables':'Grids & tables',
+	'headers-footers':'Page headers, footers, etc',
+	'hyphenation':'Hyphenation',
+	'initials':'Styling initials',
+	'inline-notes':'Inline notes & annotations',
+	'interaction':'Forms & user interaction',
+	'justification':'Text alignment & justification',
+	'line-breaking':'Line breaking',
+	'lists':'Lists, counters, etc',
+	'more-inline':'Other inline features',
+	'more-para':'Other paragraph features',
+	'numbers':'Numbers & digits',
+	'page-layout':'General page layout and progression',
+	'punctuation':'Punctuation',
+	'quotations':'Quotations',
+	'spacing':'Word & letter spacing ',
+	'text-decoration':'Text decoration',
+	'transforms':'Transforming characters',
+	'vertical-text':'Vertical text',
+	}
+
