@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 <meta charset="utf-8" />
-<title>Text layout issue tracker</title>
+<title>Language enablement issue tracker</title>
 <meta name="description" content="Lists open type layout issues in i18n Activity github repositories." />
 <script type="text/javascript">
 var f = { }
@@ -53,9 +53,10 @@ f.additionalLinks = ''
 // Define the repository owner
 var owner = 'w3c';
 
-var labelsKeys = Object.keys(labels)
-var labelsLength = labelsKeys.length
-var debug = false
+var sections = {}
+//var labelsKeys = Object.keys(labels)
+//var labelsLength = labelsKeys.length
+var debug = true
 
 var issues = []
 var maxpages = 5
@@ -69,7 +70,7 @@ var maxpages = 5
   <script>document.getElementById('mainNavigation').innerHTML = mainNavigation</script> 
 </header>
 <div class="content">
-<h1>Text layout issue tracker</h1>
+<h1>Language enablement issue tracker</h1>
 <section id="sidebarExtras">
   <h2 class="notoc">Useful links</h2>
   <ul>
@@ -117,13 +118,24 @@ var maxpages = 5
 				var timer = setInterval(function() {
 					if (counter === 0) {
 						clearInterval(timer)
-						if (debug) console.log('finished')
+						if (debug) console.log('finished','Issue length:',issues.length, sections)
 						
 						// group issues by label, adding to the labels array
 						for (var i=0; i<issues.length; i++) {
 							if (issues[i].labels) {
-								for (var l=0;l<issues[i].labels.length;l++) {
-									if (labels[issues[i].labels[l].name]) labels[issues[i].labels[l].name].push(issues[i])
+								for (var l=0;l<issues[i].labels.length;l++) { // for each label in that issue
+									if (issues[i].labels[l].name.startsWith('i:')) {
+										sLabelFound = issues[i].labels[l].name.replace(/^i:/,'')
+										if (sections[sLabelFound]) sections[sLabelFound].push(issues[i])
+										else {
+											sections[sLabelFound] = []
+											sections[sLabelFound].push(issues[i])
+											}
+								if (debug) console.log(sLabelFound)
+								}
+
+//								for (var l=0;l<issues[i].labels.length;l++) {
+//									if (labels[issues[i].labels[l].name]) labels[issues[i].labels[l].name].push(issues[i])
 									}
 								}
 							}
@@ -155,13 +167,13 @@ var maxpages = 5
 			function checkDates () {
 				// figure out the most-recent-first order for displaying labels
 				dates = {}
-				var instance = 0 // this is used to distinguish issues with the same updated_at timestamp
-				for (label in labels) {
-					if (labels[label].length > 0) {
+				var instance = 0 // this is used to distinguish issues with the same created_at timestamp
+				for (label in sections) {
+					if (sections[label].length > 0) {
 						// find the newest date
-						var newest = labels[label][0]['updated_at']
-						for (x=0;x<labels[label].length;x++) {
-							if (labels[label][x]['updated_at'] > newest) newest = labels[label][x]['updated_at']
+						var newest = sections[label][0]['created_at']
+						for (x=0;x<sections[label].length;x++) {
+							if (sections[label][x]['created_at'] > newest) newest = sections[label][x]['created_at']
 							}
 						dates[newest+instance] = label
 						instance++
@@ -197,9 +209,9 @@ var maxpages = 5
 				
 				// figure out the most-recently-updated order for displaying issues
 				var idates = {}
-				var instance = 0 // this is used to distinguish issues with the same updated_at timestamp
-				for (issue in labels[label]) {
-					idates[labels[label][issue]['updated_at']+instance] = labels[label][issue]
+				var instance = 0 // this is used to distinguish issues with the same created_at timestamp
+				for (issue in sections[label]) {
+					idates[sections[label][issue]['created_at']+instance] = sections[label][issue]
 					instance++
 					}
 				var ikeys = Object.keys(idates)
@@ -272,7 +284,7 @@ var maxpages = 5
 					td = document.createElement('td')
 					td.className = 'date'
 					td.title = 'Date last updated'
-					updated = new Date(issueData['updated_at'])
+					updated = new Date(issueData['created_at'])
 					td.textContent = updated.getFullYear()+'-'+updated.getMonth()+'-'+updated.getDate()
 					td.textContent = convertDate(updated)
 					tr.appendChild(td)
