@@ -167,13 +167,13 @@ var maxpages = 5
 			function checkDates () {
 				// figure out the most-recent-first order for displaying labels
 				dates = {}
-				var instance = 0 // this is used to distinguish issues with the same updated_at timestamp
+				var instance = 0 // this is used to distinguish issues with the same created_at timestamp
 				for (label in sections) {
 					if (sections[label].length > 0) {
 						// find the newest date
-						var newest = sections[label][0]['updated_at']
+						var newest = sections[label][0]['created_at']
 						for (x=0;x<sections[label].length;x++) {
-							if (sections[label][x]['updated_at'] > newest) newest = sections[label][x]['updated_at']
+							if (sections[label][x]['created_at'] > newest) newest = sections[label][x]['created_at']
 							}
 						dates[newest+instance] = label
 						instance++
@@ -208,9 +208,9 @@ var maxpages = 5
 				
 				// figure out the most-recently-updated order for displaying issues
 				var idates = {}
-				var instance = 0 // this is used to distinguish issues with the same updated_at timestamp
+				var instance = 0 // this is used to distinguish issues with the same created_at timestamp
 				for (issue in sections[label]) {
-					idates[sections[label][issue]['updated_at']+instance] = sections[label][issue]
+					idates[sections[label][issue]['created_at']+instance] = sections[label][issue]
 					instance++
 					}
 				var ikeys = Object.keys(idates)
@@ -256,7 +256,7 @@ var maxpages = 5
 					td = document.createElement('td')
 					td.className = 'date'
 					td.title = 'Date last updated'
-					updated = new Date(issueData['updated_at'])
+					updated = new Date(issueData['created_at'])
 					td.textContent = updated.getFullYear()+'-'+updated.getMonth()+'-'+updated.getDate()
 					td.textContent = convertDate(updated)
 					tr.appendChild(td)
