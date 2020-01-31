@@ -69,6 +69,7 @@ function buildDoc (repo, doc) {
 
 	if (sections.hyphenation) buildSection(sections.hyphenation,'hyphenation', doc)
 	if (sections.text_align_justification) buildSection(sections.text_align_justification,'justification', doc)
+	if (sections.lists_counters_etc) buildSection(sections.lists_counters_etc,'lists', doc)
 	if (sections.letter_spacing) buildSection(sections.letter_spacing,'spacing', doc)
 	if (sections.styling_initials) buildSection(sections.styling_initials,'initials', doc)
 }
@@ -79,12 +80,6 @@ function buildSection (theData, sectionId, doc) {
 	var out = ''
 	for (let i=0;i<theData.length;i++) {
 
-		// find script labels
-		for (l=0;l<theData[i].labels.length;l++) {
-			labelSet.add(theData[i].labels[l].name)
-			}
-		console.log('labelSet:',labelSet)
-		
 		// screen out issues that don't relate to the current gap-analysis document
 		rightDoc = false
 		for (l=0;l<theData[i].labels.length;l++) {
@@ -94,6 +89,12 @@ function buildSection (theData, sectionId, doc) {
 		
 		if (rightDoc) {
 
+			// find priority labels
+			for (l=0;l<theData[i].labels.length;l++) {
+				labelSet.add(theData[i].labels[l].name)
+				}
+			console.log('labelSet:',labelSet)
+		
 			out += '<section id="issue'+theData[i].number+'">\n'
 			out += '<h4><a target="_blank" href="https://github.com/w3c/eurlreq/issues/'+theData[i].number+'">#'+theData[i].number+'</a> '+theData[i].title+'</h4>\n'
 			out += '<p>'
@@ -107,6 +108,15 @@ function buildSection (theData, sectionId, doc) {
 			var test = /\[([^\]]+)\]\(([^\)]+)\)/g
 			body = body.replace(test, convert)
 
+			// create convert code segments links
+			function convertcode(str, p1, s) {
+				p1 = p1.replace(/</g,'&lt;')
+				p1 = p1.replace(/>/g,'&gt;')
+				return '<code translate="no">'+p1+'</code>'
+				}
+			test = /`([^`]+)`/g
+			body = body.replace(test, convertcode)
+
 			// split into paragraphs
 			out += body.replace(/\r\n\r\n/g,'</p><p>')
 			out += '</p>\n'
@@ -116,10 +126,10 @@ function buildSection (theData, sectionId, doc) {
 	document.getElementById('insert-'+sectionId).innerHTML = out
 
 	// figure out priority for section
-	if (labelSet.has('p:basic')) var priority = 'basic'
+	var priority = ''
+	if (labelSet.has('p:basic')) priority = 'basic'
 	else if (labelSet.has('p:advanced')) priority = 'advanced'
-	else priority = 'ok'
-	document.getElementById(sectionId).className = priority
+	if (priority !== '') document.getElementById(sectionId).className = priority
 	window.summary[sectionId] = priority
 	}
 
