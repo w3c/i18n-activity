@@ -1,0 +1,485 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="utf-8">
+
+<title>XXX Gap Analysis</title>
+<script src="../../i18n-activity/textlayout/resources/gap-analysis-github.js"> </script>
+
+<script src="https://www.w3.org/Tools/respec/respec-w3c-common" async="" class="remove">
+</script>
+  <script class="remove">
+  var respecConfig = {
+      // specification status (e.g. WD, LCWD, WG-NOTE, etc.). If in doubt use ED.
+      specStatus:           "ED",
+      //publishDate:  		"2015-07-21",
+      //previousPublishDate:  "2014-12-16",
+      //previousMaturity:  "FPWD",
+
+      noRecTrack:           true,
+      shortName:            "xxx",
+      copyrightStart:       "xxx",
+      edDraftURI:           "https://w3c.github.io/xxx",
+
+      // if this is a LCWD, uncomment and set the end of its review period
+      // lcEnd: "2009-08-05",
+
+      // editors, add as many as you like
+      // only "name" is required
+      editors:  [
+        { name: "XXX", mailto: "xxx", company: "xxx" },
+      ],
+
+
+      wg:           "Internationalization Working Group",
+      wgURI:        "https://www.w3.org/International/core/",
+
+	  github:		"w3c/xxx",
+	  
+	  
+      // langs array lists languages addressed by this document, in order of speaker (highest first)
+      // it is used to generate the javascript needed for the matrix
+      langs: ['XXX'],
+      gapDocPath: 'https://w3c.github.io/xxx/gap-analysis/xxx',
+
+
+      // URI of the patent status for this WG, for Rec-track documents
+      // !!!! IMPORTANT !!!!
+      // This is important for Rec-track documents, do not copy a patent URI from a random
+      // document unless you know what you're doing. If in doubt ask your friendly neighbourhood
+      // Team Contact.
+      wgPatentURI:  "https://www.w3.org/2004/01/pp-impl/32113/status",
+      // !!!! IMPORTANT !!!! MAKE THE ABOVE BLINK IN YOUR HEAD
+    };
+  </script>
+<script src="/i18n-activity/templates/gap-analysis/prompts.js"> </script>
+<link rel="stylesheet" href="/typography/gap-analysis/gapanalysis.css">
+</head>
+
+<body onLoad="printSummary()">
+  <div id="abstract">
+    <p>This document describes and prioritises gaps for the support of XXX on the Web and in eBooks. In particular, it is concerned with text layout. It checks that needed features are supported in W3C specifications, in particular HTML and CSS and those relating to digital publications. It also checks whether the features have been implemented in browsers and ereaders. <strong>This is a preliminary analysis.</strong></p>
+  </div>
+
+  <div id="sotd">
+    <p>This document describes and prioritises gaps for the support of Hungarian on the Web and in eBooks. In particular, it is concerned with text layout. It checks that needed features are supported in W3C specifications, in particular HTML and CSS and those relating to digital publications. It also checks whether the features have been implemented in browsers and ereaders.
+<!-- This document complements the document <a href="https://w3c.github.io/xxxxx/">Text Layout Requirements for the Xxxxx Script</a>, which describes the requirements for areas where gaps appear.-->
+It is linked to from the <a href="https://w3c.github.io/typography/gap-analysis/language-matrix.html">language matrix</a> that tracks Web support for many languages.</p>
+<p>This document is an individual contribution, and is not currently a work item in any group, however, you can contact the <a href="https://www.w3.org/International/core/">Internationalization Working Group</a> for more information. We welcome contributions to this and/or other documents.</p>
+</div>
+
+  <section id="h_introduction">
+    <h2>Introduction</h2>
+    <p>The W3C needs to make sure that the  needs of scripts and languages around the world are built in to technologies such as HTML, CSS, SVG, etc. so that Web pages and eBooks can look and behave as people expect around the world.</p>
+    
+    <p>This page documents difficulties people encounter when trying to use the Hungarian language with the Latin script on the Web. </p>
+<p>Having identified an issue, it investigates the current status with regards to web specifications and implementations by user agents (browsers, e-readers, etc.), and attempts to prioritise the severity of the issue for web users.</p>
+
+    <p>A summary of this report and others can be found as part of the <a href="https://w3c.github.io/typography/gap-analysis/language-matrix.html" style="font-size: 140%;">language matrix</a>.</p>
+    
+    <section id="workflow">
+    <h3>Work flow</h3>
+    <p><span style="font-weight:bold; font-size: 140%;">This version of the document is a preliminary analysis</span></p>
+
+    <p>Gap analysis work usually starts with a <strong>preliminary analysis</strong>, conducted quickly by one or a small group of experts. Then a more <strong>detailed analysis</strong> is carried out, involving a wider range of experts. The detailed analysis may involve the development of tests, in order to illustrate issues and track results for browsers. The next phase is <strong>ongoing maintenance</strong>. It is expected that the resulting document will not be frozen: as gaps are fixed, this should be noted in the document. It is also possible that new gaps are noticed or arise, and they can be added to this document when that happens.</p>
+    
+    <!--p>As the gap analysis develops, the requirements for features that are problematic should be described in the companion document, <a href="https://w3c.github.io/xxxxlreq/">Xxxx Layout Requirements</a>. Links to the appropriate part of that document should be added to this document as the material is created. Note that the requirements document should not contain any technology-specific information: all of that belongs here.</p-->
+    </section>
+    
+    <section id="prioritization">
+    <h3>Prioritization</h3>
+    <p>This document not only describes gaps, it also attempts to prioritise them in terms of the impact on the local user. The prioritisation is indicated by colour.</p>
+        
+        <p>Key:</p>
+  <ul style="list-style-type: none;">
+        <li class="ok"></li>
+        <li class="na"></li>
+        <li class="advanced"></li>
+        <li class="basic"></li>
+        <li class="broken"></li>
+        <li class="tbd"></li>
+        </ul>
+    
+    <p>It is important to note that these colours do not indicate to what extent a particular features is broken. They indicate the impact of a broken or missing feature on the content author or end user.</p>
+    <p>Basic styling is the level that would be generally accepted as sufficient for most Web pages. Advanced level support would include additional features one might expect to include in ebooks or other advanced typographic formats. There may be features of a script or language that are not supported on the Web, but that are not generally regarded as necessary (usually archaic or obscure features). In this case, the feature can be described here, but the status should be marked as OK.</p>
+    <p>The decision as to what priority level is assigned to a described gap is down to the experts doing the gap analysis. It may not always be straightforward to decide. If a given section in this document refers to more than one feature that is broken, each with different impacts on Web users, the priority for the section should be the lowest denominator.</p>
+    <p>A cell can be scored as OK if the feature in question is specified in an appropriate specification, and is supported by user agents. A specification that is in CR or later and has two implementations in 'major' browsers will count. This means that the feature may not be supported in all browsers yet. (At some point in the future we may try to distinguish, visually, whether support is available in a specification but still pending in major browsers or applications.) </p>
+    </section>
+</section>
+    
+    
+    
+
+
+<section id="direction">
+<h2>Text direction</h2>
+<p>See also General page layout &amp; progression for features such as column layout, page turning direction, etc. that are affected by text direction.</p>
+
+
+<section id="vertical_text" class="tbd">
+<h3>Vertical text</h3>
+<p id="prompt-vertical_text" class="status_prompt promptStub"></p>
+
+<div id="insert-vertical_text"></div>
+</section>
+
+
+
+
+<section id="bidi_text" class="tbd">
+<h3>Bidirectional text</h3>
+<p id="prompt-bidi_text" class="status_prompt promptStub"></p>
+
+<div id="insert-bidi_text"></div>
+
+</section>
+</section>
+
+
+
+
+<section id="h_characters_and_phrases">
+<h2>Characters and phrases</h2>
+    
+    
+    
+<section id="charset" class="tbd">
+<h3>Characters &amp; encoding</h3>
+<p id="prompt-charset" class="status_prompt promptStub"></p>
+
+<div id="insert-charset"></div>
+</section>
+
+
+
+<section id="fonts" class="tbd">
+<h3>Fonts</h3>
+<p id="prompt-fonts" class="status_prompt promptStub"></p>
+
+
+<div id="insert-fonts"></div>
+</section>
+
+
+
+<section id="font_style" class="tbd">
+<h3>Font  styles, weight, etc</h3>
+<p id="prompt-font_style" class="status_prompt promptStub"></p>
+
+
+<div id="insert-font_style"></div>
+</section>
+
+
+
+<section id="glyphs" class="tbd">
+<h3>Glyph shaping and positioning</h3>
+<p id="prompt-glyphs" class="status_prompt promptStub"></p>
+
+
+<div id="insert-glyphs"></div>
+</section>
+
+
+
+<section id="cursive" class="tbd">
+<h3>Cursive text</h3>
+<p id="prompt-cursive" class="status_prompt promptStub"></p>
+
+
+<div id="insert-cursive_text"></div>
+</section>
+
+
+
+<section id="baselines" class="tbd">
+<h3>Baselines, line-height, etc</h3>
+<p id="prompt-baselines" class="status_prompt promptStub"></p>
+
+
+<div id="insert-baselines"></div>
+</section>
+
+
+
+
+<section id="transforms" class="tbd">
+<h3>Transforming characters</h3>
+<p id="prompt-transforms" class="status_prompt promptStub"></p>
+
+
+<div id="insert-transforms"></div>
+</section>
+
+
+
+
+<section id="segmentation" class="tbd">
+<h3>Grapheme/word segmentation &amp; selection</h3>
+<p id="prompt-segmentation" class="status_prompt promptStub"></p>
+
+
+<div id="insert-segmentation"></div>
+</section>
+ 
+
+
+<section id="punctuation_etc" class="tbd">
+<h3>Punctuation &amp; other inline features</h3>
+<p id="prompt-punctuation_etc" class="status_prompt promptStub"></p>
+
+
+<div id="insert-punctuation_etc"></div>
+</section>
+   
+    
+    
+<section id="text_decoration" class="tbd">
+<h3>Text decoration</h3>
+<p id="prompt-text_decoration" class="status_prompt promptStub"></p>
+
+
+<div id="insert-text_decoration"></div>
+</section>
+
+
+
+<section id="quotations" class="tbd">
+<h3>Quotations</h3>
+<p id="prompt-quotations" class="status_prompt promptStub"></p>
+	
+	
+<div id="insert-quotations"></div>
+</section>
+
+
+<section id="inline_notes" class="tbd">
+<h3>Inline notes &amp; annotations</h3>
+<p id="prompt-inline_notes" class="status_prompt promptStub"></p>
+
+
+<div id="insert-inline_notes"></div>
+</section>
+
+
+
+<section id="data_formats" class="tbd">
+<h3>Data formats &amp; numbers</h3>
+<p id="prompt-data_formats" class="status_prompt promptStub"></p>
+
+
+<div id="insert-data_formats"></div>
+</section>
+
+
+
+<!--section id="otherinline" class="tbd">
+    <h3>Other inline features</h3>
+    <p class="status_prompt">Does the script have special ways of representing inline notes (such as  kumimoji in Japanese) or other inline features that need to be supported? <a href="https://w3c.github.io/typography/index#other_inline_features">See available information</a> or <a href="https://github.com/w3c/i18n-activity/issues?utf8=%E2%9C%93&amp;q=is%3Aissue%20is%3Aopen%20label%3Ainline-features%20label%3Atype-info-request">check for currently needed data</a>.</p>
+
+
+    <p></p>
+    </section-->
+
+</section>
+
+
+
+
+
+
+<section id="h_lines_and_paragraphs">
+<h2>Lines and Paragraphs</h2>
+
+ 
+<section id="line_breaking" class="tbd">
+<h3>Line breaking</h3>
+<p id="prompt-line_breaking" class="status_prompt promptStub"></p>
+
+
+<div id="insert-line_breaking"></div>
+
+<p>See also <a href="#hyphenation">hyphenation</a> below. </p>
+</section>
+
+
+
+<section id="hyphenation" class="tbd">
+<h3>Hyphenation</h3>
+<p id="prompt-hyphenation" class="status_prompt promptStub"></p>
+
+
+<div id="insert-hyphenation"></div>
+</section>
+
+
+
+<section id="justification" class="tbd">
+<h3>Text alignment &amp; justification</h3>
+<p id="prompt-justification" class="status_prompt promptStub"></p>
+
+
+<div id="insert-justification"></div>
+</section>
+
+
+
+<section id="spacing" class="tbd">
+<h3>Letter spacing</h3>
+<p id="prompt-spacing" class="status_prompt promptStub"></p>
+
+
+
+<div id="insert-spacing"></div>
+</section>
+
+
+
+<section id="lists" class="tbd">
+<h3>Lists, counters, etc.</h3>
+<p id="prompt-lists" class="status_prompt promptStub"></p>
+
+
+<div id="insert-lists"></div>
+</section>
+
+
+
+<section id="initials" class="tbd">
+<h3>Styling initials</h3>
+<p id="prompt-initials" class="status_prompt promptStub"></p>
+
+
+<div id="insert-initials"></div>
+</section>
+
+
+
+<!--section id="otherpara" class="tbd">
+    <h3>Other paragraph features</h3>
+    <p class="status_prompt">IAre there other features of paragraph design that are peculiar to your script? <a href="https://w3c.github.io/typography/index#other_para_features">See available information</a> or <a href="https://github.com/w3c/i18n-activity/issues?utf8=%E2%9C%93&amp;q=is%3Aissue%20is%3Aopen%20label%3Aparagraph-features%20label%3Atype-info-request">check for currently needed data</a>.</p>
+
+
+    <p></p>
+</section-->
+
+</section>
+
+
+
+
+
+
+
+<section id="h_pages">
+<h2>Page &amp; book layout</h2>
+
+<section id="page_layout" class="ok">
+<h3>General page layout &amp; progression</h3>
+<p id="prompt-page_layout" class="status_prompt promptStub"></p>
+
+
+<div id="insert-page-layout"></div>
+</section>
+
+
+
+<section id="footnotes_etc" class="ok">
+<h3>Footnotes, endnotes, etc.</h3>
+<p id="prompt-footnotes_etc" class="status_prompt promptStub"></p>
+
+
+<div id="insert-footnotes_etc"></div>
+</section>
+
+
+
+<section id="headers_footers" class="ok">
+<h3>Page headers, footers, etc.</h3>
+<p id="prompt-headers_footers" class="status_prompt promptStub"></p>
+
+
+
+<div id="insert-headers_footers"></div>
+</section>
+
+
+
+<section id="interaction" class="ok">
+<h3>Forms &amp; user interaction</h3>
+<p id="prompt-interaction" class="status_prompt promptStub"></p>
+
+
+<div id="insert-interaction"></div>
+</section>
+
+
+
+<!--section id="morepage" class="ok">
+    <h3>Other page layout &amp; pagination features</h3>
+
+
+    <p></p>
+    </section-->
+</section>
+
+
+
+
+
+
+<section id="h_other">
+<h2>Other</h2>
+
+
+<section id="culturespecific" class="tbd">
+    <h3>Culture-specific features</h3>
+    <p class="status_prompt">Sometimes a script or language does things that are not common outside of its sphere of influence. This is a loose bag of additional items that weren't previously mentioned. This section may also be relevant for observations related to locale formats (such as number, date, currency, format support).</p>
+
+
+<div id="insert-culturespecific"></div>
+    </section>
+
+
+
+<section id="other" class="tbd">
+    <h3>What else?</h3>
+    <p class="status_prompt">There are many other CSS modules which may need review for script-specific requirements, not to mention the SVG, HTML, Speech, MathML and other specifications. What else is likely to cause problems for worldwide deployment of the Web, and what requirements need to be addressed to make the Web function well locally?</p>
+
+
+<div id="insert-other"></div>
+    </section>
+    
+</section>
+
+
+
+
+<details>
+<summary style="margin-top:4em; cursor: pointer;">Show summary</summary>
+<pre id="summaryPlaceholder" style="white-space: pre-wrap;"></pre>
+</details>
+
+
+
+
+<script>
+setUpSummary()
+addPrompts() 
+getAllData('eurlreq','doc:hu')
+</script>
+
+
+
+<!--section class="appendix" id="acknowledgements">
+<h2>Acknowledgements</h2>
+
+    <p>Special thanks to the following people who contributed to this document (contributors' names listed in in alphabetic order).</p>
+
+    <p class="acknowledgement">This Person, That Person, etc</p>
+
+    <p data-lang="en">Please find the latest info of the contributors at the <a href="https://github.com/w3c/hlreq/graphs/contributors">GitHub contributors list</a>.</p>
+  </section-->
+</body>
+</html>
