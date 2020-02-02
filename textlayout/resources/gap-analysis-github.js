@@ -113,6 +113,13 @@ function buildSection (theData, sectionId, doc) {
 
 			var body = theData[i].body
 
+			// make GH images into img element
+			function convertToImg(str, p1, p2, s) {
+				return '<img src="'+p2+'" alt="'+p1+'"/>'
+				}
+			var test = /!\[([^\]]+)\]\(([^\)]+)\)/g
+			body = body.replace(test, convertToImg)
+
 			// create html links
 			function convert(str, p1, p2, s) {
 				return '<a href="'+p2+'">'+p1+'</a>'
