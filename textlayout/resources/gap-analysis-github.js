@@ -64,13 +64,25 @@ function buildDoc (repo, doc) {
 	if (sections.vertical_text) buildSection(sections.vertical_text,'vertical_text', doc)
 	if (sections.bidirectional_text) buildSection(sections.bidirectional_text,'bidi_text', doc)
 	
+	if (sections.characters_and_encoding) buildSection(sections.characters_and_encoding,'charset', doc)
+	if (sections.fonts) buildSection(sections.fonts,'fonts', doc)
+	if (sections.font_styles_weight_etc) buildSection(sections.font_styles_weight_etc,'font_style', doc)
+	if (sections.glyph_shaping_positioning) buildSection(sections.glyph_shaping_positioning,'glyphs', doc)
+	if (sections.cursive_text) buildSection(sections.cursive_text,'cursive', doc)
 	if (sections.transforming_characters) buildSection(sections.transforming_characters,'transforms', doc)
+	if (sections.baselines_line_height_etc) buildSection(sections.baselines_line_height_etc,'baselines', doc)
+	if (sections.grapheme_word_segmentation) buildSection(sections.grapheme_word_segmentation,'segmentation', doc)
+	if (sections.inline_features_punctuation) buildSection(sections.inline_features_punctuation,'punctuation', doc)
+	if (sections.text_decoration) buildSection(sections.text_decoration,'text_decoration', doc)
 	if (sections.quotations) buildSection(sections.quotations,'quotations', doc)
+	if (sections.inline_notes_annotations) buildSection(sections.inline_notes_annotations,'inline_notes', doc)
+	if (sections.data_formats_numbers) buildSection(sections.data_formats_numbers,'data_formats', doc)
 
+	if (sections.line_breaking) buildSection(sections.line_breaking,'line_breaking', doc)
 	if (sections.hyphenation) buildSection(sections.hyphenation,'hyphenation', doc)
 	if (sections.text_align_justification) buildSection(sections.text_align_justification,'justification', doc)
-	if (sections.lists_counters_etc) buildSection(sections.lists_counters_etc,'lists', doc)
 	if (sections.letter_spacing) buildSection(sections.letter_spacing,'spacing', doc)
+	if (sections.lists_counters_etc) buildSection(sections.lists_counters_etc,'lists', doc)
 	if (sections.styling_initials) buildSection(sections.styling_initials,'initials', doc)
 }
 
