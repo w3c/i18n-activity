@@ -84,6 +84,11 @@ function buildDoc (repo, doc) {
 	if (sections.letter_spacing) buildSection(sections.letter_spacing,'spacing', doc)
 	if (sections.lists_counters_etc) buildSection(sections.lists_counters_etc,'lists', doc)
 	if (sections.styling_initials) buildSection(sections.styling_initials,'initials', doc)
+
+	if (sections.page_layout_progression) buildSection(sections.page_layout_progression,'page_layout', doc)
+	if (sections.footnotes_endnotes_etc) buildSection(sections.footnotes_endnotes_etc,'footnotes_etc', doc)
+	if (sections.page_headers_footers_etc) buildSection(sections.page_headers_footers_etc,'headers_footers', doc)
+	if (sections.forms_user_interaction) buildSection(sections.forms_user_interaction,'interaction', doc)
 }
 
 
