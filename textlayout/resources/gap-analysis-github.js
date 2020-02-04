@@ -1,7 +1,7 @@
 var owner = 'w3c';
 
 var sections = {}
-var debug = true
+var debug = false
 
 var issues = []
 var maxpages = 5
@@ -61,38 +61,38 @@ function buildDoc (repo, doc) {
 	// incorporate the information in the database into the html document
 
 
-	if (sections.vertical_text) buildSection(sections.vertical_text,'vertical_text', doc)
-	if (sections.bidirectional_text) buildSection(sections.bidirectional_text,'bidi_text', doc)
+	if (sections.vertical_text) buildSection(sections.vertical_text,'vertical_text', doc, repo)
+	if (sections.bidirectional_text) buildSection(sections.bidirectional_text,'bidi_text', doc, repo)
 	
-	if (sections.characters_and_encoding) buildSection(sections.characters_and_encoding,'charset', doc)
-	if (sections.fonts) buildSection(sections.fonts,'fonts', doc)
-	if (sections.font_styles_weight_etc) buildSection(sections.font_styles_weight_etc,'font_style', doc)
-	if (sections.glyph_shaping_positioning) buildSection(sections.glyph_shaping_positioning,'glyphs', doc)
-	if (sections.cursive_text) buildSection(sections.cursive_text,'cursive', doc)
-	if (sections.transforming_characters) buildSection(sections.transforming_characters,'transforms', doc)
-	if (sections.baselines_line_height_etc) buildSection(sections.baselines_line_height_etc,'baselines', doc)
-	if (sections.grapheme_word_segmentation) buildSection(sections.grapheme_word_segmentation,'segmentation', doc)
-	if (sections.inline_features_punctuation) buildSection(sections.inline_features_punctuation,'punctuation', doc)
-	if (sections.text_decoration) buildSection(sections.text_decoration,'text_decoration', doc)
-	if (sections.quotations) buildSection(sections.quotations,'quotations', doc)
-	if (sections.inline_notes_annotations) buildSection(sections.inline_notes_annotations,'inline_notes', doc)
-	if (sections.data_formats_numbers) buildSection(sections.data_formats_numbers,'data_formats', doc)
+	if (sections.characters_and_encoding) buildSection(sections.characters_and_encoding,'charset', doc, repo)
+	if (sections.fonts) buildSection(sections.fonts,'fonts', doc, repo)
+	if (sections.font_styles_weight_etc) buildSection(sections.font_styles_weight_etc,'font_style', doc, repo)
+	if (sections.glyph_shaping_positioning) buildSection(sections.glyph_shaping_positioning,'glyphs', doc, repo)
+	if (sections.cursive_text) buildSection(sections.cursive_text,'cursive', doc, repo)
+	if (sections.transforming_characters) buildSection(sections.transforming_characters,'transforms', doc, repo)
+	if (sections.baselines_line_height_etc) buildSection(sections.baselines_line_height_etc,'baselines', doc, repo)
+	if (sections.grapheme_word_segmentation) buildSection(sections.grapheme_word_segmentation,'segmentation', doc, repo)
+	if (sections.inline_features_punctuation) buildSection(sections.inline_features_punctuation,'punctuation', doc, repo)
+	if (sections.text_decoration) buildSection(sections.text_decoration,'text_decoration', doc, repo)
+	if (sections.quotations) buildSection(sections.quotations,'quotations', doc, repo)
+	if (sections.inline_notes_annotations) buildSection(sections.inline_notes_annotations,'inline_notes', doc, repo)
+	if (sections.data_formats_numbers) buildSection(sections.data_formats_numbers,'data_formats', doc, repo)
 
-	if (sections.line_breaking) buildSection(sections.line_breaking,'line_breaking', doc)
-	if (sections.hyphenation) buildSection(sections.hyphenation,'hyphenation', doc)
-	if (sections.text_align_justification) buildSection(sections.text_align_justification,'justification', doc)
-	if (sections.letter_spacing) buildSection(sections.letter_spacing,'spacing', doc)
-	if (sections.lists_counters_etc) buildSection(sections.lists_counters_etc,'lists', doc)
-	if (sections.styling_initials) buildSection(sections.styling_initials,'initials', doc)
+	if (sections.line_breaking) buildSection(sections.line_breaking,'line_breaking', doc, repo)
+	if (sections.hyphenation) buildSection(sections.hyphenation,'hyphenation', doc, repo)
+	if (sections.text_align_justification) buildSection(sections.text_align_justification,'justification', doc, repo)
+	if (sections.letter_spacing) buildSection(sections.letter_spacing,'spacing', doc, repo)
+	if (sections.lists_counters_etc) buildSection(sections.lists_counters_etc,'lists', doc, repo)
+	if (sections.styling_initials) buildSection(sections.styling_initials,'initials', doc, repo)
 
-	if (sections.page_layout_progression) buildSection(sections.page_layout_progression,'page_layout', doc)
-	if (sections.footnotes_endnotes_etc) buildSection(sections.footnotes_endnotes_etc,'footnotes_etc', doc)
-	if (sections.page_headers_footers_etc) buildSection(sections.page_headers_footers_etc,'headers_footers', doc)
-	if (sections.forms_user_interaction) buildSection(sections.forms_user_interaction,'interaction', doc)
+	if (sections.page_layout_progression) buildSection(sections.page_layout_progression,'page_layout', doc, repo)
+	if (sections.footnotes_endnotes_etc) buildSection(sections.footnotes_endnotes_etc,'footnotes_etc', doc, repo)
+	if (sections.page_headers_footers_etc) buildSection(sections.page_headers_footers_etc,'headers_footers', doc, repo)
+	if (sections.forms_user_interaction) buildSection(sections.forms_user_interaction,'interaction', doc, repo)
 }
 
 
-function buildSection (theData, sectionId, doc) {
+function buildSection (theData, sectionId, doc, repo) {
 	var labelSet = new Set([])
 	var out = ''
 	for (let i=0;i<theData.length;i++) {
@@ -102,7 +102,7 @@ function buildSection (theData, sectionId, doc) {
 		for (l=0;l<theData[i].labels.length;l++) {
 			if (theData[i].labels[l].name === doc) rightDoc = true
 			}
-		console.log('rightDoc:',rightDoc)
+		if (debug) console.log('rightDoc:',rightDoc)
 		
 		if (rightDoc) {
 
@@ -110,10 +110,10 @@ function buildSection (theData, sectionId, doc) {
 			for (l=0;l<theData[i].labels.length;l++) {
 				labelSet.add(theData[i].labels[l].name)
 				}
-			console.log('labelSet:',labelSet)
+			if (debug) console.log('labelSet:',labelSet)
 		
 			out += '<section id="issue'+theData[i].number+'">\n'
-			out += '<h4><a target="_blank" href="https://github.com/w3c/eurlreq/issues/'+theData[i].number+'">#'+theData[i].number+'</a> '+theData[i].title+'</h4>\n'
+			out += '<h4><a target="_blank" href="https://github.com/w3c/'+repo+'/issues/'+theData[i].number+'">#'+theData[i].number+'</a> '+theData[i].title+'</h4>\n'
 			out += '<p>'
 
 			var body = theData[i].body
@@ -150,9 +150,10 @@ function buildSection (theData, sectionId, doc) {
 	document.getElementById('insert-'+sectionId).innerHTML = out
 
 	// figure out priority for section
-	var priority = ''
+	var priority = document.getElementById(sectionId).className
 	if (labelSet.has('p:basic')) priority = 'basic'
 	else if (labelSet.has('p:advanced')) priority = 'advanced'
+	else if (labelSet.has('p:broken')) priority = 'broken'
 	if (priority !== '') document.getElementById(sectionId).className = priority
 	window.summary[sectionId] = priority
 	}
@@ -196,13 +197,15 @@ summary.interaction = document.getElementById('interaction').className
 
 
 
-function printSummary () {
-	
+function printSummary (tentative) {
+// creates the summary at the bottom of the page that is copy/pasted into the language matrix data
+// tentative is false for work in progress in a group, true for pages done by individuals
+
 var out = ''
 for (let i=0;i<respecConfig.langs.length;i++) {
     out += '{lang: "'+respecConfig.langs[i]+'"'
     out += ', url:"'+respecConfig.gapDocPath+'"'
-    out += ', tentative:' + true
+    out += ', tentative:' + tentative
     out += ', vertical_text:"'+window.summary.vertical_text+'"'
     out += ', bidi_text:"'+window.summary.bidi_text+'"'
 
@@ -233,7 +236,7 @@ for (let i=0;i<respecConfig.langs.length;i++) {
     out += ', interaction:"'+window.summary.interaction+'"'
     out += '},\n'
 
-    out = out.replace(/tbd/g,'')
+	out = out.replace(/tbd/g,'')
     out = out.replace(/broken/g,'0')
     out = out.replace(/ok/g,'3')
     out = out.replace(/advanced/g,'2')
