@@ -154,9 +154,15 @@ function buildSection (theData, sectionId, doc, repo) {
 	if (labelSet.has('p:basic')) priority = 'basic'
 	else if (labelSet.has('p:advanced')) priority = 'advanced'
 	else if (labelSet.has('p:broken')) priority = 'broken'
+	else if (labelSet.has('p:ok')) priority = 'ok'
 	if (priority !== '') document.getElementById(sectionId).className = priority
 	window.summary[sectionId] = priority
 	}
+
+
+
+
+
 
 
 window.summary = {}
@@ -192,6 +198,7 @@ summary.footnotes_etc = document.getElementById('footnotes_etc').className
 summary.headers_footers = document.getElementById('headers_footers').className
 summary.interaction = document.getElementById('interaction').className
 
+if (debug) console.log(summary)
 }
 
 
@@ -236,6 +243,8 @@ for (let i=0;i<respecConfig.langs.length;i++) {
     out += ', interaction:"'+window.summary.interaction+'"'
     out += '},\n'
 
+	if (debug) console.log(summary)
+	
 	out = out.replace(/tbd/g,'')
     out = out.replace(/broken/g,'0')
     out = out.replace(/ok/g,'3')
