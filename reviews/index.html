@@ -114,8 +114,8 @@ var maxpages = 5
 			var totals=0
 			var counter=maxpages
 			
-			function getAllData () {
-				for (var p=1;p<maxpages+1;p++) fetchIssues(p)
+			function getAllData (maxpages_new) {
+				for (var p=1;p<maxpages_new+1;p++) fetchIssues(p)
 				var timer = setInterval(function() {
 					if (counter === 0) {
 						clearInterval(timer)
@@ -162,6 +162,24 @@ var maxpages = 5
 					}
 				request.send();
 				}
+
+            function fetchIssuesCount() {
+                var req = new Request('https://api.github.com/repos/w3c/i18n-activity/issues?per_page=100&page=1', { method: "HEAD" });
+                fetch(req)
+                .then((response) => {
+                    var last = 1;
+                    if (response.headers.has('Link')) {
+                        var links = response.headers.get('Link');
+                        links.split(',').forEach(link => {
+                            var link_val = link.match(/<.*page=([0-9]+)>; rel="(.*)"/);
+                            if ((link_val) && (link_val[2] == 'last')) {
+                                last = link_val[1];
+                            }
+                        });
+                    }
+                    getAllData(parseInt(last, 10));
+                    });
+            }
 				
 			
 			function checkDates () {
@@ -415,7 +433,10 @@ var maxpages = 5
 					document.getElementById('total').textContent = "There are "+filteredIssues+" issues."
 					}
 </script>
-<script>window.onload = getAllData()</script>
+<script>
+// window.onload = getAllData()
+window.onload = fetchIssuesCount();
+</script>
 
 <footer id="thefooter"></footer>
 <script type="text/javascript">document.getElementById('thefooter').innerHTML = g.bottomOfPage</script> 
