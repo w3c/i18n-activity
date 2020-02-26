@@ -352,7 +352,7 @@ var maxpages = 5
 						if (! labelFound) continue
 						
 						out += h2+"\n"
-						for (var i=1;i<issues.length;i++) {
+						for (var i=0;i<issues.length;i++) {
 							var spans = issues[i].querySelectorAll('span')
 							for (j=0;j<spans.length;j++) {
 								if (spans[j].title === label) {
