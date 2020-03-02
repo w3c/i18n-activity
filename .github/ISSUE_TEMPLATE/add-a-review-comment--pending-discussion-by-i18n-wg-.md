@@ -24,7 +24,7 @@ Follow the process at https://w3c.github.io/i18n-activity/guidelines/review-inst
 
 2. After discussion with the i18n WG, raise this issue to the WG that owns the spec. Use the text above this para as the basis for that comment.
 
-3. Replace the text 'link_to_issue_raised' below with a link to the place you raised the issue.
+3. Replace the text 'link_to_issue_raised' below with a link to the place you raised the issue. Do NOT remove the initial '§ '.
 
 4.  Edit this issue to remove this paragraph and ALL THE TEXT ABOVE IT. 
 
