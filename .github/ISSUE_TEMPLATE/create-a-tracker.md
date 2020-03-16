@@ -16,5 +16,13 @@ assignees: ''
 
 Instructions:
 - Do not remove § from the line with the link.
-- Add labels for spec, and anything else per section 5 of  https://www.w3.org/International/wiki/Keeping_tracker_issues_up_to_date#.5B5.5D_Apply_appropriate_labels
+- Add labels as follows:
+  - TRACKER & S:... labels should be there
+  - ADVICE-REQUESTED label if the WG-issue is specifically asking for i18n to advise/comment
+  - NEEDS-ATTENTION label if this is an important issue 
+  - if there's an i18n-*lreq label in the WG repo check for:
+     -  ...LREQ label(s) there should be one or more
+     - SPEC-TYPE-ISSUE label (dark green background) should be there 
+     - TYPE-INFO-REQUEST label (red background) if this is a WG-issue that constitutes a request for script/language expert advice
+      - I:... labels need to be added
 - Delete these instructions before saving the comment.
