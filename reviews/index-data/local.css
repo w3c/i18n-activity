@@ -19,11 +19,11 @@ td {
 	border: 1px solid #ccc;
 	}
 .labels {
-	float: right;
+	float: left;
 	height: 11px;
 	width: 11px;
 	border-radius: 2px;
-	margin: 3px;
+	margin: 1em 3em 1em .5em;
 	font-size: .2em;
 	color: rgba(0,0,0,0.00);
 	}
@@ -43,4 +43,12 @@ td {
     }
 tr:hover {
     background-color: antiquewhite;
+}
+
+#issueType {
+    margin: 3px 0;
+	width: 1em;
+}
+#issueType span {
+    vertical-align: top;
 }
