@@ -45,10 +45,10 @@ tr:hover {
     background-color: antiquewhite;
 }
 
-#issueType {
-    margin: 3px 0;
-	width: 1em;
-}
 #issueType span {
+    margin: 3px 0;
+}
+#issueType {
     vertical-align: top;
+	width: 1em;
 }
