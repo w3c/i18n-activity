@@ -72,7 +72,7 @@ function buildDoc (repo, doc) {
 	if (sections.transforming_characters) buildSection(sections.transforming_characters,'transforms', doc, repo)
 	if (sections.baselines_line_height_etc) buildSection(sections.baselines_line_height_etc,'baselines', doc, repo)
 	if (sections.grapheme_word_segmentation) buildSection(sections.grapheme_word_segmentation,'segmentation', doc, repo)
-	if (sections.inline_features_punctuation) buildSection(sections.inline_features_punctuation,'punctuation', doc, repo)
+	if (sections.inline_features_punctuation) buildSection(sections.inline_features_punctuation,'punctuation_etc', doc, repo)
 	if (sections.text_decoration) buildSection(sections.text_decoration,'text_decoration', doc, repo)
 	if (sections.quotations) buildSection(sections.quotations,'quotations', doc, repo)
 	if (sections.inline_notes_annotations) buildSection(sections.inline_notes_annotations,'inline_notes', doc, repo)
@@ -93,6 +93,7 @@ function buildDoc (repo, doc) {
 
 
 function buildSection (theData, sectionId, doc, repo) {
+	if (debug) console.log('sectionID',sectionId, 'doc',doc, 'repo',repo)
 	var labelSet = new Set([])
 	var out = ''
 	for (let i=0;i<theData.length;i++) {
