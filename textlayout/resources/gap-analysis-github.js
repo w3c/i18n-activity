@@ -113,7 +113,7 @@ function buildSection (theData, sectionId, doc, repo) {
 				}
 			if (debug) console.log('labelSet:',labelSet)
 		
-			out += '<section id="issue'+theData[i].number+'">\n'
+			out += '<section id="issue'+theData[i].number+'_'+sectionId+'">\n'
 			out += '<h4><a target="_blank" href="https://github.com/w3c/'+repo+'/issues/'+theData[i].number+'">#'+theData[i].number+'</a> '+theData[i].title+'</h4>\n'
 			out += '<p>'
 
