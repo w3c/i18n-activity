@@ -142,6 +142,56 @@ function buildSection (theData, sectionId, doc, repo) {
 			test = /`([^`]+)`/g
 			body = body.replace(test, convertcode)
 
+			// convert unordered lists to markup
+			function convertlists(str, initial, startMarkup, endMarkup) {
+				var lines = body.split('\n')
+				inList = false
+				for (let l=0;l<lines.length;l++) {
+					if (lines[l].startsWith(initial) && inList) {
+						lines[l] = '<li>'+lines[l].substring(1)+'</li>'
+						}
+					else if (lines[l].startsWith(initial)) {
+						inList = true
+						lines[l] = startMarkup+'<li>'+lines[l].substring(1)+'</li>'
+						}
+					else if (! lines[l].startsWith(initial) && inList) {
+						inList = false
+						lines[l] = endMarkup+lines[l]
+						}
+					else {
+						inList = false
+						}
+					}
+				return lines.join('\n')
+				}
+			body = convertlists(body, '-', '<ul>', '</ul>')
+			body = body.replace(/\n\d+\./g, '\n§')
+			body = convertlists(body, '§', '<ol>', '</ol>')
+
+			// convert quoted text to blockquote
+			function convertquotes(str, initial) {
+				var lines = body.split('\n')
+				inList = false
+				for (let l=0;l<lines.length;l++) {
+					if (lines[l].startsWith(initial) && inList) {
+						lines[l] = lines[l].substring(1)+'<br>'
+						}
+					else if (lines[l].startsWith(initial)) {
+						inList = true
+						lines[l] = '<blockquote>'+lines[l].substring(1)+'<br>'
+						}
+					else if (! lines[l].startsWith(initial) && inList) {
+						inList = false
+						lines[l] = '</blockquote>'+lines[l]
+						}
+					else {
+						inList = false
+						}
+					}
+				return lines.join('\n')
+				}
+			body = convertquotes(body, '>')
+
 			// split into paragraphs
 			out += body.replace(/\r\n\r\n/g,'</p><p>')
 			out += '</p>\n'
