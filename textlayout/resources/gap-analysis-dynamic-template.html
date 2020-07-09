@@ -5,7 +5,7 @@
 <meta charset="utf-8">
 
 <title>XXX Gap Analysis</title>
-<script src="../../i18n-activity/textlayout/resources/gap-analysis-github.js"> </script>
+<script class="remove" src="../../i18n-activity/textlayout/resources/gap-analysis-github.js"> </script>
 
 <script src="https://www.w3.org/Tools/respec/respec-w3c-common" async="" class="remove">
 </script>
@@ -29,19 +29,34 @@
       // only "name" is required
       editors:  [
         { name: "XXX", mailto: "xxx", company: "xxx" },
+        { name: "Richard Ishida", mailto: "ishida@w3.org", company: "W3C", w3cid: 3439 },
       ],
 
 
       wg:           "Internationalization Working Group",
       wgURI:        "https://www.w3.org/International/core/",
 
-	  github:		"w3c/xxx",
+      github:		"w3c/xxx",
+      
+        
+      postProcess: [
+    	function importStyleSheet() {
+			[...document.querySelectorAll("link[rel='stylesheet'][data-import]")].forEach(l => {
+				const style = document.createElement("style");
+				fetch(l.href).then(r => r.text()).then(t => {
+					style.textContent = t;
+					l.replaceWith(style);
+					});
+      			});
+    		}
+   		],
 	  
 	  
+
       // langs array lists languages addressed by this document, in order of speaker (highest first)
       // it is used to generate the javascript needed for the matrix
       langs: ['XXX'],
-      gapDocPath: 'https://w3c.github.io/xxx/gap-analysis/xxx',
+      gapDocPath: 'https://www.w3.org/TR/xxx-gap',
 
 
       // URI of the patent status for this WG, for Rec-track documents
@@ -53,11 +68,11 @@
       // !!!! IMPORTANT !!!! MAKE THE ABOVE BLINK IN YOUR HEAD
     };
   </script>
-<script src="/i18n-activity/templates/gap-analysis/prompts.js"> </script>
+<script  class="remove" src="/i18n-activity/templates/gap-analysis/prompts.js"> </script>
 <link rel="stylesheet" href="/typography/gap-analysis/gapanalysis.css">
 </head>
 
-<body onLoad="printSummary()">
+<body>
   <div id="abstract">
     <p>This document describes and prioritises gaps for the support of XXX on the Web and in eBooks. In particular, it is concerned with text layout. It checks that needed features are supported in W3C specifications, in particular HTML and CSS and those relating to digital publications. It also checks whether the features have been implemented in browsers and ereaders. <strong>This is a preliminary analysis.</strong></p>
   </div>
@@ -456,20 +471,16 @@ It is linked to from the <a href="https://w3c.github.io/typography/gap-analysis/
 
 
 
-<details>
+details>
 <summary style="margin-top:4em; cursor: pointer;">Show summary</summary>
 <pre id="summaryPlaceholder" style="white-space: pre-wrap;"></pre>
 </details>
-
-
-
-
-<script>
+<script class="remove">
 setUpSummary()
 addPrompts() 
 getAllData('eurlreq','doc:hu')
+printSummary(true)
 </script>
-
 
 
 <!--section class="appendix" id="acknowledgements">
