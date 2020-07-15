@@ -191,6 +191,10 @@ function buildSection (theData, sectionId, doc, repo) {
 				return lines.join('\n')
 				}
 			body = convertquotes(body, '>')
+			
+			// remove blank p markup
+			test = /<p><\/p>/g
+			body = body.replace(test,'')
 
 			// split into paragraphs
 			out += body.replace(/\r\n\r\n/g,'</p><p>')
