@@ -34,7 +34,19 @@
  
  	  github:	"w3c/xxx",
        
-      
+ 	  
+	  postProcess: [
+    	function importStyleSheet() {
+			[...document.querySelectorAll("link[rel='stylesheet'][data-import]")].forEach(l => {
+				const style = document.createElement("style");
+				fetch(l.href).then(r => r.text()).then(t => {
+					style.textContent = t;
+					l.replaceWith(style);
+					});
+      			});
+    		}
+   		],
+     
       
       // langs array lists languages addressed by this document, in order of speaker (highest first)
       // it is used to generate the javascript needed for the matrix
