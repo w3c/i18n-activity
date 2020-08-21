@@ -5,6 +5,8 @@
   <meta charset="utf-8">
 
   <title>Zzzz Gap Analysis</title>
+  <script class="remove" src="../../i18n-activity/textlayout/resources/gap-analysis-github.js"> </script>
+
   <script src="https://www.w3.org/Tools/respec/respec-w3c" async="" class="remove"> </script>
   <script class="remove">
   var respecConfig = {
@@ -63,8 +65,8 @@
       // !!!! IMPORTANT !!!! MAKE THE ABOVE BLINK IN YOUR HEAD
     };
   </script>
-<script src="/i18n-activity/templates/gap-analysis/prompts.js"> </script>
-<link rel="stylesheet" href="https://w3c.github.io/typography/gap-analysis/gapanalysis.css" type="text/css">
+<script class="remove" src="/i18n-activity/templates/gap-analysis/prompts.js"> </script>
+<link rel="stylesheet" data-import href="https://w3c.github.io/typography/gap-analysis/gapanalysis.css">
 </head>
 
 <body>
@@ -536,70 +538,18 @@
 
 
 
-<details>
-<summary style="margin-top:4em; cursor: pointer;">Show summary</summary>
+<details id="summaryStats">
+<summary style="margin-top:4em; cursor: pointer;" onclick="setUpSummary(); printSummary(true)">Show summary</summary>
 <pre id="summaryPlaceholder" style="white-space: pre-wrap;"></pre>
 </details>
-<script>
-var out = ''
-for (let i=0;i<respecConfig.langs.length;i++) {
-    out += '{lang: "'+respecConfig.langs[i]+'"'
-    out += ', url:"'+respecConfig.gapDocPath+'"'
-    out += ', tentative:' + true
-    out += ', vertical_text:"'+document.getElementById('vertical_text').className+'"'
-    out += ', bidi_text:"'+document.getElementById('bidi_text').className+'"'
-
-    out += ', charset:"'+document.getElementById('charset').className+'"'   
-    out += ', fonts:"'+document.getElementById('fonts').className+'"'
-    out += ', font_style:"'+document.getElementById('font_style').className+'"'
-    out += ', glyphs:"'+document.getElementById('glyphs').className+'"'
-    out += ', cursive:"'+document.getElementById('cursive').className+'"'
-    out += ', transforms:"'+document.getElementById('transforms').className+'"'
-    out += ', baselines:"'+document.getElementById('baselines').className+'"'
-    out += ', segmentation:"'+document.getElementById('segmentation').className+'"'
-    out += ', punctuation_etc:"'+document.getElementById('punctuation_etc').className+'"'
-    out += ', text_decoration:"'+document.getElementById('text_decoration').className+'"'
-    out += ', quotations:"'+document.getElementById('quotations').className+'"'
-    out += ', inline_notes:"'+document.getElementById('inline_notes').className+'"'
-    out += ', data_formats:"'+document.getElementById('data_formats').className+'"'
-
-    out += ', line_breaking:"'+document.getElementById('line_breaking').className+'"'
-    out += ', hyphenation:"'+document.getElementById('hyphenation').className+'"'
-    out += ', justification:"'+document.getElementById('justification').className+'"'
-    out += ', spacing:"'+document.getElementById('spacing').className+'"'
-    out += ', lists:"'+document.getElementById('lists').className+'"'
-    out += ', initials:"'+document.getElementById('initials').className+'"'
-
-    out += ', page_layout:"'+document.getElementById('page_layout').className+'"'
-    out += ', footnotes_etc:"'+document.getElementById('footnotes_etc').className+'"'
-    out += ', headers_footers:"'+document.getElementById('headers_footers').className+'"'
-    out += ', interaction:"'+document.getElementById('interaction').className+'"'
-    out += '},\n'
-
-    out = out.replace(/tbd/g,'')
-    out = out.replace(/broken/g,'0')
-    out = out.replace(/ok/g,'3')
-    out = out.replace(/advanced/g,'2')
-    out = out.replace(/basic/g,'1')
-    out = out.replace(/"na/g,'"-')
-    }
-document.getElementById('summaryPlaceholder').textContent = out
-
-var temp = document.querySelectorAll('section')
-for (let x=0;x<temp.length;x++) {
-    console.log(temp[x].id)
-    }
-
-
-
-
-
-
-
+<script class="remove">
 addPrompts() 
-
-
+getAllData('alreq','doc:arfa')
 </script>
+<script>
+if (window.location.href.includes('/TR/')) document.getElementById('summaryStats').style.display = 'none'
+</script>
+
 
 
 
