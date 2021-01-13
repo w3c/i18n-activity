@@ -28,7 +28,9 @@ This follows the process at https://w3c.github.io/i18n-activity/guidelines/revie
 
 4. Replace the text 'link_to_issue_raised' below with a link to the place you raised the issue. Do NOT remove the initial '§ '.
 
-5.  Edit this issue to remove this paragraph and ALL THE TEXT ABOVE IT. 
+5. Edit this issue to remove this paragraph and ALL THE TEXT ABOVE IT.
+
+6. Remove the 'pending' label.
 
 
 
