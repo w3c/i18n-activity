@@ -18,6 +18,7 @@ function getAllData (repo, doc) {
 		function (responses) {
 			return Promise.all(responses.map(
 				function(res) {
+					if (! res.ok) throw Error("GitHub API error " + res.status + " on " + res.url)
 					return res.json()
 					}
 				))
