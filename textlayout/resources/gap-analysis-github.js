@@ -9,11 +9,11 @@ var maxpages = 5
 var totals=0
 var counter=maxpages
 
-function getAllData (repo, doc) {
+async function getAllData (repo, doc) {
 	let arr = []
 	for (let p=1; p < maxpages+1; p++) arr.push(fetch('https://api.github.com/repos/w3c/'+repo+'/issues?per_page=100&page='+p))
 
-	return Promise.all(arr)
+	return await Promise.all(arr)
 	.then(
 		function (responses) {
 			return Promise.all(responses.map(
