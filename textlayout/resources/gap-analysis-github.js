@@ -59,7 +59,7 @@ function buildDoc (repo, doc) {
 	if (sections.fonts) buildSection(sections.fonts,'fonts', doc, repo)
 	if (sections.font_styles_weight_etc) buildSection(sections.font_styles_weight_etc,'font_style', doc, repo)
 	if (sections.glyph_shaping_positioning) buildSection(sections.glyph_shaping_positioning,'glyphs', doc, repo)
-	if (sections.cursive_text) buildSection(sections.cursive_text,'cursive', doc, repo)
+	if (sections.cursive) buildSection(sections.cursive,'cursive', doc, repo)
 	if (sections.transforming_characters) buildSection(sections.transforming_characters,'transforms', doc, repo)
 	if (sections.baselines_line_height_etc) buildSection(sections.baselines_line_height_etc,'baselines', doc, repo)
 	if (sections.grapheme_word_segmentation) buildSection(sections.grapheme_word_segmentation,'segmentation', doc, repo)
