@@ -128,13 +128,13 @@ function buildSection (theData, sectionId, doc, repo) {
 			body = body.replace(test, convertcode)
 
 			// create convert bold segments links
-			function convertcode(str, p1, s) {
+			function convertbold(str, p1, s) {
 				p1 = p1.replace(/\*\*/g,'')
 				p1 = p1.replace(/\*\*/g,'')
 				return '<strong>'+p1+'</strong>'
 				}
 			test = /\*\*([^\*]+)\*\*/g
-			body = body.replace(test, convertcode)
+			body = body.replace(test, convertbold)
 
 			// convert unordered lists to markup
 			function convertlists(str, initial, startMarkup, endMarkup) {
