@@ -19,10 +19,10 @@ Instructions:
 - Add labels as follows:
   - TRACKER & S:... labels should be there
   - ADVICE-REQUESTED label if the WG-issue is specifically asking for i18n to advise/comment
-  - NEEDS-ATTENTION label if this is an important issue 
+  - NEEDS-ATTENTION label if this is an important issue
+  - I:... labels to indicate the topic should be added as appropriate
   - if there's an i18n-*lreq label in the WG repo check for:
      -  ...LREQ label(s) there should be one or more
      - SPEC-TYPE-ISSUE label (dark green background) should be there 
      - TYPE-INFO-REQUEST label (red background) if this is a WG-issue that constitutes a request for script/language expert advice
-      - I:... labels need to be added
 - Delete these instructions before saving the comment.
