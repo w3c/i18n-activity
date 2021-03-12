@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>How to review specs and raise issues</title>
+<link rel="stylesheet" type="text/css" href="../../i18n-drafts/style/article-2016.css" />
+<style type="text/css">
+h2 {
+	font-family: Arial, helvetica, sans-serif;
+	font-size: 140%;
+	font-weight: normal;
+	color: white;
+	border: none;
+	margin-top: 3.5em;
+	margin-bottom: 1.5em;
+	padding: 0.1em 0.4em;
+	background-color: #697fb1;
+	border-radius: 10px;
+	}
+h2 a:link, h2 a:active, h2 a:visited {
+	text-decoration: none;
+	color: white;
+	}
+h3 {
+	border-bottom: 1px solid #ccc;
+	}
+.highlight {
+	font-size: 130%;
+	color: #6A6A6A;
+	font-weight: bold;
+	}
+code em {
+	font-style: normal;
+	font-weight: bold;
+	}
+var {
+	font-style: italic;
+	}
+.issue {
+	font-size: 200%;
+	color: red;
+	}
+ol ol { margin-right: 20px; margin-left: 30px;  }
+.ghButton {
+	border: 1px solid #aaa;
+	border-radius: 5px;
+	padding: 0 0.4em;
+	white-space: nowrap;
+	}
+.highlight1 {color: brown; font-weight:bold; font-style:italic; }
+.main-instructions {font-size:120%; }
+</style>
+<script type="text/javascript" src="../../i18n-drafts/javascript/articletoc-html5.js"></script>
+</head>
+
+<body>
+<header> <aside id="mainNavigation">
+	<nav id="site-navigation">
+		<a href="https://www.w3.org/International/"><img id="picture" alt="World map" title="World map" src="https://www.w3.org/International/icons/world.gif" width="150" height="61"/></a>  </nav>
+	
+	<nav class="noprint" id="search"><form method="get" action="https://www.w3.org/International/site-search.php" enctype="application/x-www-form-urlencoded" style="margin: 0;">
+<div id="searchSite"><input name="q" type="text" value="I18n site search: " onfocus="this.value=''" id="searchField" accesskey="E" maxlength="255"/></div>
+</form></nav>
+	<nav id="breadcrumbs"><p><a href="https://www.w3.org/International/">Home </a> &gt; <a href="https://www.w3.org/International/resources">Resources</a> &gt; <a href="https://www.w3.org/International/articlelist#characters">Articles</a></p></nav>
+	<nav class="noprint" id="toc">
+		<h2 id="internal-links" class="notoc"><a href="#internal-links">On this page</a></h2>
+		<div id="toclocation"> </div>
+  </nav>
+	<nav class="noprint" id="relatedlinks">
+		
+  </nav>
+</aside>
+<nav id="boilerplate"><div id="siteicons"><a href="https://www.w3.org/" title="Go to W3C Home Page"><img src="https://www.w3.org/International/icons/w3c_home.gif" alt="s_gotoW3cHome"/></a><a href="https://www.w3.org/International/" title="Go to Internationalization Activity Home Page" id="i18n-name">
+	Internationalization</a></div>
+<div id="sitelinks" class="noprint">	<bdi><a href="/International/technique-index" title="Learn techniques and requirements for internationalization.">Learn</a></bdi>&nbsp;	<bdi><a href="/International/resources" title="Find information on this site.">Find</a></bdi>&nbsp;	<bdi><a href="/International/about" title="Get help from W3C Internationalization.">Contact</a></bdi>&nbsp;	<bdi><a href="/International/participate" title="Participate in W3C Internationalization work.">Join</a></bdi>&nbsp;	<bdi><a href="/International/log/description" title="Follow the work at W3C Internationalization.">Follow</a></bdi>&nbsp;	&nbsp; </div><div id="line">&#xA0;</div></nav>
+<h1>How to use GitHub labels in Language Enablement repos</h1>
+</header>
+<section>
+<p>The Language Enablement framework uses labels to automate various processes. This document describes available labels, and how they should be used.</p>
+<p>The i18n WG also tracks discussions of interest, or discussions brought to their attention by other WGs. This tracking is enabled by applying the <span class="highlight1"><span style="background-color: #f9c9ff; padding:2px 4px; border-radius:5px; color:black;font-style:normal;font-weight: bold; white-space: nowrap;">i18n-tracker</span></span> label to an issue in the other WG repo, and creating a tracker issue in the i18n-activity repo. Instructions for handling that are found on another page, under the heading <a href="https://www.w3.org/International/wiki/Review_procedures">Keeping tracker issues up to date</a>.</p>
+</section>
+
+
+
+<section id="question">
+<h2>Question</h2>
+  <p>The <span class="highlight1"><span style="background-color: #cc317c; padding:2px 4px; border-radius:5px; color:white; font-style:normal;font-weight: bold; white-space: nowrap;">question</span></span> label should be attached to every GitHub issue that asks a question of the expert community about how a script works.</p>
+<p>Issues with this label are also tracked in the i18n WG tracker repository.</p>
+</section>
+
+
+
+
+<section id="steps">
+<h2>Gap</h2>
+  <p>The <span class="highlight1"><span style="background-color: #e99695; padding:2px 4px; border-radius:5px; color:black;font-style:normal;font-weight: bold; white-space: nowrap;">gap</span></span> label indicates that the issue contains content for a gap-analysis document. The first comment field in the document contains the actual content that will be pulled into the document when it is viewed or published.</p>
+<p>When using this label, you need to also use the following:</p>
+<ul>
+<li>a <span class="highlight1"><span style="background-color: #c2e0c6; padding:2px 4px; border-radius:5px; color:black;font-style:normal;font-weight: bold; white-space: nowrap;">doc:</span></span> label</li>
+<li>an <span class="highlight1"><span style="background-color: #fbca04; padding:2px 4px; border-radius:5px; color:black;font-style:normal;font-weight: bold; white-space: nowrap;">i:</span></span> label</li>
+<li>a <span class="highlight1"><span style="background-color: white; padding:2px 4px; border-radius:5px; color:black;font-style:normal;font-weight: bold; white-space: nowrap;">p:</span></span> label</li>
+</ul>
+</section>
+
+
+
+
+<section id="creating-product">
+<h2><a href="creating-product">Doc: labels</a></h2>
+
+<p><span class="highlight1"><span style="background-color: #c2e0c6; padding:2px 4px; border-radius:5px; color:black;font-style:normal;font-weight: bold; white-space: nowrap;">doc:</span></span> labels indicate which gap-analysis document a gap issue will be pulled into. It is only used with the <span class="highlight1"><span style="background-color: #e99695; padding:2px 4px; border-radius:5px; color:black;font-style:normal;font-weight: bold; white-space: nowrap;">gap</span></span> label. Some repositories contain more than one gap-analysis document, so this is essential information.</p>
+<p>Other repositories may only contain a single gap-analysis document, but they will still need one of these labels so that the overal process remains standard and scripting is kept simple. It also provides some insurance against the possibility of another gap-analysis document being added to the repo at a later date.</p>
+
+</section>
+
+
+
+
+
+<section id="writeup-issue">
+<h2><a href="#writeup-issue">P: labels</a></h2>
+<p>The <span class="highlight1"><span style="background-color: white; padding:2px 4px; border-radius:5px; color:black;font-style:normal;font-weight: bold; white-space: nowrap;">p:</span></span> label indicates the priority of a gap-analysis issue. It is only used with the <span class="highlight1"><span style="background-color: #e99695; padding:2px 4px; border-radius:5px; color:black;font-style:normal;font-weight: bold; white-space: nowrap;">gap</span></span> label. It is likely to change according to the current status of the issue.</p>
+<p>There are 4 possible values, each with a different colour: <span class="highlight1"><span style="background-color: #008000; padding:2px 4px; border-radius:5px; color:black;font-style:normal;font-weight: bold; white-space: nowrap;">p:ok</span></span>, <span class="highlight1"><span style="background-color: #ff9a00; padding:2px 4px; border-radius:5px; color:black;font-style:normal;font-weight: bold; white-space: nowrap;">p:basic</span></span>, <span class="highlight1"><span style="background-color: #ffe4b5; padding:2px 4px; border-radius:5px; color:black;font-style:normal;font-weight: bold; white-space: nowrap;">p:advanced</span></span>, and <span class="highlight1"><span style="background-color: #ff0000; padding:2px 4px; border-radius:5px; color:white;font-style:normal;font-weight: bold; white-space: nowrap;">p:broken</span></span>.</p>
+</section>
+
+
+
+<section id="schedule-review">
+<h2><a href="schedule-review">I: labels</a></h2>
+  <p>If you use a <span class="highlight1"><span style="background-color: #e99695; padding:2px 4px; border-radius:5px; color:black;font-style:normal;font-weight: bold; white-space: nowrap;">gap</span></span> label, you must also use one of these labels. They indicate the section into which the gap-analysis content will be put. The values correspond to sections in the Language Enablement Index, which are the same as those in the gap-analysis documents.</p>
+<p>However, it is also recommended that you use these labels with all other technical issues. That makes it possible to filter on a particular type of feature all the issues in the repo.</p>
+<p>The values are as follows. The label is shown, followed by the anchor of the relevant section in the Index, and the current title of the Index section (which may change over time).</p>
+<p><span class="highlight1"><span style="background-color: #fbca04; padding:2px 4px; border-radius:5px; color:black;font-style:normal;font-weight: bold; white-space: nowrap;">i:vertical_text</span></span> #vertical_text, Vertical text</p>
+<p><span class="highlight1"><span style="background-color: #fbca04; padding:2px 4px; border-radius:5px; color:black;font-style:normal;font-weight: bold; white-space: nowrap;">i:bidirectional_text</span></span> #bidi_text, Bidirectional text</p>
+<p><span class="highlight1"><span style="background-color: #fbca04; padding:2px 4px; border-radius:5px; color:black;font-style:normal;font-weight: bold; white-space: nowrap;">i:characters_and_encodings</span></span> #charset, Characters &amp; encoding</p>
+<p><span class="highlight1"><span style="background-color: #fbca04; padding:2px 4px; border-radius:5px; color:black;font-style:normal;font-weight: bold; white-space: nowrap;">i:fonts</span></span> #fonts, Fonts</p>
+<p><span class="highlight1"><span style="background-color: #fbca04; padding:2px 4px; border-radius:5px; color:black;font-style:normal;font-weight: bold; white-space: nowrap;">i:font_styles_weight_etc</span></span> #font_style, Font styles, weight, etc.</p>
+<p><span class="highlight1"><span style="background-color: #fbca04; padding:2px 4px; border-radius:5px; color:black;font-style:normal;font-weight: bold; white-space: nowrap;">i:glyph_shaping_positioning</span></span> #glyphs, Glyph shaping &amp; positioning</p>
+<p><span class="highlight1"><span style="background-color: #fbca04; padding:2px 4px; border-radius:5px; color:black;font-style:normal;font-weight: bold; white-space: nowrap;">i:cursive</span></span> #cursive, Cursive text</p>
+<p><span class="highlight1"><span style="background-color: #fbca04; padding:2px 4px; border-radius:5px; color:black;font-style:normal;font-weight: bold; white-space: nowrap;">i:vertical_text</span></span> #baseline, Baselines, line height, etc.</p>
+<p><span class="highlight1"><span style="background-color: #fbca04; padding:2px 4px; border-radius:5px; color:black;font-style:normal;font-weight: bold; white-space: nowrap;">i:transforming_characters</span></span> #transforms, Transforming characters</p>
+<p><span class="highlight1"><span style="background-color: #fbca04; padding:2px 4px; border-radius:5px; color:black;font-style:normal;font-weight: bold; white-space: nowrap;">i:grapheme_word_segmentation</span></span> #segmentation, Grapheme/word segmentation &amp; selection</p>
+<p><span class="highlight1"><span style="background-color: #fbca04; padding:2px 4px; border-radius:5px; color:black;font-style:normal;font-weight: bold; white-space: nowrap;">i:inline_features_punctuation</span></span> #punctuation_etc, Inline features &amp; punctuation</p>
+<p><span class="highlight1"><span style="background-color: #fbca04; padding:2px 4px; border-radius:5px; color:black;font-style:normal;font-weight: bold; white-space: nowrap;">i:text_decoration</span></span> #text_decoration, Text decoration</p>
+<p><span class="highlight1"><span style="background-color: #fbca04; padding:2px 4px; border-radius:5px; color:black;font-style:normal;font-weight: bold; white-space: nowrap;">i:quotations</span></span> #quotations, Quotations</p>
+<p><span class="highlight1"><span style="background-color: #fbca04; padding:2px 4px; border-radius:5px; color:black;font-style:normal;font-weight: bold; white-space: nowrap;">i:inline_notes_annotations</span></span> #inline_notes, Inline notes &amp; annotations</p>
+<p><span class="highlight1"><span style="background-color: #fbca04; padding:2px 4px; border-radius:5px; color:black;font-style:normal;font-weight: bold; white-space: nowrap;">i:data_formats_numbers</span></span> #data_formats, Data formats &amp; numbers</p>
+<p><span class="highlight1"><span style="background-color: #fbca04; padding:2px 4px; border-radius:5px; color:black;font-style:normal;font-weight: bold; white-space: nowrap;">i:line_breaking</span></span> #line_breaking, Line breaking</p>
+<p><span class="highlight1"><span style="background-color: #fbca04; padding:2px 4px; border-radius:5px; color:black;font-style:normal;font-weight: bold; white-space: nowrap;">i:hyphenation</span></span> #hyphenation, Hyphenation</p>
+<p><span class="highlight1"><span style="background-color: #fbca04; padding:2px 4px; border-radius:5px; color:black;font-style:normal;font-weight: bold; white-space: nowrap;">i:text_align_justification</span></span> #justification, Text alignment &amp; justification</p>
+<p><span class="highlight1"><span style="background-color: #fbca04; padding:2px 4px; border-radius:5px; color:black;font-style:normal;font-weight: bold; white-space: nowrap;">i:letter_spacing</span></span> #spacing, Letter spacing</p>
+<p><span class="highlight1"><span style="background-color: #fbca04; padding:2px 4px; border-radius:5px; color:black;font-style:normal;font-weight: bold; white-space: nowrap;">i:lists_counters_etc</span></span> #lists, Lists, counters, etc.</p>
+<p><span class="highlight1"><span style="background-color: #fbca04; padding:2px 4px; border-radius:5px; color:black;font-style:normal;font-weight: bold; white-space: nowrap;">i:styling_initials</span></span> #initials, Styling initials</p>
+<p><span class="highlight1"><span style="background-color: #fbca04; padding:2px 4px; border-radius:5px; color:black;font-style:normal;font-weight: bold; white-space: nowrap;">i:page_layout_progression</span></span> #page_layout, General page layout &amp; progression</p>
+<p><span class="highlight1"><span style="background-color: #fbca04; padding:2px 4px; border-radius:5px; color:black;font-style:normal;font-weight: bold; white-space: nowrap;">i:footnotes_endnotes_etc</span></span> #footnotes_etc, Footnotes, endnotes, etc.</p>
+<p><span class="highlight1"><span style="background-color: #fbca04; padding:2px 4px; border-radius:5px; color:black;font-style:normal;font-weight: bold; white-space: nowrap;">i:page_headers_footers_etc</span></span> #headers_footers, Page headers, footers, etc.</p>
+<p><span class="highlight1"><span style="background-color: #fbca04; padding:2px 4px; border-radius:5px; color:black;font-style:normal;font-weight: bold; white-space: nowrap;">i:forms_user_interaction</span></span> #interaction, Forms &amp; user interaction</p>
+</section>
+
+
+<section id="notify">
+<h2><a href="notify">Useful-discussion</a></h2>
+<p>These <span class="highlight1"><span style="background-color: #d4c5f9; padding:2px 4px; border-radius:5px; color:black;font-style:normal;font-weight: bold; white-space: nowrap;">l:</span></span> labels indicate the language(s) that are relevant to the issue thread. They can be used to filter the issues for a particular language.</p>
+<p>A repository that only works on a single language may not use this label.</p>
+<p>It's recommended to add this label to all technical discussions.</p>
+</section>
+
+
+<section id="useful">
+<h2><a href="useful">l: labels</a></h2>
+<p>The <span class="highlight1"><span style="background-color: #fce8c4; padding:2px 4px; border-radius:5px; color:black;font-style:normal;font-weight: bold; white-space: nowrap;">useful-discussion</span></span> label can be added to a technical discussion that contains useful information, pictures, example, etc. It is especially useful if not all that information will find its way into a document, since the Language Enablement Index points to useful discussion threads.</p>
+</section>
+
+
+<footer>
+	<address> 
+		<p>By: Richard Ishida, W3C.</p>
+</address>
+	
+	<small id="version">Content first published <time datetime="2015-12-16T07:50Z">2015-09-23</time>
+. Last substantive update 2019-11-06 14:00
+<time datetime="2016-10-11T14:02Z"> GMT</time>
+. This version 2019-11-06 14:00
+<time datetime="2016-10-11T14:02Z"> GMT</time>
+</small>
+	<small>For the history of document changes, see the
+<span class="searchkey"><a href="https://github.com/w3c/i18n-activity/commits/gh-pages/guidelines/github.html">github commit log</a></span>.</small>
+	<small class="copyright" lang="en"><a rel="Copyright" href="/Consortium/Legal/ipr-notice#Copyright" id="copyright">Copyright</a> © 2015-2019 <a href="/"><abbr title="World Wide Web Consortium">W3C</abbr></a><sup>®</sup> (<a href="http://www.csail.mit.edu/"><abbr title="Massachusetts Institute of Technology">MIT</abbr></a>, <a href="http://www.ercim.eu/"><abbr title="European Research Consortium for Informatics and Mathematics">ERCIM</abbr></a>, <a href="http://www.keio.ac.jp/">Keio</a>, <a href="http://ev.buaa.edu.cn/">Beihang</a>), All Rights Reserved. W3C <a href="/Consortium/Legal/ipr-notice#Legal_Disclaimer">liability</a>, <a href="/Consortium/Legal/ipr-notice#W3C_Trademarks">trademark</a>, <a rel="Copyright" href="/Consortium/Legal/copyright-documents">document use</a> and <a rel="Copyright" href="/Consortium/Legal/copyright-software">software licensing</a> rules apply. Your interactions with this site are in accordance with our <a href="/Consortium/Legal/privacy-statement#Public">public</a> and <a href="/Consortium/Legal/privacy-statement#Members">Member</a> privacy statements.</small>
+</footer>
+<script type="text/javascript">if (document.getElementById('toclocation')) { createtoc(); }</script>
+</body>
+</html>
