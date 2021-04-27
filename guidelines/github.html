@@ -1,98 +1,72 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="utf-8">
-<title>Github guidelines for i18n docs</title>
-<link rel="stylesheet" type="text/css" href="../../i18n-drafts/style/article-2016.css" />
-<style type="text/css">
-h2 {
-	font-family: Arial, helvetica, sans-serif;
-	font-size: 140%;
-	font-weight: normal;
-	color: white;
-	border: none;
-	margin-top: 3.5em;
-	margin-bottom: 1.5em;
-	padding: 0.1em 0.4em;
-	background-color: #697fb1;
-	border-radius: 10px;
-	}
-h2 a:link, h2 a:active, h2 a:visited {
-	text-decoration: none;
-	color: white;
-	}
-h3 {
-	border-bottom: 1px solid #ccc;
-	}
-.highlight {
-	font-size: 130%;
-	color: #6A6A6A;
-	font-weight: bold;
-	}
-code em {
-	font-style: normal;
-	font-weight: bold;
-	}
-var {
-	font-style: italic;
-	}
-.issue {
-	font-size: 200%;
-	color: red;
-	}
-ol ol { margin-right: 20px; margin-left: 30px;  }
-.ghButton {
-	border: 1px solid #aaa;
-	border-radius: 5px;
-	padding: 0 0.4em;
-	white-space: nowrap;
-	}
-pre { margin-left: 7.5%; }
-</style>
-<script type="text/javascript" src="../../i18n-drafts/javascript/articletoc-html5.js"></script>
+<meta charset="utf-8" />
+<title>GitHub guidelines for working with i18n documents</title>
+<meta name="description" content="Helps members of the W3C Internationalization Activity work with GitHub." />
+<script>
+var f = { }
+
+// AUTHORS should fill in these assignments:
+f.directory = 'guidelines'+'/'; // the path to this file, not including /International or the file name
+f.filename = 'github'; // the file name WITHOUT extensions
+f.authors = 'Richard Ishida, W3C'; // author(s) and affiliations
+f.previousauthors = ''; // as above
+f.modifiers = ''; // people making substantive changes, and their affiliation
+f.searchString = 'level2-github'; // blog search string - usually the filename without extensions
+f.firstPubDate = '2015-12-16'; // date of the first publication of the document (after review)
+f.lastSubstUpdate = { date:'2016-10-11', time:'07:50'}  // date and time of latest substantive changes to this document
+f.status = 'notreviewed';  // should be one of draft, review, published, notreviewed or obsolete
+f.path = '../' // what you need to prepend to a URL to get to the /International directory 
+
+// AUTHORS AND TRANSLATORS should fill in these assignments:
+f.thisVersion = { date:'2021-04-27', time:'12:18'} // date and time of latest edits to this document/translation
+f.contributors = ''; // people providing useful contributions or feedback during review or at other times
+// also make sure that the lang attribute on the html tag is correct!
+
+// TRANSLATORS should fill in these assignments:
+f.translators = 'xxxNAME, ORG'; // translator(s) and their affiliation - a elements allowed, but use double quotes for attributes
+
+f.breadcrumb = '';
+
+f.additionalLinks = ''
+</script>
+<script src="github-data/translations.js"> </script>
+<script src="../../i18n-drafts/javascript/doc-structure/article-dt.js"> </script>
+<script src="../../i18n-drafts/javascript/boilerplate-text/boilerplate-en.js"></script><!--TRANSLATORS must change -en to the subtag for their language!-->
+<script src="../../i18n-drafts/javascript/doc-structure/sitepage.js"> </script>
+<script src="../../i18n-drafts/javascript/articletoc-html5.js"></script>
+
+<link rel="stylesheet" href="../../i18n-drafts/style/sitepage-2016.css" />
+<link rel="copyright" href="#copyright"/>
 </head>
 
 <body>
-<header> <aside id="mainNavigation">
-	<nav id="site-navigation">
-		<a href="https://www.w3.org/International/"><img id="picture" alt="World map" title="World map" src="../../i18n-drafts/icons/world.gif" width="150" height="61"/></a>  </nav>
-	
-	<nav class="noprint" id="search"><form method="get" action="https://www.w3.org/International/site-search.php" enctype="application/x-www-form-urlencoded" style="margin: 0;">
-<div id="searchSite"><input name="q" type="text" value="I18n site search: " onfocus="this.value=''" id="searchField" accesskey="E" maxlength="255"/></div>
-</form></nav>
-	<nav id="breadcrumbs"><p><a href="https://www.w3.org/International/">Home </a> &gt; <a href="https://www.w3.org/International/resources">Resources</a> &gt; <a href="https://www.w3.org/International/articlelist#characters">Articles</a></p></nav>
-	<nav class="noprint" id="toc">
-		<h2 id="internal-links" class="notoc"><a href="#internal-links">On this page</a></h2>
-		<div id="toclocation"> </div>
-  </nav>
-	<nav class="noprint" id="relatedlinks">
-		
-  </nav>
-</aside>
-<nav id="boilerplate"><div id="siteicons"><a href="https://www.w3.org/" title="Go to W3C Home Page"><img src="../../i18n-drafts/icons/w3c_home.gif" alt="s_gotoW3cHome"/></a><a href="https://www.w3.org/International/" title="Go to Internationalization Activity Home Page" id="i18n-name">
-	Internationalization</a></div>
-<div id="sitelinks" class="noprint"><a href="https://www.w3.org/International/" title="Internationalization Activity home page.">Home</a>&#xA0; 
-<a href="https://www.w3.org/International/resources" title="Information resources on the Internationalization site.">Resources</a>&#xA0;
-<a href="https://www.w3.org/International/technique-index" title="Task-based index of i18n techniques.">Techniques</a>&#xA0;
-<a href="https://www.w3.org/International/resource-index" title="Topic index for information on this site.">Topics</a>&#xA0; 
-<a href="https://www.w3.org/International/log/description" title="Information about news filters and RSS feeds for W3C Internationalization.">News</a>&#xA0;
-<a href="https://www.w3.org/International/about#scope" title="Groups that make up the Internationalization Activity.">Groups</a>&#xA0; 
-<a href="https://www.w3.org/International/about" title="About the Internationalization Activity.">About</a>&#xA0; 
-&#xA0; </div><div id="line">&#xA0;</div></nav>
-<h1>Github guidelines for working with i18n documents</h1>
-</header>
+<header>
+  	<nav id="mainNavigation"></nav><script>document.getElementById('mainNavigation').innerHTML = mainNavigation</script>
+	</header>
+<h1>GitHub guidelines for working with i18n documents</h1>
+
+
+<section id="sidebarExtras">
+</section>
+
+
+<div id="mainLayout">
 <section>
-  <p>The W3C Internationalization Activity has task forces which use github for document development. This page provides guidelines to help people contribute content if they are unfamiliar with github. Some of this information is a shameless copy of text  from <a href="http://web-platform-tests.org/writing-tests/github-intro.html">the Test the Web Forward documentation</a>.</p>
-<p>For the examples we will use the github username <span class="highlightedterm">myUserName</span> and we'll use a  repository (repo) name, <span class="highlightedterm">repoName</span>. You should substitute your own username wherever you see <span class="qterm">myUserName</span>, and the name of the repo you want to work with for <span class="qterm">repoName</span>.</p>
-<p>If you have comments or suggestions about how to improve this page, feel free to <a href="https://github.com/w3c/i18n-activity/issues">raise a Github issue</a>.</p>
+<p>The W3C Internationalization Activity has task forces which use GitHub for document development. This page provides guidelines to help people contribute content if they are unfamiliar with GitHub. Some of this information is a shameless copy of text  from <a href="http://web-platform-tests.org/writing-tests/github-intro.html">the Test the Web Forward documentation</a>.</p>
+<p>For the examples we will use the GitHub username <span class="highlightedterm">myUserName</span> and we'll use a  repository (repo) name, <span class="highlightedterm">repoName</span>. You should substitute your own username wherever you see <span class="qterm">myUserName</span>, and the name of the repo you want to work with for <span class="qterm">repoName</span>.</p>
+<p>If you have comments or suggestions about how to improve this page, feel free to <a href="https://github.com/w3c/i18n-activity/issues">raise a GitHub issue</a>.</p>
 <p>See also the <a href="editing">editorial guidelines</a>.</p>
 </section>
 
 
 
+
+
 <section id="setup">
-  <h2><a href="#setup">Setting up github</a></h2>
-  <p>If you haven't used Github before, follow the instructions in this section. Otherwise, skip to the next section.</p>
+  <h2><a href="#setup">Setting up GitHub</a></h2>
+  <p>If you haven't used GitHub before, follow the instructions in this section. Otherwise, skip to the next section.</p>
   <ol>
     <li>
       <p>Create a GitHub account if you do not already have one, on <a href="https://github.com/">github.com</a></p>
@@ -137,14 +111,14 @@ pre { margin-left: 7.5%; }
 <section id="basics">
   <h2><a href="#basics">Basic overview of how the process works</a></h2>
   <p>The  repository that you contribute to will depend on the document that your task force is working on. For example, <a href="https://github.com/w3c/alreq">https://github.com/w3c/alreq</a>. The following diagram illustrates the basics.</p>
-  <p><img src="images/github-entities.png" style="width: 100%;" alt="Diagram showing parts of the github setup."/></p>
+  <p><img src="images/github-entities.png" style="width: 100%;" alt="Diagram showing parts of the GitHub setup."/></p>
   <p>We'll spend a moment in this section familiarising you with the basic setup. The following sections will indicate the detailed steps you need to take.</p>
-  <p>In a typical scenario, you will be working with an <span class="highlightedterm">upstream</span> repository (repo) that has a URL beginning with <span class="url" translate="no">https://github.com/<strong>w3c</strong>/</span>. This is the <span class="highlightedterm">W3C repo</span> – it is managed by the people who have editor access for your project, unless you are one of those people you don't have access to this, you can only propose changes to it. You will make a <span class="highlightedterm">fork</span> of that repo on github, which has a URL beginning with <span class="url" translate="no">https://github.com/<strong>myUserName</strong></span>. A fork is basically just a copy of the W3C repository in which you can change things at will. It sits on the github server and from time to time will be referred to in this document as the <span class="highlightedterm">origin</span>.</p>
-  <p>Then you will typically <span class="highlightedterm">clone</span> your fork to a directory on your local computer, to make it easier to edit content with authoring tools and the like, however it is also possible just edit on the github site. </p>
-  <p>If you have cloned your fork to your desktop, you should update it regularly so that it matches the W3C repo. You do this by <span class="highlightedterm">fetching</span> the changes from the W3C repo to your local copy and <span class="highlightedterm">merging</span> them with what's on your hard disk. You'll then need to <span class="highlightedterm">push</span> those changes on to your fork on github, so that that is in synch too.</p>
-  <p>As you edit content files on your computer, you'll need to get them into your fork on github. To do this you need to select the files and <span class="highlightedterm">add</span> them (which basically just identifies them as ready for the next stage). Then you <span class="highlightedterm">commit</span> them, and finally you <span class="highlightedterm">push</span> them (upload them) to your fork.</p>
+  <p>In a typical scenario, you will be working with an <span class="highlightedterm">upstream</span> repository (repo) that has a URL beginning with <span class="url" translate="no">https://github.com/<strong>w3c</strong>/</span>. This is the <span class="highlightedterm">W3C repo</span> – it is managed by the people who have editor access for your project, unless you are one of those people you don't have access to this, you can only propose changes to it. You will make a <span class="highlightedterm">fork</span> of that repo on GitHub, which has a URL beginning with <span class="url" translate="no">https://github.com/<strong>myUserName</strong></span>. A fork is basically just a copy of the W3C repository in which you can change things at will. It sits on the GitHub server and from time to time will be referred to in this document as the <span class="highlightedterm">origin</span>.</p>
+  <p>Then you will typically <span class="highlightedterm">clone</span> your fork to a directory on your local computer, to make it easier to edit content with authoring tools and the like, however it is also possible just edit on the GitHub site. </p>
+  <p>If you have cloned your fork to your desktop, you should update it regularly so that it matches the W3C repo. You do this by <span class="highlightedterm">fetching</span> the changes from the W3C repo to your local copy and <span class="highlightedterm">merging</span> them with what's on your hard disk. You'll then need to <span class="highlightedterm">push</span> those changes on to your fork on GitHub, so that that is in synch too.</p>
+  <p>As you edit content files on your computer, you'll need to get them into your fork on GitHub. To do this you need to select the files and <span class="highlightedterm">add</span> them (which basically just identifies them as ready for the next stage). Then you <span class="highlightedterm">commit</span> them, and finally you <span class="highlightedterm">push</span> them (upload them) to your fork.</p>
   <p>Usually, prior to doing the add, commit, push routine, you would create a <span class="highlightedterm">branch</span>. This is rather like a walled garden within which you'll be making and managing changes. You can have any number of branches.</p>
-  <p>Once you have made changes and you want to send those for incorporation into the W3C repo, and once you have pushed those changes to your fork on the github site, you raise a <span class="highlightedterm">pull request</span> for the branch you were working in. The pull request informs the guardians of the W3C repo that you want to contribute some changes. Those guardians may simply merge your changes into the W3C repo, but typically they will look at your suggestions and allow some time for others to review them. You may need to change some things in the light of feedback before your content is merged with the W3C repo. Sometimes, the editors may take your code and add parts of it or add something along similar lines, rather than just merging the documents.</p>
+  <p>Once you have made changes and you want to send those for incorporation into the W3C repo, and once you have pushed those changes to your fork on the GitHub site, you raise a <span class="highlightedterm">pull request</span> for the branch you were working in. The pull request informs the guardians of the W3C repo that you want to contribute some changes. Those guardians may simply merge your changes into the W3C repo, but typically they will look at your suggestions and allow some time for others to review them. You may need to change some things in the light of feedback before your content is merged with the W3C repo. Sometimes, the editors may take your code and add parts of it or add something along similar lines, rather than just merging the documents.</p>
 </section>
 <section id="forking">
   <h2><a href="#forking">How to make your fork</a></h2>
@@ -174,7 +148,7 @@ pre { margin-left: 7.5%; }
   
   <pre>$ git clone https://github.com/<var>myUserName</var>/<var>repoName</var>.git</pre>
   
-  <p>where <span class="qterm">myUserName</span> is your github username, and <span class="qterm">repoName</span> is the name of the repository. This will download the forked repository into the subdirectory we just mentioned.</p>
+  <p>where <span class="qterm">myUserName</span> is your GitHub username, and <span class="qterm">repoName</span> is the name of the repository. This will download the forked repository into the subdirectory we just mentioned.</p>
   <p>You should now have a full copy of the forked repository on your local
     machine. Feel free to browse the directories on your hard drive. You can also
     browse them on <a href="https://github.com/w3c">github.com</a> and see the full history of contributions
@@ -259,7 +233,7 @@ upstream    https://github.com/w3c/<em>repoName</em>.git (push)</pre>
       
     </li>
     <li>
-      <p>Finally you will want to make sure that these changes get into your forked repo on github too. To do this, push the changes to your fork:</p>
+      <p>Finally you will want to make sure that these changes get into your forked repo on GitHub too. To do this, push the changes to your fork:</p>
       
         <pre>$ git push</pre>
       
@@ -365,7 +339,7 @@ upstream    https://github.com/w3c/<em>repoName</em>.git (push)</pre>
     
       <pre>$ git push origin <em>myBranchName</em></pre>
     
-    <p> Here, <code>origin</code> refers to your fork of the repo on the github server. You just use the word origin, git should know where that is. <code class="kw" translate="no">myBranchName</code> should be the name of your branch that
+    <p> Here, <code>origin</code> refers to your fork of the repo on the GitHub server. You just use the word origin, git should know where that is. <code class="kw" translate="no">myBranchName</code> should be the name of your branch that
       created earlier.</p>
   </li>
   <li>
@@ -376,7 +350,7 @@ upstream    https://github.com/w3c/<em>repoName</em>.git (push)</pre>
   </li>
   <li>
     <p>Now create a <span class="highlightedterm">pull request</span>.  There are several ways to create a PR in the
-      GitHub UI.  Below is one method and others can be found on <a href="https://help.github.com/articles/creating-a-pull-request">GitHub.com</a></p>
+      GitHub UI.  Below is one method and others can be found on <a href="https://help.github.com/articles/creating-a-pull-request">github.com</a></p>
     <p>a. Click on the <img src="images/new-pull-request.png" alt="new pull request"> button. You should see something like this:</p>
     <p><img src="images/pr-panel-large.png" style="width: 150%; max-width: 809px;" alt=""/></p>
     <p>b.  Pay careful attention to the line of buttons at the top of the picture above. Here's an example:</p>
@@ -452,7 +426,7 @@ upstream    https://github.com/w3c/<em>repoName</em>.git (push)</pre>
 
 
 <section id="hints">
-<h2><a href="#hints">Github hints &amp; tips</a></h2>
+<h2><a href="#hints">GitHub hints &amp; tips</a></h2>
   
   <section id="liveview">
   <h3><a href="#liveview">See an HTML version of a page from a commit diff page</a></h3>
@@ -479,7 +453,7 @@ upstream    https://github.com/w3c/<em>repoName</em>.git (push)</pre>
 
 <section id="echidna">
 <h2><a href="#echidna">Publishing with Echidna</a></h2>
-<p>Follow these steps to quickly and easily publish your document to /TR space. It is good to keep differences between the editor's draft on github and version on /TR as small as possible. Echidna makes it possible to self-publish at any time, without having to wait for the webmaster's help.</p>
+<p>Follow these steps to quickly and easily publish your document to /TR space. It is good to keep differences between the editor's draft on GitHub and version on /TR as small as possible. Echidna makes it possible to self-publish at any time, without having to wait for the webmaster's help.</p>
 <p>Note that you can't publish First Public Working Drafts using Echidna. That has to go through the normal process.</p>
   
   <section id="echidna_setup">
@@ -492,7 +466,7 @@ upstream    https://github.com/w3c/<em>repoName</em>.git (push)</pre>
       <li>
         <p>Set the <code class="kw" translate="no">w3cid</code> variable inside the document for the editors who will be doing the actual publication.</p>
       </li>
-      <li>Add a config file for the document on github.</li>
+      <li>Add a config file for the document on GitHub.</li>
   </ol>
   </section>
   
@@ -500,7 +474,7 @@ upstream    https://github.com/w3c/<em>repoName</em>.git (push)</pre>
   <h3><a href="#echidna_publication">Actually publishing</a></h3>
   <p>Follow these steps:</p>
   <ol>
-      <li> Check that the github.io Editor's Draft (ED) is valid HTML using the <a href="https://validator.w3.org/">HTML5 validator</a>.      </li>
+      <li> Check that the GitHub.io Editor's Draft (ED) is valid HTML using the <a href="https://validator.w3.org/">HTML5 validator</a>.      </li>
       <li>Check that all links work using the W3C <a href="https://validator.w3.org/checklink">Link Checker</a>.</li>
       <li> Run a spell checker over the document.      </li>
       <li>Update the config file for the document so that it lists all images and other dependant files. The config file will be at the top level of the GitHub repo, and usually has the name of the document, without an extension.</li>
@@ -514,16 +488,12 @@ Fix anything that's needed, and rerun the checker until it's ok. You will probab
   </ol>
   </section>
 </section>
-<footer>
-	<address> 
-		<p>By: Richard Ishida, W3C.</p>
-  </address>
-	
-	<small id="version">Content first published <time datetime="2015-12-16T07:50Z">2015-12-16 07:50</time>. Last substantive update <time datetime="2016-10-11T14:02Z">2016-10-11 14:02 GMT</time>. This version <time datetime="2016-10-11T14:02Z">2016-10-11 14:02 GMT</time></small>
-	<small>For the history of document changes, see the
-<span class="searchkey"><a href="https://github.com/w3c/i18n-activity/commits/gh-pages/guidelines/github.html">github commit log</a></span>.</small>
-	<small class="copyright" lang="en"><a rel="Copyright" href="/Consortium/Legal/ipr-notice#Copyright" id="copyright">Copyright</a> © 2008-2015 <a href="/"><abbr title="World Wide Web Consortium">W3C</abbr></a><sup>®</sup> (<a href="http://www.csail.mit.edu/"><abbr title="Massachusetts Institute of Technology">MIT</abbr></a>, <a href="http://www.ercim.eu/"><abbr title="European Research Consortium for Informatics and Mathematics">ERCIM</abbr></a>, <a href="http://www.keio.ac.jp/">Keio</a>, <a href="http://ev.buaa.edu.cn/">Beihang</a>), All Rights Reserved. W3C <a href="/Consortium/Legal/ipr-notice#Legal_Disclaimer">liability</a>, <a href="/Consortium/Legal/ipr-notice#W3C_Trademarks">trademark</a>, <a rel="Copyright" href="/Consortium/Legal/copyright-documents">document use</a> and <a rel="Copyright" href="/Consortium/Legal/copyright-software">software licensing</a> rules apply. Your interactions with this site are in accordance with our <a href="/Consortium/Legal/privacy-statement#Public">public</a> and <a href="/Consortium/Legal/privacy-statement#Members">Member</a> privacy statements.</small>
-</footer>
-<script type="text/javascript">if (document.getElementById('toclocation')) { createtoc(); }</script>
+
+</div>
+
+<br style="clear: both;" />
+
+<footer id="thefooter"></footer><script>document.getElementById('thefooter').innerHTML = g.bottomOfPage</script>
+<script>completePage()</script>
 </body>
 </html>
