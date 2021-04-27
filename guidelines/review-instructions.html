@@ -1,84 +1,72 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="utf-8">
+<meta charset="utf-8" />
 <title>How to review specs and raise issues</title>
-<link rel="stylesheet" type="text/css" href="../../i18n-drafts/style/article-2016.css" />
-<style type="text/css">
-h2 {
-	font-family: Arial, helvetica, sans-serif;
-	font-size: 140%;
-	font-weight: normal;
-	color: white;
-	border: none;
-	margin-top: 3.5em;
-	margin-bottom: 1.5em;
-	padding: 0.1em 0.4em;
-	background-color: #697fb1;
-	border-radius: 10px;
-	}
-h2 a:link, h2 a:active, h2 a:visited {
-	text-decoration: none;
-	color: white;
-	}
-h3 {
-	border-bottom: 1px solid #ccc;
-	}
-.highlight {
-	font-size: 130%;
-	color: #6A6A6A;
-	font-weight: bold;
-	}
-code em {
-	font-style: normal;
-	font-weight: bold;
-	}
-var {
-	font-style: italic;
-	}
-.issue {
-	font-size: 200%;
-	color: red;
-	}
-ol ol { margin-right: 20px; margin-left: 30px;  }
-.ghButton {
-	border: 1px solid #aaa;
-	border-radius: 5px;
-	padding: 0 0.4em;
-	white-space: nowrap;
-	}
-.highlight1 {color: brown; font-weight:bold; font-style:italic; }
-.main-instructions {font-size:120%; }
+<meta name="description" content="Helps members of the W3C Internationalization Activity work with GitHub." />
+<script>
+var f = { }
+
+// AUTHORS should fill in these assignments:
+f.directory = 'guidelines'+'/'; // the path to this file, not including /International or the file name
+f.filename = 'github'; // the file name WITHOUT extensions
+f.authors = 'Richard Ishida, W3C'; // author(s) and affiliations
+f.previousauthors = ''; // as above
+f.modifiers = ''; // people making substantive changes, and their affiliation
+f.searchString = 'level2-github'; // blog search string - usually the filename without extensions
+f.firstPubDate = '2015-12-16'; // date of the first publication of the document (after review)
+f.lastSubstUpdate = { date:'2016-10-11', time:'07:50'}  // date and time of latest substantive changes to this document
+f.status = 'notreviewed';  // should be one of draft, review, published, notreviewed or obsolete
+f.path = '../' // what you need to prepend to a URL to get to the /International directory 
+
+// AUTHORS AND TRANSLATORS should fill in these assignments:
+f.thisVersion = { date:'2021-04-27', time:'12:18'} // date and time of latest edits to this document/translation
+f.contributors = ''; // people providing useful contributions or feedback during review or at other times
+// also make sure that the lang attribute on the html tag is correct!
+
+// TRANSLATORS should fill in these assignments:
+f.translators = 'xxxNAME, ORG'; // translator(s) and their affiliation - a elements allowed, but use double quotes for attributes
+
+f.breadcrumb = '';
+
+f.additionalLinks = ''
+</script>
+<script src="file-data/translations.js"> </script>
+<script src="../../i18n-drafts/javascript/doc-structure/article-dt.js"> </script>
+<script src="../../i18n-drafts/javascript/boilerplate-text/boilerplate-en.js"></script><!--TRANSLATORS must change -en to the subtag for their language!-->
+<script src="../../i18n-drafts/javascript/doc-structure/sitepage.js"> </script>
+<script src="../../i18n-drafts/javascript/articletoc-html5.js"></script>
+
+<link rel="stylesheet" href="../../i18n-drafts/style/sitepage-2016.css" />
+<link rel="copyright" href="#copyright"/>
+
+<style>
+.highlight1 {
+    color: brown;
+    font-weight: bold;
+    font-style: italic;
+    }
 </style>
-<script type="text/javascript" src="../../i18n-drafts/javascript/articletoc-html5.js"></script>
 </head>
 
 <body>
-<header> <aside id="mainNavigation">
-	<nav id="site-navigation">
-		<a href="https://www.w3.org/International/"><img id="picture" alt="World map" title="World map" src="https://www.w3.org/International/icons/world.gif" width="150" height="61"/></a>  </nav>
-	
-	<nav class="noprint" id="search"><form method="get" action="https://www.w3.org/International/site-search.php" enctype="application/x-www-form-urlencoded" style="margin: 0;">
-<div id="searchSite"><input name="q" type="text" value="I18n site search: " onfocus="this.value=''" id="searchField" accesskey="E" maxlength="255"/></div>
-</form></nav>
-	<nav id="breadcrumbs"><p><a href="https://www.w3.org/International/">Home </a> &gt; <a href="https://www.w3.org/International/resources">Resources</a> &gt; <a href="https://www.w3.org/International/articlelist#characters">Articles</a></p></nav>
-	<nav class="noprint" id="toc">
-		<h2 id="internal-links" class="notoc"><a href="#internal-links">On this page</a></h2>
-		<div id="toclocation"> </div>
-  </nav>
-	<nav class="noprint" id="relatedlinks">
-		
-  </nav>
-</aside>
-<nav id="boilerplate"><div id="siteicons"><a href="https://www.w3.org/" title="Go to W3C Home Page"><img src="https://www.w3.org/International/icons/w3c_home.gif" alt="s_gotoW3cHome"/></a><a href="https://www.w3.org/International/" title="Go to Internationalization Activity Home Page" id="i18n-name">
-	Internationalization</a></div>
-<div id="sitelinks" class="noprint">	<bdi><a href="/International/technique-index" title="Learn techniques and requirements for internationalization.">Learn</a></bdi>&nbsp;	<bdi><a href="/International/resources" title="Find information on this site.">Find</a></bdi>&nbsp;	<bdi><a href="/International/about" title="Get help from W3C Internationalization.">Contact</a></bdi>&nbsp;	<bdi><a href="/International/participate" title="Participate in W3C Internationalization work.">Join</a></bdi>&nbsp;	<bdi><a href="/International/log/description" title="Follow the work at W3C Internationalization.">Follow</a></bdi>&nbsp;	&nbsp; </div><div id="line">&#xA0;</div></nav>
+<header>
+  	<nav id="mainNavigation"></nav><script>document.getElementById('mainNavigation').innerHTML = mainNavigation</script>
+	</header>
 <h1>How to review specs and raise issues</h1>
-</header>
+
+
+<section id="sidebarExtras">
+</section>
+
+
+<div id="mainLayout">
 <section>
 <p>The i18n WG uses GitHub issues to track review comments raised against the specs of other WGs. This page outlines how to raise issues against a spec, and create other issues in the i18n-activity repository to track those issues. It is verbose to help beginners. Practised hands can just follow the highlighted text for reminders.</p>
 <p>The i18n WG also tracks discussions of interest, or discussions brought to their attention by other WGs. This tracking is enabled by applying the <span class="highlight1"><span style="background-color: #f9c9ff; padding:2px 4px; border-radius:5px; color:black;font-style:normal;font-weight: bold; white-space: nowrap;">i18n-tracker</span></span> label to an issue in the other WG repo, and creating a tracker issue in the i18n-activity repo. Instructions for handling that are found on another page, under the heading <a href="https://www.w3.org/International/wiki/Review_procedures">Keeping tracker issues up to date</a>.</p>
 </section>
+
+
 
 
 
@@ -187,21 +175,12 @@ We feel that you should use xml:lang for this. </p>
 </ol>
 <p>Going forward, as long as you are subscribed to the www-international@w3.org mailing list, you will receive a daily digest containing links to all issues  that have changed over the past 24 hours. You should track the progress of any issues you raised.</p>
 </section>
-<footer>
-	<address> 
-		<p>By: Richard Ishida, W3C.</p>
-</address>
-	
-	<small id="version">Content first published <time datetime="2015-12-16T07:50Z">2015-09-23</time>
-. Last substantive update 2019-11-06 14:00
-<time datetime="2016-10-11T14:02Z"> GMT</time>
-. This version 2019-11-06 14:00
-<time datetime="2016-10-11T14:02Z"> GMT</time>
-</small>
-	<small>For the history of document changes, see the
-<span class="searchkey"><a href="https://github.com/w3c/i18n-activity/commits/gh-pages/guidelines/github.html">github commit log</a></span>.</small>
-	<small class="copyright" lang="en"><a rel="Copyright" href="/Consortium/Legal/ipr-notice#Copyright" id="copyright">Copyright</a> © 2015-2019 <a href="/"><abbr title="World Wide Web Consortium">W3C</abbr></a><sup>®</sup> (<a href="http://www.csail.mit.edu/"><abbr title="Massachusetts Institute of Technology">MIT</abbr></a>, <a href="http://www.ercim.eu/"><abbr title="European Research Consortium for Informatics and Mathematics">ERCIM</abbr></a>, <a href="http://www.keio.ac.jp/">Keio</a>, <a href="http://ev.buaa.edu.cn/">Beihang</a>), All Rights Reserved. W3C <a href="/Consortium/Legal/ipr-notice#Legal_Disclaimer">liability</a>, <a href="/Consortium/Legal/ipr-notice#W3C_Trademarks">trademark</a>, <a rel="Copyright" href="/Consortium/Legal/copyright-documents">document use</a> and <a rel="Copyright" href="/Consortium/Legal/copyright-software">software licensing</a> rules apply. Your interactions with this site are in accordance with our <a href="/Consortium/Legal/privacy-statement#Public">public</a> and <a href="/Consortium/Legal/privacy-statement#Members">Member</a> privacy statements.</small>
-</footer>
-<script type="text/javascript">if (document.getElementById('toclocation')) { createtoc(); }</script>
+
+</div>
+
+<br style="clear: both;" />
+
+<footer id="thefooter"></footer><script>document.getElementById('thefooter').innerHTML = g.bottomOfPage</script>
+<script>completePage()</script>
 </body>
 </html>
