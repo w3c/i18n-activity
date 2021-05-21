@@ -106,6 +106,9 @@ function buildSection (theData, sectionId, doc, repo) {
 
 			// make GH images into img element
 			function convertToImg(str, p1, p2, s) {
+                path = p2.split('/')
+                p2 = 'images/'+path[path.length-1]
+                console.log('p2',p2)
 				return '<img src="'+p2+'" alt="'+p1+'"/>'
 				}
 			var test = /!\[([^\]]+)\]\(([^\)]+)\)/g
@@ -135,6 +138,15 @@ function buildSection (theData, sectionId, doc, repo) {
 				}
 			test = /\*\*([^\*]+)\*\*/g
 			body = body.replace(test, convertbold)
+
+			// create convert italic segments links
+			//function convertitalic(str, p1, s) {
+			//	p1 = p1.replace(/_/g,'')
+			//	p1 = p1.replace(/_/g,'')
+			//	return '<em>'+p1+'</em>'
+			//	}
+			//test = /_([^\_]+)_/g
+			//body = body.replace(test, convertitalic)
 
 			// convert unordered lists to markup
 			function convertlists(str, initial, startMarkup, endMarkup) {
