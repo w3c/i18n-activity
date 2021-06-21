@@ -4,7 +4,7 @@
 <meta charset="utf-8" />
 <title>Language enablement issue tracker</title>
 <meta name="description" content="Lists open type layout issues in i18n Activity github repositories." />
-<script type="text/javascript">
+<script>
 var f = { }
 
 // AUTHORS should fill in these assignments:
@@ -31,16 +31,15 @@ f.breadcrumb = 'characters';
 
 f.additionalLinks = ''
 </script>
-<script type="text/javascript" src="index-data/translations.js"> </script>
-<script type="text/javascript" src="https://w3c.github.io/i18n-drafts/javascript/doc-structure/article-dt.js"> </script>
-<script type="text/javascript" src="https://w3c.github.io/i18n-drafts/javascript/boilerplate-text/boilerplate-en.js"></script><!--TRANSLATORS must change -en to the subtag for their language!-->
-<script type="text/javascript" src="https://w3c.github.io/i18n-drafts/javascript/doc-structure/sitepage.js"> </script>
-<script type="text/javascript" src="https://w3c.github.io/i18n-drafts/javascript/articletoc-html5.js"></script>
-<script type="text/javascript" src="index-data/label-list.js"></script>
+<script src="index-data/translations.js"> </script>
+<script src="https://w3c.github.io/i18n-drafts/javascript/doc-structure/article-dt.js"> </script>
+<script src="https://w3c.github.io/i18n-drafts/javascript/boilerplate-text/boilerplate-en.js"></script><!--TRANSLATORS must change -en to the subtag for their language!-->
+<script src="https://w3c.github.io/i18n-drafts/javascript/doc-structure/sitepage.js"> </script>
+<script src="https://w3c.github.io/i18n-drafts/javascript/articletoc-html5.js"></script>
+<script src="index-data/label-list.js"></script>
 <link rel="stylesheet" href="https://w3c.github.io/i18n-drafts/style/sitepage-2016.css" type="text/css" />
 <link rel="stylesheet" href="index-data/local.css" type="text/css" />
 <link rel="copyright" href="#copyright"/>
-<!--[if lt IE 9]><script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
 <script>
 // Note that the code is designed to pull a maximum of 200 issues - for more, change maxpages
 // It will only display issues with labels that correspond to those defined in the labels variable
@@ -112,15 +111,18 @@ var maxpages = 5
 <script>
 			var totals=0
 			var counter=maxpages
+            var labelList = []
 			
 			function getAllData () {
 				for (var p=1;p<maxpages+1;p++) fetchIssues(p)
 				var timer = setInterval(function() {
 					if (counter === 0) {
 						clearInterval(timer)
-						if (debug) console.log('finished','Issue length:',issues.length, sections)
+                        if (debug) console.log('In getAllData')
+						if (debug) console.log('Finished.','Issue length:',issues.length,'Sections:',sections)
 						
 						// group issues by label, adding to the labels array
+                        if (debug) console.log('Following is a list of i: labels found:')
 						for (var i=0; i<issues.length; i++) {
 							if (issues[i].labels) {
 								for (var l=0;l<issues[i].labels.length;l++) { // for each label in that issue
@@ -130,16 +132,18 @@ var maxpages = 5
 										else {
 											sections[sLabelFound] = []
 											sections[sLabelFound].push(issues[i])
+                                            labelList.push(sLabelFound)
 											}
-								if (debug) console.log(sLabelFound)
-								}
+                                        if (debug) console.log(sLabelFound)
+                                        }
 
 //								for (var l=0;l<issues[i].labels.length;l++) {
 //									if (labels[issues[i].labels[l].name]) labels[issues[i].labels[l].name].push(issues[i])
 									}
 								}
 							}
-						
+						if (debug) console.log('Sections:',sections)
+                        if (debug) console.log('List of labels',labelList)
 						checkDates()
 						}
 					else if (debug) console.log(counter)
@@ -156,8 +160,9 @@ var maxpages = 5
 						for (var i=0;i<temp.length;i++) {
 							issues.push(temp[i])
 							}
-					totals += issues.length;
-					if (debug) console.log(issues.length,totals,page, counter)
+					totals += issues.length
+                    if (debug) console.log('In fetchIssues:')
+					if (debug) console.log('Issues',issues.length,'Totals',totals,'Page',page,'Counter',counter)
 					counter--
 					}
 				request.send();
@@ -194,12 +199,12 @@ var maxpages = 5
 			function displayRepo(label) {
 				// Add a container to put the repository info and issues in
 				var table, tr, td, a, updated, toc, span
-				var labelSection = document.createElement('section');
+				var labelSection = document.createElement('section')
 				
 				// Add a heading
-				var labelLink = document.createElement('a');
-				labelLink.setAttribute('href', '#'+label);
-				labelLink.innerHTML = sectionNames[label];
+				var labelLink = document.createElement('a')
+				labelLink.setAttribute('href', '#'+label)
+				labelLink.innerHTML = sectionNames[label]
 				var labelHeader = document.createElement('h2')
 				labelHeader.id = label
 				labelHeader.appendChild(labelLink);
@@ -472,8 +477,8 @@ function showGet () {
 <script>window.onload = getAllData()</script>
 
 <footer id="thefooter"></footer>
-<script type="text/javascript">document.getElementById('thefooter').innerHTML = g.bottomOfPage</script> 
-<script type="text/javascript">completePage()</script>
+<script>document.getElementById('thefooter').innerHTML = g.bottomOfPage</script> 
+<script>completePage()</script>
 
 </div>
 </body>
