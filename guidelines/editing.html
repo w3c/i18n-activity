@@ -38,6 +38,15 @@ f.additionalLinks = ''
 <script src="../../i18n-drafts/javascript/articletoc-html5.js"></script>
 
 <link rel="stylesheet" href="../../i18n-drafts/style/sitepage-2016.css" />
+<style>
+table { border-collapse: collapse; }
+th, td { text-align: start; }
+table tr { border-bottom: 1px solid #ddd; }
+table td {
+  padding: .75em .25em .75em .25em;
+  vertical-align: top;
+}
+</style>
 <link rel="copyright" href="#copyright"/>
 </head>
 
@@ -181,116 +190,118 @@ f.additionalLinks = ''
     English version. Any translated version may change the presentation 
     (eg. a Japanese version may substitute underlining for bold).</p>
   <table>
-    <tbody>
+    <thead>
       <tr>
         <th>Type of in-line content</th>
         <th>Example</th>
         <th>Markup to use</th>
       </tr>
+    </thead>
+    <tbody>
       <tr>
-        <td valign="top">emphasis (general)</td>
-        <td valign="top">In keyboard input it is <em>not</em> always the case that...</td>
-        <td valign="top">em</td>
+        <td>emphasis (general)</td>
+        <td>In keyboard input it is <em>not</em> always the case that...</td>
+        <td>em</td>
       </tr>
       <tr>
-        <td valign="top">emphasis (stronger)</td>
-        <td valign="top">you must <strong>absolutely not</strong> do that!</td>
-        <td valign="top">strong</td>
+        <td>emphasis (stronger)</td>
+        <td>you must <strong>absolutely not</strong> do that!</td>
+        <td>strong</td>
       </tr>
       <tr>
-        <td valign="top">new term introduction</td>
-        <td valign="top">The set of characters is called a <dfn>repertoire</dfn>.</td>
-        <td valign="top">dfn id="def_&lt;termName&gt;" title="&lt;termName&gt;"</td>
+        <td>new term introduction</td>
+        <td>The set of characters is called a <dfn>repertoire</dfn>.</td>
+        <td>dfn id="def_&lt;termName&gt;" title="&lt;termName&gt;"</td>
       </tr>
       <tr>
-        <td valign="top">reference to a term definition</td>
-        <td valign="top">The <a class="termref" href="#def_repertoire">repertoire</a> of UTF-8 includes all characters you're likely to need.</td>
-        <td valign="top">a class="termref" href="#def_&lt;termName&gt;"</td>
+        <td>reference to a term definition</td>
+        <td>The <a class="termref" href="#def_repertoire">repertoire</a> of UTF-8 includes all characters you're likely to need.</td>
+        <td>a class="termref" href="#def_&lt;termName&gt;"</td>
       </tr>
       <tr>
-        <td valign="top">document title</td>
-        <td valign="top">see <cite>Requirements for String Identity Matching</cite>.</td>
-        <td valign="top">cite</td>
+        <td>document title</td>
+        <td>see <cite>Requirements for String Identity Matching</cite>.</td>
+        <td>cite</td>
       </tr>
       <tr>
-        <td valign="top">quoted term</td>
-        <td valign="top">The word <span class="qterm">character</span> is used in many contexts.</td>
-        <td valign="top">span class="qterm"</td>
+        <td>quoted term</td>
+        <td>The word <span class="qterm">character</span> is used in many contexts.</td>
+        <td>span class="qterm"</td>
       </tr>
       <tr>
-        <td valign="top">quoted term / phrase expressing dubious usage</td>
-        <td valign="top">ie. numeric <span class="quote">positions</span> within a string</td>
-        <td valign="top">span class="quote"</td>
+        <td>quoted term / phrase expressing dubious usage</td>
+        <td>ie. numeric <span class="quote">positions</span> within a string</td>
+        <td>span class="quote"</td>
       </tr>
       <tr>
-        <td valign="top">quoted text</td>
-        <td valign="top">such as <q>...as it may from time to time be revised or amended.</q></td>
-        <td valign="top">q</td>
+        <td>quoted text</td>
+        <td>such as <q>...as it may from time to time be revised or amended.</q></td>
+        <td>q</td>
       </tr>
       <tr>
-        <td valign="top">quoted character (refers to typically one, but occasionally more, specific characters).</td>
-        <td valign="top">The character <span class="qchar">ç</span> is common in French.</td>
-        <td valign="top">span class="qchar"</td>
+        <td>quoted character (refers to typically one, but occasionally more, specific characters).</td>
+        <td>The character <span class="qchar">ç</span> is common in French.</td>
+        <td>span class="qchar"</td>
       </tr>
       <tr>
-        <td valign="top">quoted sample output (cf. HTML SAMP)</td>
-        <td valign="top">The string <samp>artículo</samp> is subject to different representations</td>
-        <td valign="top">samp</td>
+        <td>quoted sample output (cf. HTML SAMP)</td>
+        <td>The string <samp>artículo</samp> is subject to different representations</td>
+        <td>samp</td>
       </tr>
       <tr>
-        <td valign="top">quoted code</td>
-        <td valign="top"><code>suc&amp;#xE7;on</code></td>
-        <td valign="top">code translate="no"</td>
+        <td>quoted code</td>
+        <td><code>suc&amp;#xE7;on</code></td>
+        <td>code translate="no"</td>
       </tr>
       <tr>
-        <td valign="top">quoted keyboard input (cf. HTML KBD)</td>
-        <td valign="top">a user typing <kbd>çé</kbd> on a traditional French-Canadian keyboard</td>
-        <td valign="top">kbd</td>
+        <td>quoted keyboard input (cf. HTML KBD)</td>
+        <td>a user typing <kbd>çé</kbd> on a traditional French-Canadian keyboard</td>
+        <td>kbd</td>
       </tr>
       <tr>
-        <td valign="top">element name</td>
-        <td valign="top">a user agent that looks for <code class="name">artículo</code> elements</td>
-        <td valign="top">span class="el" translate="no"</td>
+        <td>element name</td>
+        <td>a user agent that looks for <code class="name">artículo</code> elements</td>
+        <td>span class="el" translate="no"</td>
       </tr>
       <tr>
-        <td valign="top">attribute name or value</td>
-        <td valign="top">the <code class="kw" translate="no">section</code> element</td>
-        <td valign="top">code class="kw" translate="no"</td>
+        <td>attribute name or value</td>
+        <td>the <code class="kw" translate="no">section</code> element</td>
+        <td>code class="kw" translate="no"</td>
       </tr>
       <tr>
-        <td valign="top">function name</td>
-        <td valign="top">The <code class="kw" translate="no">doit</code> function returns interesting results.</td>
-        <td valign="top">code class="kw" translate="no"</td>
+        <td>function name</td>
+        <td>The <code class="kw" translate="no">doit</code> function returns interesting results.</td>
+        <td>code class="kw" translate="no"</td>
       </tr>
       <tr>
-        <td valign="top">key word in a markup or programming language</td>
-        <td valign="top">the IANA <code class="kw" translate="no">charset</code> value</td>
-        <td valign="top">code class="kw" translate="no"</td>
+        <td>key word in a markup or programming language</td>
+        <td>the IANA <code class="kw" translate="no">charset</code> value</td>
+        <td>code class="kw" translate="no"</td>
       </tr>
       <tr>
-        <td valign="top">variable name</td>
-        <td valign="top"></td>
-        <td valign="top">var</td>
+        <td>variable name</td>
+        <td></td>
+        <td>var</td>
       </tr>
       <tr>
-        <td valign="top">conformance related word based on rfc2119</td>
-        <td valign="top">All references to Unicode <span class="rfc2119">MUST</span> refer to...</td>
-        <td valign="top">span class="rfc2119"</td>
+        <td>conformance related word based on rfc2119</td>
+        <td>All references to Unicode <span class="rfc2119">MUST</span> refer to...</td>
+        <td>span class="rfc2119"</td>
       </tr>
       <tr>
-        <td valign="top">acronyms &amp; abbreviations</td>
-        <td valign="top">More and more <abbr title="Application Programming Interface">API</abbr>s are defined,</td>
-        <td valign="top"> abbr title="..."</td>
+        <td>acronyms &amp; abbreviations</td>
+        <td>More and more <abbr title="Application Programming Interface">API</abbr>s are defined,</td>
+        <td> abbr title="..."</td>
       </tr>
       <tr>
-        <td valign="top">Unicode name</td>
-        <td valign="top">Use <span class="uname">U+0338 COMBINING LONG SOLIDUS OVERLAY</span> for that.</td>
-        <td valign="top">span class="uname"</td>
+        <td>Unicode name</td>
+        <td>Use <span class="uname">U+0338 COMBINING LONG SOLIDUS OVERLAY</span> for that.</td>
+        <td>span class="uname"</td>
       </tr>
       <tr>
-        <td valign="top">an URL that doesn't have a link on it</td>
-        <td valign="top">https://github.com/w3c/repoName/</td>
-        <td valign="top">&lt;span class=&quot;url&quot;&gt;https://github.com/w3c/repoName/&lt;/span&gt;</td>
+        <td>an URL that doesn't have a link on it</td>
+        <td>https://github.com/w3c/repoName/</td>
+        <td>&lt;span class=&quot;url&quot;&gt;https://github.com/w3c/repoName/&lt;/span&gt;</td>
       </tr>
     </tbody>
   </table>
