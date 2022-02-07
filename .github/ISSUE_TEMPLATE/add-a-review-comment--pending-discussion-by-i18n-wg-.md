@@ -22,15 +22,15 @@ This follows the process at https://w3c.github.io/i18n-activity/guidelines/revie
 
 1. **CREATE A PROPOSED REVIEW COMMENT BY REPLACING THE PROMPTS ABOVE THIS PARAGRAPH, BUT LEAVE THIS PARAGRAPH INTACT AS WELL AS THE TEXT BELOW IT** Then ask the i18n WG to review your comment.
 
-2. Set a label to identify the spec. This starts with s: followed by the spec's short name. If you are unable to do that, ask a W3C staff contact to help.
+2. Set a label to identify the spec. This starts with **s: followed by the spec's short name**. If you are unable to do that, ask a W3C staff contact to help.
 
-3. After discussion with the i18n WG, raise this issue to the WG that owns the spec. Use the text above this para as the starting pint for that comment, but add any suggestions from the i18n WG.
+3. After discussion with the i18n WG, **raise this issue to the WG that owns the spec**. Use the text above this para as the starting pint for that comment, but add any suggestions from the i18n WG.
 
-4. Replace the text 'url_for_the_issue_raised' below with a link to the place you raised the issue. Do NOT remove the initial '§ '. Do NOT use []() notation - just paste the URL.
+4. **Replace the text 'url_for_the_issue_raised**' below with a link to the place you raised the issue. Do NOT remove the initial '§ '. Do NOT use []() notation - just paste the URL.
 
-5. Remove the 'pending' label. DO NOT add a needs-resolution or tracker tag to this issue – add it to the issue you raised in the other WG's repo.
+5. **Remove the 'pending' label.** DO NOT add a needs-resolution or tracker tag to this issue – add it to the issue you raised in the other WG's repo.
 
-6. Edit this issue to **remove all the instructions** down to and including this line.
+6. Edit this issue to **remove all the instructions** down to and including this line,  but no further.
 
 
 
