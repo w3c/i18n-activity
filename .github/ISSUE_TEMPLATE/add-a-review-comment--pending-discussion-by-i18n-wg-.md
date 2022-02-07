@@ -37,4 +37,4 @@ This follows the process at https://w3c.github.io/i18n-activity/guidelines/revie
 **This is a tracker issue.** Only discuss things here if they are i18n WG internal meta-discussions about the issue. **Contribute to the actual discussion at the following link:**
 
 
-§ link_to_issue_raised
+§ url_for_the_issue_raised
