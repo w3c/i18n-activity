@@ -15,23 +15,25 @@ url_that_points_to_the_relevant_place_in_the_spec
 
 comment_goes_here
 
----
+-
 Instructions: 
 
 This follows the process at https://w3c.github.io/i18n-activity/guidelines/review-instructions.html
 
-1. **CREATE A PROPOSED REVIEW COMMENT BY REPLACING THE PROMPTS ABOVE THIS PARAGRAPH, BUT LEAVE THIS PARAGRAPH INTACT AS WELL AS THE TEXT BELOW IT** Then ask the i18n WG to review your comment.
+1. Create the review comment you want to propose by replacing the prompts above these instructions, but **LEAVE ALL THE INSTRUCTIONS INTACT** Then ask the i18n WG to review your comment.
 
-2. Set a label to identify the spec. This starts with **s: followed by the spec's short name**. If you are unable to do that, ask a W3C staff contact to help.
+2. Set a label to identify the spec: this starts with s: followed by the spec's short name. If you are unable to do that, ask a W3C staff contact to help.
 
-3. After discussion with the i18n WG, **raise this issue to the WG that owns the spec**. Use the text above this para as the starting point for that comment, but add any suggestions from the i18n WG.
+3. After discussion with the i18n WG, raise an issue in the repository of the WG that owns the spec. Use the text above these instructions as the starting point for that comment, but add any suggestions that arose from the i18n WG. In the other WG's repo, add an 'i18n-needs-resolution' label to the new issue. If you think any of the participants in layout requirements task force groups would be interested in following the discussion, add also the appropriate i18n-\*lreq label(s).
 
-4. **Replace the text 'url_for_the_issue_raised**' below with a link to the place you raised the issue. Do NOT remove the initial '§ '. Do NOT use []() notation - just paste the URL.
+4. Replace the text 'url_for_the_issue_raised' below with a link to the issue you raised in the other WG's repository. Do NOT remove the initial '§ '. Do NOT use []() notation - just paste the URL.
 
-5. **Remove the 'pending' label.** DO NOT add a needs-resolution or tracker tag to this issue – add it to the issue you raised in the other WG's repo.
+5. Remove the 'pending' label, and add a 'needs-resolution' tag to this tracker issue – add it to the issue you raised in the other WG's repo. If you added an \*lreq label, add the label 'spec-type-issue' and a label to indicate the relevant typographic feature(s), eg. 'i:line_breaking'. The latter represent categories related to the Language Enablement Index, and all start with i:.
 
-6. Edit this issue to **remove all the instructions** down to and including this line,  but no further.
+6. Edit this issue to **REMOVE ALL THE INSTRUCTIONS** down to and including this line, but no further.
 
+End of instructions.
+-
 
 
 
