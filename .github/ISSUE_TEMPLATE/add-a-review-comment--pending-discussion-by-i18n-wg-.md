@@ -29,7 +29,7 @@ This follows the process at https://w3c.github.io/i18n-activity/guidelines/revie
 
 4. After discussion with the i18n WG, raise an issue in the repository of the WG that owns the spec. Use the text above these instructions as the starting point for that comment, but add any suggestions that arose from the i18n WG. In the other WG's repo, add an 'i18n-needs-resolution' label to the new issue. If you think any of the participants in layout requirements task force groups would be interested in following the discussion, add also the appropriate i18n-\*lreq label(s).
 
-5. Replace the text 'url_for_the_issue_raised' below with a link to the issue you raised in the other WG's repository. Do NOT remove the initial '§ '. Do NOT use []() notation - just paste the URL.
+5. Replace the text 'url_for_the_issue_raised' below with a link to the issue you raised in the other WG's repository. Do NOT remove the initial '§ '. Do NOT use \[...](...) notation - just paste the URL.
 
 6. Remove the 'pending' label, and add a 'needs-resolution' tag to this tracker issue. 
 
