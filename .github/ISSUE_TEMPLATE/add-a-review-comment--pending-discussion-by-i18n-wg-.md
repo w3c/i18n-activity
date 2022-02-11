@@ -35,11 +35,9 @@ This follows the process at https://w3c.github.io/i18n-activity/guidelines/revie
 
 7. If you added an \*lreq label, add the label 'spec-type-issue', add the corresponding language label, and a label to indicate the relevant typographic feature(s), eg. 'i:line_breaking'. The latter represent categories related to the Language Enablement Index, and all start with i:.
 
-8. Edit this issue to **REMOVE ALL THE INSTRUCTIONS & THE PROPOSED COMMENT**, ie. the line below that is '---' and all the text before it to the start of the issue.
+8. Edit this issue to **REMOVE ALL THE INSTRUCTIONS & THE PROPOSED COMMENT**, ie. the line below that is '---' and all the text before it to the very start of the issue.
 
-End of instructions.
 ---
-
 
 
 **This is a tracker issue.** Only discuss things here if they are i18n WG internal meta-discussions about the issue. **Contribute to the actual discussion at the following link:**
