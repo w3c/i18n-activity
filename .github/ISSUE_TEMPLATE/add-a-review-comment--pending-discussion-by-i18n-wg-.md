@@ -7,6 +7,7 @@ labels: pending
 assignees: ''
 
 ---
+## Proposed comment
 
 Section_etc_title
 url_that_points_to_the_relevant_place_in_the_spec
@@ -16,7 +17,7 @@ url_that_points_to_the_relevant_place_in_the_spec
 comment_goes_here
 
 ---
-Instructions: 
+## Instructions: 
 
 This follows the process at https://w3c.github.io/i18n-activity/guidelines/review-instructions.html
 
@@ -28,9 +29,11 @@ This follows the process at https://w3c.github.io/i18n-activity/guidelines/revie
 
 4. Replace the text 'url_for_the_issue_raised' below with a link to the issue you raised in the other WG's repository. Do NOT remove the initial '§ '. Do NOT use []() notation - just paste the URL.
 
-5. Remove the 'pending' label, and add a 'needs-resolution' tag to this tracker issue. If you added an \*lreq label, add the label 'spec-type-issue' and a label to indicate the relevant typographic feature(s), eg. 'i:line_breaking'. The latter represent categories related to the Language Enablement Index, and all start with i:.
+5. Remove the 'pending' label, and add a 'needs-resolution' tag to this tracker issue. 
 
-6. Edit this issue to **REMOVE ALL THE INSTRUCTIONS**, ie. the two lines that are '---' and all the text between.
+6. If you added an \*lreq label, add the label 'spec-type-issue', add the corresponding language label, and a label to indicate the relevant typographic feature(s), eg. 'i:line_breaking'. The latter represent categories related to the Language Enablement Index, and all start with i:.
+
+6. Edit this issue to **REMOVE ALL THE INSTRUCTIONS & THE PROPOSED COMMENT**, ie. the line below that is '---' and all the text before it to the start of the issue.
 
 End of instructions.
 ---
