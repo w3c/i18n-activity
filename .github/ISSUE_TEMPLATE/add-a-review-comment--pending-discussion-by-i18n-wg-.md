@@ -16,7 +16,7 @@ url_that_points_to_the_relevant_place_in_the_spec
 
 comment_goes_here
 
----
+
 ## Instructions: 
 
 This follows the process at https://w3c.github.io/i18n-activity/guidelines/review-instructions.html
