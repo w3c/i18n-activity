@@ -64,6 +64,7 @@ table td {
 <div id="mainLayout">
 <section>
 <p>The W3C Internationalization Activity uses github for document development. This page provides guidelines to help people contribute content that matches the standard styling and keeps the documents in a state that keeps the publication process straightforward.</p>
+<p>The i18n WG works with 3 main types of page: <a href="https://www.w3.org/International/articlelist">article pages</a>, site pages such as this one, and respec documents. They each use different javascript and style files.</p>
 <p>If you have comments or suggestions about how to improve this page, feel free to <a href="https://github.com/w3c/i18n-activity/issues">raise a Github issue</a>.</p>
 <p>See also the <a href="github">guidelines for working with github</a>.</p>
 </section>
@@ -76,7 +77,7 @@ table td {
   <h2><a href="#general">General principles for editing HTML</a></h2>
   <p>You should always bear in mind the following when creating content:</p>
   <ul>
-    <li>HTML pages much <strong>always be valid</strong>!  Use the <a href="https://validator.w3.org/">W3C validator</a>.</li>
+    <li>HTML pages must <strong>always be valid</strong>!  Use the <a href="https://validator.w3.org/">W3C validator</a>.</li>
     <li><strong>Use HTML5</strong> markup.</li>
     <li>HTML pages must always <strong>use the UTF-8 character encoding</strong>, and this encoding should be declared at the top of the file.</li>
     <li>HTML pages must also always <strong>declare the language</strong> of the document as a whole using a <code class="kw" translate="no">lang</code> attribute in the <code class="kw" translate="no">html</code> tag. A range of text in another language inside the document should be tagged for language too, using the <code class="kw" translate="no">lang</code> attribute.</li>
@@ -90,30 +91,97 @@ table td {
 
 
 <section id="othermarkup">
-  <h2><a href="#othermarkup">General markup guidelines</a></h2>
-  
-  <section id="figures">
-  <h3><a href="#figures">Figures</a></h3>
-  <p>Put pictures, tables, examples, and the like in <code class="kw" translate="no">figure</code> markup. Use the <code class="kw" translate="no">figcaption</code> element when you want a caption. (Caption use is encouraged.)</p>
-  <p>To refer to a <code class="kw" translate="no">figure</code> from the text, just use an empty <code class="kw" translate="no">a</code> element, with <code class="kw" translate="no">href</code> pointing to the <code class="kw" translate="no">id</code> of the <code class="kw" translate="no">figure</code> element, eg. <code>&lt;a href=&quot;#figure_id&quot;&gt;&lt;/a&gt;</code>. Respec will automatically add the figure number to the link text  when the page is displayed.</p>
-  </section>
-<section id="notes">
-  <h3><a href="#notes">Notes</a></h3>
-  <p>To create a block-type note add <code>class="note"</code> to the paragraph if a single para note, or use a <code>div class="note"</code> around the note if it contains multiple paras or blocks.</p>
-  <p>For editor's notes, put <code>class="issue"</code> on a <code class="kw" translate="no">p</code>, <code class="kw" translate="no">div</code> or <code class="kw" translate="no">span</code> around the text you want to be the editor's note.</p>
+<h2><a href="#othermarkup">General markup guidelines</a></h2>
+
+
+
+<section id="files">
+<h3><a href="#files">Javascript &amp; CSS files</a></h3>
+
+<p>New articles must include the following:</p>
+
+<ol>
+<li>javascript/doc-structure/article-2022.js</li>
+<li>javascript/articletoc-2022.js</li>
+<li>style/article-2022.css</li>
+</ol>
+
+<p>New site pages must include the following:</p>
+
+<ol>
+<li>/i18n-drafts/javascript/doc-structure/sitepage.js</li>
+<li>/i18n-drafts/javascript/articletoc-html5.js</li>
+<li>/i18n-drafts/style/sitepage-2016.css</li>
+</ol>
+
+<p>We use relative links so that pages can be viewed without an internet connection.</p>
+
+<p>Respec provides the appropriate scripting and styling when working in that context.</p>
 </section>
+
+
+
+<section id="sourcecode">
+<h3><a href="#sourcecode">Source code</a></h3>
+
+<p>It isn't required, but it's easier to find things in the source code if you leave several blank lines before each section tag, and single blank lines between block elements such as p, figure, blockquote, etc.</p>
+</section>
+
+
+
 <section id="headings">
-  <h3><a href="#headings">Headings</a></h3>
-  <p>Do not supply numbering for section headings. These will be provided automatically by respec.</p>
-  <p>An <code class="kw" translate="no">h1</code>..<code class="kw" translate="no">h6</code> element should be used for headings, and should always be a direct child of  a <code class="kw" translate="no">section</code> element. The <code class="kw" translate="no">section</code> element should have an <code class="kw" translate="no">id</code>. </p>
-  <p>Surround the text of the   heading with a link to the <code class="kw" translate="no">id</code> in the <code class="kw" translate="no">section</code> tag, to make it easier to find the id.</p>
-  <pre id="line1">&lt;section id="mylinkid"&gt;
-&lt;h3&gt;&lt;a href="#mylinkid"&gt;My header text&lt;/a&gt;&lt;/h3&gt;
+<h3><a href="#headings">Headings</a></h3>
+  
+<p>Do not supply numbering for section headings. These will be provided automatically by scripting.</p>
+
+<p>An <code class="kw" translate="no">h1</code>..<code class="kw" translate="no">h6</code> element should be used for headings, and should always be a direct child of  a <code class="kw" translate="no">section</code> element. The <code class="kw" translate="no">section</code> element should have an <code class="kw" translate="no">id</code>.  The h* element should not have a link around the heading (self links are  added automatically by scripting).</p>
+
+<pre id="line1">&lt;section id="mylinkid"&gt;
+&lt;h3&gt;My header text&lt;/h3&gt;
 ...
 &lt;/section&gt;</pre>
-  <p>The current&nbsp;styling for TR documents makes it often difficult to quickly find section headings. Use the <a href="#css">styling suggested below</a> in your local.css file in order to open up the space between sections.</p>
-  <p>To refer to a section from the text, just use an empty <code class="kw" translate="no">a</code> element, with <code class="kw" translate="no">href</code> pointing to the <code class="kw" translate="no">id</code> of the <code class="kw" translate="no">section</code> element, eg. <code>&lt;a href=&quot;#section_id&quot;&gt;&lt;/a&gt;</code>. Respec will automatically  add the section number and heading to the link text  when the page is displayed.</p>
+
+<p>The current&nbsp;styling for TR documents makes it often difficult for readers to quickly find section headings. Use the <a href="#css">styling suggested below</a> in your local.css file in order to open up the space between sections.</p>
+
+<h4>To refer to a section from the text</h4>
+
+<p><span class="leadin">In Respec:</span> use<code>[[[section_id]]]</code>, where section_id is the id of the section you are pointing to. (An alternative is to use <code>&lt;a href=&quot;#section_id&quot;&gt;&lt;/a&gt;</code>, but the previous approach is better because you are able to see the id in wysiwyg source or if the link fails.)</p>
+
+<p><span class="leadin">In i18n articles:</span> use <code>&lt;a class=&quot;secref&quot;&gt;section_id&lt;/a&gt;</code>, where section_id is the id of the section you are pointing to. (Only works with articles that use the latest javascript includes.)</p>
+
+<p>The paragraph containing the pointer will be updated automatically with a link to the section you are pointing to, and the link text will be the section heading.</p>
 </section>
+
+
+
+<section id="figures">
+<h3><a href="#figures">Figures</a></h3>
+
+<p>Put pictures, tables, examples, and the like in <code class="kw" translate="no">figure</code> markup. Use the <code class="kw" translate="no">figcaption</code> element when you want a caption. (Caption use is encouraged.)</p>
+
+<h4>To refer to a <code class="kw" translate="no">figure</code> from the text</h4>
+
+<p><span class="leadin">In Respec:</span> use <code>[[[figure_id]]]</code>, where figure_id is the id of the figure you are pointing to. (An alternative is to use  <code>&lt;a href=&quot;#figure_id&quot;&gt;&lt;/a&gt;</code>, but the previous approach is better because you are able to see the id in wysiwyg source.)</p>
+
+<p><span class="leadin">In i18n articles:</span> use <code>&lt;a class=&quot;figref&quot;&gt;figure_id&lt;/a&gt;</code>, where figure_id is the id of the figure you are pointing to. (Only works with articles that use the latest javascript includes.)</p>
+
+<p>In both cases, the markup will be replaced by a link to 'Figure XX' when the page is viewed. The Figure number will be updated automatically as new figures are added.</p>
+</section>
+
+
+
+
+<section id="notes">
+<h3><a href="#notes">Notes</a></h3>
+
+<p>To create a block-type note add <code>class="note"</code> to the paragraph if a single para note, or use a <code>div class="note"</code> around the note if it contains multiple paras or blocks.</p>
+
+<p>For editor's notes, put <code>class="issue"</code> on a <code class="kw" translate="no">p</code>, <code class="kw" translate="no">div</code> or <code class="kw" translate="no">span</code> around the text you want to be the editor's note.</p>
+</section>
+
+
+
+
 
 <!--div class="section"> 
 		<h3><a name="graphics" id="graphics">Graphics, tables and figures</a></h3> 
@@ -184,7 +252,7 @@ table td {
 
 
 <section id="inline">
-  <h2><a href="#inline">Marking up inline content</a></h2>
+<h2><a href="#inline">Marking up inline content</a></h2>
   <p>The following table suggests conventions for marking up inline 
     content. The presentation column applies to the
     English version. Any translated version may change the presentation 
