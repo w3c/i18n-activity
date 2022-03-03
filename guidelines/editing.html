@@ -36,8 +36,10 @@ f.additionalLinks = ''
 <script src="../../i18n-drafts/javascript/boilerplate-text/boilerplate-en.js"></script><!--TRANSLATORS must change -en to the subtag for their language!-->
 <script src="../../i18n-drafts/javascript/doc-structure/sitepage.js"> </script>
 <script src="../../i18n-drafts/javascript/articletoc-html5.js"></script>
+<script src="../../i18n-drafts/javascript/prism.js"></script>
 
 <link rel="stylesheet" href="../../i18n-drafts/style/sitepage-2016.css" />
+<link rel="stylesheet" href="../../i18n-drafts/style/prism.css" type="text/css" />
 <style>
 table { border-collapse: collapse; }
 th, td { text-align: start; }
@@ -114,6 +116,13 @@ table td {
 <li>/i18n-drafts/style/sitepage-2016.css</li>
 </ol>
 
+<p>New articles and site pages with syntax highlighting must include the following:</p>
+
+<ol>
+  <li>/i18n-drafts/javascript/prism.js</li>
+  <li>/i18n-drafts/style/prism.css</li>
+</ol>
+
 <p>We use relative links so that pages can be viewed without an internet connection.</p>
 
 <p>Respec provides the appropriate scripting and styling when working in that context.</p>
@@ -136,10 +145,10 @@ table td {
 
 <p>An <code class="kw" translate="no">h1</code>..<code class="kw" translate="no">h6</code> element should be used for headings, and should always be a direct child of  a <code class="kw" translate="no">section</code> element. The <code class="kw" translate="no">section</code> element should have an <code class="kw" translate="no">id</code>.  The h* element should not have a link around the heading (self links are  added automatically by scripting).</p>
 
-<pre id="line1">&lt;section id="mylinkid"&gt;
+<pre id="line1"><code class="language-html">&lt;section id="mylinkid"&gt;
 &lt;h3&gt;My header text&lt;/h3&gt;
 ...
-&lt;/section&gt;</pre>
+&lt;/section&gt;</code></pre>
 
 <p>The current&nbsp;styling for TR documents makes it often difficult for readers to quickly find section headings. Use the <a href="#localcss">styling suggested below</a> in your local.css file in order to open up the space between sections.</p>
 
@@ -208,11 +217,24 @@ table td {
   <p>Sometimes it's not necessary to create a new section and heading, 
     but you may want to highlight a word or sentence at the start of a 
     series of paragraphs. To do this, use the following markup.</p>
-  <pre>&lt;span class="leadin"&gt;highlighted text goes here&lt;/span&gt; Rest of paragraph follows...</pre>
+  <pre><code class="language-html">&lt;span class="leadin"&gt;highlighted text goes here&lt;/span&gt; Rest of paragraph follows...</code></pre>
 </section>
 <section id="abbrevs">
   <h3><a href="#abbrevs">Abbreviations and acronyms</a></h3>
-  <p>Use the <span class="kw"><code class="kw" translate="no">abbr</code></span> element for both of these. Spell out the full form in the <span class="kw"><code class="kw" translate="no">title</code></span> attribute.</p>
+  <p>Use the <code class="kw" translate="no">abbr</code> element for both of these. Spell out the full form in the <code class="kw" translate="no">title</code> attribute.</p>
+</section>
+<section id="syntax-highlighting">
+  <h3><a href="#syntax-highlighting">Syntax highlighting</a></h3>
+
+  <p>Use a <code class="kw" translate="no">pre</code> element with a <code class="kw" translate="no">code</code> element inside to mark up a code block for syntax highlighting, like so:</p>
+
+  <pre><code class="language-html">&lt;pre>&lt;code class="language-css">p { color: red }&lt;/code>&lt;/pre></code></pre>
+
+  <p>Inline code snippets are done like this:</p>
+
+  <pre><code class="language-html">&lt;code class="language-css">p { color: red }&lt;/code></code></pre>
+
+  <p><strong>Note</strong>: you have to escape all <code class="kw" translate="no">&lt;</code> and <code class="kw" translate="no">&amp;</code> characters inside <code class="kw" translate="no">code</code> elements (code blocks and inline snippets) with <code class="language-markup">&amp;lt;</code> and <code class="language-markup">&amp;amp;</code> respectively.</p>
 </section>
 <section id="lists">
   <h3><a href="#lists">Lists</a></h3>
@@ -382,7 +404,7 @@ table td {
 <section id="localcss">
   <h2><a href="#localcss">Suggested styling for local.css</a></h2>
   <p>The following styles can be used as the base for the <code class="kw" translate="no">local.css</code> file. They contain style rules for the approaches mentioned in this styleguide.</p>
-  <pre>h2 {
+  <pre><code class="language-css">h2 {
 	margin-top: 3em;
 	margin-bottom: 0em;
 	}
@@ -464,7 +486,7 @@ samp, kbd {
 	font-size: 85%;
 	letter-spacing:0.03em;
 	}
-</pre>
+</code></pre>
 </section>
 
 </div>
