@@ -119,8 +119,8 @@ table td {
 <p>New articles and site pages with syntax highlighting must include the following:</p>
 
 <ol>
-  <li>/i18n-drafts/javascript/prism.js</li>
-  <li>/i18n-drafts/style/prism.css</li>
+  <li>javascript/prism.js</li>
+  <li>style/prism.css</li>
 </ol>
 
 <p>We use relative links so that pages can be viewed without an internet connection.</p>
@@ -226,7 +226,13 @@ table td {
 <section id="syntax-highlighting">
   <h3><a href="#syntax-highlighting">Syntax highlighting</a></h3>
 
-  <p>Use a <code class="kw" translate="no">pre</code> element with a <code class="kw" translate="no">code</code> element inside to mark up a code block for syntax highlighting, like so:</p>
+  <p>In Respec: use triple-backticks to create code blocks.</p>
+
+  <pre><code class="language-markdown">```css
+p { color: red }
+```</code></pre>
+
+  <p>In i18n articles and site pages: use a <code class="kw" translate="no">pre</code> element with a <code class="kw" translate="no">code</code> element inside to mark up a code block for syntax highlighting, like so:</p>
 
   <pre><code class="language-html">&lt;pre>&lt;code class="language-css">p { color: red }&lt;/code>&lt;/pre></code></pre>
 
@@ -234,7 +240,7 @@ table td {
 
   <pre><code class="language-html">&lt;code class="language-css">p { color: red }&lt;/code></code></pre>
 
-  <p><strong>Note</strong>: you have to escape all <code class="kw" translate="no">&lt;</code> and <code class="kw" translate="no">&amp;</code> characters inside <code class="kw" translate="no">code</code> elements (code blocks and inline snippets) with <code class="language-markup">&amp;lt;</code> and <code class="language-markup">&amp;amp;</code> respectively.</p>
+  <p><strong>Note</strong>: you have to escape all <code class="kw" translate="no">&lt;</code> and <code class="kw" translate="no">&amp;</code> characters inside <code class="kw" translate="no">code</code> elements (code blocks and inline snippets) with <code class="language-markup">&amp;lt;</code> and <code class="language-markup">&amp;amp;</code> respectively. If you have large portions of HTML code, you can use the <a href="https://r12a.github.io/app-conversion/">Unicode code converter</a> to escape these characters.</p>
 </section>
 <section id="lists">
   <h3><a href="#lists">Lists</a></h3>
