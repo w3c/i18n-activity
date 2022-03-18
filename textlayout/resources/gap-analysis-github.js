@@ -207,7 +207,8 @@ function buildSection (theData, sectionId, doc, repo) {
 			}
 		}
 
-	document.getElementById('insert-'+sectionId).innerHTML = out
+    if (document.getElementById('insert-'+sectionId))           document.getElementById('insert-'+sectionId).innerHTML = out
+    else (console.log(`⏵⏵⏵ ERROR in buildSection: can't find section with id insert-${ sectionId }`))
 
 	// figure out priority for section
 	var priority = document.getElementById(sectionId).className
