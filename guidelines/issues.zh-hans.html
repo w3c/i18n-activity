@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="zh-Hans">
+<head>
+<meta charset="utf-8" />
+<title>使用GitHub issues</title>
+<meta name="description" content="帮助W3C国际化活动的成员使用GitHub。" />
+<script>
+var f = { }
+
+// AUTHORS should fill in these assignments:
+f.directory = 'guidelines'+'/'; // the path to this file, not including /International or the file name
+f.filename = 'issues'; // the file name WITHOUT extensions
+f.authors = 'Richard Ishida, W3C'; // author(s) and affiliations
+f.previousauthors = ''; // as above
+f.modifiers = ''; // people making substantive changes, and their affiliation
+f.searchString = 'level2-issues'; // blog search string - usually the filename without extensions
+f.firstPubDate = '2015-12-16'; // date of the first publication of the document (after review)
+f.lastSubstUpdate = { date:'2016-10-11', time:'07:50'}  // date and time of latest substantive changes to this document
+f.status = 'notreviewed';  // should be one of draft, review, published, notreviewed or obsolete
+f.path = '../' // what you need to prepend to a URL to get to the /International directory 
+
+// AUTHORS AND TRANSLATORS should fill in these assignments:
+f.thisVersion = { date:'2022-03-17', time:'12:18'} // date and time of latest edits to this document/translation
+f.contributors = ''; // people providing useful contributions or feedback during review or at other times
+// also make sure that the lang attribute on the html tag is correct!
+
+// TRANSLATORS should fill in these assignments:
+f.translators = '薛富侨'; // translator(s) and their affiliation - a elements allowed, but use double quotes for attributes
+
+f.breadcrumb = '';
+
+f.additionalLinks = ''
+</script>
+<script src="file-data/translations.js"> </script>
+<script src="../../i18n-drafts/javascript/doc-structure/article-dt.js"> </script>
+<script src="../../i18n-drafts/javascript/boilerplate-text/boilerplate-zh-hans.js"></script><!--TRANSLATORS must change -en to the subtag for their language!-->
+<script src="../../i18n-drafts/javascript/doc-structure/sitepage.js"> </script>
+<script src="../../i18n-drafts/javascript/articletoc-html5.js"></script>
+
+<link rel="stylesheet" href="../../i18n-drafts/style/sitepage-2016.css" />
+<link rel="copyright" href="#copyright"/>
+</head>
+
+<body>
+<header>
+  	<nav id="mainNavigation"></nav><script>document.getElementById('mainNavigation').innerHTML = mainNavigation</script>
+	</header>
+<h1>使用GitHub issues</h1>
+
+
+<section id="sidebarExtras">
+</section>
+
+
+<div id="mainLayout">
+<section>
+<p>
+  W3C国际化活动使用GitHub issues进行技术讨论，本文档为刚接触GitHub的人介绍了如何处理issue。
+</p>
+<p>
+  首先要说的是，<strong>GitHub issue非常简单和直观</strong>！虽然GitHub在处理软件或文档的历史时有时会涉及复杂的操作，但<strong>GitHub issue的使用并不复杂</strong>。
+</p>
+</section>
+
+
+
+
+
+<section id="setup">
+  <h2><a href="#setup">阅览issue</a></h2>
+  <p>
+    每个GitHub仓库都有一个指向issue列表的链接。下图显示了<a href="https://github.com/w3c/jlreq/">日文布局任务团</a>的仓库主页，点击蓝色圆圈处就可以访问issue列表。
+  </p>
+<p><img src="images/issue-button.png" style="width: 100%;" alt="GitHub界面"/></p>
+<p>
+  点击该选项卡后，你将看到如下的页面，其中列出了所有当前未解决的issue。（单击“2 Closed”将显示所有已关闭的issue。）
+</p>
+<p><img src="images/issue-list.png" style="width: 100%;" alt="GitHub界面"/></p>
+<p>
+  如果需要，可以使用页面顶部附近的控件过滤或排序列表的内容。你可以通过单击标签（如<span style="background-color:red; color: white; padding: 2px 4px;">question</span>）查看带有特定标签的所有未解决issue。
+</p>
+<p>
+  点击issue的标题以查看讨论内容。例如，如果你点击上面列表中的第三个标题，你会看到如下内容。
+</p>
+<p><img src="images/issue-page.png" style="width: 100%;" alt="GitHub界面"/></p>
+</section>
+<section id="basics">
+<h2><a href="#basics">向issue添加评论</a></h2>
+<p>
+  在issue底部的文本框（见上图）中输入内容即可为issue添加评论。
+</p>
+<p>
+  如果你喜欢的话，你也可以在文本中<a href="https://guides.github.com/features/mastering-markdown/">添加Markdown</a>或点击工具栏上的图标为你的评论添加格式。
+</p>
+<p>
+  写完评论后，使用Preview选项卡检查你的评论，然后点击<span style="color:white; background-color:#30C553; padding: 2px 4px; border-radius: 4px;">Comment</span>按钮即可评论。
+</p>
+<p>
+  请注意，GitHub会将评论中的尖括号视为HTML标记，因此如果你想包含源代码示例，你应该在源代码两边加上反引号（`）。
+</p>
+<p>
+  此外，如果你想回复issue中的某个较早的特定句子或段落，请将其复制到你的评论中，并在行首添加一个大于号 (&gt;)。GitHub将会为该文本提供灰色背景。
+</p>
+<p>
+  你也可以尝试使用输入框上方的图标来发现其他编辑辅助工具。
+</p>
+</section><section id="forking">
+<h2><a href="#forking">跟踪讨论</a></h2>
+<p>
+  如果你评论了某个issue，你将自动订阅该issue，并因此在有新评论时收到电子邮件通知。
+</p>
+<p>
+  如果你尚未发表评论，GitHub会提供一个<img src="images/subscribe.png" alt="Subscribe" style="vertical-align: middle;">按钮（仅用来通知你这个特定issue的更新）或页面顶部的<img src="images/watch.png" alt="Watch" style="vertical-align: middle;">按钮（通知你该仓库中任何issue的更新，以及拉取请求）。
+</p>
+<p>
+  不过，你还应该考虑订阅你关注的仓库的邮件列表。具体的邮件列表会在仓库主页上的说明文本中注明。订阅邮件列表后，你将每天收到一封摘要邮件，其中包含该仓库过去24小时内所有有更新的issue链接。这些摘要也会指出其他仓库中的相关讨论（如CSS和HTML）。
+</p>
+</section>
+
+
+
+<section id="cloning">
+<h2><a href="#cloning">创建一个新issue</a></h2>
+<p>
+  任何人都可以提出新issue。 只需单击<span style="color:white; background-color:#30C553; padding: 2px 4px; border-radius: 4px;">New issue</span>按钮，添加一个简短但有意义的标题，然后在提供的框中写下你的评论即可。
+</p>
+<p><img src="images/new-issue.png" style="width: 100%;" alt="等待用户输入内容的新issue截图"/></p>
+<p>
+  只有具有管理权限的人才能为issue分配标签。当你创建了一个新issue，他们会收到通知并将决定为其分配哪些标签。
+</p>
+</section>
+
+
+<section id="housekeeping">
+<h2><a href="#housekeeping">礼仪</a>和小技巧</h2>
+  <p>请记住以下几点：</p>
+  <ol>
+    <li>
+      <p>
+        在评论之前仔细考虑，并在提交之前重新读一遍。尽量使内容清晰和简洁。
+      </p>
+</li>
+    <li>
+      <p>
+        始终关注主题。如果你还想提出其他问题，请开一个新的issue。目标是让每一个issue都专注于特定的主题。
+      </p>
+    </li>
+    <li>
+      <p>
+        在你的评论中始终保持礼貌和建设性。
+      </p>
+</li>
+<li>
+  <p>
+    即使某个用户没有关注这个问题，你也可以在他们的GitHub用户名后面加上@符号来让GitHub通知他们，如：“@r12a 你觉得这个主意怎么样？”。
+  </p>
+</li>
+  </ol>
+</section>
+
+</div>
+
+<br style="clear: both;" />
+
+<footer id="thefooter"></footer><script>document.getElementById('thefooter').innerHTML = g.bottomOfPage</script>
+<script>completePage()</script>
+</body>
+</html>
