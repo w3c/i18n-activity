@@ -34,12 +34,12 @@ f.additionalLinks = ''
 <script src="file-data/translations.js"> </script>
 <script src="../../i18n-drafts/javascript/doc-structure/article-dt.js"> </script>
 <script src="../../i18n-drafts/javascript/boilerplate-text/boilerplate-en.js"></script><!--TRANSLATORS must change -en to the subtag for their language!-->
-<script src="../../i18n-drafts/javascript/doc-structure/sitepage.js"> </script>
-<script src="../../i18n-drafts/javascript/articletoc-html5.js"></script>
+<script src="../../i18n-drafts/javascript/doc-structure/sitepage-2022.js"> </script>
+<script src="../../i18n-drafts/javascript/articletoc-2022.js"></script>
 <script src="../../i18n-drafts/javascript/prism.js"></script>
 
-<link rel="stylesheet" href="../../i18n-drafts/style/sitepage-2016.css" />
-<link rel="stylesheet" href="../../i18n-drafts/style/prism.css" type="text/css" />
+<link rel="stylesheet" href="../../i18n-drafts/style/prism.css">
+<link rel="stylesheet" href="../../i18n-drafts/style/sitepage-2022.css">
 <style>
 table { border-collapse: collapse; }
 th, td { text-align: start; }
@@ -76,7 +76,7 @@ table td {
 
 
 <section id="general">
-  <h2><a href="#general">General principles for editing HTML</a></h2>
+  <h2>General principles for editing HTML</h2>
   <p>You should always bear in mind the following when creating content:</p>
   <ul>
     <li>HTML pages must <strong>always be valid</strong>!  Use the <a href="https://validator.w3.org/">W3C validator</a>.</li>
@@ -93,12 +93,12 @@ table td {
 
 
 <section id="othermarkup">
-<h2><a href="#othermarkup">General markup guidelines</a></h2>
+<h2>General markup guidelines</h2>
 
 
 
 <section id="files">
-<h3><a href="#files">Javascript &amp; CSS files</a></h3>
+<h3>Javascript &amp; CSS files</h3>
 
 <p>New articles must include the following:</p>
 
@@ -131,7 +131,7 @@ table td {
 
 
 <section id="sourcecode">
-<h3><a href="#sourcecode">Source code</a></h3>
+<h3>Source code</h3>
 
 <p>It isn't required, but it's easier to find things in the source code if you leave several blank lines before each section tag, and single blank lines between block elements such as p, figure, blockquote, etc.</p>
 </section>
@@ -139,7 +139,7 @@ table td {
 
 
 <section id="headings">
-<h3><a href="#headings">Headings</a></h3>
+<h3>Headings</h3>
   
 <p>Do not supply numbering for section headings. These will be provided automatically by scripting.</p>
 
@@ -152,6 +152,7 @@ table td {
 
 <p>The current&nbsp;styling for TR documents makes it often difficult for readers to quickly find section headings. Use the <a href="#localcss">styling suggested below</a> in your local.css file in order to open up the space between sections.</p>
 
+<section>
 <h4>To refer to a section from the text</h4>
 
 <p><span class="leadin">In Respec:</span> use<code>[[[#section_id]]]</code>, where section_id is the id of the section you are pointing to. (An alternative is to use <code>&lt;a href=&quot;#section_id&quot;&gt;&lt;/a&gt;</code>, but the previous approach is better because you are able to see the id in wysiwyg source or if the link fails.)</p>
@@ -160,11 +161,14 @@ table td {
 
 <p>The paragraph containing the pointer will be updated automatically with a link to the section you are pointing to, and the link text will be the section heading.</p>
 </section>
+</section>
+
+
 
 
 
 <section id="figures">
-<h3><a href="#figures">Figures</a></h3>
+<h3>Figures</h3>
 
 <p>Put pictures, tables, examples, and the like in <code class="kw" translate="no">figure</code> markup. Use the <code class="kw" translate="no">figcaption</code> element when you want a caption. (Caption use is encouraged.)</p>
 
@@ -181,7 +185,7 @@ table td {
 
 
 <section id="notes">
-<h3><a href="#notes">Notes</a></h3>
+<h3>Notes</h3>
 
 <p>To create a block-type note add <code>class="note"</code> to the paragraph if a single para note, or use a <code>div class="note"</code> around the note if it contains multiple paras or blocks.</p>
 
@@ -213,18 +217,27 @@ table td {
 		  generally means describing the point being made by the picture rather than the visual elements.</p></div-->
 
 <section id="leadin">
-  <h3><a href="#leadin">Run-in headings</a></h3>
+  <h3>Run-in headings</h3>
   <p>Sometimes it's not necessary to create a new section and heading, 
     but you may want to highlight a word or sentence at the start of a 
     series of paragraphs. To do this, use the following markup.</p>
   <pre><code class="language-html">&lt;span class="leadin"&gt;highlighted text goes here&lt;/span&gt; Rest of paragraph follows...</code></pre>
 </section>
+
+
+
+
+
 <section id="abbrevs">
-  <h3><a href="#abbrevs">Abbreviations and acronyms</a></h3>
+  <h3>Abbreviations and acronyms</h3>
   <p>Use the <code class="kw" translate="no">abbr</code> element for both of these. Spell out the full form in the <code class="kw" translate="no">title</code> attribute.</p>
 </section>
+
+
+
+
 <section id="syntax-highlighting">
-  <h3><a href="#syntax-highlighting">Syntax highlighting</a></h3>
+  <h3>Syntax highlighting</h3>
 
   <p>In Respec: use triple-backticks to create code blocks.</p>
 
@@ -243,7 +256,7 @@ p { color: red }
   <p><strong>Note</strong>: you have to escape all <code class="kw" translate="no">&lt;</code> and <code class="kw" translate="no">&amp;</code> characters inside <code class="kw" translate="no">code</code> elements (code blocks and inline snippets) with <code class="language-markup">&amp;lt;</code> and <code class="language-markup">&amp;amp;</code> respectively. If you have large portions of HTML code, you can use the <a href="https://r12a.github.io/app-conversion/">Unicode code converter</a> to escape these characters.</p>
 </section>
 <section id="lists">
-  <h3><a href="#lists">Lists</a></h3>
+  <h3>Lists</h3>
   <p>A colon should be used for a sentence that leads into the list.</p>
   <p>If a list is expressed as a single sentence each list item should 
     begin with a lower case letter and end with a comma or ", and".&nbsp; 
@@ -271,8 +284,13 @@ p { color: red }
   </ul>
   </div>
 </section>
+
+
+
+
+
 <section id="changes">
-  <h3><a href="#changes">Change markup</a></h3>
+  <h3>Change markup</h3>
   <p>To show changes to the text use <code class="kw" translate="no">ins</code> and <code class="kw" translate="no">del</code>. However, remember that if you do commits carefully, such markup is not needed. People will be able to see the changes by looking at the diff for the commit on the Github site.</p>
 </section>
 </section>
@@ -280,7 +298,7 @@ p { color: red }
 
 
 <section id="inline">
-<h2><a href="#inline">Marking up inline content</a></h2>
+<h2>Marking up inline content</h2>
   <p>The following table suggests conventions for marking up inline 
     content. The presentation column applies to the
     English version. Any translated version may change the presentation 
@@ -408,7 +426,7 @@ p { color: red }
 
 
 <section id="localcss">
-  <h2><a href="#localcss">Suggested styling for local.css</a></h2>
+  <h2>Suggested styling for local.css</h2>
   <p>The following styles can be used as the base for the <code class="kw" translate="no">local.css</code> file. They contain style rules for the approaches mentioned in this styleguide.</p>
   <pre><code class="language-css">h2 {
 	margin-top: 3em;

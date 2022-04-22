@@ -33,11 +33,12 @@ f.additionalLinks = ''
 </script>
 <script src="file-data/translations.js"> </script>
 <script src="../../i18n-drafts/javascript/doc-structure/article-dt.js"> </script>
-<script src="../../i18n-drafts/javascript/boilerplate-text/boilerplate-en.js"></script><!--TRANSLATORS must change -en to the subtag for their language!-->
-<script src="../../i18n-drafts/javascript/doc-structure/sitepage.js"> </script>
-<script src="../../i18n-drafts/javascript/articletoc-html5.js"></script>
+<script src="../../i18n-drafts/javascript/boilerplate-text/boilerplate-en.js"></script>
+<!--TRANSLATORS must change -en just above to the subtag for their language!-->
+<script src="../../i18n-drafts/javascript/doc-structure/sitepage-2022.js"> </script>
+<script src="../../i18n-drafts/javascript/articletoc-2022.js"></script>
 
-<link rel="stylesheet" href="../../i18n-drafts/style/sitepage-2016.css" />
+<link rel="stylesheet" href="../../i18n-drafts/style/sitepage-2022.css" />
 <link rel="copyright" href="#copyright"/>
 </head>
 
@@ -65,7 +66,7 @@ f.additionalLinks = ''
 
 
 <section id="setup">
-  <h2><a href="#setup">Setting up GitHub</a></h2>
+  <h2>Setting up GitHub</h2>
   <p>If you haven't used GitHub before, follow the instructions in this section. Otherwise, skip to the next section.</p>
   <ol>
     <li>
@@ -108,8 +109,13 @@ f.additionalLinks = ''
     </li>
   </ol>
 </section>
+
+
+
+
+
 <section id="basics">
-  <h2><a href="#basics">Basic overview of how the process works</a></h2>
+  <h2>Basic overview of how the process works</h2>
   <p>The  repository that you contribute to will depend on the document that your task force is working on. For example, <a href="https://github.com/w3c/alreq">https://github.com/w3c/alreq</a>. The following diagram illustrates the basics.</p>
   <p><img src="images/github-entities.png" style="width: 100%;" alt="Diagram showing parts of the GitHub setup."/></p>
   <p>We'll spend a moment in this section familiarising you with the basic setup. The following sections will indicate the detailed steps you need to take.</p>
@@ -120,8 +126,13 @@ f.additionalLinks = ''
   <p>Usually, prior to doing the add, commit, push routine, you would create a <span class="highlightedterm">branch</span>. This is rather like a walled garden within which you'll be making and managing changes. You can have any number of branches.</p>
   <p>Once you have made changes and you want to send those for incorporation into the W3C repo, and once you have pushed those changes to your fork on the GitHub site, you raise a <span class="highlightedterm">pull request</span> for the branch you were working in. The pull request informs the guardians of the W3C repo that you want to contribute some changes. Those guardians may simply merge your changes into the W3C repo, but typically they will look at your suggestions and allow some time for others to review them. You may need to change some things in the light of feedback before your content is merged with the W3C repo. Sometimes, the editors may take your code and add parts of it or add something along similar lines, rather than just merging the documents.</p>
 </section>
+
+
+
+
+
 <section id="forking">
-  <h2><a href="#forking">How to make your fork</a></h2>
+  <h2>How to make your fork</h2>
   <p>Once you have Git set up, you will need to fork the test repository. This
   will enable you to submit your proposed changes using a pull request (more on this below).</p>
   <ol>
@@ -141,7 +152,7 @@ f.additionalLinks = ''
 
 
 <section id="cloning">
-  <h2><a href="#cloning">Cloning your forked repo to your desktop</a></h2>
+  <h2>Cloning your forked repo to your desktop</h2>
   <p>If your fork was successful, the next step is to clone (download) a copy of your forked repo.</p>
   <p>At the command prompt, use <kbd>cd</kbd> to get to a directory where you want to keep your fork. We're about to create a subdirectory within the directory you just moved to: the subdirectory will be called <samp>repoName</samp>, and will contain all the files for that fork.</p>
   <p>Type the following:</p>
@@ -157,7 +168,7 @@ f.additionalLinks = ''
 
 
 <section id="housekeeping">
-  <h2><a href="#housekeeping">Additional housekeeping</a></h2>
+  <h2>Additional housekeeping</h2>
   <p>You should do a little housekeeping before going further.</p>
   <ol>
     <li>
@@ -202,7 +213,7 @@ upstream    https://github.com/w3c/<em>repoName</em>.git (push)</pre>
 
 
 <section id="synchronising">
-  <h2><a href="#synchronising">Synchronising your local files and your fork with the W3C repo</a></h2>
+  <h2>Synchronising your local files and your fork with the W3C repo</h2>
   <p>You should regularly bring your local copy of the files up-to-date with the latest commits in the W3C
     repository.</p>
   <ol>
@@ -245,12 +256,16 @@ upstream    https://github.com/w3c/<em>repoName</em>.git (push)</pre>
 
 
 <section id="changing">
-<h2><a href="#changing">Making changes and proposing them</a></h2>
+<h2>Making changes and proposing them</h2>
 <p>Now we describe steps to create content and how to request that the changes be merged into the content on the W3C repo.</p>
 <p><span class="highlightedterm">Before you start on these steps</span>, ensure that you have fetched the latest files from the W3C repo by following the steps in the previous section! </p>
 <p><span class="highlightedterm">Also, ensure that</span> you start from the <code class="kw" translate="no">gh-pages</code> branch, otherwise you'll end up with a horrible nested mess and you'll be very embarrassed because someone will have to spend a while digging you out. You have been warned!</p>
+
+
+
+
 <section id="newbranch">
-  <h3><a href="#newbranch">Create a new branch</a></h3>
+  <h3>Create a new branch</h3>
   <p>At the command line, check you are on the <code class="kw" translate="no">gh-pages</code> branch by typing</p>
   
     <pre>$ git status</pre>
@@ -274,13 +289,13 @@ upstream    https://github.com/w3c/<em>repoName</em>.git (push)</pre>
 
 
 <section id="makeChanges">
-  <h3><a href="#makeChanges">Make the changes to your content</a></h3>
+  <h3>Make the changes to your content</h3>
   <p>Edit the files you want to change or create.</p>
 </section>
 
 
 <section id="prepare">
-<h3><a href="#prepare">Prepare your files for submission</a></h3>
+<h3>Prepare your files for submission</h3>
 <p>Before you submit your changes for review and contribution to the W3C
   repo, you'll need to first commit them locally, where you now have your own
   personal version control system with git. In fact, as you are making your changes, you may want to save versions of your work as you go before you submit
@@ -331,7 +346,7 @@ upstream    https://github.com/w3c/<em>repoName</em>.git (push)</pre>
 
 
 <section id="request">
-<h3><a href="#request">Request that your changes be incorporated into the W3C repo</a></h3>
+<h3>Request that your changes be incorporated into the W3C repo</h3>
 <ol>
   <li>
     <p>The first thing you do before submitting changes to the W3C repo is to push
@@ -371,7 +386,7 @@ upstream    https://github.com/w3c/<em>repoName</em>.git (push)</pre>
 
 
   <section id="modify">
-    <h3><a href="#modify">Modify your submission</a></h3>
+    <h3>Modify your submission</h3>
     <p>Once you submit your pull request, a reviewer will check your proposed changes
       for correctness and style. It is likely that this process will lead to some
       comments asking for modifications to your code. When you are ready to make the
@@ -405,7 +420,7 @@ upstream    https://github.com/w3c/<em>repoName</em>.git (push)</pre>
   
   
   <section id="cleanup">
-    <h3><a href="#cleanup">Cleaning up</a></h3>
+    <h3>Cleaning up</h3>
     <p>Once your pull request has been accepted, you will be notified in the GitHub
       UI and you may get an email. At this point, your changes have been merged
       into the W3C repo. You do not need to take any further action
@@ -426,10 +441,10 @@ upstream    https://github.com/w3c/<em>repoName</em>.git (push)</pre>
 
 
 <section id="hints">
-<h2><a href="#hints">GitHub hints &amp; tips</a></h2>
+<h2>GitHub hints &amp; tips</h2>
   
   <section id="liveview">
-  <h3><a href="#liveview">See an HTML version of a page from a commit diff page</a></h3>
+  <h3>See an HTML version of a page from a commit diff page</h3>
   <p>You're looking at the diff for a commit (eg. <a href="https://github.com/w3c/alreq/commit/404f75daa4f6bb83750db85eee92b73371759842">this one</a>), and i want to see what the HTML page would look like. How do you do that?</p>
   <ol>
       <li>
@@ -452,12 +467,15 @@ upstream    https://github.com/w3c/<em>repoName</em>.git (push)</pre>
 
 
 <section id="echidna">
-<h2><a href="#echidna">Publishing with Echidna</a></h2>
+<h2>Publishing with Echidna</h2>
 <p>Follow these steps to quickly and easily publish your document to /TR space. It is good to keep differences between the editor's draft on GitHub and version on /TR as small as possible. Echidna makes it possible to self-publish at any time, without having to wait for the webmaster's help.</p>
 <p>Note that you can't publish First Public Working Drafts using Echidna. That has to go through the normal process.</p>
-  
+
+
+
+
   <section id="echidna_setup">
-  <h3><a href="#echidna_setup">Setting things up</a></h3>
+  <h3>Setting things up</h3>
   <p>Ask your staff contact to do the following:  </p>
   <ol>
       <li>
@@ -469,9 +487,12 @@ upstream    https://github.com/w3c/<em>repoName</em>.git (push)</pre>
       <li>Add a config file for the document on GitHub.</li>
   </ol>
   </section>
-  
-  <section id="echidna_publication">
-  <h3><a href="#echidna_publication">Actually publishing</a></h3>
+
+
+
+
+<section id="echidna_publication">
+  <h3>Actually publishing</h3>
   <p>Follow these steps:</p>
   <ol>
       <li> Check that the GitHub.io Editor's Draft (ED) is valid HTML using the <a href="https://validator.w3.org/">HTML5 validator</a>.      </li>
