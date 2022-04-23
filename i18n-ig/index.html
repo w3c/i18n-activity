@@ -3,9 +3,8 @@
 <head>
  <meta charset="UTF-8" />
  <title>I18n Interest Group home page</title>
-<link type="text/css" rel="stylesheet" href="https://w3c.github.io/i18n-activity/style/homepage.css">
 
-<script type="text/javascript">
+<script>
 var f = { }
 
 // AUTHORS should fill in these assignments:
@@ -28,26 +27,18 @@ f.contributors = '';
 f.translators = 'xxxNAME, ORG';
 
 f.breadcrumb = '';
-f.toc = 'no'
+f.toc = ''
 
 f.additionalLinks = ''
 </script>
-<script type="text/javascript" src="https://w3c.github.io/i18n-activity/i18n-ig/index-data/translations.js"> </script>
-<script type="text/javascript" src="https://w3c.github.io/i18n-drafts/javascript/doc-structure/article-dt.js"> </script>
-<script type="text/javascript" src="https://w3c.github.io/i18n-drafts/javascript/boilerplate-text/boilerplate-en.js"></script>
-<script type="text/javascript" src="https://w3c.github.io/i18n-drafts/javascript/doc-structure/sitepage.js"> </script>
-<script type="text/javascript" src="https://w3c.github.io/i18n-drafts/javascript/articletoc-html5.js"></script>
-<link rel="stylesheet" href="https://w3c.github.io/i18n-drafts/style/sitepage-2016.css" type="text/css" />
-<link rel="stylesheet" href="https://w3c.github.io/i18n-activity/i18n-ig/index-data/local.css" type="text/css" />
+<script src="https://w3c.github.io/i18n-activity/i18n-ig/index-data/translations.js"> </script>
+<script src="https://w3c.github.io/i18n-drafts/javascript/doc-structure/article-dt.js"> </script>
+<script src="https://w3c.github.io/i18n-drafts/javascript/boilerplate-text/boilerplate-en.js"></script>
+<script src="https://w3c.github.io/i18n-drafts/javascript/doc-structure/sitepage-2022.js"> </script>
+<script src="https://w3c.github.io/i18n-drafts/javascript/articletoc-2022.js"></script>
+<link rel="stylesheet" href="https://w3c.github.io/i18n-drafts/style/sitepage-2022.css" />
 <link rel="copyright" href="#copyright"/>
-<!--[if lt IE 9]><script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
-
-<style>
-div.content { width: 100%; display: flex; flex-flow: row; flex-wrap: wrap; float: none; padding: 0; }
-.panel {flex: 1; }
-.topRight { width: inherit; }
-</style>
- </head>
+</head>
 
  <body>
 <header>
@@ -56,46 +47,77 @@ div.content { width: 100%; display: flex; flex-flow: row; flex-wrap: wrap; float
 </header>
 
 
-<h1>Internationalization Interest Group<br />
+<h1>Internationalization Interest Group<br>
    Home Page</h1>
 
-<p> <span class="intnavbar"><strong>Key information:</strong> <a href="#about">Mission</a> - <a href="https://www.w3.org/International/groups/ig/charter.html">Charter</a> - <a href="https://www.w3.org/International">News</a> - <a href="#docs">Work in progress</a> - <a href="#join">How to join</a></span>
+<p> <span class="intnavbar"><strong>Key information:</strong> <a href="#about">Mission</a> - <a href="https://www.w3.org/International/groups/ig/charter.html">Charter</a> - <a href="https://www.w3.org/International">News</a> - <a href="#work">Work in progress</a> - <a href="#join">How to join</a></span>
  </p>
+
+
 
 <div class="content">
 
-<section class="panel">
-<h2 id="about" style="margin-top: 0"><a href="#about">Mission</a></h2>
+<section id="about">
+<h2>Mission</h2>
+
 <p>To share advice and information across a large group of people with knowledge of different languages, scripts and cultures, and relating to internationalization of different parts of the Web architecture.</p>
-        <p>The Interest Group also includes a number of task forces, looking into layout requirements.</p>
-<h2><a id="join">How to Join</a></h2>
-        <p><a href="mailto:www-international-request@w3.org?subject=subscribe">Subscribe</a> to the <a href="mailto:www-international@w3.org">www-international@w3.org mailing list</a>. You can also look at the <a href="https://lists.w3.org/Archives/Public/www-international/">public archive</a> (no subscription necessary). </p>
-<p>To join a layout task force follow the links on the page <a href="/International/layout">Layout &amp; typography</a>.</p>
-<h2><a id="meetings">Meetings</a></h2>
-        <p>The Interest Group holds no meetings.</p>
- </section>
-
-
-<section class="panel directory">
-<h2 id="work" style="margin-top: 0"> <a href="#work">Work in
-          progress</a> </h2>
-
-        <p>The www-international list receives  daily digests of GitHub activity. One reflects developments related to review comments being tracked by the i18n WG, and the other tracks changes to documents worked on by the WG. It also receives the i18n WG weekly teleconference minutes.</p>
-<p>We encourage use of the <a href="https://github.com/w3c/i18n-discuss/">w3c/i18n-discuss</a> issue list, rather than the <a href="http://lists.w3.org/Archives/Public/www-international/">www-international</a> mailing list, for technical discussions or questions about internationalization topics. This provides access to the many advantages associated with using GitHub issues. </p>
-        <p>For a list of layout task forces, see <a href="/International/layout">Layout &amp; typography</a>.</p>
-<h2><a id="reviews">Get involved !</a></h2>
-        <p>As a member of the I18N IG, you can help by reviewing early versions of W3C specifications for internationalization issues.</p>
-        <p>Send your comments to the interest group list, and the Internationalization Core Working Group will consider them and forward
-           them to the relevant working group. This work is central to ensuring that new technologies developed at W3C meet the needs of global users. See the <a href="https://github.com/w3c/i18n-activity/projects/1">Review Radar</a> for a list of documents currently in review by the Internationalization Working Group.</p>
-        <p>We also welcome contributions to discussions on the wide range of issues posted on the main IG mailing list, and the work of the task forces.</p>
+<p>The Interest Group also includes a number of task forces, looking into requirements for support of the world's languages on the Web.</p>
 </section>
 
+
+
+
+<section id="organization">
+<h2>Organization</h2>
+
+<p>The chair of the Interest Group is Martin Dürst.</p>
+
+<p>The Interest Group uses its mailing lists  to disseminate information about the word of the <a href="../i18n-wg/">W3C Internationalization Working Group</a>, including notifications about ongoing work and meeting minutes.  The language enablement work of the WG is supported by repositories and task forces that are formed under the umbrella of the Interest Group, but overseen by the Working Group. Participation in the Interest Group and its task forces is open to all who are interested.  Participation in the Working Group itself is limited to W3C members and invited experts.</p>
+</section>
+
+
+
+
+<section id="join">
+<h2>How to Join</h2>
+
+<p><a href="mailto:www-international-request@w3.org?subject=subscribe">Subscribe</a> to the <a href="mailto:www-international@w3.org">www-international@w3.org mailing list</a>. You can also look at the <a href="https://lists.w3.org/Archives/Public/www-international/">public archive</a> (no subscription necessary). </p>
+<p>To join a layout task force follow the links on the page <a href="https://www.w3.org/International/i18n-drafts/nav/languagedev">Language enablement</a>.</p>
+</section>
+
+
+<section id="meetings">
+<h2>Meetings</h2>
+
+<p>The Interest Group holds no meetings.</p>
+</section>
+
+
+
+
+<section id="work">
+<h2>Work in progress</h2>
+
+<p>The www-international list receives  daily digests of GitHub activity. One reflects developments related to review comments being tracked by the i18n WG, and the other tracks changes to documents worked on by the WG. It also receives the i18n WG weekly teleconference minutes.</p>
+<p>We encourage use of the <a href="https://github.com/w3c/i18n-discuss/">w3c/i18n-discuss</a> issue list, rather than the <a href="http://lists.w3.org/Archives/Public/www-international/">www-international</a> mailing list, for technical discussions or questions about internationalization topics. This provides access to the many advantages associated with using GitHub issues. </p>
+<p>For a list of layout task forces, see <a href="/International/layout">Layout &amp; typography</a>.</p>
+</section>
+
+
+
+<section id="reviews">
+<h2>Get involved !</h2>
+
+<p>As a member of the I18N IG, you can help by reviewing early versions of W3C specifications for internationalization issues.</p>
+<p>Send your comments to the interest group list, and the Internationalization Core Working Group will consider them and forward
+them to the relevant working group. This work is central to ensuring that new technologies developed at W3C meet the needs of global users. See the <a href="https://github.com/w3c/i18n-activity/projects/1">Review Radar</a> for a list of documents currently in review by the Internationalization Working Group.</p>
+<p>We also welcome contributions to discussions on the wide range of issues posted on the main IG mailing list, and the work of the task forces.</p>
+</section>
 </div>
 
-<hr />
-<small>
-<p><em>Chair: Martin Dürst<br />Staff contact: Richard Ishida (ishida at w3 dot org)</em></p>
-<p class="copyright">Copyright © 2018 W3C <sup>®</sup> (<a href="http://www.csail.mit.edu/"><acronym title="Massachusetts Institute of Technology">MIT</acronym></a>, <a href="http://www.ercim.eu/"><acronym title="European Research Consortium for Informatics and Mathematics">ERCIM</acronym></a>, <a href="http://www.keio.ac.jp/">Keio</a>, <a href="http://ev.buaa.edu.cn/">Beihang</a>), All Rights Reserved. W3C <a href="https://www.w3.org/Consortium/Legal/ipr-notice#Legal_Disclaimer">liability</a>, <a href="https://www.w3.org/Consortium/Legal/ipr-notice#W3C_Trademarks">trademark</a>, <a rel="Copyright" href="https://www.w3.org/Consortium/Legal/copyright-documents">document use</a> and <a rel="Copyright" href="https://www.w3.org/Consortium/Legal/copyright-software">software licensing</a> rules apply. Your interactions with this site are in accordance with our <a href="https://www.w3.org/Consortium/Legal/privacy-statement#Public">public</a> and <a href="https://www.w3.org/Consortium/Legal/privacy-statement#Members">Member</a> privacy statements.</p>
-</small>
+
+
+<footer id="thefooter"></footer><script>document.getElementById('thefooter').innerHTML = g.bottomOfPage</script>
+<script>completePage()</script>
 </body>
 </html>
