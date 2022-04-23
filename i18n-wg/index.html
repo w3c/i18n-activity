@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8" />
 <title>Internationalization Working Group home page</title>
-<link rel="stylesheet" href="https://w3c.github.io/i18n-activity/style/homepage.css">
+<!--link rel="stylesheet" href="https://w3c.github.io/i18n-activity/style/homepage.css"-->
 
 
 <script>
@@ -29,184 +29,126 @@ f.contributors = '';
 f.translators = 'xxxNAME, ORG';
 
 f.breadcrumb = '';
-f.toc = 'no'
+f.toc = 'yes'
 
 f.additionalLinks = ''
 </script>
 <script src="index-data/translations.js"> </script>
 <script src="../../i18n-drafts/javascript/doc-structure/article-dt.js"> </script>
 <script src="../../i18n-drafts/javascript/boilerplate-text/boilerplate-en.js"></script>
-<script src="../../i18n-drafts/javascript/doc-structure/sitepage.js"> </script>
-<script src="../../i18n-drafts/javascript/articletoc-html5.js"></script>
+<!--TRANSLATORS must change -en in the line above to the subtag for their language!-->
+<script src="../../i18n-drafts/javascript/doc-structure/sitepage-2022.js"> </script>
+<script src="../../i18n-drafts/javascript/articletoc-2022.js"></script>
 
-<link rel="stylesheet" href="https://w3c.github.io/i18n-drafts/style/sitepage-2016.css" />
-<link rel="stylesheet" href="https://w3c.github.io/i18n-activity/i18n-wg/index-data/local.css" />
+<link rel="stylesheet" href="https://w3c.github.io/i18n-drafts/style/sitepage-2022.css" />
 <link rel="copyright" href="#copyright"/>
-
-<style>
-div.content { width: 100%; display: flex; flex-flow: row; flex-wrap: wrap; float: none; padding: 0; }
-.panel {flex: 1; }
-.topRight { width: inherit; }
-</style>
-
-
-
-
-<style>
-table#layout-body {
-	width: 100%;
-}
-a.highlightradar:link {
-	color: maroon;
-	font-weight: bold;
-}
-a.highlightradar:visited {
-	color: maroon;
-	font-weight: bold;
-}
-#admin_area, #work_area, #participation_area {
-	width: 30%;
-	vertical-align: top;
-	padding-left: 8px;
-	float: left;
-}
-p.sidebarNotation {
-	font-size: smaller;
-	background-color: gray;
-}
-.highlightlink {
-	text-align: center;
-}
-.highlightlink {
-	font-size: 150%;
-	border: 1px solid #eeb058;
-	padding-left: 10px;
-	padding-right: 10px;
-	border-radius: 8px;
-}
-.highlightlink:hover {
-	background-color: #697fb1;
-	border-color: #697fb1;
-	background-color: teal;
-	border-color: teal;
-	color: white;
-}
-.highlightlink:hover a {
-    color: white;
-    }
-.col {
-	float: left;
-	min-width: 30%;
-	vertical-align: top;
-	padding-left: 8px;
-}
-div.directory {
-	margin-top: 0;
-}
-</style>
-<style>
-#project_list { clear:both; }
-#project_list .topic {
-	font-size: 24px;
-	margin-left: 0;
-	background-color: rgb(244, 150, 9);
-	color: white;
-	border-radius: 10px;
-	padding: 0 .5em;
-	}
-th { text-align: start;
-	font-size: 24px;
-	font-weight: 300;
-	padding: 8px;
-	vertical-align: top;
-	}
-td {
-	vertical-align: top;
-	}
-#project_list p { margin-left: 1em; }
-#project_list ul, #project_list li { margin-left: .5em; padding-left: .5em; }
-.inprogress {
-	background-color: rgb(255, 248, 168);
-	border-radius: 10px;
-	}
-.priority {
-	}
-.subdiv {
-    margin-bottom: 0px;
-    font-weight: bold;
-    font-style: italic;
-    margin-top: 0px;
-	}
-</style>
-<link rel="participants"
-  href="http://www.w3.org/2000/09/dbwg/details?group=32113" />
-<style>
-.inprogress {	background-color: rgb(255, 248, 168);
-	border-radius: 10px;
-}
-.priority {}
-#project_list {clear:both; }
-</style>
 </head>
 
-<body lang="en">
+<body>
 <header>
   <nav id="mainNavigation"></nav>
   <script>document.getElementById('mainNavigation').innerHTML = mainNavigation</script> 
-
-<h1>Internationalization  Working Group<br />
-  Home Page</h1>
 </header>
+
+<h1>Internationalization  Working Group<br>
+  Home Page</h1>
 
 
 <p><span class="intnavbar"><strong>Key  information:</strong> <a
-href="#about">Mission</a> - <a href="https://www.w3.org/International">News</a> - <a
+href="#mission">Mission</a> - <a href="https://www.w3.org/International">News</a> - <a
 href="#work">Work in progress</a> - <a href="https://www.w3.org/standards/techs/i18n#drafts">Publications</a> - <a
-href="https://www.w3.org/International/resources">Other resources</a> - <a
+href="https://www.w3.org/International/i18n-drafts/nav/find">Other resources</a> - <a
 href="https://www.w3.org/International/groups/wg/charter.html" rel="charter">Charter</a> - <a
-href="#meetings">Meetings</a> - <a href="#lists">Archives</a> - <a
-href="http://www.w3.org/2000/09/dbwg/details?group=32113">Participants</a> - <a href="#benefits">How to join</a> - <a href="#join">Patent policy</a></span></p>
+href="#meetings">Meetings</a> - <a href="#communication">Archives</a> - <a
+href="https://www.w3.org/groups/wg/i18n-core/participants">Participants</a> - <a href="#join">How to join</a><!-- - <a href="#join">Patent policy</a--></span></p>
 
 
 <div class="content">
 
-<section class="panel">
-  <h2 style="margin-top: 0" id="about">Mission</h2>
-  <p> Provide internationalization advice to
-    other groups developing Web standards, and review their
-    specifications (mostly W3C groups, but we also get involved in  
-    Unicode, IDN, IETF and other work). </p>
-  <p>Develop education and outreach materials to make the
-    internationalization aspects of W3C technology better understood and
-    more widely and consistently used by content authors and
-    implementers.</p>
+<section id="mission">
+<h2>Mission</h2>
+
 <p>Gather and make available requirements for the support of local writing systems and languages on the Web.</p>
-    <p>The project radar lists  objectives for current WG work items.</p><p class="highlightlink"><a target="_blank" href="https://w3c.github.io/i18n-activity/projects">Project
-    Radar</a></p>
-<h2><a id="lists" name="lists">Organization</a></h2>
-  <p>The main point of entry for information and news related to the work of the Internationalization Working Group is the</p>
-  <p class="highlightlink"><a target="_blank" href="https://www.w3.org/International/">I18n Home Page</a>  </p>
-  <p>The news is sent to various <a href="https://www.w3.org/International/log/description">RSS feeds</a>, and also a Twitter channel, <a href="https://twitter.com/webi18n">@webi18n</a>.</p>
-  <p>The chair of the Working Group is Addison Phillips (Amazon).</p>
-  <h2><a id="communication" name="lists">Electronic communication</a></h2>
-  <p>Much of the technical discussion  takes place in various github issues lists. If you want to raise an issue with a document, this is the place to raise it. See a <a href="http://www.w3.org/International/docs/openissues/">list of open issues</a>.</p>
-  <p> Technical topics for which  no GitHub issue list is appropriate can be discussed on the <a href="http://lists.w3.org/Archives/Public/www-international/">www-international</a> mailing list, <strong>however, we recommend that you start technical threads on <a href="https://github.com/w3c/i18n-discuss/">w3c/i18n-discuss</a> rather than here</strong>, to leverage the significant benefits that GitHub issues bring. Www-international is the main list for the Internationalization Interest Group. The list  receives i18n WG minutes, and daily digests of activity on i18n GitHub issues, including review comments sent to other groups. The list is public and anyone can subscribe.</p>
-  <p><a href="http://lists.w3.org/Archives/Public/public-i18n-core/">public-i18n-core</a> is used mostly for  group-restricted discussions, and for notification of proposed review comments. The archive is public. This list also receives weekly digests of activity on i18n GitHub issues.</p>
-  <p>There is also a member-only list [<a
-        href="http://lists.w3.org/Archives/Member/member-i18n-core/">archive</a>] which is used for group administravia and any member-confidential topics.</p>
-  <p> There is also a related, very low traffic list, <a href="http://lists.w3.org/Archives/Public/public-iri/">public-iri</a>, for   discussions of IRIs and related topics. The list is public and anyone can subscribe.</p>
-  <h2><a id="meetings" name="meetings">Meetings</a></h2>
-  <h3>Teleconferences</h3>
-  <p>The working group holds a weekly Webex teleconference to discuss work
-    items for about one hour.</p>
-  <p>Meeting agenda are published before each teleconference  on the <code class="kw" translate="no"><a href="http://lists.w3.org/Archives/Member/member-i18n-core/">member-i18n-core</a></code> mailing list. They include Webex links and telephone numbers, and also include information about how to connect to IRC, which is used during meetings to record minutes and also to share URIs, examples, and so forth. We also use it outside of meetings for quick contacts.</p>
-  <p>To request an agenda item, send an email to the member list with &quot;agenda+&quot; at the start of the subject.</p>
-  <p>Minutes and summaries of all teleconferences and face-to-face meetings can be found in the <code class="kw" translate="no"><a href="http://lists.w3.org/Archives/Public/www-international/">www-international</a></code> mail archive.</p>
-  <h3>Next face-to-face meeting</h3>
-  <ul>
-    <li><strong>Vancouver, BC, Canada (TPAC), 26-30 October 2020</strong>
-      </li>
-  </ul>
+
+<p> Provide internationalization advice to
+other groups developing Web standards, and review their
+specifications (mostly W3C groups, but we also get involved in  
+Unicode, IDN, IETF and other work). </p>
+
+<p>Develop education and outreach materials to make the
+internationalization aspects of W3C technology better understood and
+more widely and consistently used by content authors and
+implementers.</p>
+
+<p>The project radar lists  objectives for current WG work items.</p>
+
+<p><a class="highlightLink" target="_blank" href="https://w3c.github.io/i18n-activity/projects">Project Radar</a></p>
+</section>
+
+
+
+
+<section id="organization">
+<h2>Organization</h2>
+
+<p>The chair of the Working Group is Addison Phillips (Amazon).</p>
+
+<p>The Working Group uses the mailing lists of the <a href="../i18n-ig/">Internationalization Interest Group</a> to disseminate notifications about ongoing work and meeting minutes.  The language enablement work of the WG is supported by repositories and task forces that are formed under the umbrella of the Interest Group. Participation in the Interest Group and its task forces is open to all who are interested.  Participation in the Working Group itself is limited to W3C members and invited experts.</p>
+</section>
+
+
+
+
+<section id="communication">
+<h2>Electronic communication</h2>
+
+<p>The main points of entry for information and news related to the work of the Internationalization Working Group are the home page and twitter channel.</p>
+
+<p class="highlightLink"><a target="_blank" href="https://www.w3.org/International/">I18n Home Page</a></p>
+
+<p class="highlightLink"><a href="https://twitter.com/webi18n">@webi18n</a></p>
+
+<p>The news is also sent to various <a href="https://www.w3.org/International/i18n-drafts/nav/follow#feeds">RSS feeds</a>.</p>
+
+<p>All technical discussion takes place in GitHub issues.</p>
+
+<p>Lists of GitHub repositories and mail archives can be found  in the <a href="https://www.w3.org/International/i18n-drafts/nav/find#groups">list of groups</a>. Check the group pages for information about how the lists are used.</p>
+
+<p> Technical topics for which  no GitHub issue list is appropriate can be discussed on the <a href="https://github.com/w3c/i18n-discuss/">w3c/i18n-discuss</a> GitHub issue list.</p>
+</section>
+
+
+
+
+<section id="meetings">
+<h2>Meetings</h2>
+
+
+<section id="telecons">
+<h3>Teleconferences</h3>
+
+<p>The working group holds a weekly Zoom teleconference to discuss work items, which lasts for about one hour.</p>
+
+<p>Meeting agenda are sent to the <code class="kw" translate="no"><a href="http://lists.w3.org/Archives/Member/member-i18n-core/">member-i18n-core</a></code> mailing list. They include instructions for joining the teleconference. </p>
+<p>IRC is used during meetings to record minutes and also to share URIs, examples, and so forth. We also use it outside of meetings for quick contacts.</p>
+
+<p>To request an agenda item, send an email to the member list with &quot;agenda+&quot; at the start of the subject.</p>
+
+<p>Minutes and summaries of all teleconferences and face-to-face meetings can be found in the <code class="kw" translate="no"><a href="http://lists.w3.org/Archives/Public/www-international/">www-international</a></code> mail archive.</p>
+</section>
+
+
+<section id="ftf">
+<h3>Next face-to-face meeting</h3>
+<ul>
+<li><strong>Vancouver, BC, Canada (TPAC), October 2022</strong>
+</li>
+</ul>
+</section>
+
+
+  
+  <section id="meeting_links">
   <h3>Useful Links</h3>
   <ul>
     <li><a href="http://www.w3.org/2001/12/zakim-irc-bot.html">Zakim
@@ -215,90 +157,116 @@ href="http://www.w3.org/2000/09/dbwg/details?group=32113">Participants</a> - <a 
             href="http://www.timeanddate.com/worldclock/meeting.html">World
       Clock Meeting Planner</a></li>
   </ul>
-</section>
-
-
-<section class="panel directory">
-  <h2 id="join" style="margin-top: 0"><a href="#join" id="benefits">How to participate</a></h2>
-  <p>The Working Group (WG) is always looking for additional
-    participants, to work on a very varied range of topics and interests.
-    The group needs a variety of people with different skills, from
-    technical authoring to specialised knowledge of particular
-    technologies.</p>
-  <p>See a <a href="https://www.w3.org/International/about#benefits">list of
-    participation benefits </a> for you and your organization. </p>
-  <p>See some examples of <a href="#activities">what WG members do</a> within the group.</p>
-  <p> Working group members are responsible for the
-    development of the group's deliverables, so some minimum commitment
-    is preferred, but we are flexible about this. </p>
-  <p>We would expect you to keep up to date with the discussions on the <a href="http://lists.w3.org/Archives/Public/public-i18n-core/">public-i18n-core</a> and <a href="https://lists.w3.org/Archives/Public/www-international/">www-international</a> lists and respond in a timely manner when required.</p>
-  <p> We would like you to participate in weekly teleconferences and in face to face meetings as scheduled or send regrets to list.</p>
-  <p>We would like you participate in reviews and discussions of documents or specifications where you have an interest or expertise.</p>
-  <p>The Working Group has fingers in so many pies that it can be a little disorienting or confusing for new people at first.  Your participation in the WG will be driven mostly by your interests, so please look for areas where you are interested in contributing and feel free to volunteer or champion an area that is particularly interesting to you. </p>
-  <p>Participants in the working group are expected to observe the requirements of the <a href="http://www.w3.org/Consortium/Process-20010719/groups.html#GAGeneral">W3C Process for Working Groups</a>. </p>
-  <p class="highlightlink"><a
-        href="http://www.w3.org/2004/01/pp-impl/32113/instructions">Join</a></p>
-  <p>If you are unable to make the required commitment to join the
-    working group, <a
-        href="https://www.w3.org/International/about#otherways">you can still contribute</a> in
-    a number of ways. You can also simply follow the work by accessing the <a
-        href="https://www.w3.org/International/">Internationalization Web site</a>, the <a href="http://www.w3.org/International/about#mail">public mailing lists and archives</a>, and all public <a
-        href="https://www.w3.org/International/core/#work">documents</a>. </p>
-  <p>You are also encouraged to join the <a
-        href="https://www.w3.org/International/ig/">Internationalization
-    Interest Group</a>.</p>
-  <p><a
-        href="http://www.w3.org/2000/09/dbwg/details?group=32113">Current
-    WG participants</a></p>
+    </section>
 </section>
 
 
 
-<section class="panel directory">
-  <h2 style="margin-top: 0" 
-        id="work">Useful links</h2>
-  <p>We use Github to develop our technical reports. You can find links to the github repositories in the <a href="https://www.w3.org/International/wiki/Project_radar">project radar</a>.</p>
-  <p>The folllowing links take you to pages that point to useful information, depending on who you are.</p>
-<p class="highlightlink"><a target="_blank" href="http://w3c.github.io/i18n-drafts/getting-started/contentdev.en">Content authors &amp; developers</a></p>
-<p class="highlightlink"><a target="_blank" href="http://w3c.github.io/i18n-drafts/getting-started/specdev.en">Spec developers &amp; implementers</a></p>
-<p class="highlightlink"><a target="_blank" href="http://w3c.github.io/i18n-drafts/getting-started/wg.en">WG participants</a>  </p>
 
-<h2><a id="activities" name="activities">What WG members do </a></h2>
-  <p>Working Group members contribute in one or more of the following
-    ways.</p>
-  <ul>
-    <li>Participate in discussions on the <a href="http://www.w3.org/International/about#mail">various  mailing lists</a> and during <a
-          href="#meetings">teleconferences</a>.</li>
-    <li>Review <a href="https://w3c.github.io/i18n-activity/projects">articles and documents </a> prior
-      to publication and send comments.</li>
-    <li>Review <a href="https://w3c.github.io/i18n-activity/radar">W3C
-      specifications</a> for internationalization issues and forward to
-      the group </li>
-    <li>Coordinate notification and discussion of <a href="http://w3c.github.io/i18n-activity/reviews/">review issues</a> with
-      other Working Groups.</li>
-    <li>Provide information about language or script usage in response
-      to our <a href="http://www.w3.org/blog/International?cat=24">feedback
-      requests</a>.</li>
-    <li>Write <a href="http://www.w3.org/blog/International/articlelist">articles</a> and
-      plan and discuss content for forthcoming articles.</li>
-    <li>Develop or review <a href="http://www.w3.org/International/techniques-index">best
-      practices, requirements,  guidelines and other Working Group Notes</a> for content authors, implementers, or specification
-      developers.</li>
-    <li>Help maintain <a href="https://www.w3.org/International/resource-index">topic</a> and <a href="https://www.w3.org/International/technique-index">techniques</a> indexes to the information on the site.</li>
-    <li>Develop <a href="http://www.w3.org/International/tests/">tests</a> to help implementors and better understand what internationalization features are supported in browsers.</li>
-    <li>Help respond to feedback on articles, etc. </li>
-  </ul>
-<h2 id="reviewhowto">What does reviewing a spec involve?</h2>
-<p>Choose specs you have an interest in or that you think may widen your awareness, and don't worry about revisiting recently reviewed specs and raising new issues if you spot any. See the <a href="http://w3c.github.io/i18n-activity/radar/">review radar</a> for suggestions.</p>
-<p>There is  a page <a href="https://www.w3.org/International/reviews/review-instructions">How to review specs and raise issues</a> that describes, step-by-step, how to raise issues as you review a spec.</p>
-<p> We are currently developing <a href="https://www.w3.org/International/techniques/developing-specs-dynamic">a checklist to help you</a> with suggestions of things to look for. It's by no means exhaustive, and it's still in development, so don't expect it to be perfect. However, as you drill down in that page you reach a list of &quot;Recommendations&quot; which will give you ideas. If there is a 'more' link at the end of the recommendation, click on it to better understand the topic. </p>
+
+<section id="join">
+<h2>How to participate</h2>
+
+<p>The Working Group (WG) is always looking for additional participants, to work on a very varied range of topics and interests. The group needs a variety of people with different skills, from technical authoring to specialised knowledge of particular technologies.</p>
+
+<p>See a <a href="https://www.w3.org/International/i18n-drafts/nav/participate#benefits">list of
+participation benefits </a> for you and your organization, and some examples of <a href="#activities">what WG members do</a> within the group.</p>
+
+<p> Working group members are responsible for the
+development of the group's deliverables, so some minimum commitment
+is preferred, but we are flexible about this. We would expect you to keep up to date with the discussions on the <a href="http://lists.w3.org/Archives/Public/public-i18n-core/">public-i18n-core</a> and <a href="https://lists.w3.org/Archives/Public/www-international/">www-international</a> lists and respond in a timely manner when required.</p>
+
+<p> We also prefer that you participate in weekly teleconferences and in face to face meetings as scheduled or send regrets to list.</p>
+
+<p>We would like you participate in reviews and discussions of documents or specifications where you have an interest or expertise.</p>
+
+<p>The Working Group has fingers in so many pies that it can be a little disorienting or confusing for new people at first.  Your participation in the WG will be driven mostly by your own interests, so please look for areas where you are interested in contributing and feel free to volunteer or champion an area that is particularly interesting to you.</p>
+
+<p>Participants in the working group are expected to observe the requirements of the <a href="http://www.w3.org/Consortium/Process-20010719/groups.html#GAGeneral">W3C Process for Working Groups</a>.</p>
+
+<p class="highlightLink"><a
+href="http://www.w3.org/2004/01/pp-impl/32113/instructions">Join</a></p>
+<p>If you are unable to make the required commitment to join the Working Group, you can still contribute in a number of ways.  See <a href="https://www.w3.org/International/i18n-drafts/nav/participate">Get involved in W3C Internationalization</a> for ideas.</p>
+
+<p>See a list of <a href="https://www.w3.org/groups/wg/i18n-core/participants">current WG participants</a>.</p>
 </section>
 
-</div>
 
 
-<br style="clear:both;"/>
-<h2 id="historical">Historical information</h2>
+<section id="work">
+<h2>Useful links</h2>
+
+<p>The folllowing links take you to pages that point to useful information, depending on your interests and role.</p>
+
+<p class="highlightLink"><a target="_blank" href="https://www.w3.org/International/i18n-drafts/nav/languagedev">Linguistic experts</a></p>
+
+<p class="highlightLink"><a target="_blank" href="https://www.w3.org/International/i18n-drafts/nav/specdev">Spec developers &amp; implementers</a></p>
+
+<p class="highlightLink"><a target="_blank" href="https://www.w3.org/International/i18n-drafts/nav/contentdev">Content authors &amp; developers</a></p>
+
+<p class="highlightlink"><a target="_blank" href="http://w3c.github.io/i18n-drafts/getting-started/wg.en">WG participants</a></p>
+</section>
+
+
+
+
+
+<section id="activities">
+<h2>What WG members do </h2>
+
+<p>Working Group members contribute in one or more of the following
+ways.</p>
+
+<ul>
+<li>Participate in discussions on the <a href="https://www.w3.org/International/i18n-drafts/nav/follow#other">various  mailing lists</a> and during <a
+href="#meetings">teleconferences</a>.</li>
+
+<li>Review <a href="https://www.w3.org/International/articlelist.en.html">articles and documents </a> prior to publication and send comments.</li>
+
+<li>Review <a href="https://github.com/w3c/i18n-request/projects/1">W3C specifications</a> for internationalization issues and forward to the group </li>
+
+<li>Coordinate notification and discussion of <a href="http://w3c.github.io/i18n-activity/reviews/">review issues</a> with other Working Groups.</li>
+
+<li>Provide information about language or script usage in response to our <a href="https://www.w3.org/International/i18n-activity/textlayout/">feedback requests</a>.</li>
+
+<li>Write <a href="http://www.w3.org/blog/International/articlelist">articles</a> explaining internationalization-related aspects of Web technologies, and
+plan and discuss content for forthcoming articles.</li>
+
+<li>Develop or review <a href="https://www.w3.org/TR/international-specs/">best
+practices, requirements,  guidelines and other Working Group Notes</a> for content authors, implementers, or specification
+developers.</li>
+
+<li>Help maintain <a href="https://www.w3.org/International/techniques/authoring-html">techniques</a> indexes and the <a href="https://www.w3.org/TR/typography/">language enablement index</a>.</li>
+
+<li>Develop <a href="https://www.w3.org/International/i18n-tests/">tests</a> to help implementors and better understand what internationalization features are supported in browsers.</li>
+
+<li>Help respond to feedback on articles, etc.</li>
+</ul>
+</section>
+
+
+
+
+
+
+<section id="reviewhowto">
+<h2>What does reviewing a spec involve?</h2>
+
+<p>Choose specs you have an interest in or that you think may widen your awareness, and don't worry about revisiting recently reviewed specs and raising new issues if you spot any. See the <a href="https://github.com/w3c/i18n-request/projects/1">review radar</a> for suggestions.</p>
+
+<p>The page <a href="https://w3c.github.io/i18n-activity/guidelines/review-instructions.html">How to review specs and raise issues</a> that describes, step-by-step, how to raise issues as you review a spec.</p>
+
+<p>For ideas of what to look for during a review see the <a href="https://www.w3.org/International/i18n-drafts/techniques/shortchecklist">Short i18n review checklist</a>. Follow the links from there to the document <a href="https://www.w3.org/International/techniques/developing-specs-dynamic">Internationalization Best Practices for Spec Developers</a> for detailed suggestions of things to look for, with explanations. (You can also <a href="https://w3c.github.io/bp-i18n-specdev/#ghChecklist">generate a checklist</a> of just the recommendations.)</p>
+</section>
+
+
+
+
+<section id="historical">
+<h2>Historical information</h2>
+
+
+<section id="minutes">
 <h3>Previous locations of minutes:</h3>
 <p>Since May 2012, see the <a href="https://www.w3.org/Search/Mail/Member/advanced_search?keywords=&amp;hdr-1-name=subject&amp;hdr-1-query=minutes&amp;hdr-2-name=from&amp;hdr-2-query=&amp;hdr-3-name=message-id&amp;hdr-3-query=&amp;period_month=&amp;period_year=&amp;index-grp=Member__FULL+Public__FULL&amp;index-type=t&amp;type-index=www-international&amp;resultsperpage=50&amp;sortby=date">www-international archive</a>, and search for 'minutes' in the subject.</p>
 <p> Apr 2011 - May 2012, see the public-i18n-core <a
@@ -311,6 +279,11 @@ href="http://www.w3.org/2000/09/dbwg/details?group=32113">Participants</a> - <a 
 <p>For earlier minutes, see <a
         href="http://www.w3.org/Search/Mail/Member/search?keywords=&amp;hdr-1-name=subject&amp;hdr-1-query=minutes&amp;index-grp=Member__FULL+Public__FULL&amp;index-type=t&amp;type-index=w3c-i18n-ig">this
   archive</a><sup>MO</sup>.</p>
+  </section>
+
+
+
+<section id="pastftf">
 <h3>Past FTF meetings</h3>
 <ul>
   <li><strong>Fukuoka, Japan (TPAC), 16-20 September 2019</strong>
@@ -354,6 +327,12 @@ href="http://www.w3.org/2000/09/dbwg/details?group=32113">Participants</a> - <a 
                                                             <a href="2002/11/ftf-agenda-200211.html">[Agenda]</a>--> 
   </li>
 </ul>
+</section>
+
+
+
+
+<section id="oldprocess">
 <h3>Old process documents</h3>
 <ul>
   <li><a href="https://www.w3.org/International/style/article-styleguide.html">Article
@@ -381,26 +360,14 @@ href="http://www.w3.org/2000/09/dbwg/details?group=32113">Participants</a> - <a 
             href="https://www.w3.org/International/xmlspec/002/documentation/xmlspec-i18n-dtd">XMLSpec-i18n
     DTD documentation</a> </li>
 </ul>
-<hr />
-<small>
-<p>Chair: Addison
-  Phillips (addison at amazon dot com)<br />
-  Staff contact: Richard Ishida (ishida at w3 dot org) <br />
-  <em>$Id: Overview.html,v 1.149 2015/10/21 18:52:56 rishida Exp $</em></p>
-<p class="copyright"><a rel="Copyright"
-href="https://www.w3.org/Consortium/Legal/ipr-notice#Copyright">Copyright</a> © 2007-2014 <a
-href="https://www.w3.org/"><acronym
-title="World Wide Web Consortium">W3C</acronym></a><sup>®</sup> (<a
-href="http://www.csail.mit.edu/index.php"><acronym
-title="Massachusetts Institute of Technology">MIT</acronym></a>, <a
-href="http://www.ercim.org/"><acronym
-title="European Research Consortium for Informatics and Mathematics">ERCIM</acronym></a>, <a href="http://www.keio.ac.jp/">Keio</a>, <a href="http://ev.buaa.edu.cn/">Beihang</a>), All Rights Reserved. W3C <a
-href="https://www.w3.org/Consortium/Legal/ipr-notice#Legal_Disclaimer">liability</a>, <a
-href="https://www.w3.org/Consortium/Legal/ipr-notice#W3C_Trademarks">trademark</a>, <a
-rel="Copyright" href="https://www.w3.org/Consortium/Legal/copyright-documents">document use</a> and <a rel="Copyright" href="https://www.w3.org/Consortium/Legal/copyright-software">software
-  licensing</a> rules apply. Your interactions with this site are in accordance
-  with our <a href="https://www.w3.org/Consortium/Legal/privacy-statement#Public">public</a> and <a href="https://www.w3.org/Consortium/Legal/privacy-statement#Members">Member</a> privacy
-  statements.</p>
-</small>
+</section>
+</section>
+
+</div>
+
+
+
+<footer id="thefooter"></footer><script>document.getElementById('thefooter').innerHTML = g.bottomOfPage</script>
+<script>completePage()</script>
 </body>
 </html>
