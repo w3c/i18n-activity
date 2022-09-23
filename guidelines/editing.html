@@ -408,11 +408,11 @@ p { color: red }
 
 <p>A similar approach can be used for character sequences (and can also be produced easily using the character apps). The normal pattern is:</p>
 
-<p id="codepoint_code_eg"><code class="language-html">&lt;span class=&quot;codepoint&quot; translate=&quot;no&quot;&gt;&lt;bdi lang=&quot;XX&quot;&gt;&amp;#xXXXX;&amp;#xYYYY;&lt;/bdi&gt; [&lt;span class=&quot;uname&quot;&gt;U+XXXX UNICODE_CHARACTER_NAME&lt;/span&gt; + &lt;span class=&quot;uname&quot;&gt;U+YYYY UNICODE_CHARACTER_NAME&lt;/span&gt;]&lt;/span&gt;</code></p>
+<p id="codepoint_codes"><code class="language-html">&lt;span class=&quot;codepoint&quot; translate=&quot;no&quot;&gt;&lt;bdi lang=&quot;XX&quot;&gt;&amp;#xXXXX;&amp;#xYYYY;&lt;/bdi&gt; [&lt;span class=&quot;uname&quot;&gt;U+XXXX UNICODE_CHARACTER_NAME&lt;/span&gt; + &lt;span class=&quot;uname&quot;&gt;U+YYYY UNICODE_CHARACTER_NAME&lt;/span&gt;]&lt;/span&gt;</code></p>
 
 <p>For example:</p>
 
-<p id="codepoint_code_eg"><code class="language-html">&lt;span class=&quot;codepoint&quot; translate=&quot;no&quot;&gt;&lt;bdi lang=&quot;fr&quot;&gt;&amp;#x0065;&amp;#x0301;&lt;/bdi&gt; [&lt;span class=&quot;uname&quot;&gt;U+0065 LATIN SMALL LETTER E&lt;/span&gt; + &lt;span class=&quot;uname&quot;&gt;U+0301 COMBINING ACUTE ACCENT&lt;/span&gt;]&lt;/span&gt;</code></p>
+<p id="codepoint_codes_eg"><code class="language-html">&lt;span class=&quot;codepoint&quot; translate=&quot;no&quot;&gt;&lt;bdi lang=&quot;fr&quot;&gt;&amp;#x0065;&amp;#x0301;&lt;/bdi&gt; [&lt;span class=&quot;uname&quot;&gt;U+0065 LATIN SMALL LETTER E&lt;/span&gt; + &lt;span class=&quot;uname&quot;&gt;U+0301 COMBINING ACUTE ACCENT&lt;/span&gt;]&lt;/span&gt;</code></p>
 
 <p>will produce: <span class="codepoint" translate="no"><bdi lang="fr">&#x0065;&#x0301;</bdi> [<span class="uname">U+0065 LATIN SMALL LETTER E</span> + <span class="uname">U+0301 COMBINING ACUTE ACCENT</span>]</span>.</p>
 </section>
