@@ -41,6 +41,93 @@ f.additionalLinks = ''
 <link rel="stylesheet" href="../../i18n-drafts/style/prism.css">
 <link rel="stylesheet" href="../../i18n-drafts/style/sitepage-2022.css">
 <style>
+h2 {
+	margin-top: 3em;
+	margin-bottom: 0em;
+	}
+.head h2, #abstract h2, #sotd h2 {
+	margin-top: 0;
+	}
+h3 {
+	margin-top: 3em;
+	}
+h4  { 
+	font-size: 100%; 
+    font-weight: normal; 
+    color: #005a9c; 
+    margin-top: 2em;  
+    }
+.leadin {
+	font-weight: bold;
+	}
+
+ins { 
+	background-color: #99FF99; 
+	text-decoration: none; 
+	}
+del { 
+	display: inline; 
+	color: silver; 
+	}
+
+figure { 
+	margin-bottom: 2em; 
+	text-align: center;
+	}
+figcaption {
+	 text-align: center;
+	margin: 0.5em 2em;
+	font-style: italic;
+	font-size: 90%;
+	}
+.figno:after {
+	content: ':\00A0  ';
+}
+
+a.termref:link {
+	color:#C60;
+	text-decoration:none;
+	border-bottom: 1px dotted #FC0; 
+	}
+a.termref:hover {
+	color:#C60;
+	text-decoration:none;
+	border-bottom: 1px dotted #FC0; 
+	}
+a.termref:visited {
+	color:#C60;
+	text-decoration:none;
+	border-bottom: 1px dotted #FC0; 
+	}
+a.termref:active {
+	color:#C60;
+	text-decoration:none;
+	border-bottom: 1px dotted #FC0; 
+	}
+
+.qterm:before, .qchar:before { content: "'"; }
+.qterm:after, .qchar:after { content: "'"; }
+.quote:before { content: '"'; }
+.quote:after { content: '"'; }
+code { 
+	color: #A52A2A; 
+    font-family: Consolas, "Andale Mono", "Lucida Console", "Lucida Sans Typewriter", Monaco, "Courier New", monospace; 
+    font-size: 100%; 
+    }
+samp, kbd { 
+	font-family: Consolas, "Andale Mono", "Lucida Console", "Lucida Sans Typewriter", Monaco, "Courier New", monospace; 
+    font-size: 100%; 
+    }
+.uname {
+	text-transform: uppercase;
+	font-size: 85%;
+	letter-spacing:0.03em;
+	}
+.codepoint span[lang], .codepoint bdi[lang] {
+	color: black;
+    font-size: 1.6rem;
+	}
+
 table { border-collapse: collapse; }
 th, td { text-align: start; }
 table tr { border-bottom: 1px solid #ddd; }
@@ -299,6 +386,44 @@ p { color: red }
 
 <section id="inline">
 <h2>Marking up inline content</h2>
+
+
+
+<section id="codepoints">
+<h3>Codepoints</h3>
+
+<p>Use the following markup to represent a character.</p>
+
+<pre id="codepoint_code"><code class="language-html">&lt;span class=&quot;codepoint&quot; translate=&quot;no&quot;&gt;&lt;bdi lang=&quot;XX&quot;&gt;&amp;#xXXXX;&lt;/bdi&gt; 
+[&lt;span class=&quot;uname&quot;&gt;U+XXXX Unicode_character_name&lt;/span&gt;]&lt;/span&gt;</code></pre>
+
+<p>For example:</p>
+
+<pre id="codepoint_code_eg"><code class="language-html">&lt;span class=&quot;codepoint&quot; translate=&quot;no&quot;&gt;&lt;bdi lang=&quot;en&quot;&gt;&amp;#x00E9;&lt;/bdi&gt; 
+[&lt;span class=&quot;uname&quot;&gt;U+00E9 LATIN SMALL LETTER E WITH ACUTE&lt;/span&gt;]&lt;/span&gt;</code></pre>
+
+<p>will produce: <span class="codepoint" translate="no"><bdi lang="en">&#x00E9;</bdi> [<span class="uname">U+00E9 LATIN SMALL LETTER E WITH ACUTE</span>]</span>.</p>
+
+<p>The easiest way to create this markup is to choose an appropriate <a href="https://r12a.github.io/pickers/" target="_blank">character app</a>, type or paste the character in the large box, and click on <samp>Character markup</samp>. Then click on the icon to the right to copy the result to your clipboard. Note that the character app can also convert characters to NFD using the control lower down the page.</p>
+
+<p>A similar approach can be used for character sequences (and can also be produced easily using the character apps). The normal pattern is:</p>
+
+<p id="codepoint_code_eg"><code class="language-html">&lt;span class=&quot;codepoint&quot; translate=&quot;no&quot;&gt;&lt;bdi lang=&quot;XX&quot;&gt;&amp;#xXXXX;&amp;#xYYYY;&lt;/bdi&gt; [&lt;span class=&quot;uname&quot;&gt;U+XXXX UNICODE_CHARACTER_NAME&lt;/span&gt; + &lt;span class=&quot;uname&quot;&gt;U+YYYY UNICODE_CHARACTER_NAME&lt;/span&gt;]&lt;/span&gt;</code></p>
+
+<p>For example:</p>
+
+<p id="codepoint_code_eg"><code class="language-html">&lt;span class=&quot;codepoint&quot; translate=&quot;no&quot;&gt;&lt;bdi lang=&quot;fr&quot;&gt;&amp;#x0065;&amp;#x0301;&lt;/bdi&gt; [&lt;span class=&quot;uname&quot;&gt;U+0065 LATIN SMALL LETTER E&lt;/span&gt; + &lt;span class=&quot;uname&quot;&gt;U+0301 COMBINING ACUTE ACCENT&lt;/span&gt;]&lt;/span&gt;</code></p>
+
+<p>will produce: <span class="codepoint" translate="no"><bdi lang="fr">&#x0065;&#x0301;</bdi> [<span class="uname">U+0065 LATIN SMALL LETTER E</span> + <span class="uname">U+0301 COMBINING ACUTE ACCENT</span>]</span>.</p>
+</section>
+
+
+
+
+
+<section id="otherinline">
+<h3>Other inline markup</h3>
+
   <p>The following table suggests conventions for marking up inline 
     content. The presentation column applies to the
     English version. Any translated version may change the presentation 
@@ -423,6 +548,11 @@ p { color: red }
     usages can be styled differently (esp. for documents with 
     translations!).</p>
 </section>
+</section>
+
+
+
+
 
 
 <section id="localcss">
@@ -505,6 +635,10 @@ samp, kbd {
 	font-family: Consolas, "Andale Mono", "Lucida Console", "Lucida Sans Typewriter", Monaco, "Courier New", monospace; 
     font-size: 100%; 
     }
+.codepoint span[lang], .codepoint bdi[lang] {
+	color: black;
+    font-size: 1.6rem;
+	}
 .uname {
 	text-transform: uppercase;
 	font-size: 85%;
