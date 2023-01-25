@@ -16,7 +16,7 @@ assignees: ''
 
 Instructions _(delete this line and all following)_:
 - Check that TRACKER & S:... labels are there
-- **Add I:... label(s) to indicate the topic (same as ids in specdev)**
+- **Add t:... label(s) to indicate the topic (same as ids in specdev)**
 
 
 - If urgent add:
@@ -28,6 +28,7 @@ Instructions _(delete this line and all following)_:
   -  ...LREQ label(s) there should be one or more
   - SPEC-TYPE-ISSUE label (dark green background) should be there 
   - TYPE-INFO-REQUEST label (red background) if this is a WG-issue that constitutes a request for script/language expert advice
+  - i:... label(s) to indicate the Language Enablement Index category
 
 
 - Delete these instructions before saving the comment.
