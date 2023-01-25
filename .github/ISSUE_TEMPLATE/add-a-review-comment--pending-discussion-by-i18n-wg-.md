@@ -23,7 +23,7 @@ This follows the process at https://w3c.github.io/i18n-activity/guidelines/revie
 
 1. Create the review comment you want to propose by replacing the prompts above these instructions, but **LEAVE ALL THE INSTRUCTIONS INTACT** 
 
-2. **Add one or more i:... labels. These should use ids from specdev establish a link to that doc.**
+2. **Add one or more t:... labels. These should use ids from specdev establish a link to that doc.**
 
 2. Set a label to identify the spec: this starts with s: followed by the spec's short name. If you are unable to do that, ask a W3C staff contact to help.
 
