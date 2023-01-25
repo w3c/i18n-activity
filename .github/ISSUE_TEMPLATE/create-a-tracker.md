@@ -14,15 +14,17 @@ assignees: ''
 § link_to_issue_raised_here
 
 
-Instructions:
+Instructions _(delete this line and all following)_:
 - Do not remove § from the line with the link.
-- Add labels as follows:
-  - TRACKER & S:... labels should be there
+- Check that TRACKER & S:... labels are there
+- **Add I:... label(s) to indicate the topic (same as ids in specdev)**
+
+
+- If urgent add:
   - ADVICE-REQUESTED label if the WG-issue is specifically asking for i18n to advise/comment
   - NEEDS-ATTENTION label if this is an important issue
-  - I:... labels to indicate the topic should be added as appropriate
-  - if there's an i18n-*lreq label in the WG repo check for:
-     -  ...LREQ label(s) there should be one or more
-     - SPEC-TYPE-ISSUE label (dark green background) should be there 
-     - TYPE-INFO-REQUEST label (red background) if this is a WG-issue that constitutes a request for script/language expert advice
+- If there's an i18n-*lreq label in the WG repo check for:
+  -  ...LREQ label(s) there should be one or more
+  - SPEC-TYPE-ISSUE label (dark green background) should be there 
+  - TYPE-INFO-REQUEST label (red background) if this is a WG-issue that constitutes a request for script/language expert advice
 - Delete these instructions before saving the comment.
