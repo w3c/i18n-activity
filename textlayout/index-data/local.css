@@ -44,3 +44,7 @@ td {
 tr:hover {
     background-color: antiquewhite;
 }
+div.directory {
+	float: right;
+	position: static;
+}
