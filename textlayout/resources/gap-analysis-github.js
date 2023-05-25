@@ -1,7 +1,7 @@
 var owner = 'w3c'
 
 var sections = {}
-var debug = false
+var debug = true
 
 var issues = []
 var maxpages = 5
@@ -140,6 +140,17 @@ function buildSection (theData, sectionId, doc, repo) {
 				}
 			test = /\*\*([^\*]+)\*\*/g
 			body = body.replace(test, convertbold)
+
+			// replace ### headings with markup
+			function convertheading(str, p1, s) {
+                console.log("str",str)
+                console.log("p1",p1)
+				p1 = p1.replace(/\#\#\#/,'')
+				return '<h5>'+p1+'</h5>'
+				}
+			test = /###([^\n]+?)\n/g
+            console.log(test)
+			body = body.replace(test, convertheading)
 
 			// create convert italic segments links
 			//function convertitalic(str, p1, s) {
