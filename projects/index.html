@@ -4,7 +4,7 @@
 <meta charset="utf-8" />
 <title>I18n Activity Project RADAR</title>
 <meta name="description" content="Lists open issues in i18n Activity github repositories." />
-<script type="text/javascript">
+<script>
 var f = { }
 
 // AUTHORS should fill in these assignments:
@@ -14,13 +14,13 @@ f.authors = 'Richard Ishida, W3C'; // author(s) and affiliations
 f.previousauthors = ''; // as above
 f.modifiers = ''; // people making substantive changes, and their affiliation
 f.searchString = 'github-openissues'; // blog search string - usually the filename without extensions
-f.firstPubDate = '2106-03-16'; // date of the first publication of the document (after review)
-f.lastSubstUpdate = { date:'2106-03-16', time:'07:32'}  // date and time of latest substantive changes to this document
+f.firstPubDate = '2016-03-16'; // date of the first publication of the document (after review)
+f.lastSubstUpdate = { date:'2016-03-16', time:'07:32'}  // date and time of latest substantive changes to this document
 f.status = 'notreviewed';  // should be one of draft, review, published, notreviewed or obsolete
 f.path = 'https://w3c.github.io/i18n-drafts/' // what you need to prepend to a URL to get to the /International directory 
 
 // AUTHORS AND TRANSLATORS should fill in these assignments:
-f.thisVersion = { date:'2106-03-16', time:'07:32'} // date and time of latest edits to this document/translation
+f.thisVersion = { date:'2023-05-29', time:'07:32'} // date and time of latest edits to this document/translation
 f.contributors = ''; // people providing useful contributions or feedback during review or at other times
 // also make sure that the lang attribute on the html tag is correct!
 
@@ -206,23 +206,18 @@ For each work item, the page describes objectives <!--and next steps (the number
 <p><a target="_blank" href="https://github.com/w3c/afrlreq/">GH repo</a> &bull; <a target="_blank" href="https://w3c.github.io/i18n-activity/textlayout/?filter=afrlreq">issue summary</a></p>
 </div>
 
+<div class="item" id="americas">
+<p class="topic">americas</p>
+<p><a target="_blank" href="https://github.com/w3c/amlreq/">GH repo</a> &bull; <a target="_blank" href="https://w3c.github.io/i18n-activity/textlayout/?filter=amlreq">issue summary</a></p>
+</div>
+
      <div class="item" id="arabic">
       <p class="topic">arabic</p>
         <p><a target="_blank" href="https://github.com/w3c/alreq/">GH repo</a> • <a target="_blank" href="https://w3c.github.io/i18n-activity/textlayout/?filter=alreq">issue summary</a></p>
-<ol class="todo">
-<li class="inprogress">add content</li>
-          <li>send for reviews</li>
-          <li>publish FPWD</li>
-        </ol>
 </div>
 <div class="item" id="chinese">
 <p class="topic">chinese</p>
 <p><a target="_blank" href="https://github.com/w3c/clreq/">GH repo</a> &bull; <a target="_blank" href="https://w3c.github.io/i18n-activity/textlayout/?filter=clreq">issue summary</a></p>
-<ol class="todo">
-<li class="inprogress">complete translation to SC</li>
-<li>address outstanding issues</li>
-<li>complete glossary</li>
-</ol>
 </div>
 <div class="item" id="ethiopic">
 <p class="topic">ethiopic</p>
@@ -241,11 +236,6 @@ For each work item, the page describes objectives <!--and next steps (the number
 <div class="item" id="hebrew">
 <p class="topic">hebrew</p>
 <p><a target="_blank" href="https://github.com/w3c/hlreq/">GH repo</a> &bull; <a target="_blank" href="https://w3c.github.io/i18n-activity/textlayout/?filter=hlreq">issue summary</a></p>
-<ol class="todo">
-<li class="inprogress">set up group</li>
-<li>send for reviews</li>
-<li>publish FPWD</li>
-</ol>
 </div>
 <div class="item" id="indic">
 <p class="topic">indic (s asian)</p>
@@ -259,10 +249,6 @@ For each work item, the page describes objectives <!--and next steps (the number
 <div class="item" id="japanese">
 <p class="topic">japanese</p>
           <p><a target="_blank" href="https://github.com/w3c/jlreq/">GH repo</a> &bull; <a target="_blank" href="https://w3c.github.io/i18n-activity/textlayout/?filter=jlreq">issue summary</a></p>
-<ol class="todo">
-<li class="inprogress">update with errata</li>
-            <li>publish updated Note</li>
-          </ol>
 </div>
 <div class="item" id="korean">
 <p class="topic">korean</p>
@@ -395,7 +381,7 @@ For each work item, the page describes objectives <!--and next steps (the number
 </div>
       <div class="item" id="tests">
         <p class="topic">tests</p>
-        <p><a target="_blank" href="https://www.w3.org/International/tests">test suite</a></p>
+        <p><a target="_blank" href="https://www.w3.org/International/i18n-tests/">test suite</a></p>
         <ul class="objectives">
           <li>Produce tests for i18n features of browsers, especially for upcoming CSS features. Add summaries of the results on latest UA versions. Develop notes on current implementation status.<br>
           </li>
@@ -408,7 +394,7 @@ For each work item, the page describes objectives <!--and next steps (the number
 </div>
       <div class="item" id="ruby_impl">
         <p class="topic"> implementer support</p>
-        <p><a target="_blank" href="https://www.w3.org/International/tests">test suite</a> • <a href="https://w3c.github.io/i18n-activity/reviews/#browser-implementations">bug tracker</a></p>
+        <p><a target="_blank" href="https://www.w3.org/International/i18n-tests/">test suite</a> • <a href="https://w3c.github.io/i18n-activity/reviews/#browser-implementations">bug tracker</a></p>
         <ul class="objectives1">
           <li>Assess and track implementations of i18n features, and offer advice to implementers.</li>
         </ul>
@@ -420,7 +406,15 @@ For each work item, the page describes objectives <!--and next steps (the number
           <li>encourage encoding spec completeness<br>
           </li>
         </ol>
-</div></td>
+</div>
+<div class="item" id="glossary">
+        <p class="topic">glossary</p>
+        <p><a target="_blank" href="https://github.com/w3c/i18n-glossary">GH repo</a></p>
+        <ul class="objectives1">
+          <li>Definitions of terms used in W3C internationalization documents.</li>
+        </ul>
+</div>
+</td>
 
 
 
@@ -611,7 +605,7 @@ For each work item, the page describes objectives <!--and next steps (the number
 </td>
       <td>
         <p class="topic">javascript</p>
-        <p><a target="_blank" href="http://wiki.ecmascript.org/doku.php?id=globalization:specification_drafts">ES-402</a></p>
+        <p><a target="_blank" href="https://www.ecma-international.org/technical-committees/tc39/">ECMA-402</a></p>
         <ol class="todo">
           <li>track the Intl extension</li>
         </ol>
@@ -658,8 +652,8 @@ For each work item, the page describes objectives <!--and next steps (the number
 <p>&nbsp;</p>
 <div class="content">
 <footer id="thefooter"></footer>
-<script type="text/javascript">document.getElementById('thefooter').innerHTML = g.bottomOfPage</script> 
-<script type="text/javascript">
+<script>document.getElementById('thefooter').innerHTML = g.bottomOfPage</script> 
+<script>
 completePage();
 //var objs = document.querySelectorAll('.objectives')
 //for (var o=0;o<objs.length;o++) { objs[o].style.display = 'none'; }
