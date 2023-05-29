@@ -33,11 +33,12 @@ var labels = {
 
 
 
-var scriptLabels= new Set(['afrlreq', 'alreq', 'clreq', 'elreq', 'eurlreq', 'hlreq', 'ilreq', 'jlreq', 'klreq', 'llreq', 'mlreq', 'sealreq', 'tlreq'])
+var scriptLabels= new Set(['afrlreq', 'amlreq', 'alreq', 'clreq', 'elreq', 'eurlreq', 'hlreq', 'ilreq', 'jlreq', 'klreq', 'llreq', 'mlreq', 'sealreq', 'tlreq'])
 
 
 var labelName = {
 	'afrlreq': 'afrlreq (Africa)',
+	'amlreq': 'amlreq (Americas)',
 	'alreq': 'alreq (Arabic/Persian)',
 	'clreq': 'clreq (Chinese)',
 	'elreq': 'elreq (Ethiopic)',
