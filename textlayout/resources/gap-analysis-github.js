@@ -106,6 +106,22 @@ function buildSection (theData, sectionId, doc, repo) {
 
 			var body = theData[i].body
 
+			// make GH img markup point to local image
+			function convertFromImg(str, p1, p2, s) {
+                var imgContainer = document.createElement( 'img' )
+                imgContainer.innerHTML = str+'>'
+                var src = imgContainer.firstChild.src
+                var width = imgContainer.firstChild.width
+                var alt = imgContainer.firstChild.alt
+                var path = src.split('/')
+                var filename = path[path.length-1]
+                
+                var out = `<img src="images/${ path[path.length-1] }" width="${ width }" alt="${ alt }"`
+				return out
+				}
+			var test = /<img ([^>]+)/g
+			body = body.replace(test, convertFromImg)
+
 			// make GH images into img element
 			function convertToImg(str, p1, p2, s) {
                 path = p2.split('/')
