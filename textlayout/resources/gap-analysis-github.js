@@ -1,17 +1,18 @@
 var owner = 'w3c'
 
 var sections = {}
-var debug = true
+var debug = false
 
 var issues = []
-var maxpages = 5
+var maxpages = 6
 
 var totals=0
 var counter=maxpages
 
 async function getAllData (repo, doc) {
 	let arr = []
-	for (let p=1; p < maxpages+1; p++) arr.push(fetch('https://api.github.com/repos/w3c/'+repo+'/issues?per_page=100&page='+p))
+	//for (let p=1; p < maxpages+1; p++) arr.push(fetch('https://api.github.com/repos/w3c/'+repo+'/issues?per_page=500&page='+p))
+	for (let p=1; p < maxpages+1; p++) arr.push(fetch('https://api.github.com/repos/w3c/'+repo+'/issues?labels=gap&per_page=100&page='+p))
 
 	return await Promise.all(arr)
 	.then(
@@ -27,7 +28,8 @@ async function getAllData (repo, doc) {
 	.then(function(data) {
 		issues = issues.concat(data[0])
 		totals = issues.length
-
+        if (debug) console.log("Issue length", issues.length)
+        
 		// group issues by label, adding to the labels array
 		for (var i=0; i<issues.length; i++) {
 			if (issues[i].labels) {
@@ -39,11 +41,12 @@ async function getAllData (repo, doc) {
 							sections[sLabelFound] = []
 							sections[sLabelFound].push(issues[i])
 							}
-						if (debug) console.log(sLabelFound)
+						if (debug) console.log("sLabelFound", sLabelFound)
 						}
 					}
 				}
 			}
+        if (debug) console.log("SECTIONS", sections)
 		buildDoc(repo, doc)
 		})
 	}
@@ -165,7 +168,6 @@ function buildSection (theData, sectionId, doc, repo) {
 				return '<h5>'+p1+'</h5>'
 				}
 			test = /###([^\n]+?)\n/g
-            console.log(test)
 			body = body.replace(test, convertheading)
 
 			// create convert italic segments links
