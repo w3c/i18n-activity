@@ -103,7 +103,18 @@ function buildSection (theData, sectionId, doc, repo) {
 
 			out += '<section id="issue'+theData[i].number+'_'+sectionId+'">\n'
 			out += '<h4>#'+theData[i].number+' '+theData[i].title+'</h4>\n'
-			out += `<p class="ghLink"><a target="_blank" href="https://github.com/w3c/${ repo }/issues/${ theData[i].number }">GitHub issue #${ theData[i].number }</a></p>`
+			out += `<p class="ghLink">`
+            
+             	// figure out priority for this issue
+                var priority = ''
+                if (labelSet.has('p:basic')) priority = 'basic'
+                else if (labelSet.has('p:advanced')) priority = 'advanced'
+                else if (labelSet.has('p:broken')) priority = 'broken'
+                else if (labelSet.has('p:ok')) priority = 'ok'
+            
+           out += `<a target="_blank" href="https://github.com/w3c/${ repo }/issues/${ theData[i].number }" class="issueLink ${ priority+'Issue'}">GitHub issue #${ theData[i].number }</a></p>`
+            
+
 
 			out += '<p>'
 
