@@ -94,12 +94,14 @@ function buildSection (theData, sectionId, doc, repo) {
 		// screen out issues that don't relate to the current gap-analysis document
 		rightDoc = false
 		for (l=0;l<theData[i].labels.length;l++) if (theData[i].labels[l].name === doc) rightDoc = true
-		if (debug) console.log('rightDoc:',rightDoc)
 
 		if (rightDoc) {
 			// find priority labels
-			for (l=0;l<theData[i].labels.length;l++) labelSet.add(theData[i].labels[l].name)
-			if (debug) console.log('labelSet:',labelSet)
+            var issueLabelSet = new Set([])
+			for (l=0;l<theData[i].labels.length;l++) {
+                issueLabelSet.add(theData[i].labels[l].name)
+                labelSet.add(theData[i].labels[l].name)
+                }
 
 			out += '<section id="issue'+theData[i].number+'_'+sectionId+'">\n'
 			out += '<h4>#'+theData[i].number+' '+theData[i].title+'</h4>\n'
@@ -107,10 +109,10 @@ function buildSection (theData, sectionId, doc, repo) {
             
              	// figure out priority for this issue
                 var priority = ''
-                if (labelSet.has('p:basic')) priority = 'basic'
-                else if (labelSet.has('p:advanced')) priority = 'advanced'
-                else if (labelSet.has('p:broken')) priority = 'broken'
-                else if (labelSet.has('p:ok')) priority = 'ok'
+                if (issueLabelSet.has('p:basic')) priority = 'basic'
+                else if (issueLabelSet.has('p:advanced')) priority = 'advanced'
+                else if (issueLabelSet.has('p:broken')) priority = 'broken'
+                else if (issueLabelSet.has('p:ok')) priority = 'ok'
             
            out += `<a target="_blank" href="https://github.com/w3c/${ repo }/issues/${ theData[i].number }" class="issueLink ${ priority+'Issue'}">GitHub issue #${ theData[i].number }</a></p>`
             
@@ -173,8 +175,8 @@ function buildSection (theData, sectionId, doc, repo) {
 
 			// replace ### headings with markup
 			function convertheading(str, p1, s) {
-                console.log("str",str)
-                console.log("p1",p1)
+                //console.log("str",str)
+                //console.log("p1",p1)
 				p1 = p1.replace(/\#\#\#/,'')
 				return '<h5>'+p1+'</h5>'
 				}
