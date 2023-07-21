@@ -129,6 +129,11 @@ samp, kbd {
 	font-size: 130%;
 	margin-inline: 0.25em;
 	}
+.codepoint img {
+	height: 1.6em;
+	margin-inline: 0.25em;
+    vertical-align: bottom;
+	}
 
 table { border-collapse: collapse; }
 th, td { text-align: start; }
@@ -396,27 +401,35 @@ p { color: red }
 
 <p>Use the following markup to represent a character.</p>
 
-<pre id="codepoint_code"><code class="language-html">&lt;span class=&quot;codepoint&quot; translate=&quot;no&quot;&gt;&lt;bdi lang=&quot;XX&quot;&gt;&amp;#xXXXX;&lt;/bdi&gt; 
-&lt;span class=&quot;uname&quot;&gt;U+XXXX Unicode_character_name&lt;/span&gt;&lt;/span&gt;</code></pre>
+<p id="codepoint_code" style="white-space: pre-wrap"><code class="language-html">&lt;span class=&quot;codepoint&quot; translate=&quot;no&quot;&gt;&lt;bdi lang=&quot;XX&quot;&gt;&amp;#xXXXX;&lt;/bdi&gt;&lt;span class=&quot;uname&quot;&gt;U+XXXX Unicode_character_name&lt;/span&gt;&lt;/span&gt;</code></p>
 
 <p>For example:</p>
 
-<pre id="codepoint_code_eg"><code class="language-html">&lt;span class=&quot;codepoint&quot; translate=&quot;no&quot;&gt;&lt;bdi lang=&quot;en&quot;&gt;&amp;#x00E9;&lt;/bdi&gt; 
-&lt;span class=&quot;uname&quot;&gt;U+00E9 LATIN SMALL LETTER E WITH ACUTE&lt;/span&gt;&lt;/span&gt;</code></pre>
+<p id="codepoint_code_eg" style="white-space: pre-wrap"><code class="language-html">&lt;span class=&quot;codepoint&quot; translate=&quot;no&quot;&gt;&lt;bdi lang=&quot;en&quot;&gt;&amp;#x00E9;&lt;/bdi&gt;&lt;span class=&quot;uname&quot;&gt;U+00E9 LATIN SMALL LETTER E WITH ACUTE&lt;/span&gt;&lt;/span&gt;</code></p>
 
-<p>will produce: <span class="codepoint" translate="no"><bdi lang="en">&#x00E9;</bdi> <span class="uname">U+00E9 LATIN SMALL LETTER E WITH ACUTE</span></span>.</p>
+<p>That will produce: <span class="codepoint" translate="no"><bdi lang="en">&#x00E9;</bdi><span class="uname">U+00E9 LATIN SMALL LETTER E WITH ACUTE</span></span>.</p>
 
 <p>The easiest way to create this markup is to choose an appropriate <a href="https://r12a.github.io/pickers/" target="_blank">character app</a>, type or paste the character in the large box, and click on <samp>Character markup</samp>. Then click on the icon to the right to copy the result to your clipboard. Note that the character app can also convert characters to NFD using the control lower down the page.</p>
 
+
+
 <p>A similar approach can be used for character sequences (and can also be produced easily using the character apps). The normal pattern is:</p>
 
-<p id="codepoint_codes"><code class="language-html">&lt;span class=&quot;codepoint&quot; translate=&quot;no&quot;&gt;&lt;bdi lang=&quot;XX&quot;&gt;&amp;#xXXXX;&amp;#xYYYY;&lt;/bdi&gt; &lt;span class=&quot;uname&quot;&gt;U+XXXX UNICODE_CHARACTER_NAME&lt;/span&gt; + &lt;span class=&quot;uname&quot;&gt;U+YYYY UNICODE_CHARACTER_NAME&lt;/span&gt;&lt;/span&gt;</code></p>
+<p id="codepoint_codes"><code class="language-html">&lt;span class=&quot;codepoint&quot; translate=&quot;no&quot;&gt;&lt;bdi lang=&quot;XX&quot;&gt;&amp;#xXXXX;&amp;#xYYYY;&lt;/bdi&gt;&lt;span class=&quot;uname&quot;&gt;U+XXXX UNICODE_CHARACTER_NAME&lt;/span&gt; + &lt;span class=&quot;uname&quot;&gt;U+YYYY UNICODE_CHARACTER_NAME&lt;/span&gt;&lt;/span&gt;</code></p>
 
 <p>For example:</p>
 
-<p id="codepoint_codes_eg"><code class="language-html">&lt;span class=&quot;codepoint&quot; translate=&quot;no&quot;&gt;&lt;bdi lang=&quot;fr&quot;&gt;&amp;#x0065;&amp;#x0301;&lt;/bdi&gt; &lt;span class=&quot;uname&quot;&gt;U+0065 LATIN SMALL LETTER E&lt;/span&gt; + &lt;span class=&quot;uname&quot;&gt;U+0301 COMBINING ACUTE ACCENT&lt;/span&gt;&lt;/span&gt;</code></p>
+<p id="codepoint_codes_eg"><code class="language-html">&lt;span class=&quot;codepoint&quot; translate=&quot;no&quot;&gt;&lt;bdi lang=&quot;fr&quot;&gt;&amp;#x0065;&amp;#x0301;&lt;/bdi&gt;&lt;span class=&quot;uname&quot;&gt;U+0065 LATIN SMALL LETTER E&lt;/span&gt; + &lt;span class=&quot;uname&quot;&gt;U+0301 COMBINING ACUTE ACCENT&lt;/span&gt;&lt;/span&gt;</code></p>
 
-<p>will produce: <span class="codepoint" translate="no"><bdi lang="fr">&#x0065;&#x0301;</bdi> <span class="uname">U+0065 LATIN SMALL LETTER E</span> + <span class="uname">U+0301 COMBINING ACUTE ACCENT</span></span>.</p>
+<p>That will produce: <span class="codepoint" translate="no"><bdi lang="fr">&#x0065;&#x0301;</bdi><span class="uname">U+0065 LATIN SMALL LETTER E</span> + <span class="uname">U+0301 COMBINING ACUTE ACCENT</span></span>.</p>
+
+
+
+<p>When referring to an invisible character you may want to simply omit the <code class="kw" translate="no">bdi</code> element, or you can use an image. The image should be stored in a local directory. It is important to style the size of the image, so that it fits inline (especially when using an SVG image). The default style sheet applies a height of 1.6em, but this can be changed inline where needed.</p>
+
+<p id="codepoint_imgs" style="text-align: start;"><code class="language-html">&lt;span class=&quot;codepoint&quot; translate=&quot;no&quot;&gt;&lt;img alt=&quot;NBSP&quot; src=&quot;images/00A0.png&quot;&gt;&lt;span class=&quot;uname&quot;&gt;U+00A0 N0-BREAK SPACE&lt;/span&gt;&lt;/span&gt;</code></p>
+
+<p>That will produce: <span class="codepoint" translate="no"><img alt="NBSP" src="images/00A0.png"><span class="uname">U+00A0 N0-BREAK SPACE</span></span>.</p>
 </section>
 
 
@@ -558,7 +571,7 @@ p { color: red }
 
 
 <section id="localcss">
-  <h2>Suggested styling for local.css</h2>
+<h2>Suggested styling for local.css</h2>
   <p>The following styles can be used as the base for the <code class="kw" translate="no">local.css</code> file. They contain style rules for the approaches mentioned in this styleguide.</p>
   <pre><code class="language-css">h2 {
 	margin-top: 3em;
