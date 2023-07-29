@@ -1,17 +1,18 @@
 var owner = 'w3c'
 
 var sections = {}
-var debug = true
+var debug = false
 
 var issues = []
-var maxpages = 5
+var maxpages = 6
 
 var totals=0
 var counter=maxpages
 
 async function getAllData (repo, doc) {
 	let arr = []
-	for (let p=1; p < maxpages+1; p++) arr.push(fetch('https://api.github.com/repos/w3c/'+repo+'/issues?per_page=100&page='+p))
+	//for (let p=1; p < maxpages+1; p++) arr.push(fetch('https://api.github.com/repos/w3c/'+repo+'/issues?per_page=500&page='+p))
+	for (let p=1; p < maxpages+1; p++) arr.push(fetch('https://api.github.com/repos/w3c/'+repo+'/issues?labels=gap&per_page=100&page='+p))
 
 	return await Promise.all(arr)
 	.then(
@@ -27,7 +28,8 @@ async function getAllData (repo, doc) {
 	.then(function(data) {
 		issues = issues.concat(data[0])
 		totals = issues.length
-
+        if (debug) console.log("Issue length", issues.length)
+        
 		// group issues by label, adding to the labels array
 		for (var i=0; i<issues.length; i++) {
 			if (issues[i].labels) {
@@ -39,11 +41,12 @@ async function getAllData (repo, doc) {
 							sections[sLabelFound] = []
 							sections[sLabelFound].push(issues[i])
 							}
-						if (debug) console.log(sLabelFound)
+						if (debug) console.log("sLabelFound", sLabelFound)
 						}
 					}
 				}
 			}
+        if (debug) console.log("SECTIONS", sections)
 		buildDoc(repo, doc)
 		})
 	}
@@ -91,20 +94,49 @@ function buildSection (theData, sectionId, doc, repo) {
 		// screen out issues that don't relate to the current gap-analysis document
 		rightDoc = false
 		for (l=0;l<theData[i].labels.length;l++) if (theData[i].labels[l].name === doc) rightDoc = true
-		if (debug) console.log('rightDoc:',rightDoc)
 
 		if (rightDoc) {
 			// find priority labels
-			for (l=0;l<theData[i].labels.length;l++) labelSet.add(theData[i].labels[l].name)
-			if (debug) console.log('labelSet:',labelSet)
+            var issueLabelSet = new Set([])
+			for (l=0;l<theData[i].labels.length;l++) {
+                issueLabelSet.add(theData[i].labels[l].name)
+                labelSet.add(theData[i].labels[l].name)
+                }
 
 			out += '<section id="issue'+theData[i].number+'_'+sectionId+'">\n'
 			out += '<h4>#'+theData[i].number+' '+theData[i].title+'</h4>\n'
-			out += `<p class="ghLink"><a target="_blank" href="https://github.com/w3c/${ repo }/issues/${ theData[i].number }">GitHub issue #${ theData[i].number }</a></p>`
+			out += `<p class="ghLink">`
+            
+             	// figure out priority for this issue
+                var priority = ''
+                if (issueLabelSet.has('p:basic')) priority = 'basic'
+                else if (issueLabelSet.has('p:advanced')) priority = 'advanced'
+                else if (issueLabelSet.has('p:broken')) priority = 'broken'
+                else if (issueLabelSet.has('p:ok')) priority = 'ok'
+            
+           out += `<a target="_blank" href="https://github.com/w3c/${ repo }/issues/${ theData[i].number }" class="issueLink ${ priority+'Issue'}">GitHub issue #${ theData[i].number }</a></p>`
+            
+
 
 			out += '<p>'
 
 			var body = theData[i].body
+
+			// make GH img markup point to local image
+			function convertFromImg(str, p1, p2, s) {
+                var imgContainer = document.createElement( 'img' )
+                imgContainer.innerHTML = str+'>'
+                var src = imgContainer.firstChild.src
+                var width = imgContainer.firstChild.width
+                var alt = imgContainer.firstChild.alt
+                var path = src.split('/')
+                var filename = path[path.length-1]
+                
+                var out = `<img src="images/${ path[path.length-1] }" width="${ width }" alt="${ alt }"`
+				return out
+				}
+			var test = /<img ([^>]+)/g
+			body = body.replace(test, convertFromImg)
 
 			// make GH images into img element
 			function convertToImg(str, p1, p2, s) {
@@ -143,13 +175,12 @@ function buildSection (theData, sectionId, doc, repo) {
 
 			// replace ### headings with markup
 			function convertheading(str, p1, s) {
-                console.log("str",str)
-                console.log("p1",p1)
+                //console.log("str",str)
+                //console.log("p1",p1)
 				p1 = p1.replace(/\#\#\#/,'')
 				return '<h5>'+p1+'</h5>'
 				}
 			test = /###([^\n]+?)\n/g
-            console.log(test)
 			body = body.replace(test, convertheading)
 
 			// create convert italic segments links
