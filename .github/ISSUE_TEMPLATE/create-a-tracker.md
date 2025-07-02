@@ -16,7 +16,7 @@ assignees: ''
 
 Instructions _(delete this line and all following)_:
 - Check that TRACKER & S:... labels are there
-- **Add t:... label(s) to indicate the topic (same as ids in specdev)**
+- **Add t:... label(s) to indicate the topic (same as ids in [specdev](https://w3c.github.io/bp-i18n-specdev/))**
 
 
 - If urgent add:
