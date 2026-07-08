@@ -1,9 +1,9 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="utf-8" />
+<meta charset="utf-8">
 <title>I18n Activity Project RADAR</title>
-<meta name="description" content="Lists open issues in i18n Activity github repositories." />
+<meta name="description" content="Tracks active projects in the W3C Internationalization Activity.">
 <script>
 var f = { }
 
@@ -36,8 +36,8 @@ f.additionalLinks = ''
 <script src="https://w3c.github.io/i18n-drafts/javascript/boilerplate-text/boilerplate-en.js"></script><!--TRANSLATORS must change -en to the subtag for their language!-->
 <script src="https://w3c.github.io/i18n-drafts/javascript/doc-structure/sitepage.js"> </script>
 <script src="https://w3c.github.io/i18n-drafts/javascript/articletoc-html5.js"></script>
-<link rel="stylesheet" href="https://w3c.github.io/i18n-drafts/style/sitepage-2016.css" type="text/css" />
-<link rel="stylesheet" href="index-data/local.css" type="text/css" />
+<link rel="stylesheet" href="https://w3c.github.io/i18n-drafts/style/sitepage-2016.css" type="text/css">
+<link rel="stylesheet" href="index-data/local.css" type="text/css">
 <link rel="copyright" href="#copyright"/>
 <!--[if lt IE 9]><script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
 
@@ -51,22 +51,54 @@ f.additionalLinks = ''
 	border-radius: 10px;
 	padding: 0 .5em;
 	}
-th { text-align: start;
-	font-size: 24px;
-	font-weight: 300;
-	padding: 8px;
+.project_list th {
+	background-color: rgb(239, 239, 236);
+	border: 1px solid rgb(206, 207, 203);
+	color: rgb(47, 48, 45);
+	font-size: 1.25rem;
+	font-weight: 500;
+	line-height: 1.25;
+	padding: .65rem .75rem;
+	text-align: start;
 	vertical-align: top;
 	}
-td {
+.project_list td {
+	background-color: rgb(255, 254, 250);
+	border: 1px solid rgb(215, 216, 212);
+	padding: .65rem;
 	vertical-align: top;
+	}
+.project_list tr:first-child th {
+	font-size: 1.35rem;
+	}
+.project_list tr:nth-child(2) th {
+	/* background-color: rgb(246, 246, 243); */
+	color: rgb(58, 58, 54);
+	font-size: 1.05rem;
 	}
 .project_list p { margin-left: 1em; }
-.project_list ul, .project_list ol, #project_list li { margin-left: .5em; padding-left: .5em; }
+.project_list p:last-child {
+	margin-block-end: 0;
+	}
+.project_list .item {
+	background-color: rgb(250, 250, 247);
+	border: 1px solid rgb(222, 222, 217);
+	border-radius: 6px;
+	margin-block-end: .85rem;
+	padding: .7rem .75rem .75rem;
+	}
+.project_list .item:last-child {
+	margin-block-end: 0;
+	}
+.project_list ul, .project_list ol, .project_list li {
+	padding-inline-start: .5em;
+	}
 .project_list ul {
     list-style-type: none;
 }
 .project_list ol {
-    margin-left: .75em; padding-left: .75em;
+  margin-inline-start: .75em;
+	padding-inline-start: .75em;
 }
 
 .inprogress {
@@ -77,10 +109,9 @@ td {
 	background-color: rgb(255, 255, 255);
 	}
 .subdiv {
-    margin-bottom: 0px;
     font-weight: bold;
     font-style: italic;
-    margin-top: 0px;
+    margin-block: 0;
 	}
 .objectives li {
     padding: .25em;
@@ -99,6 +130,18 @@ div.directory {
 .todo {
     display: none;
     }
+.visually-hidden {
+	border: 0;
+	clip: rect(0 0 0 0);
+	clip-path: inset(50%);
+	height: 1px;
+	margin: -1px;
+	overflow: hidden;
+	padding: 0;
+	position: absolute;
+	white-space: nowrap;
+	width: 1px;
+	}
 </style>
 <script>
 // routines to achieve correct ordering of items per column, based on order of lists below
@@ -139,8 +182,8 @@ function orderCol (col) {
     <li><a target="_blank" href="https://github.com/w3c/i18n-actions/issues">Open actions</a></li>
   </ul>
 </section>
-<section>
-  <p>Use this page to track  projects that we are actively working on.
+<section class="project-intro">
+  <p>Use this page to track projects that we are actively working on.
 For each work item, the page describes objectives <!--and next steps (the numbered lists)--> as well as useful links and contact names.
     <!--span class="inprogress">Yellow backgrounds</span> indicate priority work in progress.--></p>
   <!--p>
@@ -181,6 +224,7 @@ For each work item, the page describes objectives <!--and next steps (the number
 </div>
 
 <table class="project_list">
+  <caption class="visually-hidden">Current projects</caption>
   <tbody>
     <tr>
       <th>Requirements</th>
@@ -232,7 +276,7 @@ For each work item, the page describes objectives <!--and next steps (the number
 <p><a target="_blank" href="https://github.com/orgs/w3c/projects/95">pipeline</a></p>
 
 <ul class="objectives">
-<li>Having identified gaps and created tests, raise bugs/issues against specs and major brower engines, and track progress.</li></ul>
+<li>Having identified gaps and created tests, raise bugs/issues against specs and major browser engines, and track progress.</li></ul>
 </div>
 
 
@@ -304,7 +348,7 @@ For each work item, the page describes objectives <!--and next steps (the number
         <p class="topic">adhoc topics</p>
         <!-- <p><a target="_blank" href="https://github.com/w3c/i18n-activity/labels/track">issue tracker</a></p> -->
         <ul class="objectives">
-          <li> Respond to topics arising from emails or other communications on an adhoc basis.</li>
+          <li> Respond to topics arising from emails or other communications on an ad hoc basis.</li>
         </ul>
         <ol class="todo">
           <li class="inprogress">respond to  requests for help. </li>
@@ -345,7 +389,7 @@ For each work item, the page describes objectives <!--and next steps (the number
         </ol>
 </div>
       <div class="item" id="ruby_impl">
-        <p class="topic"> implementer support</p>
+        <p class="topic">implementer support</p>
         <p><a target="_blank" href="https://www.w3.org/International/i18n-tests/">test suite</a> • <a href="https://w3c.github.io/i18n-activity/reviews/#browser-implementations">bug tracker</a></p>
         <ul class="objectives1">
           <li>Assess and track implementations of i18n features, and offer advice to implementers.</li>
@@ -377,7 +421,7 @@ For each work item, the page describes objectives <!--and next steps (the number
           </ol>
 </div-->
 <div class="item" id="strings">
-<p class="topic"> string metadata</p>
+<p class="topic">string metadata</p>
           <p><a target="_blank" href="https://w3c.github.io/string-meta/">note</a> • <a target="_blank" href="https://w3c.github.io/i18n-discuss/notes/i18n-action-612.html">issue doc</a> • <a href="https://github.com/w3ctag/design-reviews/issues/178">tag discn</a></p>
           <ul class="objectives1">
             <li> Develop requirements and best practices for handling language and direction with strings in plain text and JSON, data formats, etc.</li>
@@ -419,7 +463,7 @@ For each work item, the page describes objectives <!--and next steps (the number
     <li> Produce definitions and best practices related to the specification of manifest files and similar document formats on the Web.</li>
   </ul>
 </div>
-<div class="item" id="manifest">
+<div class="item" id="string_search">
   <p class="topic">string search</p>
   <p><a target="_blank" href="https://w3c.github.io/string-search/">ED</a> &bull; <a target="_blank" href="https://github.com/w3c/string-search">GH</a></p>
   <ul class="objectives">
@@ -521,7 +565,9 @@ For each work item, the page describes objectives <!--and next steps (the number
     </tbody></table>
     
     
-    <table class="project_list"><tbody>
+    <table class="project_list">
+    <caption class="visually-hidden">Track industry</caption>
+    <tbody>
     <tr>
       <th colspan="5">Track industry</th>
 
@@ -562,7 +608,9 @@ For each work item, the page describes objectives <!--and next steps (the number
 </tbody></table>
     
     
-    <table class="project_list"><tbody>
+    <table class="project_list">
+    <caption class="visually-hidden">Related community groups</caption>
+    <tbody>
     <tr>
       <th colspan="5">Related community groups</th>
 
@@ -603,7 +651,9 @@ For each work item, the page describes objectives <!--and next steps (the number
     </tr>
   </tbody>
 </table>
-<table class="project_list"><tbody>
+<table class="project_list">
+<caption class="visually-hidden">Former projects</caption>
+<tbody>
   <tr>
     <th colspan="5">Former projects</th>
   </tr>
@@ -632,6 +682,7 @@ For each work item, the page describes objectives <!--and next steps (the number
   </tr>
 </tbody>
 </table>
+
 <p>&nbsp;</p>
 <div class="content">
 <footer id="thefooter"></footer>
