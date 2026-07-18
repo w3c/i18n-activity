@@ -271,7 +271,6 @@ var maxpages = 5
 					td.className = 'date'
 					td.title = 'Date last updated'
 					updated = new Date(issueData['created_at'])
-					td.textContent = updated.getFullYear()+'-'+updated.getMonth()+'-'+updated.getDate()
 					td.textContent = convertDate(updated)
 					tr.appendChild(td)
 					
