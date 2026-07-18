@@ -3,24 +3,24 @@
 <head>
 <meta charset="utf-8" />
 <title>How to review specs and raise issues</title>
-<meta name="description" content="Helps members of the W3C Internationalization Activity work with GitHub." />
+<meta name="description" content="How to review specifications and raise issues for the W3C Internationalization Activity." />
 <script>
 var f = { }
 
 // AUTHORS should fill in these assignments:
 f.directory = 'guidelines'+'/'; // the path to this file, not including /International or the file name
-f.filename = 'github'; // the file name WITHOUT extensions
+f.filename = 'review-instructions'; // the file name WITHOUT extensions
 f.authors = 'Richard Ishida, W3C'; // author(s) and affiliations
 f.previousauthors = ''; // as above
 f.modifiers = ''; // people making substantive changes, and their affiliation
-f.searchString = 'level2-github'; // blog search string - usually the filename without extensions
+f.searchString = 'level2-review-instructions'; // blog search string - usually the filename without extensions
 f.firstPubDate = '2015-12-16'; // date of the first publication of the document (after review)
 f.lastSubstUpdate = { date:'2016-10-11', time:'07:50'}  // date and time of latest substantive changes to this document
 f.status = 'notreviewed';  // should be one of draft, review, published, notreviewed or obsolete
 f.path = '../' // what you need to prepend to a URL to get to the /International directory 
 
 // AUTHORS AND TRANSLATORS should fill in these assignments:
-f.thisVersion = { date:'2021-04-27', time:'12:18'} // date and time of latest edits to this document/translation
+f.thisVersion = { date:'2026-07-18', time:'12:00'} // date and time of latest edits to this document/translation
 f.contributors = ''; // people providing useful contributions or feedback during review or at other times
 // also make sure that the lang attribute on the html tag is correct!
 
@@ -64,7 +64,7 @@ f.additionalLinks = ''
 <div id="mainLayout">
 <section>
 <p>The i18n WG uses GitHub issues to track review comments raised against the specs of other WGs. This page outlines how to raise issues against a spec, and create other issues in the i18n-activity repository to track those issues. It is verbose to help beginners. Practised hands can just follow the highlighted text for reminders.</p>
-<p>The i18n WG also tracks discussions of interest, or discussions brought to their attention by other WGs. This tracking is enabled by applying the <span class="highlight1"><span style="background-color: #f9c9ff; padding:2px 4px; border-radius:5px; color:black;font-style:normal;font-weight: bold; white-space: nowrap;">i18n-tracker</span></span> label to an issue in the other WG repo, and creating a tracker issue in the i18n-activity repo. Instructions for handling that are found on another page, under the heading <a href="https://www.w3.org/International/wiki/Review_procedures">Keeping tracker issues up to date</a>.</p>
+<p>The i18n WG also tracks discussions of interest, or discussions brought to their attention by other WGs. This tracking is enabled by applying the <span style="background-color: #f9c9ff; padding:2px 4px; border-radius:5px; color:black;font-style:normal;font-weight: bold; white-space: nowrap;">i18n-tracker</span> label to an issue in the other WG repo, and creating a tracker issue in the i18n-activity repo. Instructions for handling that are found on another page, under the heading <a href="https://www.w3.org/International/wiki/Review_procedures">Keeping tracker issues up to date</a>.</p>
 </section>
 
 
@@ -147,21 +147,21 @@ We feel that you should use xml:lang for this. </p>
 
 <section id="notify">
 <h2>Notify the relevant WG</h2>
-  <p>These days, all W3C WGs use GitHub for spec development, and you should raise issues in the repository that holds the spec (even if comments direct you to use a mailing list). However, if the group is not using a repo under the w3c  organisation you should encourage them to move their repo before sending comments. (Unless, of course, this is a spec from WhatWG, Unicode, etc.)</p>
+  <p>These days, all W3C WGs use GitHub for spec development, and you should raise issues in the repository that holds the spec (even if comments direct you to use a mailing list). However, if the group is not using a repo under the w3c  organisation you should encourage them to move their repo before sending comments. (Unless, of course, this is a spec from WHATWG, Unicode, etc.)</p>
 <p>Here, a 'WG issue' refers to an issue in the repository of the specification being reviewed. A 'tracker issue' refers to an issue raised in the w3c/i18n-activity repository.</p><p>The steps are as follows:</p>
 <ol>
   <li>
     <p><span class="highlight1">Create a new WG issue</span> in the target WG repository.</p>
 </li>
   <li>
-<p> <span class="highlight1">Add labels to the new WG issue</span>, or ask one of the i18n staff to add them. <span class="highlight1"></span></p>
+<p> <span class="highlight1">Add labels to the new WG issue</span>, or ask one of the i18n staff to add them.</p>
 <ol>
 <li>Always add an <span style="background-color: #f9c9ff; padding:2px 4px; border-radius:5px; color:black;font-style:normal;font-weight: bold; white-space: nowrap;">i18n-needs-resolution</span> label.</li>
 <li>If you think any of the participants in layout requirements task force groups would be interested in following the discussion, add the appropriate <span style="background-color: #d4c5f9; padding:2px 4px; border-radius:5px; color:black;font-style:normal;font-weight: bold; white-space: nowrap;">i18n-*lreq</span>  label(s).</li>
 </ol>
 </li>
 <li>
-<p> <span class="highlight1">Add  labels to the tracker issue</span>, ie. a<span class="highlight1"></span> <span class="highlight1"><span style="background-color: #f9c9ff; padding:2px 4px; border-radius:5px; color:black;font-style:normal;font-weight: bold; white-space: nowrap;">needs-resolution</span></span> label, and any appropriate <span class="highlight1"><span style="background-color: #d4c5f9; padding:2px 4px; border-radius:5px; color:black;font-style:normal;font-weight: bold;">*lreq</span></span> label(s). (These are the same labels as used for the WG issue, just without the i18n- prefix.)</p>
+<p> <span class="highlight1">Add  labels to the tracker issue</span>, ie. a <span class="highlight1"><span style="background-color: #f9c9ff; padding:2px 4px; border-radius:5px; color:black;font-style:normal;font-weight: bold; white-space: nowrap;">needs-resolution</span></span> label, and any appropriate <span class="highlight1"><span style="background-color: #d4c5f9; padding:2px 4px; border-radius:5px; color:black;font-style:normal;font-weight: bold;">*lreq</span></span> label(s). (These are the same labels as used for the WG issue, just without the i18n- prefix.)</p>
 <p>If you added an *lreq label, add the label <span style="background-color: #006b75; padding:2px 4px; border-radius:5px; color:white;font-style:normal;font-weight: normal; white-space: nowrap;">spec-type-issue</span> and a label to indicate the relevant typographic feature(s), eg. <span style="background-color: #fef2c0; padding:2px 4px; border-radius:5px; color:black;font-style:normal;font-weight: normal; white-space: nowrap;">i:line_breaking</span>. The latter represent categories related to the <a href="https://www.w3.org/TR/typography/">Language Enablement Index</a>, and all start with i:.</p>
 <p>Always add a label starting with t: to indicate the topic, eg. <span style="background-color: #FBCA04; padding:2px 4px; border-radius:5px; color:black;font-style:normal;font-weight: normal; white-space: nowrap;">t:text_case</span>. After the t: the label contains an id for a relevant section in the document <a href="https://w3c.github.io/bp-i18n-specdev/">Internationalization Best Practices for Spec Developers</a> (called 'specdev'). You can attach multiple labels if multiple sections are relevant. These labels automatically establish links between the specdev document and related issues.</p>
 </li>
