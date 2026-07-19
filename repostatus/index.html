@@ -116,25 +116,72 @@ const reposLength = reposKeys.length
 <script>
 			var totals=0
 			var counter=reposLength
+			var repoErrors = {}
 			
 			function getAllData () {
-				for (repo in repos) fetchIssues(repo)
-				var timer = setInterval(function() {
-					if (counter === 0) {
-						clearInterval(timer)
-						console.log('finished')
-						checkDates()
+				var request = new XMLHttpRequest()
+				request.open('get', 'https://api.github.com/rate_limit')
+				request.setRequestHeader('Accept', 'application/vnd.github+json')
+				request.timeout = 10000
+				request.onload = function () {
+					if (request.status < 200 || request.status >= 300) {
+						showApiError('HTTP '+request.status)
+						return
 						}
-					else console.log(counter)
-					}, 50)
+
+					try {
+						var rateData = JSON.parse(request.responseText)
+						var coreRate = rateData.resources && rateData.resources.core
+						if (!coreRate || typeof coreRate.remaining !== 'number') {
+							showApiError('invalid response')
+							return
+							}
+						if (coreRate.remaining < reposLength) {
+							showRateLimitMessage(coreRate)
+							return
+							}
+						}
+					catch (error) {
+						showApiError('invalid JSON')
+						return
+						}
+					fetchAllIssues()
+					}
+				request.onerror = function () {
+					showApiError('network error')
+					}
+				request.ontimeout = function () {
+					showApiError('request timed out')
+					}
+				request.send()
+				}
+
+			function fetchAllIssues () {
+				for (var repo in repos) fetchIssues(repo)
+				}
+
+			function showRateLimitMessage (rate) {
+				var reset = new Date(rate.reset * 1000)
+				var message = 'Unable to load issues because the GitHub API does not have enough requests remaining. '
+				message += 'This page needs '+reposLength+' requests, but only '+rate.remaining+' remain. '
+				message += 'Try again after '+reset.toLocaleString()+'.'
+				document.getElementById('total').textContent = message
+				}
+
+			function showApiError (error) {
+				document.getElementById('total').textContent = 'Unable to load issues from GitHub ('+error+'). Try again later.'
 				}
 				
 			
 			function checkDates () {
 				// figure out the most-recent-first order for displaying repos
-				dates = {}
-				for (repo in repos) {
-					dates[repos[repo][0]['updated_at']] = repo
+				var dates = {}
+				for (var repo in repos) {
+					// A repository may have no open issues, or its request may have failed.
+					if (!Array.isArray(repos[repo]) || repos[repo].length === 0) continue
+					var newestIssue = repos[repo][0]
+					if (!newestIssue || !newestIssue.updated_at) continue
+					dates[newestIssue.updated_at+repo] = repo
 					//console.log(dates)
 					}
 				var keys = Object.keys(dates)
@@ -146,7 +193,18 @@ const reposLength = reposKeys.length
 					displayRepo(reponame)
 					//console.log(dates[keys[i]])
 					}
-				}
+
+				var failedRepos = Object.keys(repoErrors)
+				var message = 'There are '+totals+' issues.'
+				if (failedRepos.length > 0) {
+					message += ' Unable to load '+failedRepos.length+' repositories: '
+					message += failedRepos.map(function (failedRepo) {
+						return failedRepo+' ('+repoErrors[failedRepo]+')'
+						}).join(', ')
+					message += '. GitHub may be rate limiting requests; try again later.'
+					}
+				document.getElementById('total').textContent = message
+			}
 									
 			// Display repository information
 			function displayRepo(repo) {
@@ -157,7 +215,7 @@ const reposLength = reposKeys.length
 				// Add a heading
 				var repoLink = document.createElement('a');
 				repoLink.setAttribute('href', '#'+repo);
-				repoLink.innerHTML = repo;
+				repoLink.textContent = repo;
 				var repoHeader = document.createElement('h2')
 				repoHeader.id = repo
 				repoHeader.appendChild(repoLink);
@@ -219,20 +277,47 @@ const reposLength = reposKeys.length
 				repoSection.appendChild(table)
 				// Add the repo header to the DOM
 				document.getElementById("rawdata").appendChild(repoSection)
-				document.getElementById('total').textContent = "There are "+totals+" issues."
 			}
 
 			// Grab and present the issue list from GitHub
 			function fetchIssues(repo) {
 				var request = new XMLHttpRequest();
-				request.open('get','https://api.github.com/repos/'+owner+'/'+repo+'/issues');
+				request.open('get','https://api.github.com/repos/'+owner+'/'+repo+'/issues?state=open&per_page=100');
+				request.setRequestHeader('Accept', 'application/vnd.github+json')
+				request.timeout = 10000
 				request.onload = function () {
-					repos[repo] = JSON.parse(request.responseText)
-					totals += repos[repo].length;
-					console.log(repos[repo].length,totals,repo, counter)
-					counter--
+					if (request.status < 200 || request.status >= 300) {
+						finishRepo(repo, [], 'HTTP '+request.status)
+						return
+						}
+
+					try {
+						var issues = JSON.parse(request.responseText)
+						if (!Array.isArray(issues)) {
+							finishRepo(repo, [], 'invalid response')
+							return
+							}
+						finishRepo(repo, issues)
+						}
+					catch (error) {
+						finishRepo(repo, [], 'invalid JSON')
+						}
+					}
+				request.onerror = function () {
+					finishRepo(repo, [], 'network error')
+					}
+				request.ontimeout = function () {
+					finishRepo(repo, [], 'request timed out')
 					}
 				request.send();
+				}
+
+			function finishRepo (repo, issues, error) {
+				repos[repo] = issues
+				if (error) repoErrors[repo] = error
+				totals += issues.length
+				counter--
+				if (counter === 0) checkDates()
 				}
 				
 			function convertDate (date) {
