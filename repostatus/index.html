@@ -8,7 +8,7 @@
 var f = { }
 
 // AUTHORS should fill in these assignments:
-f.directory = 'i18n-wg/repostatus/'+'/'; // the path to this file, not including /International or the file name
+f.directory = 'repostatus/'+'/'; // the path to this file, not including /International or the file name
 f.filename = 'index'; // the file name WITHOUT extensions
 f.authors = 'Richard Ishida, W3C'; // author(s) and affiliations
 f.previousauthors = ''; // as above
@@ -20,7 +20,7 @@ f.status = 'notreviewed';  // should be one of draft, review, published, notrevi
 f.path = 'https://w3c.github.io/i18n-drafts/' // what you need to prepend to a URL to get to the /International directory 
 
 // AUTHORS AND TRANSLATORS should fill in these assignments:
-f.thisVersion = { date:'2016-03-16', time:'07:32'} // date and time of latest edits to this document/translation
+f.thisVersion = { date:'2026-07-18', time:'07:32'} // date and time of latest edits to this document/translation
 f.contributors = ''; // people providing useful contributions or feedback during review or at other times
 // also make sure that the lang attribute on the html tag is correct!
 
@@ -39,35 +39,39 @@ f.additionalLinks = ''
 <link rel="stylesheet" href="https://w3c.github.io/i18n-drafts/style/sitepage-2016.css" type="text/css" />
 <link rel="stylesheet" href="index-data/local.css" type="text/css" />
 <link rel="copyright" href="#copyright"/>
-<!--[if lt IE 9]><script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
 <script>
 // Define the repository owner
-var owner = 'w3c';
+const owner = 'w3c';
 
-// Full list of repositories to present.
-var repos = { 
-	'i18n-drafts':{},
-	'i18n-discuss':{},
-	'charmod-norm':{},
-	'bp-i18n-specdev':{},
-	'predefined-counter-styles':{},
+// Full list of repositories to present (alphabetical order).
+const repos = {
 	'alreq':{},
-	'ilreq':{},
-	'klreq':{},
+	'bp-i18n-specdev':{},
+	'charmod-norm':{},
 	'clreq':{},
-	'tlreq':{},
+	'elreq':{},
+	'hlreq':{},
+	'i18n-discuss':{},
+	'i18n-drafts':{},
+	'ilreq':{},
+	'jlreq':{},
+	'klreq':{},
+	'mlreq':{},
+	'predefined-counter-styles':{},
 	'string-meta':{},
+	'tlreq':{},
+	'type-samples':{},
 	'unicode-xml':{},
 	}
-var reposKeys = Object.keys(repos)
-var reposLength = reposKeys.length
+const reposKeys = Object.keys(repos)
+const reposLength = reposKeys.length
 </script>
 </head>
 
 <body>
 <header>
   <nav id="mainNavigation"></nav>
-  <script>document.getElementById('mainNavigation').innerHTML = mainNavigation</script> 
+  <script>document.getElementById('mainNavigation').innerHTML = mainNavigation</script>
 </header>
 <div class="content">
 <h1>I18n document issues</h1>
@@ -78,23 +82,29 @@ var reposLength = reposKeys.length
     <li><a href="#bp-i18n-specdev">bp-i18n-specdev</a></li>
     <li><a href="#charmod-norm">charmod-norm</a></li>
     <li><a href="#clreq">clreq</a></li>
+    <li><a href="#elreq">elreq</a></li>
+    <li><a href="#hlreq">hlreq</a></li>
     <li><a href="#i18n-discuss">i18n-discuss</a></li>
     <li><a href="#i18n-drafts">i18n-drafts</a></li>
     <li><a href="#ilreq">ilreq</a></li>
+    <li><a href="#jlreq">jlreq</a></li>
     <li><a href="#klreq">klreq</a></li>
-    <li><a href="#tlreq">tlreq</a></li>
+    <li><a href="#mlreq">mlreq</a></li>
     <li><a href="#predefined-counter-styles">predefined-counter-styles</a></li>
+    <li><a href="#string-meta">string-meta</a></li>
+    <li><a href="#tlreq">tlreq</a></li>
+    <li><a href="#type-samples">type-samples</a></li>
     <li><a href="#unicode-xml">unicode-xml</a></li>
   </ul>
   <h2 class="notoc">Useful links</h2>
   <p>These links are for comments raised against <em>specs of other Working Groups</em> during reviews</p>
   <ul>
-    <li><a class="print" href="http://w3c.github.io/i18n-activity/reviews/">Review comment tracker</a></li>
+    <li><a class="print" href="https://w3c.github.io/i18n-activity/reviews/">Review comment tracker</a></li>
     <li><a class="print" href="https://github.com/w3c/i18n-activity/issues">Review comment tracker on Github</a></li>
   </ul>
 </section>
 <section>
-  <p>This page lists  OPEN issues for documents developed by the i18n WG/IG, grouped by github repository. The mostly recently changed issues appear at the top of each section, and sections are ordered according to where the most recent changes occurred. Dates indicate latest interventions for each issue. Click on the issue name to go to the issue page. The colored boxes represent labels  used in the repo where that issue was raised.</p>
+  <p>This page lists OPEN issues for documents developed by the i18n WG/IG, grouped by github repository. The most recently changed issues appear at the top of each section, and sections are ordered according to where the most recent changes occurred. Dates indicate latest interventions for each issue. Click on the issue name to go to the issue page. The colored boxes represent labels used in the repo where that issue was raised.</p>
   <p id="total">Loading data...</p>
 </section>
 <section id="rawdata">
