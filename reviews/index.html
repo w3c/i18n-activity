@@ -140,6 +140,10 @@ var maxpages = 5
 							}
 						
 						checkDates()
+                        // jump to hash position after tree built
+                        if (document.location.hash) {
+                            var chash = document.location.hash;
+                            document.location.hash = chash;
 						}
 					else if (debug) console.log('Counter',counter)
 					}, 50)
