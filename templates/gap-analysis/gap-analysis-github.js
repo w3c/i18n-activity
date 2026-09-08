@@ -151,10 +151,11 @@ function buildSection (theData, sectionId, doc, repo) {
                 var src = imgContainer.firstChild.src
                 var width = imgContainer.firstChild.width
                 var alt = imgContainer.firstChild.alt
+                var ext = imgContainer.firstChild.dataset.ext ? imgContainer.firstChild.dataset.ext : ''
                 var path = src.split('/')
                 var filename = path[path.length-1]
                 
-                var out = `<img src="images/${ path[path.length-1] }" width="${ width }" alt="${ alt }"`
+                var out = `<img src="images/${ path[path.length-1]+ext }" width="${ width }" alt="${ alt }"`
 				return out
 				}
 			var test = /<img ([^>]+)/g
