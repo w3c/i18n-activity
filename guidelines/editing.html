@@ -257,7 +257,7 @@ table td {
 
 <p>The current&nbsp;styling for TR documents makes it often difficult for readers to quickly find section headings. Use the <a href="#localcss">styling suggested below</a> in your local.css file in order to open up the space between sections.</p>
 
-<section>
+<section id="section-references">
 <h4>To refer to a section from the text</h4>
 
 <p><span class="leadin">In Respec:</span> use<code>[[[#section_id]]]</code>, where section_id is the id of the section you are pointing to. (An alternative is to use <code>&lt;a href=&quot;#section_id&quot;&gt;&lt;/a&gt;</code>, but the previous approach is better because you are able to see the id in wysiwyg source or if the link fails.)</p>
@@ -277,6 +277,7 @@ table td {
 
 <p>Put pictures, tables, examples, and the like in <code class="kw" translate="no">figure</code> markup. Use the <code class="kw" translate="no">figcaption</code> element when you want a caption. (Caption use is encouraged.)</p>
 
+<section id="figure-references">
 <h4>To refer to a <code class="kw" translate="no">figure</code> from the text</h4>
 
 <p><span class="leadin">In Respec:</span> use <code>[[[#figure_id]]]</code>, where figure_id is the id of the figure you are pointing to. (An alternative is to use  <code>&lt;a href=&quot;#figure_id&quot;&gt;&lt;/a&gt;</code>, but the previous approach is better because you are able to see the id in wysiwyg source.)</p>
@@ -284,6 +285,7 @@ table td {
 <p><span class="leadin">In i18n articles:</span> use <code>&lt;a class=&quot;figref&quot;&gt;figure_id&lt;/a&gt;</code>, where figure_id is the id of the figure you are pointing to. (Only works with articles that use the latest javascript includes.)</p>
 
 <p>In both cases, the markup will be replaced by a link to 'Figure XX' when the page is viewed. The Figure number will be updated automatically as new figures are added.</p>
+</section>
 </section>
 
 
@@ -479,7 +481,7 @@ p { color: red }
       </tr>
       <tr>
         <td>new term introduction</td>
-        <td>The set of characters is called a <dfn>repertoire</dfn>.</td>
+        <td>The set of characters is called a <dfn id="def_repertoire" title="repertoire">repertoire</dfn>.</td>
         <td>dfn id="def_&lt;termName&gt;" title="&lt;termName&gt;"</td>
       </tr>
       <tr>
@@ -519,7 +521,7 @@ p { color: red }
       </tr>
       <tr>
         <td>quoted code</td>
-        <td><code>suc&amp;#xE7;on</code></td>
+        <td><code translate="no">suc&amp;#xE7;on</code></td>
         <td>code translate="no"</td>
       </tr>
       <tr>
@@ -529,12 +531,12 @@ p { color: red }
       </tr>
       <tr>
         <td>element name</td>
-        <td>a user agent that looks for <code class="name">artículo</code> elements</td>
-        <td>span class="el" translate="no"</td>
+        <td>a user agent that looks for <code class="kw" translate="no">section</code> elements</td>
+        <td>code class="kw" translate="no"</td>
       </tr>
       <tr>
         <td>attribute name or value</td>
-        <td>the <code class="kw" translate="no">section</code> element</td>
+        <td>the <code class="kw" translate="no">lang</code> attribute with the value <code class="kw" translate="no">en</code></td>
         <td>code class="kw" translate="no"</td>
       </tr>
       <tr>
@@ -549,7 +551,7 @@ p { color: red }
       </tr>
       <tr>
         <td>variable name</td>
-        <td></td>
+        <td>The variable <var>count</var> stores the number of characters.</td>
         <td>var</td>
       </tr>
       <tr>
