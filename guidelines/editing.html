@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8" />
 <title>Editorial guidelines for i18n docs</title>
-<meta name="description" content="Helps members of the W3C Internationalization Activity work with GitHub." />
+<meta name="description" content="Provides editorial guidelines for W3C Internationalization documents." />
 <script>
 var f = { }
 
@@ -186,7 +186,7 @@ table td {
     <li>When committing changes, <strong>use clear and simple descriptions of changes</strong>. It should be possible to use the commit list as a change log for the document, so think in these terms when wording the initial line of your commit.</li>
   </ul>
   <p>We recommend adding the standard i18n CSS rules in a file called <code class="kw" translate="no">local.css</code>. These rules can be <a href="#localcss">found  below</a>.</p>
-  <p><strong>Important: </strong>Only make minimal changes to the source code. If you commit an update that has lots of formatting changes in the source code, it obscures the actual substantive changes in the github diff. You must use an editor that doesn't automatically re-layout the source text each time you make changes. If you do want to tidy the source text, do so as a separate commit, with no substantive changes applied, and describe the commit so that people are aware that it is just a source tidy.</p>
+  <p><strong>Important: </strong>Only make minimal changes to the source code. If you commit an update that has lots of formatting changes in the source code, it obscures the actual substantive changes in the GitHub diff. You must use an editor that doesn't automatically re-layout the source text each time you make changes. If you do want to tidy the source text, do so as a separate commit, with no substantive changes applied, and describe the commit so that people are aware that it is just a source tidy.</p>
   <!--p>Editors should also be aware of the information in the <a href="https://www.w3.org/International/docs/styleguide">style guide</a>.</p-->
 </section>
 
@@ -201,7 +201,7 @@ table td {
 
 
 <section id="files">
-<h3>Javascript &amp; CSS files</h3>
+<h3>JavaScript &amp; CSS files</h3>
 
 <p>New articles must include the following:</p>
 
@@ -260,9 +260,9 @@ table td {
 <section id="section-references">
 <h4>To refer to a section from the text</h4>
 
-<p><span class="leadin">In Respec:</span> use<code>[[[#section_id]]]</code>, where section_id is the id of the section you are pointing to. (An alternative is to use <code>&lt;a href=&quot;#section_id&quot;&gt;&lt;/a&gt;</code>, but the previous approach is better because you are able to see the id in wysiwyg source or if the link fails.)</p>
+<p><span class="leadin">In ReSpec:</span> use<code>[[[#section_id]]]</code>, where section_id is the id of the section you are pointing to. (An alternative is to use <code>&lt;a href=&quot;#section_id&quot;&gt;&lt;/a&gt;</code>, but the previous approach is better because you are able to see the id in wysiwyg source or if the link fails.)</p>
 
-<p><span class="leadin">In i18n articles:</span> use <code>&lt;a class=&quot;secref&quot;&gt;section_id&lt;/a&gt;</code>, where section_id is the id of the section you are pointing to. (Only works with articles that use the latest javascript includes.)</p>
+<p><span class="leadin">In i18n articles:</span> use <code>&lt;a class=&quot;secref&quot;&gt;section_id&lt;/a&gt;</code>, where section_id is the id of the section you are pointing to. (Only works with articles that use the latest JavaScript includes.)</p>
 
 <p>The paragraph containing the pointer will be updated automatically with a link to the section you are pointing to, and the link text will be the section heading.</p>
 </section>
@@ -280,9 +280,9 @@ table td {
 <section id="figure-references">
 <h4>To refer to a <code class="kw" translate="no">figure</code> from the text</h4>
 
-<p><span class="leadin">In Respec:</span> use <code>[[[#figure_id]]]</code>, where figure_id is the id of the figure you are pointing to. (An alternative is to use  <code>&lt;a href=&quot;#figure_id&quot;&gt;&lt;/a&gt;</code>, but the previous approach is better because you are able to see the id in wysiwyg source.)</p>
+<p><span class="leadin">In ReSpec:</span> use <code>[[[#figure_id]]]</code>, where figure_id is the id of the figure you are pointing to. (An alternative is to use  <code>&lt;a href=&quot;#figure_id&quot;&gt;&lt;/a&gt;</code>, but the previous approach is better because you are able to see the id in wysiwyg source.)</p>
 
-<p><span class="leadin">In i18n articles:</span> use <code>&lt;a class=&quot;figref&quot;&gt;figure_id&lt;/a&gt;</code>, where figure_id is the id of the figure you are pointing to. (Only works with articles that use the latest javascript includes.)</p>
+<p><span class="leadin">In i18n articles:</span> use <code>&lt;a class=&quot;figref&quot;&gt;figure_id&lt;/a&gt;</code>, where figure_id is the id of the figure you are pointing to. (Only works with articles that use the latest JavaScript includes.)</p>
 
 <p>In both cases, the markup will be replaced by a link to 'Figure XX' when the page is viewed. The Figure number will be updated automatically as new figures are added.</p>
 </section>
@@ -346,7 +346,7 @@ table td {
 <section id="syntax-highlighting">
   <h3>Syntax highlighting</h3>
 
-  <p>In Respec: use triple-backticks to create code blocks.</p>
+  <p>In ReSpec: use triple-backticks to create code blocks.</p>
 
   <pre><code class="language-markdown">```css
 p { color: red }
@@ -385,7 +385,7 @@ p { color: red }
   <p>Some aspects of Unicode that require additional specification for the Web include:</p>
   <ul>
     <li>Choice of encoding forms (UTF-8, UTF-16, UTF-32). </li>
-    <li>Counting characters, measuring string length in the presence of variable-length encodings and combining characters). </li>
+    <li>Counting characters, measuring string length in the presence of variable-length encodings and combining characters. </li>
     <li>Duplicate encodings (e.g. precomposed vs decomposed). </li>
     <li>Use of control codes for various purposes (e.g. bidirectionality control, symmetric swapping, etc.).</li>
   </ul>
@@ -398,7 +398,7 @@ p { color: red }
 
 <section id="changes">
   <h3>Change markup</h3>
-  <p>To show changes to the text use <code class="kw" translate="no">ins</code> and <code class="kw" translate="no">del</code>. However, remember that if you do commits carefully, such markup is not needed. People will be able to see the changes by looking at the diff for the commit on the Github site.</p>
+  <p>To show changes to the text use <code class="kw" translate="no">ins</code> and <code class="kw" translate="no">del</code>. However, remember that if you do commits carefully, such markup is not needed. People will be able to see the changes by looking at the diff for the commit on the GitHub site.</p>
 </section>
 </section>
 
@@ -444,9 +444,9 @@ p { color: red }
 
 <p>When referring to an invisible character you may want to simply omit the <code class="kw" translate="no">bdi</code> element, or you can use an image. The image should be stored in a local directory. It is important to style the size of the image, so that it fits inline (especially when using an SVG image). The default style sheet applies a height of 1.6em, but this can be changed inline where needed.</p>
 
-<p id="codepoint_imgs" style="text-align: start;"><code class="language-html">&lt;span class=&quot;codepoint&quot; translate=&quot;no&quot;&gt;&lt;img alt=&quot;NBSP&quot; src=&quot;images/00A0.png&quot;&gt;&lt;code class=&quot;uname&quot;&gt;U+00A0 N0-BREAK SPACE&lt;/code&gt;&lt;/span&gt;</code></p>
+<p id="codepoint_imgs" style="text-align: start;"><code class="language-html">&lt;span class=&quot;codepoint&quot; translate=&quot;no&quot;&gt;&lt;img alt=&quot;NBSP&quot; src=&quot;images/00A0.png&quot;&gt;&lt;code class=&quot;uname&quot;&gt;U+00A0 NO-BREAK SPACE&lt;/code&gt;&lt;/span&gt;</code></p>
 
-<p>That will produce: <span class="codepoint" translate="no"><img alt="NBSP" src="images/00A0.png"><code class="uname">U+00A0 N0-BREAK SPACE</code></span>.</p>
+<p>That will produce: <span class="codepoint" translate="no"><img alt="NBSP" src="images/00A0.png"><code class="uname">U+00A0 NO-BREAK SPACE</code></span>.</p>
 </section>
 
 
