@@ -126,14 +126,14 @@ on the <code>public-xlreq-admin</code> mailing list (change x as appropriate) fa
 <p>To 
 <mark>get a meeting started</mark>
 on IRC the chair should go to IRC and type:</p>
-<pre> mynick:   trackbot, start meeting</pre>
+<pre> mynick:   zakim, start meeting</pre>
 <p>You should see something like the following:</p>
-<pre>trackbot is preparing a teleconference. 
-trackbot   RRSAgent, make logs public 
-RRSAgent   I have made the request, trackbot 
-trackbot   Zakim, this will be 
-trackbot   Meeting: Hebrew Layout Task Force Teleconference 
-trackbot   Date: 18 July 2017</pre>
+<pre>Zakim      inviting RRSAgent
+RRSAgent has joined the channel
+Zakim      RRSAgent, make logs Public 
+RRSAgent   I have made the request, Zakim 
+RRSAgent   logging to https://www.w3.org/2026/10/16-hlreq-irc
+RRSAgent   I have made the request, Zakim</pre>
 <p>You may want to 
 <mark>set up a list of agenda items</mark>
 . Do this in IRC using this pattern:</p>
@@ -212,7 +212,7 @@ using the substitution command. For example, the following will change the recor
 <p>To
 <mark>scribe what someone is saying</mark>
 , type the name/nick of that person followed by a colon, then add what they say. You can continue the same person's comments by starting a new line with ... (three dots). The bot will then stitch the lines together when it produces the minutes. So, for example:</p>
-<pre> mynick:    r12a: this is me scribing what someone is saying
+<pre>mynick:    r12a: this is me scribing what someone is saying
 mynick:    ... and now i'm adding something else they are saying
 mynick:    ... and yet more!</pre>
 <p>There not much more to it than that. But don't forget to save the minutes before the end of the call and before dismissing rrsagent!</p>
@@ -222,10 +222,10 @@ mynick:    ... and yet more!</pre>
 
 
 <section id="minutes">
-<h3>Creating minutes  </h3>
+<h3>Creating minutes</h3>
 <p>You need to 
 <mark>ensure that the rrsagent bot is on the IRC channel</mark>
-before starting to record minutes. If you start the meeting using trackbot, it will usually start up rrsagent automatically. Otherwise, do this in IRC:</p>
+before starting to record minutes. If you start the meeting using zakim, it will usually start up rrsagent automatically. Otherwise, do this in IRC:</p>
 <pre>mynick:    /invite #channel_name rrsagent</pre>
 <p>If you don't have rrsagent running, producing minutes will be a major hassle.</p>
 <p>To 
@@ -260,17 +260,6 @@ before starting to record minutes. If you start the meeting using trackbot, it w
 
 
 
-<section id="action_items">
-<h2>Managing actions</h2>
-<p>We discussed how to raise actions and close them in meetings in the previous section.</p>
-<p>Other groups have concluded that it works much better to use a separate W3C tracker instance for action items, rather than using github issues.</p>
-<p>You should have a tracker instance set up for you. You should be able to find open actions for review at a URL like this (substitute something appropriate for <samp>hebrew-layout</samp>).</p>
-<p><a href="https://www.w3.org/International/groups/hebrew-layout/track/actions/open">https://www.w3.org/International/groups/hebrew-layout/track/actions/open</a></p>
-<p>You can edit actions using that interface, if you need to.</p>
-<p>We usually close actions during teleconference calls, during an action item review topic.</p>
-<p>(The W3C tracker is also able to track issue, but we strongly recommend that you use github issues instead. The latter is much superior.)</p>
-</section>
-
 
 
 
@@ -285,7 +274,7 @@ before starting to record minutes. If you start the meeting using trackbot, it w
 
 
 
-<section id="pipeline">
+<!-- <section id="pipeline">
 <h2>Using a github project pipeline</h2>
 <p>In your github repo you can set up a project to track progress on work items.</p>
 <p>This is very useful for doing a status review during or outside of meetings. During a review in a telecon, it's particularly useful because you can drag and drop items from one column to the next in real time. This avoids having to update the chart offline, and gives everyone on the call instant feedback.</p>
@@ -299,7 +288,7 @@ before starting to record minutes. If you start the meeting using trackbot, it w
 <li>done</li>
 </ol>
 <p>The idea is to move items from the left to the right.</p>
-</section>
+</section> -->
 
 
 
