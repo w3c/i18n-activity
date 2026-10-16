@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8" />
 <title>Practical tips for task forces</title>
-<meta name="description" content="Helps members of the W3C Internationalization Activity work with GitHub." />
+<meta name="description" content="Practical guidance for W3C Internationalization task forces on meetings, IRC, minutes, and issue management." />
 <script>
 var f = { }
 
@@ -13,14 +13,14 @@ f.filename = 'process'; // the file name WITHOUT extensions
 f.authors = 'Richard Ishida, W3C'; // author(s) and affiliations
 f.previousauthors = ''; // as above
 f.modifiers = ''; // people making substantive changes, and their affiliation
-f.searchString = 'level2-github'; // blog search string - usually the filename without extensions
+f.searchString = 'level2-process'; // blog search string - usually the filename without extensions
 f.firstPubDate = '2015-12-16'; // date of the first publication of the document (after review)
-f.lastSubstUpdate = { date:'2016-10-11', time:'07:50'}  // date and time of latest substantive changes to this document
+f.lastSubstUpdate = { date:'2026-10-16', time:'16:26'}  // date and time of latest substantive changes to this document
 f.status = 'notreviewed';  // should be one of draft, review, published, notreviewed or obsolete
 f.path = '../' // what you need to prepend to a URL to get to the /International directory 
 
 // AUTHORS AND TRANSLATORS should fill in these assignments:
-f.thisVersion = { date:'2021-04-27', time:'12:18'} // date and time of latest edits to this document/translation
+f.thisVersion = { date:'2026-10-16', time:'16:26'} // date and time of latest edits to this document/translation
 f.contributors = ''; // people providing useful contributions or feedback during review or at other times
 // also make sure that the lang attribute on the html tag is correct!
 
@@ -91,9 +91,9 @@ pre {
 <div id="mainLayout">
 <section>
 <p>I thought it would be useful to gather together the bare minimum of useful things to help participants use W3C meetings, IRC, etc.</p>
-<p>Remember that you should be able to find links to most of the information you need from your GitHub repo home page, eg. https://github.com/w3c/alreq/. That includes links to how to use GitHub for collaboration on document delivereables, a style guide for people editing the documents, and a link to the group home page, which includes information about teleconference times, etc.</p>
+<p>Start with your task force's GitHub repository, for example the <a href="https://github.com/w3c/alreq/">Arabic Layout Task Force repository</a>. Its README should link to the group home page, meeting information, and guidance on contributing to documents.</p>
 <p>If you have comments or suggestions about how to improve this page, feel free to <a href="https://github.com/w3c/i18n-activity/issues">raise a Github issue</a>.</p>
-<p>See also the <a href="editing">editorial guidelines</a>.</p>
+<p>See also the <a href="editing">editorial guidelines</a> and the <a href="github">GitHub workflow guide</a>.</p>
 </section>
 
 
@@ -102,31 +102,39 @@ pre {
 
 <section id="setup">
 <h2>Starting and running a telecon</h2>
-<p>You should already be set up with the things you need to make this work. If you're stuck with something ask your staff contact for help. Follow the steps below.</p>
+<p>The steps below cover meetings that use IRC for agendas and minutes. Your conferencing service is separate from IRC: starting a meeting in IRC does not start the audio or video call.</p>
+
+
+<section id="before_joining">
+<h3>Before your first meeting</h3>
+<ul>
+<li>Find the meeting date, time zone, joining link, and IRC channel in the group's meeting information.</li>
+<li>Connect to IRC using the <a href="https://www.w3.org/guide/meetings/irc.html">W3C IRC guide</a>, choose a nickname, and join the group's channel.</li>
+<li>If you cannot find these details or need help joining, ask the chair or the group's W3C staff contact, listed on the group home page.</li>
+</ul>
+<p>For more commands, see the <a href="https://www.w3.org/guide/meetings/zakim.html">Zakim guide</a>, <a href="https://www.w3.org/2002/03/RRSAgent">RRSAgent guide</a>, and <a href="https://w3c.github.io/scribe2/scribedoc.html">scribe guide</a>.</p>
+</section>
 
 
 
 <section id="prepping_telecons">
 <h3>Preparing for a telecon</h3>
 <p><strong>For: the meeting chair</strong></p>
-<p>Depending on how your teleconference is set up, participants may need a 
-<mark>password and a host key</mark>
-. These are set up by the staff contact and communicated to the chair. They should be sent on to participants in email or private IRC channels directly. They should not be sent via any publicly visible list, since otherwise you will find unknown people camping on your call. </p>
-<p>(To get rid of unknown participants, you'll need to go to Reclaim Host Role, and enter the host key. You'll then be able to remove the individual by right-clicking on their name.)</p>
-<p>You should 
-<mark>send out an agenda</mark>
-on the <code>public-xlreq-admin</code> mailing list (change x as appropriate) far enough in advance for people to do prep work. We find it effective to also call for agenda items from the participants at the same time.</p>
+<p><mark>Check the meeting credentials</mark> with your staff contact. Send any participant password through a private channel. Share a host key only with people who need to host the call. Keep credentials out of public mailing lists, IRC logs, agendas, and minutes.</p>
+<p>Send out an agenda using the <a href="https://www.w3.org/guide/meetings/organize.html#calendars">group calendar</a> far enough in advance for participants to prepare.</p>
 </section>
 
 
 
 <section id="starting_telecons">
 <h3>Starting a telecon</h3>
-<p><strong>For: the meeting chair</strong>  </p>
+<p><strong>For: the meeting chair</strong></p>
 <p>To 
 <mark>get a meeting started</mark>
 on IRC the chair should go to IRC and type:</p>
-<pre> mynick:   zakim, start meeting</pre>
+<p>If Zakim is not already in the channel, invite it first:</p>
+<pre>/invite Zakim #channel_name</pre>
+<pre>zakim, start meeting</pre>
 <p>You should see something like the following:</p>
 <pre>Zakim      inviting RRSAgent
 RRSAgent has joined the channel
@@ -134,30 +142,31 @@ Zakim      RRSAgent, make logs Public
 RRSAgent   I have made the request, Zakim 
 RRSAgent   logging to https://www.w3.org/2026/10/16-hlreq-irc
 RRSAgent   I have made the request, Zakim</pre>
+<p>Check that RRSAgent has joined before scribing begins. If it has not joined, invite it:</p>
+<pre>/invite RRSAgent #channel_name</pre>
+<p>Check that the log visibility matches the group's meeting policy. For a public meeting, use:</p>
+<pre>rrsagent, make logs public</pre>
+<p>Set the meeting title and chair for the minutes:</p>
+<pre>Meeting: Task force meeting
+Chair: chair_name</pre>
 <p>You may want to 
 <mark>set up a list of agenda items</mark>
 . Do this in IRC using this pattern:</p>
-<pre>mynick:    agenda+ Action item review 
-mynick:    agenda+ Issue review
-mynick:    agenda+ Do this
-mynick:    agenda+ Do that 
-...</pre>
+<pre>agenda+ Action item review
+agenda+ Issue review
+agenda+ Review proposed document changes</pre>
 <p>
 <mark>If you have regrets</mark>
 from some participants, indicate that for the minutes by typing:</p>
-<pre>mynick:    regrets+ personsname anotherperson etc
-</pre>
+<pre>regrets+ absent_person</pre>
 <p>You'll need to set up someone as a scribe (to take the minutes). To do so, type:</p>
-<pre>mynick:    scribenick: persons_irc_nickname</pre>
-<p>Depending on how your telecon is set up, you may need to 
-<mark>claim the host role</mark>
-to start the meeting. To do this.....</p>
+<pre>scribe: scribe_nickname</pre>
+
 <p><strong>For: the participants</strong></p>
 <p>
 You should <mark>sign in when you join the call</mark>
 by typing into IRC:</p>
-<pre>mynick:    present+ myname 
-</pre>
+<pre>present+ myname</pre>
 <p>This records you as present in the minutes, and the zakim bot keeps track of participants this way.</p>
 
 </section>
@@ -170,33 +179,25 @@ by typing into IRC:</p>
 To 
 <mark> start a new topic</mark>
 type:</p>
-<pre> mynick:    Topic: title_of_the_topic_here</pre>
+<pre>Topic: title_of_the_topic_here</pre>
 <p>Alternatively, if you have set up an agenda on IRC, you can type:</p>
-<pre>mynick:     zakim, take up agendum X</pre>
+<pre>zakim, take up agendum X</pre>
 <p>where X is the number of the agenda item. You don't need to progress through the agenda sequentially. Setting the topic will automatically create a linked heading in the minutes.</p>
 <p>
 To 
 <mark> check what's on the agenda</mark>
 , type</p>
-<pre>mynick:    agenda?</pre>
+<pre>agenda?</pre>
 <p>To 
 <mark>give someone an action</mark>
 , type</p>
-<pre>mynick:    Action: Person's_nickname to do something
+<pre>ACTION: myname to propose revised wording in the GitHub issue
 </pre>
 <p>Note that the person's name needs to be the one the bot recognises, and that the word 'to' is important for the action to be recognised by the bot.</p>
-<p>To 
-<mark>close an action</mark>
-, such as action number 10, simply type</p>
-<pre>mynick:    close action-10
-</pre>
-<p>Depending on how your telecon is set up, you may need to 
-<mark>claim the host role</mark>
-to start the meeting. To do this.....</p>
 <p>Anyone can 
 <mark>correct the minutes in IRC</mark>
 using the substitution command. For example, the following will change the record in the minutes.</p>
-<pre>mynick:    s/@@ said he would do it/David said he would NOT do it/
+<pre>s/@@ said he would do it/David said he would NOT do it/
 </pre>
 </section>
 
@@ -207,15 +208,17 @@ using the substitution command. For example, the following will change the recor
 <p>You need to 
 <mark>tell the bot who the scribe is</mark>
 . Do this by typing in IRC:</p>
-<pre>mynick:    scribenick: person's_nickname</pre>
+<pre>scribe: scribe_nickname</pre>
 <p>Doing this will produce much tidier and more readable minutes.</p>
 <p>To
 <mark>scribe what someone is saying</mark>
 , type the name/nick of that person followed by a colon, then add what they say. You can continue the same person's comments by starting a new line with ... (three dots). The bot will then stitch the lines together when it produces the minutes. So, for example:</p>
-<pre>mynick:    r12a: this is me scribing what someone is saying
-mynick:    ... and now i'm adding something else they are saying
-mynick:    ... and yet more!</pre>
-<p>There not much more to it than that. But don't forget to save the minutes before the end of the call and before dismissing rrsagent!</p>
+<pre>r12a: this is me scribing what someone is saying
+... and now i'm adding something else they are saying
+... and yet more!</pre>
+<p>Record an agreed decision on its own line, for example:</p>
+<pre>RESOLVED: Adopt the revised wording discussed in this meeting</pre>
+<p>If another person takes over scribing, enter <code>scribe+ scribe_nickname</code> with the new scribe's nickname.</p>
 
 </section>
 
@@ -223,27 +226,23 @@ mynick:    ... and yet more!</pre>
 
 <section id="minutes">
 <h3>Creating minutes</h3>
-<p>You need to 
-<mark>ensure that the rrsagent bot is on the IRC channel</mark>
-before starting to record minutes. If you start the meeting using zakim, it will usually start up rrsagent automatically. Otherwise, do this in IRC:</p>
-<pre>mynick:    /invite #channel_name rrsagent</pre>
-<p>If you don't have rrsagent running, producing minutes will be a major hassle.</p>
+<p><strong>For: the meeting chair and scribe</strong></p>
 <p>To 
 <mark>tell rrsagent to draft the minutes</mark>
 , type the following:</p>
-<pre> mynick:    rrsagent, draft minutes
+<pre>rrsagent, draft minutes
 </pre>
 <p>The bot will reply to you with a URL where the minutes are being stored. (It may take a moment for the page to refresh.)</p>
 <p>You should ALWAYS ask rrsagent to draft the minutes at the end of the telecon, but you can also do so at any time during the call.</p>
 <p>You may need to 
 <mark>set the access rights for the minutes</mark>
 . You can do this in IRC using:</p>
-<pre> mynick:    rrsagent, make log public
+<pre>rrsagent, make log public
 </pre>
 <p>Once the meeting is finished, the chair or scribe should check that the minutes look ok. If you want to change anything in the minutes page, use the substitution command mentioned above (ie. s/xxx/yyy/). You'll need to do this before dismissing rrsagent!</p>
 <p>Finally, 
 <mark>send the minutes out to the group's mailing list</mark>
-. You should send the minutes to the mailing list your group uses for public discussion, ie. public-i18n-xxxx.</p>
+. You should send the minutes to the mailing list your group uses for public discussion, ie. <code>public-i18n-xxxx</code> (replace this with your group's actual list address).</p>
 <p>Set the subject of the email to something like </p>
 <pre> [minutes] Hebrew layout telecon 2017-07-19
 </pre>
