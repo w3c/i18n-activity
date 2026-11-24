@@ -87,6 +87,9 @@ function buildDoc (repo, doc) {
 	if (sections.footnotes_etc) buildSection(sections.footnotes_etc,'footnotes_etc', doc, repo)
 	if (sections.headers_footers) buildSection(sections.headers_footers,'headers_footers', doc, repo)
 	if (sections.interaction) buildSection(sections.interaction,'interaction', doc, repo)
+
+	if (sections.culturespecific) buildSection(sections.culturespecific,'culturespecific', doc, repo)
+	if (sections.other) buildSection(sections.other,'other', doc, repo)
 	}
 
 
