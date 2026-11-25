@@ -16,7 +16,7 @@ contentPrompts = {
 
 "cursive":'If this script is cursive (ie. letters are generally joined up, like in Arabic, N’Ko, Syriac, etc), are there problems or needed features related to the handling of cursive text? Do cursive links break if parts of a word are marked up or styled? Do Unicode joiner and non-joiner characters behave as expected?',
 
-"transforms":'Does your script need special text transforms that are not supported? For example, do you need to to convert between half-width and full-width presentation forms? Does your script convert letters to uppercase, capitalised and lowercase alternatives according to your typographic needs? How about other transforms?',
+"transforms":'Does your script need special text transforms that are not supported? For example, do you need to convert between half-width and full-width presentation forms? Does your script convert letters to uppercase, capitalised and lowercase alternatives according to your typographic needs? How about other transforms?',
 
 "segmentation":'This is about how text is divided into graphemes, words, sentences, etc., and behaviour associated with that. Are there special requirements for the following operations: forwards/backwards deletion, cursor movement & selection, character counts, searching & matching, text insertion, line-breaking, justification, case conversions, sorting? Are words separated by spaces, or other characters? Are there special requirements when double-clicking or triple-clicking on the text? Are words hyphenated?  (Some of the answers to these questions may be picked up in other sections, such as [[[#line_breaking]]], or [[[#initials]]].)',
 
